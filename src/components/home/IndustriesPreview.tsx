@@ -1,7 +1,13 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
+import dynamic from 'next/dynamic'
+
+const GastronomiaDemo    = dynamic(() => import('@/components/demos/gastronomia/GastronomiaDemo'),     { ssr: false })
+const DistribuidorasDemo = dynamic(() => import('@/components/demos/distribuidoras/DistribuidorasDemo'), { ssr: false })
+const TalleresDemo       = dynamic(() => import('@/components/demos/talleres/TalleresDemo'),             { ssr: false })
+const InmobiliariasDemo  = dynamic(() => import('@/components/demos/inmobiliarias/InmobiliariasDemo'),   { ssr: false })
+const EcommerceDemo      = dynamic(() => import('@/components/demos/ecommerce/EcommerceDemo'),           { ssr: false })
 
 const industries = [
   {
@@ -14,8 +20,6 @@ const industries = [
       </svg>
     ),
     problema: 'No sabés exactamente cuánto te cuesta cada plato.',
-    solucion: 'Calculadora de food cost en tiempo real: cargás tus insumos y el sistema te dice el costo exacto de cada receta.',
-    demo: 'Calculadora de food cost',
   },
   {
     id: 'distribuidoras',
@@ -26,8 +30,6 @@ const industries = [
       </svg>
     ),
     problema: 'Las rutas de reparto se definen de cabeza, sin saber el costo real de cada viaje.',
-    solucion: 'Panel de planificación de rutas con mapa en vivo y cálculo automático de costo por recorrido.',
-    demo: 'Planificador de rutas',
   },
   {
     id: 'talleres',
@@ -38,8 +40,6 @@ const industries = [
       </svg>
     ),
     problema: 'El estado de los vehículos en reparación vive en papeles o en la cabeza del encargado.',
-    solucion: 'Seguimiento en tiempo real de cada orden: desde el ingreso hasta la entrega, con vista kanban.',
-    demo: 'Panel de órdenes',
   },
   {
     id: 'salud',
@@ -50,8 +50,6 @@ const industries = [
       </svg>
     ),
     problema: '[contenido pendiente de definir]',
-    solucion: '[contenido pendiente de definir]',
-    demo: 'Demo pendiente',
   },
   {
     id: 'inmobiliarias',
@@ -63,8 +61,6 @@ const industries = [
       </svg>
     ),
     problema: 'Los leads se pierden entre WhatsApp, mails y anotaciones.',
-    solucion: 'CRM visual con pipeline de etapas: de "interesado" a "cierre" en un solo panel.',
-    demo: 'CRM de leads',
   },
   {
     id: 'ecommerce',
@@ -75,101 +71,121 @@ const industries = [
       </svg>
     ),
     problema: 'Carritos abandonados, clientes sin segmentar y respuestas lentas a consultas.',
-    solucion: 'CRM + recuperación de carritos + agente de respuestas + cotizador integrado.',
-    demo: 'Suite e-commerce',
   },
 ]
+
+function SaludPlaceholder() {
+  return (
+    <div className="flex flex-col items-center justify-center min-h-[420px] text-center px-6">
+      <div className="w-16 h-16 rounded-2xl bg-pink-50 flex items-center justify-center mb-5 text-pink-400">
+        <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+        </svg>
+      </div>
+      <h3 className="text-xl font-bold text-carbon mb-2">Demo Salud</h3>
+      <p className="text-sm text-texto-sec max-w-xs">
+        Esta demo está en proceso de definición. Próximamente vas a poder explorar las herramientas de IA para clínicas y consultorios.
+      </p>
+      <span className="mt-5 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-fondo-suave text-xs font-semibold text-texto-sec border border-borde">
+        <span className="w-1.5 h-1.5 rounded-full bg-yellow-400" />
+        Demo pendiente de definir
+      </span>
+    </div>
+  )
+}
+
+function renderDemo(id: string) {
+  switch (id) {
+    case 'gastronomia':    return <GastronomiaDemo />
+    case 'distribuidoras': return <DistribuidorasDemo />
+    case 'talleres':       return <TalleresDemo />
+    case 'inmobiliarias':  return <InmobiliariasDemo />
+    case 'ecommerce':      return <EcommerceDemo />
+    case 'salud':          return <SaludPlaceholder />
+    default:               return null
+  }
+}
 
 export default function IndustriesPreview() {
   const [active, setActive] = useState('gastronomia')
   const current = industries.find((i) => i.id === active)!
 
   return (
-    <section id="industrias" className="py-20 md:py-28 bg-white">
-      <div className="max-w-container mx-auto px-5 md:px-10">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-carbon mb-4 tracking-tight">Verticales de impacto</h2>
-          <p className="text-lg text-texto-sec max-w-xl mx-auto">
-            Seleccioná tu industria para ver cómo resolvemos tus cuellos de botella.
-          </p>
-        </div>
+    <>
+      {/* Alias anchor so both /#industrias and /#demos scroll here */}
+      <div id="demos" />
+      <section id="industrias" className="py-20 md:py-28 bg-white">
+        <div className="max-w-container mx-auto px-5 md:px-10">
 
-        {/* Tabs */}
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
-          {industries.map((ind) => (
-            <button
-              key={ind.id}
-              onClick={() => setActive(ind.id)}
-              className={`flex items-center gap-2 px-4 py-2 rounded-sm text-sm font-semibold transition-all duration-160 ${
-                active === ind.id
-                  ? 'bg-azul-nucleo text-white shadow-primary'
-                  : 'bg-fondo-suave text-texto-sec hover:bg-borde/60'
-              }`}
-            >
-              {ind.icon}
-              {ind.label}
-            </button>
-          ))}
-        </div>
-
-        {/* Content panel */}
-        <div
-          key={active}
-          className="grid md:grid-cols-2 gap-8 items-center bg-fondo-suave rounded-xl p-8 md:p-12 animate-fade-in"
-        >
-          {/* Left: copy */}
-          <div>
-            <h3 className="text-2xl md:text-3xl font-bold text-carbon mb-5 tracking-tight">
-              {current.label}
-            </h3>
-            <div className="space-y-4 mb-8">
-              <div className="flex gap-3">
-                <span className="mt-0.5 shrink-0 w-5 h-5 rounded-full bg-error/10 flex items-center justify-center">
-                  <svg width="10" height="10" fill="currentColor" viewBox="0 0 24 24" className="text-error">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
-                  </svg>
-                </span>
-                <p className="text-sm text-texto-sec leading-relaxed">{current.problema}</p>
-              </div>
-              <div className="flex gap-3">
-                <span className="mt-0.5 shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
-                  <svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3} className="text-green-600">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                  </svg>
-                </span>
-                <p className="text-sm text-carbon leading-relaxed font-medium">{current.solucion}</p>
-              </div>
-            </div>
-            <Link
-              href="/demostraciones"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-azul-nucleo hover:text-azul-accion transition-colors duration-160"
-            >
-              Probar {current.demo} en vivo
-              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-              </svg>
-            </Link>
+          {/* Header */}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-carbon mb-4 tracking-tight">
+              Tu negocio optimizado
+            </h2>
+            <p className="text-lg text-texto-sec max-w-xl mx-auto">
+              Elegí tu industria y probá cómo Dataria transforma tu negocio.
+            </p>
           </div>
 
-          {/* Right: mini-mockup placeholder */}
-          <div className="rounded-lg bg-white border border-borde shadow-soft overflow-hidden min-h-[220px] flex items-center justify-center">
-            <div className="text-center p-8">
-              <div className="w-12 h-12 rounded-xl bg-tinte-interfaz flex items-center justify-center mx-auto mb-3 text-azul-nucleo">
-                {current.icon}
-              </div>
-              <p className="text-sm font-semibold text-carbon mb-1">{current.demo}</p>
-              <p className="text-xs text-texto-sec">Demo interactiva disponible en la página de demostraciones</p>
-              <Link
-                href="/demostraciones"
-                className="mt-4 inline-flex items-center justify-center h-8 px-4 rounded-xs bg-tinte-interfaz text-azul-nucleo text-xs font-semibold hover:bg-azul-nucleo/15 transition-colors duration-160"
+          {/* Tabs */}
+          <div className="flex flex-wrap justify-center gap-2 mb-10">
+            {industries.map((ind) => (
+              <button
+                key={ind.id}
+                onClick={() => setActive(ind.id)}
+                className={`flex items-center gap-2 px-4 py-2 rounded-sm text-sm font-semibold transition-all duration-160 ${
+                  active === ind.id
+                    ? 'bg-azul-nucleo text-white shadow-primary'
+                    : 'bg-fondo-suave text-texto-sec hover:bg-borde/60'
+                }`}
               >
-                Ir a demostraciones →
-              </Link>
+                {ind.icon}
+                {ind.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Problem + embedded demo */}
+          <div key={active} className="animate-fade-in space-y-4">
+
+            {/* Problem statement */}
+            <div className="flex gap-3 items-start px-5 py-4 rounded-lg bg-fondo-suave border border-borde">
+              <span className="mt-0.5 shrink-0 w-5 h-5 rounded-full bg-error/10 flex items-center justify-center">
+                <svg width="10" height="10" fill="currentColor" viewBox="0 0 24 24" className="text-error">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
+                </svg>
+              </span>
+              <p className="text-sm text-texto-sec leading-relaxed">{current.problema}</p>
             </div>
+
+            {/* Demo panel */}
+            <div className="bg-white rounded-xl border border-borde shadow-soft overflow-hidden">
+              {/* Demo header */}
+              <div className="flex items-center justify-between px-5 py-3 border-b border-borde bg-white">
+                <div className="flex items-center gap-2">
+                  <span className="text-azul-nucleo">{current.icon}</span>
+                  <h3 className="text-sm font-bold text-carbon">
+                    Demo · {current.label}, tu solución
+                  </h3>
+                  <span className="px-2 py-0.5 rounded-xs bg-tinte-interfaz text-azul-nucleo text-xs font-medium border border-azul-nucleo/10">
+                    Simulación
+                  </span>
+                </div>
+                <span className="hidden sm:flex items-center gap-1.5 text-xs text-texto-sec/60">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
+                  Datos de ejemplo — no conectado a backend
+                </span>
+              </div>
+
+              {/* Demo content */}
+              <div className="p-4 md:p-6 overflow-auto">
+                {renderDemo(active)}
+              </div>
+            </div>
+
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   )
 }

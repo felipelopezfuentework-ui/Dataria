@@ -5,15 +5,18 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 const navLinks = [
-  { label: 'Industrias',      href: '/#industrias'         },
-  { label: 'Demostraciones',  href: '/demostraciones'      },
-  { label: 'Cómo trabajamos', href: '/como-trabajamos'     },
-  { label: 'Nosotros',        href: '/nosotros'            },
+  { label: 'Industrias',      href: '/#industrias'      },
+  { label: 'Cómo trabajamos', href: '/#como-trabajamos' },
+  { label: 'Contacto',        href: '/#contacto'        },
 ]
 
+function scrollToContacto() {
+  document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })
+}
+
 export default function Header() {
-  const [scrolled, setScrolled]     = useState(false)
-  const [menuOpen, setMenuOpen]     = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8)
@@ -31,8 +34,8 @@ export default function Header() {
     >
       <div className="max-w-container mx-auto px-5 md:px-10 flex items-center justify-between h-16 md:h-20">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 shrink-0">
-          <Image src="/logo.png" alt="Dataria" width={120} height={36} priority className="h-8 w-auto" />
+        <Link href="/" className="flex items-center shrink-0">
+          <Image src="/dataria-sin-fondo.png" alt="Dataria" width={300} height={90} priority className="h-[72px] md:h-[84px] w-auto" />
         </Link>
 
         {/* Desktop nav */}
@@ -50,12 +53,12 @@ export default function Header() {
 
         {/* CTA */}
         <div className="hidden md:block">
-          <Link
-            href="/contacto"
+          <button
+            onClick={scrollToContacto}
             className="inline-flex items-center justify-center h-10 px-5 rounded-sm bg-azul-nucleo text-white text-sm font-bold hover:bg-azul-accion transition-colors duration-160 shadow-primary"
           >
             Solicitar demo
-          </Link>
+          </button>
         </div>
 
         {/* Mobile hamburger */}
@@ -84,13 +87,12 @@ export default function Header() {
                 {l.label}
               </Link>
             ))}
-            <Link
-              href="/contacto"
-              onClick={() => setMenuOpen(false)}
+            <button
+              onClick={() => { setMenuOpen(false); scrollToContacto() }}
               className="mt-3 inline-flex items-center justify-center h-11 px-5 rounded-sm bg-azul-nucleo text-white text-sm font-bold"
             >
               Solicitar demo
-            </Link>
+            </button>
           </nav>
         </div>
       )}

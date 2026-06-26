@@ -1,17 +1,16 @@
 'use client'
 
 import { useState } from 'react'
-import type { Metadata } from 'next'
 import Input from '@/components/ui/Input'
 import Button from '@/components/ui/Button'
 import Select from '@/components/ui/Select'
 
 const industries = ['Gastronomía', 'Distribuidoras de Alimentos', 'Talleres y Comercios', 'Salud', 'Inmobiliarias', 'E-commerce', 'Otro']
 
-export default function ContactoPage() {
-  const [form, setForm]     = useState({ nombre: '', email: '', empresa: '', industria: '', mensaje: '' })
-  const [sent, setSent]     = useState(false)
-  const [loading, setLoad]  = useState(false)
+export default function ContactoSection() {
+  const [form, setForm]    = useState({ nombre: '', email: '', empresa: '', industria: '', mensaje: '' })
+  const [sent, setSent]    = useState(false)
+  const [loading, setLoad] = useState(false)
 
   const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
     setForm((f) => ({ ...f, [k]: e.target.value }))
@@ -25,15 +24,14 @@ export default function ContactoPage() {
   }
 
   return (
-    <main className="min-h-screen bg-fondo-suave py-14 md:py-20">
+    <section id="contacto" className="py-16 md:py-20 bg-fondo-suave">
       <div className="max-w-container mx-auto px-5 md:px-10">
         <div className="max-w-2xl mx-auto">
-          {/* Header */}
           <div className="text-center mb-10">
             <p className="text-xs font-bold uppercase tracking-widest text-azul-nucleo mb-4">Contacto</p>
-            <h1 className="text-3xl md:text-4xl font-extrabold text-carbon mb-4 tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-carbon mb-4 tracking-tight">
               Hablemos de tu caso
-            </h1>
+            </h2>
             <p className="text-lg text-texto-sec">
               Contanos en qué industria operás y cuál es tu cuello de botella principal. Te respondemos en menos de 24hs hábiles.
             </p>
@@ -85,6 +83,6 @@ export default function ContactoPage() {
           )}
         </div>
       </div>
-    </main>
+    </section>
   )
 }
