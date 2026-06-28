@@ -55,7 +55,7 @@ export default function Header() {
         <div className="hidden md:block">
           <button
             onClick={scrollToContacto}
-            className="inline-flex items-center justify-center h-10 px-5 rounded-sm bg-azul-nucleo text-white text-sm font-bold hover:bg-azul-accion transition-colors duration-160 shadow-primary"
+            className="inline-flex items-center justify-center h-[46px] px-6 rounded-[10px] bg-azul-nucleo text-white font-bold tracking-[0.04em] uppercase text-[13px] hover:bg-azul-accion transition-colors duration-160 shadow-primary"
           >
             Solicitar demo
           </button>
@@ -89,7 +89,7 @@ export default function Header() {
             ))}
             <button
               onClick={() => { setMenuOpen(false); scrollToContacto() }}
-              className="mt-3 inline-flex items-center justify-center h-11 px-5 rounded-sm bg-azul-nucleo text-white text-sm font-bold"
+              className="mt-3 inline-flex items-center justify-center h-[46px] px-6 rounded-[10px] bg-azul-nucleo text-white font-bold tracking-[0.04em] uppercase text-[13px]"
             >
               Solicitar demo
             </button>

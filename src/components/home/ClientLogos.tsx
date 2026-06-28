@@ -27,7 +27,7 @@ export default function ClientLogos() {
     <section className="py-10 border-y border-borde bg-white overflow-hidden">
       <div className="max-w-container mx-auto px-5 md:px-10 mb-6">
         <p className="text-xs font-semibold uppercase tracking-widest text-texto-sec/60 text-center">
-          Empresas que confían en nosotros
+          Empresas que ya optimizan su proceso
         </p>
       </div>
       {/* Single track: each item owns its right padding so translateX(-50%) loops perfectly */}

@@ -13,13 +13,13 @@ export default function CTASection() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
           <Link
             href="/contacto"
-            className="inline-flex items-center justify-center h-12 px-7 rounded-sm bg-white text-azul-nucleo font-bold text-sm hover:bg-white/90 transition-colors duration-160 shadow-soft"
+            className="inline-flex items-center justify-center h-[46px] px-6 rounded-[10px] bg-white text-azul-nucleo font-bold tracking-[0.04em] uppercase text-[13px] hover:bg-white/90 transition-colors duration-160 shadow-soft"
           >
             Solicitar asesoría gratuita
           </Link>
           <Link
             href="/demostraciones"
-            className="inline-flex items-center justify-center h-12 px-7 rounded-sm bg-white/10 text-white font-semibold text-sm border border-white/20 hover:bg-white/20 transition-colors duration-160"
+            className="inline-flex items-center justify-center h-[46px] px-6 rounded-[10px] bg-white/10 text-white font-semibold tracking-[0.04em] uppercase text-[13px] border-[1.5px] border-white/20 hover:bg-white/20 transition-colors duration-160"
           >
             Ver demos en vivo
           </Link>

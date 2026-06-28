@@ -178,7 +178,7 @@ function Card({ demo, onSelect }: { demo: DemoCard; onSelect: () => void }) {
       <p className="text-white font-semibold text-center text-sm leading-tight">{demo.label}</p>
       {demo.enabled ? (
         <button onClick={onSelect}
-          className="px-5 py-2 rounded-sm text-white text-sm font-semibold transition-opacity hover:opacity-85"
+          className="inline-flex items-center justify-center h-[46px] px-6 rounded-[10px] text-white font-bold tracking-[0.04em] uppercase text-[13px] transition-opacity hover:opacity-85"
           style={{ backgroundColor: '#306ECF' }}>
           Ver demo
         </button>

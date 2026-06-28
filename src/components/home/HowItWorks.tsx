@@ -2,13 +2,13 @@ const steps = [
   {
     num: '01',
     name: 'Setup',
-    tag: 'Pago único',
-    desc: 'Configuramos las herramientas con IA desde cero, integradas a tu operación.',
-    items: ['Diagnóstico de puntos críticos', 'Capacitación de equipos', 'Pago único · Implementación única'],
+    tag: 'Sin mensualidad inicial',
+    desc: 'Configuramos las herramientas de IA desde cero, integradas con tus datos y adaptadas a tu operación específica. Entregamos en semanas, no en meses.',
+    items: ['Diagnóstico de puntos críticos', 'Capacitación de equipos', 'Desarrollo interactivo'],
   },
   {
     num: '02',
-    name: 'Mantenimiento',
+    name: 'Seguimiento',
     tag: 'Mensual',
     desc: 'Soporte técnico continuo, actualizaciones de modelos y garantía de funcionamiento 24/7. Vos operás; nosotros mantenemos.',
     items: ['Soporte y monitoreo continuo', 'Optimización de modelos', 'Cobertura de conexiones y seguridad'],

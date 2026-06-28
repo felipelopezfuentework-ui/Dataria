@@ -27,7 +27,7 @@ export default function CTAReunion() {
             href="https://calendar.app.google/64ms78PrrpQv8x4n9"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2.5 h-12 px-7 rounded-sm bg-white text-azul-nucleo font-bold text-sm hover:bg-white/90 transition-colors shadow-soft"
+            className="inline-flex items-center justify-center gap-2.5 h-[46px] px-6 rounded-[10px] bg-white text-azul-nucleo font-bold tracking-[0.04em] uppercase text-[13px] hover:bg-white/90 transition-colors shadow-soft"
           >
             Agendar reunión gratis
             <span className="px-2 py-0.5 rounded-full bg-green-100 text-green-700 text-xs font-bold leading-none">
@@ -36,7 +36,7 @@ export default function CTAReunion() {
           </a>
           <button
             onClick={scrollToDemos}
-            className="inline-flex items-center justify-center h-12 px-7 rounded-sm bg-white/10 border border-white/30 text-white font-semibold text-sm hover:bg-white/20 transition-colors"
+            className="inline-flex items-center justify-center h-[46px] px-6 rounded-[10px] bg-white/10 border-[1.5px] border-white/30 text-white font-semibold tracking-[0.04em] uppercase text-[13px] hover:bg-white/20 transition-colors"
           >
             Ver demos en vivo
           </button>

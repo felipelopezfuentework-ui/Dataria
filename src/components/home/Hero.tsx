@@ -95,7 +95,7 @@ export default function Hero() {
         </h1>
 
         {/* Sub */}
-        <p className="text-xl md:text-2xl text-texto-sec max-w-2xl mx-auto leading-relaxed mb-10">
+        <p className="text-lg md:text-xl font-light max-w-2xl mx-auto mb-10" style={{ color: '#5A6871', lineHeight: '1.6' }}>
           Dataria crea herramientas de IA para que pymes y autónomos optimicen sus operaciones — desde el primer día.
         </p>
 
@@ -103,7 +103,7 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
           <button
             onClick={() => scrollTo('demos')}
-            className="inline-flex items-center justify-center h-12 px-7 rounded-sm bg-gradient-dataria text-white font-bold text-sm shadow-primary hover:opacity-90 transition-opacity duration-160"
+            className="inline-flex items-center justify-center h-[46px] px-6 rounded-[10px] bg-gradient-dataria text-white font-bold tracking-[0.04em] uppercase text-[13px] shadow-primary hover:opacity-90 transition-opacity duration-160"
           >
             Ver demostraciones en vivo
           </button>
@@ -111,7 +111,7 @@ export default function Hero() {
             href="https://calendar.app.google/64ms78PrrpQv8x4n9"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center h-12 px-7 rounded-sm bg-white text-azul-nucleo font-semibold text-sm border border-borde hover:border-azul-nucleo/30 transition-colors duration-160"
+            className="inline-flex items-center justify-center h-[46px] px-6 rounded-[10px] bg-white text-azul-nucleo font-semibold tracking-[0.04em] uppercase text-[13px] border-[1.5px] border-borde hover:border-azul-nucleo/30 transition-colors duration-160"
           >
             Agendar reunión gratis
           </a>
