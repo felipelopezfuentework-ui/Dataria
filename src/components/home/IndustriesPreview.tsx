@@ -3,7 +3,10 @@
 import { useState } from 'react'
 import dynamic from 'next/dynamic'
 
-const FoodCostDemo = dynamic(() => import('@/components/demos/gastronomia/FoodCostDemo'), { ssr: false })
+const FoodCostDemo = dynamic(() => import('@/components/demos/gastronomia/FoodCostDemo'),       { ssr: false })
+const ResenasDemo  = dynamic(() => import('@/components/demos/gastronomia/ResenasDemo'),        { ssr: false })
+const TurnosDemo   = dynamic(() => import('@/components/demos/gastronomia/TurnosDemo'),         { ssr: false })
+const RutasDemo    = dynamic(() => import('@/components/demos/distribuidoras/RutasDemo'),       { ssr: false })
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -81,6 +84,16 @@ const IcoLock = () => (
     <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
   </svg>
 )
+const IcoStar = () => (
+  <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+  </svg>
+)
+const IcoCalendar = () => (
+  <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+  </svg>
+)
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
@@ -91,9 +104,9 @@ const industries: Industry[] = [
   {
     id: 'gastronomia', label: 'Gastronomía', icon: <IcoGastro />,
     demos: [
-      { id: 'food-cost',  label: 'Food cost', icon: <IcoCoin />,   enabled: true  },
-      { id: 'gastro-d2',  label: 'Demo 2',    icon: <IcoLock />,   enabled: false },
-      { id: 'gastro-d3',  label: 'Demo 3',    icon: <IcoLock />,   enabled: false },
+      { id: 'food-cost', label: 'Food cost',               icon: <IcoCoin />,     enabled: true  },
+      { id: 'resenas',   label: 'Gestión de reseñas',    icon: <IcoStar />,     enabled: true  },
+      { id: 'turnos',    label: 'Planificador de turnos', icon: <IcoCalendar />, enabled: true  },
     ],
   },
   {
@@ -221,9 +234,10 @@ export default function IndustriesPreview() {
   const activeIndustry = industries.find(i => i.id === activeId)!
 
   const renderDemo = () => {
-    if (activeId === 'gastronomia' && activeDemoId === 'food-cost') {
-      return <FoodCostDemo onBack={goBack} />
-    }
+    if (activeId === 'gastronomia'    && activeDemoId === 'food-cost') return <FoodCostDemo onBack={goBack} />
+    if (activeId === 'gastronomia'    && activeDemoId === 'resenas')   return <ResenasDemo  onBack={goBack} />
+    if (activeId === 'gastronomia'    && activeDemoId === 'turnos')    return <TurnosDemo   onBack={goBack} />
+    if (activeId === 'distribuidoras' && activeDemoId === 'rutas')     return <RutasDemo    onBack={goBack} />
     const demo = activeIndustry.demos.find(d => d.id === activeDemoId)
     return <ProximamenteScreen label={demo?.label ?? ''} onBack={goBack} />
   }

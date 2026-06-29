@@ -4,7 +4,7 @@ import { useState } from 'react'
 import dynamic from 'next/dynamic'
 
 const GastronomiaDemo   = dynamic(() => import('./gastronomia/GastronomiaDemo'),   { ssr: false })
-const DistribuidorasDemo = dynamic(() => import('./distribuidoras/DistribuidorasDemo'), { ssr: false })
+const DistribuidorasHub  = dynamic(() => import('./distribuidoras/DistribuidorasHub'),  { ssr: false })
 const TalleresDemo      = dynamic(() => import('./talleres/TalleresDemo'),          { ssr: false })
 const InmobiliariasDemo = dynamic(() => import('./inmobiliarias/InmobiliariasDemo'), { ssr: false })
 const EcommerceDemo     = dynamic(() => import('./ecommerce/EcommerceDemo'),         { ssr: false })
@@ -99,7 +99,7 @@ export default function DemoHub() {
   const renderDemo = () => {
     switch (active) {
       case 'gastronomia':    return <GastronomiaDemo />
-      case 'distribuidoras': return <DistribuidorasDemo />
+      case 'distribuidoras': return <DistribuidorasHub />
       case 'talleres':       return <TalleresDemo />
       case 'inmobiliarias':  return <InmobiliariasDemo />
       case 'ecommerce':      return <EcommerceDemo />
