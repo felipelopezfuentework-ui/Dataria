@@ -7,6 +7,9 @@ const FoodCostDemo = dynamic(() => import('@/components/demos/gastronomia/FoodCo
 const ResenasDemo  = dynamic(() => import('@/components/demos/gastronomia/ResenasDemo'),        { ssr: false })
 const TurnosDemo   = dynamic(() => import('@/components/demos/gastronomia/TurnosDemo'),         { ssr: false })
 const RutasDemo    = dynamic(() => import('@/components/demos/distribuidoras/RutasDemo'),       { ssr: false })
+const DemandaDemo  = dynamic(() => import('@/components/demos/distribuidoras/DemandaDemo'),     { ssr: false })
+const AgenteDemo      = dynamic(() => import('@/components/demos/distribuidoras/AgenteDemo'),      { ssr: false })
+const SeguimientoDemo = dynamic(() => import('@/components/demos/talleres/SeguimientoDemo'),       { ssr: false })
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -64,6 +67,13 @@ const IcoKanban = () => (
     <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
   </svg>
 )
+const IcoCar = () => (
+  <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+    <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+    <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+    <path d="M5 17h-2v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6m-6-6h15m-6 0v-5" />
+  </svg>
+)
 const IcoHeart = () => (
   <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
     <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
@@ -89,6 +99,18 @@ const IcoStar = () => (
     <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
   </svg>
 )
+const IcoTrendingUp = () => (
+  <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    <polyline strokeLinecap="round" strokeLinejoin="round" points="3 17 9 11 13 15 21 7" />
+    <polyline strokeLinecap="round" strokeLinejoin="round" points="14 7 21 7 21 14" />
+  </svg>
+)
+const IcoBrandWhatsapp = () => (
+  <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" />
+    <path strokeLinecap="round" strokeLinejoin="round" d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" />
+  </svg>
+)
 const IcoCalendar = () => (
   <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
     <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
@@ -112,14 +134,15 @@ const industries: Industry[] = [
   {
     id: 'distribuidoras', label: 'Distribuidoras', icon: <IcoDist />,
     demos: [
-      { id: 'rutas',   label: 'Rutas',  icon: <IcoRoute />, enabled: true  },
-      ...disabledCards(['Demo 2', 'Demo 3']),
+      { id: 'rutas',    label: 'Rutas',                  icon: <IcoRoute />,          enabled: true  },
+      { id: 'demanda',  label: 'Predictor de demanda',   icon: <IcoTrendingUp />,     enabled: true  },
+      { id: 'agente',   label: 'Agente de pedidos',      icon: <IcoBrandWhatsapp />,  enabled: true  },
     ],
   },
   {
     id: 'talleres', label: 'Talleres', icon: <IcoTaller />,
     demos: [
-      { id: 'seguimiento', label: 'Seguimiento', icon: <IcoKanban />, enabled: true  },
+      { id: 'seguimiento', label: 'Seguimiento de reparación', icon: <IcoCar />, enabled: true  },
       ...disabledCards(['Demo 2', 'Demo 3']),
     ],
   },
@@ -237,7 +260,10 @@ export default function IndustriesPreview() {
     if (activeId === 'gastronomia'    && activeDemoId === 'food-cost') return <FoodCostDemo onBack={goBack} />
     if (activeId === 'gastronomia'    && activeDemoId === 'resenas')   return <ResenasDemo  onBack={goBack} />
     if (activeId === 'gastronomia'    && activeDemoId === 'turnos')    return <TurnosDemo   onBack={goBack} />
-    if (activeId === 'distribuidoras' && activeDemoId === 'rutas')     return <RutasDemo    onBack={goBack} />
+    if (activeId === 'distribuidoras' && activeDemoId === 'rutas')   return <RutasDemo   onBack={goBack} />
+    if (activeId === 'distribuidoras' && activeDemoId === 'demanda') return <DemandaDemo onBack={goBack} />
+    if (activeId === 'distribuidoras' && activeDemoId === 'agente')  return <AgenteDemo       onBack={goBack} />
+    if (activeId === 'talleres'       && activeDemoId === 'seguimiento') return <SeguimientoDemo onBack={goBack} />
     const demo = activeIndustry.demos.find(d => d.id === activeDemoId)
     return <ProximamenteScreen label={demo?.label ?? ''} onBack={goBack} />
   }
