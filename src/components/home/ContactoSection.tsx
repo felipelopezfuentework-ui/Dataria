@@ -5,7 +5,7 @@ import Input from '@/components/ui/Input'
 import Button from '@/components/ui/Button'
 import Select from '@/components/ui/Select'
 
-const industries = ['Gastronomía', 'Distribuidoras de Alimentos', 'Talleres y Comercios', 'Salud', 'Inmobiliarias', 'E-commerce', 'Otro']
+const industries = ['Gastronomía', 'Distribuidoras de Alimentos', 'Salud', 'Inmobiliarias', 'E-commerce', 'Otro']
 
 export default function ContactoSection() {
   const [form, setForm]    = useState({ nombre: '', email: '', empresa: '', industria: '', mensaje: '' })

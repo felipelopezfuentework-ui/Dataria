@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic'
 
 const GastronomiaDemo   = dynamic(() => import('./gastronomia/GastronomiaDemo'),   { ssr: false })
 const DistribuidorasHub  = dynamic(() => import('./distribuidoras/DistribuidorasHub'),  { ssr: false })
-const TalleresDemo      = dynamic(() => import('./talleres/TalleresDemo'),          { ssr: false })
+const SaludHub          = dynamic(() => import('./salud/SaludHub'),                 { ssr: false })
 const InmobiliariasDemo = dynamic(() => import('./inmobiliarias/InmobiliariasDemo'), { ssr: false })
 const EcommerceDemo     = dynamic(() => import('./ecommerce/EcommerceDemo'),         { ssr: false })
 
@@ -31,19 +31,9 @@ const industries = [
     ),
   },
   {
-    id: 'talleres',
-    label: 'Talleres',
-    tag: 'Reparaciones',
-    icon: (
-      <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
-      </svg>
-    ),
-  },
-  {
     id: 'salud',
     label: 'Salud',
-    tag: 'Próximamente',
+    tag: 'Agenda',
     icon: (
       <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -73,25 +63,6 @@ const industries = [
   },
 ]
 
-function SaludPlaceholder() {
-  return (
-    <div className="flex flex-col items-center justify-center min-h-[420px] text-center px-6">
-      <div className="w-16 h-16 rounded-2xl bg-pink-50 flex items-center justify-center mb-5 text-pink-400">
-        <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-        </svg>
-      </div>
-      <h3 className="text-xl font-bold text-carbon mb-2">Demo Salud</h3>
-      <p className="text-sm text-texto-sec max-w-xs">
-        Esta demo está en proceso de definición. Próximamente vas a poder explorar las herramientas de IA para clínicas y consultorios.
-      </p>
-      <span className="mt-5 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-fondo-suave text-xs font-semibold text-texto-sec border border-borde">
-        <span className="w-1.5 h-1.5 rounded-full bg-yellow-400" />
-        Demo pendiente de definir
-      </span>
-    </div>
-  )
-}
 
 export default function DemoHub() {
   const [active, setActive] = useState('gastronomia')
@@ -100,10 +71,9 @@ export default function DemoHub() {
     switch (active) {
       case 'gastronomia':    return <GastronomiaDemo />
       case 'distribuidoras': return <DistribuidorasHub />
-      case 'talleres':       return <TalleresDemo />
-      case 'inmobiliarias':  return <InmobiliariasDemo />
+case 'inmobiliarias':  return <InmobiliariasDemo />
       case 'ecommerce':      return <EcommerceDemo />
-      case 'salud':          return <SaludPlaceholder />
+      case 'salud':          return <SaludHub />
       default:               return null
     }
   }
@@ -118,8 +88,7 @@ export default function DemoHub() {
           <p className="text-xs font-bold uppercase tracking-widest text-texto-sec/60 mb-4">Industrias</p>
           <nav className="flex lg:flex-col gap-1.5 overflow-x-auto lg:overflow-x-visible pb-1 lg:pb-0">
             {industries.map((ind) => {
-              const isActive  = active === ind.id
-              const isPending = ind.id === 'salud'
+              const isActive = active === ind.id
               return (
                 <button
                   key={ind.id}
@@ -132,11 +101,11 @@ export default function DemoHub() {
                     }
                   `}
                 >
-                  <span className={`shrink-0 ${isActive ? 'text-white' : isPending ? 'text-texto-sec/40' : 'text-azul-nucleo'}`}>
+                  <span className={`shrink-0 ${isActive ? 'text-white' : 'text-azul-nucleo'}`}>
                     {ind.icon}
                   </span>
                   <div className="min-w-0">
-                    <p className={`text-sm font-semibold leading-tight truncate ${isPending && !isActive ? 'text-texto-sec/50' : ''}`}>
+                    <p className="text-sm font-semibold leading-tight truncate">
                       {ind.label}
                     </p>
                     <p className={`text-xs leading-tight ${isActive ? 'text-white/70' : 'text-texto-sec/60'}`}>

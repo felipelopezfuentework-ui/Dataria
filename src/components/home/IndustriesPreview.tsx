@@ -9,7 +9,9 @@ const TurnosDemo   = dynamic(() => import('@/components/demos/gastronomia/Turnos
 const RutasDemo    = dynamic(() => import('@/components/demos/distribuidoras/RutasDemo'),       { ssr: false })
 const DemandaDemo  = dynamic(() => import('@/components/demos/distribuidoras/DemandaDemo'),     { ssr: false })
 const AgenteDemo      = dynamic(() => import('@/components/demos/distribuidoras/AgenteDemo'),      { ssr: false })
-const SeguimientoDemo = dynamic(() => import('@/components/demos/talleres/SeguimientoDemo'),       { ssr: false })
+const AgendaDemo      = dynamic(() => import('@/components/demos/salud/AgendaDemo'),               { ssr: false })
+const CRMDemo            = dynamic(() => import('@/components/demos/inmobiliarias/CRMDemo'),              { ssr: false })
+const RespondedorDemo    = dynamic(() => import('@/components/demos/inmobiliarias/RespondedorDemo'),        { ssr: false })
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -27,11 +29,6 @@ const IcoGastro = () => (
 const IcoDist = () => (
   <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
     <path strokeLinecap="round" strokeLinejoin="round" d="M8 17l-1.5-1.5M8 17l1.5-1.5M8 17V7m8 10l-1.5-1.5M16 17l1.5-1.5M16 17V7M3 12h18" />
-  </svg>
-)
-const IcoTaller = () => (
-  <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63" />
   </svg>
 )
 const IcoSalud = () => (
@@ -65,13 +62,6 @@ const IcoRoute = () => (
 const IcoKanban = () => (
   <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
     <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
-  </svg>
-)
-const IcoCar = () => (
-  <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
-    <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-    <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-    <path d="M5 17h-2v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6m-6-6h15m-6 0v-5" />
   </svg>
 )
 const IcoHeart = () => (
@@ -116,6 +106,23 @@ const IcoCalendar = () => (
     <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
   </svg>
 )
+const IcoMessageCircle = () => (
+  <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M3 20l1.3-3.9C2 12.76 2.9 8.32 6.4 5.8c3.5-2.5 8.6-2.3 11.8.5s3.7 7.3 1 10.5c-2.6 3.2-7.6 4.2-11.6 2.3L3 20" />
+  </svg>
+)
+const IcoBuildingEstate = () => (
+  <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M3 21h18" />
+    <path strokeLinecap="round" strokeLinejoin="round" d="M9 8h1" />
+    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h1" />
+    <path strokeLinecap="round" strokeLinejoin="round" d="M9 16h1" />
+    <path strokeLinecap="round" strokeLinejoin="round" d="M14 8h1" />
+    <path strokeLinecap="round" strokeLinejoin="round" d="M14 12h1" />
+    <path strokeLinecap="round" strokeLinejoin="round" d="M14 16h1" />
+    <path strokeLinecap="round" strokeLinejoin="round" d="M5 21V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v14" />
+  </svg>
+)
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
@@ -140,21 +147,18 @@ const industries: Industry[] = [
     ],
   },
   {
-    id: 'talleres', label: 'Talleres', icon: <IcoTaller />,
+    id: 'salud', label: 'Salud', icon: <IcoSalud />,
     demos: [
-      { id: 'seguimiento', label: 'Seguimiento de reparación', icon: <IcoCar />, enabled: true  },
+      { id: 'agenda', label: 'Agenda de turnos', icon: <IcoCalendar />, enabled: true },
       ...disabledCards(['Demo 2', 'Demo 3']),
     ],
   },
   {
-    id: 'salud', label: 'Salud', icon: <IcoSalud />,
-    demos: disabledCards(['Demo próximamente', 'Demo 2', 'Demo 3']),
-  },
-  {
     id: 'inmobiliarias', label: 'Inmobiliarias', icon: <IcoInmo />,
     demos: [
-      { id: 'crm', label: 'CRM', icon: <IcoCRM />, enabled: true },
-      ...disabledCards(['Demo 2', 'Demo 3']),
+      { id: 'crm',          label: 'CRM de leads',             icon: <IcoBuildingEstate />, enabled: true },
+      { id: 'respondedor',  label: 'Respondedor de consultas', icon: <IcoMessageCircle />,  enabled: true },
+      ...disabledCards(['Demo 3']),
     ],
   },
   {
@@ -262,8 +266,10 @@ export default function IndustriesPreview() {
     if (activeId === 'gastronomia'    && activeDemoId === 'turnos')    return <TurnosDemo   onBack={goBack} />
     if (activeId === 'distribuidoras' && activeDemoId === 'rutas')   return <RutasDemo   onBack={goBack} />
     if (activeId === 'distribuidoras' && activeDemoId === 'demanda') return <DemandaDemo onBack={goBack} />
-    if (activeId === 'distribuidoras' && activeDemoId === 'agente')  return <AgenteDemo       onBack={goBack} />
-    if (activeId === 'talleres'       && activeDemoId === 'seguimiento') return <SeguimientoDemo onBack={goBack} />
+    if (activeId === 'distribuidoras' && activeDemoId === 'agente')  return <AgenteDemo  onBack={goBack} />
+    if (activeId === 'salud'          && activeDemoId === 'agenda')  return <AgendaDemo  onBack={goBack} />
+    if (activeId === 'inmobiliarias'  && activeDemoId === 'crm')         return <CRMDemo          onBack={goBack} />
+    if (activeId === 'inmobiliarias'  && activeDemoId === 'respondedor') return <RespondedorDemo  onBack={goBack} />
     const demo = activeIndustry.demos.find(d => d.id === activeDemoId)
     return <ProximamenteScreen label={demo?.label ?? ''} onBack={goBack} />
   }
