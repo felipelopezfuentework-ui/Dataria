@@ -3,18 +3,36 @@
 import { useState } from 'react'
 import dynamic from 'next/dynamic'
 
-const FoodCostDemo = dynamic(() => import('@/components/demos/gastronomia/FoodCostDemo'),       { ssr: false })
-const ResenasDemo  = dynamic(() => import('@/components/demos/gastronomia/ResenasDemo'),        { ssr: false })
-const TurnosDemo   = dynamic(() => import('@/components/demos/gastronomia/TurnosDemo'),         { ssr: false })
-const RutasDemo    = dynamic(() => import('@/components/demos/distribuidoras/RutasDemo'),       { ssr: false })
-const DemandaDemo  = dynamic(() => import('@/components/demos/distribuidoras/DemandaDemo'),     { ssr: false })
-const AgenteDemo      = dynamic(() => import('@/components/demos/distribuidoras/AgenteDemo'),      { ssr: false })
-const AgendaDemo      = dynamic(() => import('@/components/demos/salud/AgendaDemo'),               { ssr: false })
-const CRMDemo            = dynamic(() => import('@/components/demos/inmobiliarias/CRMDemo'),              { ssr: false })
-const RespondedorDemo    = dynamic(() => import('@/components/demos/inmobiliarias/RespondedorDemo'),        { ssr: false })
-const ProyeccionesDemo   = dynamic(() => import('@/components/demos/ecommerce/ProyeccionesDemo'),          { ssr: false })
-const ClientesDemo       = dynamic(() => import('@/components/demos/ecommerce/ClientesDemo'),              { ssr: false })
-const StockDemo          = dynamic(() => import('@/components/demos/ecommerce/StockDemo'),                 { ssr: false })
+// ─── Loading fallback (avoids the panel flashing blank while a demo chunk loads) ──
+
+function DemoLoading() {
+  return (
+    <div className="min-h-[560px] flex items-center justify-center" style={{ backgroundColor: '#F3F6F5' }}>
+      <div className="flex items-center gap-2">
+        {[0, 1, 2].map(i => (
+          <span
+            key={i}
+            className="w-2.5 h-2.5 rounded-full animate-pulse"
+            style={{ backgroundColor: '#306ECF', animationDelay: `${i * 160}ms` }}
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
+
+const FoodCostDemo = dynamic(() => import('@/components/demos/gastronomia/FoodCostDemo'),       { ssr: false, loading: DemoLoading })
+const ResenasDemo  = dynamic(() => import('@/components/demos/gastronomia/ResenasDemo'),        { ssr: false, loading: DemoLoading })
+const TurnosDemo   = dynamic(() => import('@/components/demos/gastronomia/TurnosDemo'),         { ssr: false, loading: DemoLoading })
+const RutasDemo    = dynamic(() => import('@/components/demos/distribuidoras/RutasDemo'),       { ssr: false, loading: DemoLoading })
+const DemandaDemo  = dynamic(() => import('@/components/demos/distribuidoras/DemandaDemo'),     { ssr: false, loading: DemoLoading })
+const AgenteDemo      = dynamic(() => import('@/components/demos/distribuidoras/AgenteDemo'),      { ssr: false, loading: DemoLoading })
+const VisitasDemo     = dynamic(() => import('@/components/demos/inmobiliarias/VisitasDemo'),      { ssr: false, loading: DemoLoading })
+const CRMDemo            = dynamic(() => import('@/components/demos/inmobiliarias/CRMDemo'),              { ssr: false, loading: DemoLoading })
+const RespondedorDemo    = dynamic(() => import('@/components/demos/inmobiliarias/RespondedorDemo'),        { ssr: false, loading: DemoLoading })
+const ProyeccionesDemo   = dynamic(() => import('@/components/demos/ecommerce/ProyeccionesDemo'),          { ssr: false, loading: DemoLoading })
+const ClientesDemo       = dynamic(() => import('@/components/demos/ecommerce/ClientesDemo'),              { ssr: false, loading: DemoLoading })
+const StockDemo          = dynamic(() => import('@/components/demos/ecommerce/StockDemo'),                 { ssr: false, loading: DemoLoading })
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -25,18 +43,14 @@ interface Industry { id: string; label: string; icon: React.ReactNode; demos: De
 
 const IcoGastro = () => (
   <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-    <circle cx="12" cy="12" r="10" />
+    <path strokeLinecap="round" strokeLinejoin="round" d="M8.5 11.5c-1.5-.5-2.5-2-2.5-3.75A3.75 3.75 0 019.75 4c.5 0 1 .1 1.4.3A3.5 3.5 0 0115 3c1.7 0 3.1 1.2 3.4 2.85.15-.02.3-.03.45-.03a3.25 3.25 0 013.25 3.25c0 1.65-.9 3.1-2.35 3.65M8.5 11.5h9M8.5 11.5v6.75c0 .69.56 1.25 1.25 1.25h4.5c.69 0 1.25-.56 1.25-1.25V11.5" />
   </svg>
 )
 const IcoDist = () => (
   <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M8 17l-1.5-1.5M8 17l1.5-1.5M8 17V7m8 10l-1.5-1.5M16 17l1.5-1.5M16 17V7M3 12h18" />
-  </svg>
-)
-const IcoSalud = () => (
-  <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+    <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5V6.75A.75.75 0 013.75 6h9a.75.75 0 01.75.75v9.75M3 16.5h10.5M3 16.5H2.25m11.25 0h4.19a.75.75 0 00.61-.315l1.83-2.562a.75.75 0 00.12-.408V10.5a.75.75 0 00-.75-.75h-3.5m-2.5 0h2.5m0 0V7.5" />
+    <circle cx="6.75" cy="16.5" r="1.75" />
+    <circle cx="16.5" cy="16.5" r="1.75" />
   </svg>
 )
 const IcoInmo = () => (
@@ -48,6 +62,11 @@ const IcoInmo = () => (
 const IcoEcom = () => (
   <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
     <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+  </svg>
+)
+const IcoOtros = () => (
+  <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m-7.5-7.5h15" />
   </svg>
 )
 
@@ -119,19 +138,6 @@ const IcoMessageCircle = () => (
     <path strokeLinecap="round" strokeLinejoin="round" d="M3 20l1.3-3.9C2 12.76 2.9 8.32 6.4 5.8c3.5-2.5 8.6-2.3 11.8.5s3.7 7.3 1 10.5c-2.6 3.2-7.6 4.2-11.6 2.3L3 20" />
   </svg>
 )
-const IcoBuildingEstate = () => (
-  <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M3 21h18" />
-    <path strokeLinecap="round" strokeLinejoin="round" d="M9 8h1" />
-    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h1" />
-    <path strokeLinecap="round" strokeLinejoin="round" d="M9 16h1" />
-    <path strokeLinecap="round" strokeLinejoin="round" d="M14 8h1" />
-    <path strokeLinecap="round" strokeLinejoin="round" d="M14 12h1" />
-    <path strokeLinecap="round" strokeLinejoin="round" d="M14 16h1" />
-    <path strokeLinecap="round" strokeLinejoin="round" d="M5 21V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v14" />
-  </svg>
-)
-
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
 const disabledCards = (labels: string[]): DemoCard[] =>
@@ -155,18 +161,11 @@ const industries: Industry[] = [
     ],
   },
   {
-    id: 'salud', label: 'Salud', icon: <IcoSalud />,
-    demos: [
-      { id: 'agenda', label: 'Agenda de turnos', icon: <IcoCalendar />, enabled: true },
-      ...disabledCards(['Demo 2', 'Demo 3']),
-    ],
-  },
-  {
     id: 'inmobiliarias', label: 'Inmobiliarias', icon: <IcoInmo />,
     demos: [
-      { id: 'crm',          label: 'CRM de leads',             icon: <IcoBuildingEstate />, enabled: true },
-      { id: 'respondedor',  label: 'Respondedor de consultas', icon: <IcoMessageCircle />,  enabled: true },
-      ...disabledCards(['Demo 3']),
+      { id: 'crm',          label: 'CRM',                      icon: <IcoUsers />,          enabled: true },
+      { id: 'respondedor',  label: 'Agente de consultas',      icon: <IcoMessageCircle />,  enabled: true },
+      { id: 'agenda',       label: 'Agenda de visitas',        icon: <IcoCalendar />,       enabled: true },
     ],
   },
   {
@@ -177,19 +176,17 @@ const industries: Industry[] = [
       { id: 'proyecciones', label: 'Proyecciones de ventas', icon: <IcoTrendingUp />, enabled: true },
     ],
   },
+  { id: 'otros', label: 'Otros', icon: <IcoOtros />, demos: [] },
 ]
 
 // ─── Próximamente placeholder ─────────────────────────────────────────────────
 
 function ProximamenteScreen({ label, onBack }: { label: string; onBack: () => void }) {
   return (
-    <div className="min-h-[480px] flex flex-col" style={{ backgroundColor: '#1a1f2e' }}>
+    <div className="min-h-[560px] flex flex-col" style={{ backgroundColor: '#F3F6F5' }}>
       <div className="p-4">
         <button onClick={onBack}
-          className="flex items-center gap-1.5 text-sm font-medium transition-colors"
-          style={{ color: 'rgba(255,255,255,0.6)' }}
-          onMouseEnter={e => (e.currentTarget.style.color = '#fff')}
-          onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.6)')}>
+          className="flex items-center gap-1.5 text-sm font-medium transition-colors text-[#5A6871] hover:text-[#1B5BC1]">
           <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
           </svg>
@@ -197,15 +194,14 @@ function ProximamenteScreen({ label, onBack }: { label: string; onBack: () => vo
         </button>
       </div>
       <div className="flex-1 flex flex-col items-center justify-center gap-4 text-center px-8 pb-8">
-        <div className="w-16 h-16 rounded-2xl flex items-center justify-center"
-          style={{ backgroundColor: 'rgba(255,255,255,0.08)' }}>
-          <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} style={{ color: 'rgba(255,255,255,0.4)' }}>
+        <div className="w-16 h-16 rounded-2xl flex items-center justify-center bg-white border border-[#DCE5E9]">
+          <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} className="text-[#5A6871]">
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
         </div>
         <div>
-          <p className="font-bold text-lg mb-1" style={{ color: 'rgba(255,255,255,0.85)' }}>{label}</p>
-          <p className="text-sm" style={{ color: 'rgba(255,255,255,0.4)' }}>Esta demo estará disponible próximamente.</p>
+          <p className="font-bold text-xl mb-1 text-[#353C42]">{label}</p>
+          <p className="text-base text-[#5A6871]">Esta demo estará disponible próximamente.</p>
         </div>
       </div>
     </div>
@@ -217,22 +213,21 @@ function ProximamenteScreen({ label, onBack }: { label: string; onBack: () => vo
 function Card({ demo, onSelect }: { demo: DemoCard; onSelect: () => void }) {
   return (
     <div
-      className="rounded-xl p-6 flex flex-col items-center gap-4 transition-all"
-      style={{ backgroundColor: '#25313B', opacity: demo.enabled ? 1 : 0.45 }}
+      className="rounded-xl p-6 flex flex-col items-center gap-4 transition-all bg-white border border-[#DCE5E9] shadow-sm"
+      style={{ opacity: demo.enabled ? 1 : 0.5 }}
     >
-      <div className="w-14 h-14 rounded-2xl flex items-center justify-center"
-        style={{ backgroundColor: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.75)' }}>
+      <div className="w-14 h-14 rounded-2xl flex items-center justify-center bg-[#EAF5FD] text-[#1B5BC1]">
         {demo.icon}
       </div>
-      <p className="text-white font-semibold text-center text-sm leading-tight">{demo.label}</p>
+      <p className="text-[#353C42] font-bold text-center text-base leading-tight">{demo.label}</p>
       {demo.enabled ? (
         <button onClick={onSelect}
-          className="inline-flex items-center justify-center h-[46px] px-6 rounded-[10px] text-white font-bold tracking-[0.04em] uppercase text-[13px] transition-opacity hover:opacity-85"
+          className="inline-flex items-center justify-center h-[46px] px-6 rounded-[10px] text-white font-semibold tracking-[0.02em] uppercase text-[13px] transition-opacity hover:opacity-85"
           style={{ backgroundColor: '#306ECF' }}>
           Ver demo
         </button>
       ) : (
-        <span className="text-xs font-medium" style={{ color: 'rgba(255,255,255,0.25)' }}>Próximamente</span>
+        <span className="text-xs font-medium text-[#5A6871]">Próximamente</span>
       )}
     </div>
   )
@@ -242,15 +237,121 @@ function Card({ demo, onSelect }: { demo: DemoCard; onSelect: () => void }) {
 
 function CardsView({ industry, onSelect }: { industry: Industry; onSelect: (demoId: string) => void }) {
   return (
-    <div className="min-h-[480px] flex flex-col p-8" style={{ backgroundColor: '#1a1f2e' }}>
-      <p className="text-xs font-bold uppercase tracking-widest mb-8"
-        style={{ color: 'rgba(255,255,255,0.35)' }}>
+    <div className="min-h-[560px] flex flex-col p-8" style={{ backgroundColor: '#F3F6F5' }}>
+      <p className="text-sm font-bold uppercase tracking-widest mb-8 text-[#5A6871]">
         {industry.label}
       </p>
       <div className="grid grid-cols-3 gap-4">
         {industry.demos.map(demo => (
           <Card key={demo.id} demo={demo} onSelect={() => onSelect(demo.id)} />
         ))}
+      </div>
+    </div>
+  )
+}
+
+// ─── "Otros" industry: inline contact form ─────────────────────────────────────
+
+const OTROS_ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY
+
+function OtrosForm() {
+  const [form, setForm] = useState({ nombre: '', email: '', proyecto: '', industria: '', descripcion: '' })
+  const [sent, setSent] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+
+  const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+    setForm(f => ({ ...f, [k]: e.target.value }))
+
+  const submit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!OTROS_ACCESS_KEY) {
+      console.error('[OtrosForm] Falta NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY')
+      setError('El formulario no está configurado todavía. Escribinos a datariaai@gmail.com mientras tanto.')
+      return
+    }
+    setLoading(true)
+    setError(null)
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: OTROS_ACCESS_KEY,
+          subject: `Nueva consulta (Otros) de ${form.nombre} — Dataria`,
+          from_name: 'Formulario web — Dataria (Otros)',
+          ...form,
+        }),
+      })
+      const data = await res.json().catch(() => null)
+      if (res.ok && data?.success) {
+        setSent(true)
+      } else {
+        console.error('[OtrosForm] Web3Forms rechazó el envío:', res.status, data)
+        setError(data?.message || 'No pudimos enviar tu consulta. Probá de nuevo o escribinos a datariaai@gmail.com.')
+      }
+    } catch (err) {
+      console.error('[OtrosForm] Error de red:', err)
+      setError('No pudimos conectar con el servicio de envío. Probá de nuevo o escribinos a datariaai@gmail.com.')
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  return (
+    <div className="min-h-[560px] flex flex-col p-8" style={{ backgroundColor: '#F3F6F5' }}>
+      <div className="max-w-lg mx-auto w-full">
+        <div className="text-center mb-6">
+          <h3 className="font-display text-2xl font-extrabold text-[#353C42] mb-2 tracking-[-0.02em]">¿Tenés un proceso que querés automatizar?</h3>
+          <p className="font-display font-semibold text-base text-[#5A6871] tracking-[-0.01em]">Contanos de qué se trata y te mostramos cómo Dataria puede ayudarte.</p>
+        </div>
+
+        {!sent ? (
+          <form onSubmit={submit} className="bg-white rounded-xl border border-[#DCE5E9] shadow-sm p-6 space-y-4">
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label className="text-xs font-semibold text-[#5A6871] uppercase tracking-wide">Nombre</label>
+                <input required value={form.nombre} onChange={set('nombre')} placeholder="Tu nombre"
+                  className="mt-1 w-full h-10 px-3 rounded-sm border border-[#DCE5E9] text-sm text-[#353C42] bg-white focus:outline-none focus:border-[#306ECF]" />
+              </div>
+              <div>
+                <label className="text-xs font-semibold text-[#5A6871] uppercase tracking-wide">Email</label>
+                <input required type="email" value={form.email} onChange={set('email')} placeholder="tucorreo@ejemplo.com"
+                  className="mt-1 w-full h-10 px-3 rounded-sm border border-[#DCE5E9] text-sm text-[#353C42] bg-white focus:outline-none focus:border-[#306ECF]" />
+              </div>
+            </div>
+            <div>
+              <label className="text-xs font-semibold text-[#5A6871] uppercase tracking-wide">Empresa / Proyecto</label>
+              <input value={form.proyecto} onChange={set('proyecto')} placeholder="Nombre de tu empresa o proyecto"
+                className="mt-1 w-full h-10 px-3 rounded-sm border border-[#DCE5E9] text-sm text-[#353C42] bg-white focus:outline-none focus:border-[#306ECF]" />
+            </div>
+            <div>
+              <label className="text-xs font-semibold text-[#5A6871] uppercase tracking-wide">Industria</label>
+              <input value={form.industria} onChange={set('industria')} placeholder="¿A qué industria pertenece tu negocio?"
+                className="mt-1 w-full h-10 px-3 rounded-sm border border-[#DCE5E9] text-sm text-[#353C42] bg-white focus:outline-none focus:border-[#306ECF]" />
+            </div>
+            <div>
+              <label className="text-xs font-semibold text-[#5A6871] uppercase tracking-wide">Descripción del proceso</label>
+              <textarea rows={4} value={form.descripcion} onChange={set('descripcion')} placeholder="Contanos qué proceso te gustaría automatizar..."
+                className="mt-1 w-full px-3 py-2.5 rounded-sm border border-[#DCE5E9] text-sm text-[#353C42] bg-white focus:outline-none focus:border-[#306ECF] resize-none" />
+            </div>
+            {error && <p className="text-sm text-red-600 text-center">{error}</p>}
+            <button type="submit" disabled={loading}
+              className="w-full h-[46px] rounded-[10px] text-white font-semibold text-[13px] tracking-[0.02em] uppercase transition-opacity hover:opacity-85 disabled:opacity-50"
+              style={{ backgroundColor: '#306ECF' }}>
+              {loading ? 'Enviando…' : 'Enviar consulta'}
+            </button>
+          </form>
+        ) : (
+          <div className="bg-white rounded-xl border border-[#DCE5E9] shadow-sm p-10 text-center">
+            <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-5">
+              <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} className="text-green-600">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+              </svg>
+            </div>
+            <h3 className="font-display text-xl font-bold text-[#353C42] tracking-[-0.02em]">¡Gracias! Te contactamos en menos de 24hs.</h3>
+          </div>
+        )}
       </div>
     </div>
   )
@@ -276,9 +377,9 @@ export default function IndustriesPreview() {
     if (activeId === 'distribuidoras' && activeDemoId === 'rutas')   return <RutasDemo   onBack={goBack} />
     if (activeId === 'distribuidoras' && activeDemoId === 'demanda') return <DemandaDemo onBack={goBack} />
     if (activeId === 'distribuidoras' && activeDemoId === 'agente')  return <AgenteDemo  onBack={goBack} />
-    if (activeId === 'salud'          && activeDemoId === 'agenda')  return <AgendaDemo  onBack={goBack} />
     if (activeId === 'inmobiliarias'  && activeDemoId === 'crm')         return <CRMDemo          onBack={goBack} />
     if (activeId === 'inmobiliarias'  && activeDemoId === 'respondedor') return <RespondedorDemo  onBack={goBack} />
+    if (activeId === 'inmobiliarias'  && activeDemoId === 'agenda')      return <VisitasDemo      onBack={goBack} />
     if (activeId === 'ecommerce'      && activeDemoId === 'proyecciones') return <ProyeccionesDemo onBack={goBack} />
     if (activeId === 'ecommerce'      && activeDemoId === 'clientes')     return <ClientesDemo     onBack={goBack} />
     if (activeId === 'ecommerce'      && activeDemoId === 'stock')        return <StockDemo        onBack={goBack} />
@@ -294,32 +395,34 @@ export default function IndustriesPreview() {
 
           {/* Header */}
           <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-carbon mb-4 tracking-tight">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-carbon mb-4 tracking-[-0.02em]">
               Tu negocio optimizado
             </h2>
-            <p className="text-xl text-texto-sec max-w-xl mx-auto">
+            <p className="font-display font-semibold text-xl text-texto-sec max-w-xl mx-auto tracking-[-0.01em]">
               Elegí tu industria y probá cómo Dataria transforma tu negocio.
             </p>
           </div>
 
           {/* Panel */}
-          <div className="max-w-[860px] mx-auto rounded-2xl overflow-hidden shadow-soft"
-            style={{ boxShadow: '0 8px 48px rgba(0,0,0,0.18)' }}>
-            {level === 'cards'
-              ? <CardsView industry={activeIndustry} onSelect={selectDemo} />
-              : renderDemo()
+          <div className="max-w-[1040px] mx-auto rounded-2xl overflow-hidden shadow-soft"
+            style={{ boxShadow: '0 8px 48px rgba(0,0,0,0.14)' }}>
+            {activeId === 'otros'
+              ? <OtrosForm />
+              : level === 'cards'
+                ? <CardsView industry={activeIndustry} onSelect={selectDemo} />
+                : renderDemo()
             }
           </div>
 
           {/* Industry bar — below the panel */}
-          <div className="max-w-[860px] mx-auto mt-0 flex justify-center">
+          <div className="max-w-[1040px] mx-auto mt-0 flex flex-wrap justify-center">
             {industries.map(ind => {
               const isActive = ind.id === activeId
               return (
                 <button
                   key={ind.id}
                   onClick={() => selectIndustry(ind.id)}
-                  className="flex flex-col items-center gap-1.5 px-4 py-3 text-sm font-semibold transition-all border-t-2"
+                  className="flex flex-col items-center gap-1.5 px-4 py-3 text-base font-medium transition-all border-t-2"
                   style={{
                     borderTopColor: isActive ? '#306ECF' : 'transparent',
                     color: isActive ? '#306ECF' : '#5A6871',

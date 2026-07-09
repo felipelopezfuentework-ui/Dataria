@@ -7,7 +7,7 @@ import WhatsAppButton from '@/components/layout/WhatsAppButton'
 export const metadata: Metadata = {
   title: 'Dataria — Menos datos sueltos. Mejores decisiones.',
   description:
-    'Dataria crea herramientas de inteligencia artificial para pymes y autónomos — gastronomía, distribución, talleres, salud, inmobiliarias y e-commerce.',
+    'Dataria crea herramientas de inteligencia artificial para pymes y autónomos — gastronomía, distribución, inmobiliarias y e-commerce.',
   keywords: ['inteligencia artificial', 'pymes', 'automatización', 'gastronomía', 'distribuidoras'],
   openGraph: {
     title: 'Dataria',

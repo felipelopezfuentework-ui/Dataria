@@ -10,7 +10,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const variantClasses: Record<Variant, string> = {
-  primary:   'bg-gradient-dataria text-white font-bold shadow-primary hover:opacity-90 active:scale-[.98]',
+  primary:   'bg-gradient-dataria text-white font-semibold shadow-primary hover:opacity-90 active:scale-[.98]',
   secondary: 'bg-tinte-interfaz text-azul-nucleo font-semibold border-[1.5px] border-azul-nucleo/20 hover:bg-azul-nucleo/10',
   ghost:     'bg-transparent text-texto-sec font-semibold hover:bg-fondo-suave',
   danger:    'bg-error/10 text-error font-semibold border-[1.5px] border-error/20 hover:bg-error/20',
@@ -29,7 +29,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         disabled={disabled || loading}
         className={`
-          inline-flex items-center justify-center gap-2 tracking-[0.04em] uppercase
+          inline-flex items-center justify-center gap-2 tracking-[0.02em] uppercase
           transition-all duration-160 whitespace-nowrap
           disabled:opacity-50 disabled:cursor-not-allowed
           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-azul-nucleo/50

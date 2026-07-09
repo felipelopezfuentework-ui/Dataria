@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -129,26 +130,13 @@ function etapaBadgeStyle(etapa: Etapa): React.CSSProperties {
 function Splash({ onBack, onStart }: { onBack: () => void; onStart: () => void }) {
   return (
     <div
-      className="relative flex flex-col overflow-hidden"
-      style={{
-        minHeight: 520,
-        background: 'linear-gradient(140deg, #0A1829 0%, #0F2847 45%, #0A1E35 100%)',
-      }}
+      className="min-h-[560px] flex flex-col"
+      style={{ background: 'linear-gradient(160deg, #1B5BC1 0%, #2a6fd4 50%, #45B5F3 100%)' }}
     >
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: 'radial-gradient(circle, rgba(48,110,207,0.18) 1px, transparent 1px)',
-          backgroundSize: '26px 26px',
-        }}
-      />
-      <div className="relative p-5">
+      <div className="p-4">
         <button
           onClick={onBack}
-          className="flex items-center gap-1.5 text-sm font-medium"
-          style={{ color: 'rgba(255,255,255,0.6)' }}
-          onMouseEnter={e => ((e.currentTarget as HTMLButtonElement).style.color = '#fff')}
-          onMouseLeave={e => ((e.currentTarget as HTMLButtonElement).style.color = 'rgba(255,255,255,0.6)')}
+          className="flex items-center gap-1.5 text-white/70 hover:text-white text-sm font-medium transition-colors"
         >
           <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
@@ -156,22 +144,19 @@ function Splash({ onBack, onStart }: { onBack: () => void; onStart: () => void }
           Volver
         </button>
       </div>
-      <div className="relative flex-1 flex flex-col items-center justify-center gap-6 text-center px-8 pb-10">
-        <div>
-          <div
-            className="w-20 h-20 rounded-2xl flex items-center justify-center text-white font-black text-4xl mx-auto mb-2"
-            style={{ backgroundColor: '#306ECF', fontStyle: 'italic', letterSpacing: '-0.03em', lineHeight: 1 }}
-          >
-            d
-          </div>
-          <p className="text-white font-bold text-lg" style={{ letterSpacing: '0.06em' }}>dataria</p>
+      <div className="flex-1 flex flex-col items-center justify-center gap-6 text-center px-8 pb-10">
+        <div className="w-20 h-20 rounded-2xl bg-white shadow-soft p-3 flex items-center justify-center">
+          <Image src="/isologo-dataria.png" alt="Dataria" width={64} height={64} className="w-full h-full object-contain" />
         </div>
         <div>
-          <p className="text-[11px] font-bold uppercase tracking-widest mb-2" style={{ color: '#5B9BF5' }}>
+          <p className="text-2xl font-extrabold text-white mb-1.5">
+            <span style={{ color: '#56BCFA' }}>d</span>ataria
+          </p>
+          <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: 'rgba(255,255,255,0.65)' }}>
             Inmobiliarias · CRM
           </p>
-          <h2 className="text-3xl font-bold text-white mb-3">CRM de leads</h2>
-          <p className="text-sm max-w-xs mx-auto leading-relaxed" style={{ color: 'rgba(255,255,255,0.5)' }}>
+          <h2 className="text-3xl font-bold text-white mb-3">CRM</h2>
+          <p className="text-base max-w-xs mx-auto leading-relaxed" style={{ color: 'rgba(255,255,255,0.75)' }}>
             Gestioná tu cartera de clientes, seguí el pipeline de ventas y detectá oportunidades de seguimiento automáticamente.
           </p>
         </div>
@@ -201,7 +186,7 @@ function Topbar({ onBack }: { onBack: () => void }) {
         </div>
         <div>
           <p className="text-white font-bold text-sm leading-tight">dataria</p>
-          <p className="text-[11px] leading-tight" style={{ color: 'rgba(255,255,255,0.6)' }}>CRM de leads</p>
+          <p className="text-[11px] leading-tight" style={{ color: 'rgba(255,255,255,0.6)' }}>CRM</p>
         </div>
       </div>
       <button

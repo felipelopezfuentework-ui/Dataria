@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
+import Image from 'next/image'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -41,14 +42,26 @@ const INIT_MSGS: Msg[] = [
   },
 ]
 
+const LIMITE_MENSAJES = 10
+const CALENDAR_URL = 'https://calendar.app.google/64ms78PrrpQv8x4n9'
+
 function fmtUSD(n: number) {
   return `USD ${n.toLocaleString('es-AR')}`
 }
 
-// ─── Trigger engine ───────────────────────────────────────────────────────────
+// La API de Claude exige que la conversación empiece con role 'user' — el mensaje
+// de bienvenida hardcodeado (role 'agent') no cuenta como historial real.
+function toApiMessages(msgs: Msg[]): { role: 'user' | 'assistant'; content: string }[] {
+  const firstUserIdx = msgs.findIndex(m => m.role === 'user')
+  const trimmed = firstUserIdx === -1 ? [] : msgs.slice(firstUserIdx)
+  return trimmed.filter(m => m.content).map(m => ({ role: m.role === 'agent' ? 'assistant' : 'user', content: m.content }))
+}
+
+// ─── Local heuristic — drives only the side panel (calificación / CRM / props) ──
+// La respuesta real del chat la genera Claude; esto sólo clasifica la intención
+// del mensaje del usuario para actualizar el panel de la derecha en vivo.
 
 interface TriggerResult {
-  response: string
   calificacion: Calificacion
   addPropIds: number[]
   etapa: EtapaCRM
@@ -62,69 +75,34 @@ function matchTrigger(text: string, state: ChatState): TriggerResult {
   if (state === 'waitingForDay') {
     const slot = VISIT_SLOTS.find(s => t.includes(s.day))
     if (slot) {
-      return {
-        response: `¡Visita confirmada! Te esperamos el ${slot.label} en la propiedad. Te enviamos la dirección exacta por este medio. ¡Gracias por tu interés!`,
-        calificacion: 'Caliente',
-        addPropIds: [],
-        etapa: 'Visita agendada',
-        showDayChips: false,
-        nextState: 'idle',
-      }
+      return { calificacion: 'Caliente', addPropIds: [], etapa: 'Visita agendada', showDayChips: false, nextState: 'idle' }
     }
   }
 
   if (['visita', 'ver ', 'conocer', 'cuándo', 'cuando'].some(kw => t.includes(kw))) {
-    return {
-      response: '¡Perfecto! Tenemos disponibilidad esta semana:\n🗓️ Miércoles 11:00hs\n🗓️ Jueves 16:00hs\n🗓️ Viernes 10:00hs\n¿Cuál te queda mejor?',
-      calificacion: 'Caliente',
-      addPropIds: [],
-      etapa: null,
-      showDayChips: true,
-      nextState: 'waitingForDay',
-    }
+    return { calificacion: 'Caliente', addPropIds: [], etapa: null, showDayChips: true, nextState: 'waitingForDay' }
   }
 
-  if (t.includes('palermo') || (t.includes('2 amb') && t.includes('palermo'))) {
-    return {
-      response: '¡Hola! Sí, el depto de 2 ambientes en Palermo (55m²) sigue disponible. Precio: USD 145.000.\nTiene balcón, cocina integrada y muy buena luz natural. ¿Te gustaría coordinar una visita?',
-      calificacion: 'Caliente',
-      addPropIds: [1],
-      etapa: 'Interesado',
-      showDayChips: false,
-      nextState: 'idle',
-    }
+  if (t.includes('palermo')) {
+    return { calificacion: 'Caliente', addPropIds: [1], etapa: 'Interesado', showDayChips: false, nextState: 'idle' }
   }
-
   if (t.includes('belgrano') || t.includes('3 amb')) {
-    return {
-      response: '¡Hola! El depto de 3 ambientes en Belgrano (78m²) está disponible, USD 210.000. Excelente ubicación cerca del subte.\nTambién tenemos un depto de 2 amb en Núñez por USD 158.000 que podría interesarte. ¿Querés coordinar una visita a alguno de los dos?',
-      calificacion: 'Tibio',
-      addPropIds: [2, 5],
-      etapa: 'Interesado',
-      showDayChips: false,
-      nextState: 'idle',
-    }
+    return { calificacion: 'Tibio', addPropIds: [2, 5], etapa: 'Interesado', showDayChips: false, nextState: 'idle' }
+  }
+  if (t.includes('olivos') || t.includes('casa')) {
+    return { calificacion: 'Tibio', addPropIds: [3], etapa: 'Interesado', showDayChips: false, nextState: 'idle' }
+  }
+  if (t.includes('caballito') || t.includes('1 amb')) {
+    return { calificacion: 'Tibio', addPropIds: [4], etapa: 'Interesado', showDayChips: false, nextState: 'idle' }
+  }
+  if (t.includes('núñez') || t.includes('nunez')) {
+    return { calificacion: 'Tibio', addPropIds: [5], etapa: 'Interesado', showDayChips: false, nextState: 'idle' }
+  }
+  if (t.includes('presupuesto') || t.includes('hasta ') || /usd|\$/.test(t) || /\d{5,}/.test(t)) {
+    return { calificacion: 'Caliente', addPropIds: [], etapa: 'Interesado', showDayChips: false, nextState: 'idle' }
   }
 
-  if (t.includes('presupuesto') || t.includes('hasta ') || /usd|\$/.test(t) || /\d{5,}/.test(t) || /\d{2,}[.,]\d{3}/.test(t)) {
-    return {
-      response: '¡Gracias por contarnos tu presupuesto! Según lo que buscás, tenemos un par de opciones que podrían encajar. ¿Me confirmás la zona de tu preferencia para mostrarte las mejores alternativas?',
-      calificacion: 'Caliente',
-      addPropIds: [],
-      etapa: 'Interesado',
-      showDayChips: false,
-      nextState: 'idle',
-    }
-  }
-
-  return {
-    response: '¡Hola! Gracias por tu consulta. Contanos qué tipo de propiedad estás buscando (zona, ambientes, presupuesto) y te paso las opciones disponibles.',
-    calificacion: 'Frío',
-    addPropIds: [],
-    etapa: null,
-    showDayChips: false,
-    nextState: 'idle',
-  }
+  return { calificacion: 'Frío', addPropIds: [], etapa: null, showDayChips: false, nextState: 'idle' }
 }
 
 // ─── Splash ───────────────────────────────────────────────────────────────────
@@ -132,23 +110,13 @@ function matchTrigger(text: string, state: ChatState): TriggerResult {
 function Splash({ onBack, onStart }: { onBack: () => void; onStart: () => void }) {
   return (
     <div
-      className="relative flex flex-col overflow-hidden"
-      style={{ minHeight: 520, background: 'linear-gradient(140deg, #0A1829 0%, #0F2847 45%, #0A1E35 100%)' }}
+      className="min-h-[560px] flex flex-col"
+      style={{ background: 'linear-gradient(160deg, #1B5BC1 0%, #2a6fd4 50%, #45B5F3 100%)' }}
     >
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: 'radial-gradient(circle, rgba(48,110,207,0.18) 1px, transparent 1px)',
-          backgroundSize: '26px 26px',
-        }}
-      />
-      <div className="relative p-5">
+      <div className="p-4">
         <button
           onClick={onBack}
-          className="flex items-center gap-1.5 text-sm font-medium"
-          style={{ color: 'rgba(255,255,255,0.6)' }}
-          onMouseEnter={e => ((e.currentTarget as HTMLButtonElement).style.color = '#fff')}
-          onMouseLeave={e => ((e.currentTarget as HTMLButtonElement).style.color = 'rgba(255,255,255,0.6)')}
+          className="flex items-center gap-1.5 text-white/70 hover:text-white text-sm font-medium transition-colors"
         >
           <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
@@ -156,23 +124,20 @@ function Splash({ onBack, onStart }: { onBack: () => void; onStart: () => void }
           Volver
         </button>
       </div>
-      <div className="relative flex-1 flex flex-col items-center justify-center gap-6 text-center px-8 pb-10">
-        <div>
-          <div
-            className="w-20 h-20 rounded-2xl flex items-center justify-center text-white font-black text-4xl mx-auto mb-2"
-            style={{ backgroundColor: '#306ECF', fontStyle: 'italic', letterSpacing: '-0.03em', lineHeight: 1 }}
-          >
-            d
-          </div>
-          <p className="text-white font-bold text-lg" style={{ letterSpacing: '0.06em' }}>dataria</p>
+      <div className="flex-1 flex flex-col items-center justify-center gap-6 text-center px-8 pb-10">
+        <div className="w-20 h-20 rounded-2xl bg-white shadow-soft p-3 flex items-center justify-center">
+          <Image src="/isologo-dataria.png" alt="Dataria" width={64} height={64} className="w-full h-full object-contain" />
         </div>
         <div>
-          <p className="text-[11px] font-bold uppercase tracking-widest mb-2" style={{ color: '#5B9BF5' }}>
+          <p className="text-2xl font-extrabold text-white mb-1.5">
+            <span style={{ color: '#56BCFA' }}>d</span>ataria
+          </p>
+          <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: 'rgba(255,255,255,0.65)' }}>
             Inmobiliarias · Consultas
           </p>
-          <h2 className="text-3xl font-bold text-white mb-3">Respondedor de consultas</h2>
-          <p className="text-sm max-w-xs mx-auto leading-relaxed" style={{ color: 'rgba(255,255,255,0.5)' }}>
-            Respondé consultas del portal inmobiliario de forma automática, calificá leads y agendá visitas sin intervención manual.
+          <h2 className="text-3xl font-bold text-white mb-3">Agente de consultas</h2>
+          <p className="text-base max-w-xs mx-auto leading-relaxed" style={{ color: 'rgba(255,255,255,0.75)' }}>
+            Respondé consultas del portal inmobiliario con IA real, calificá leads y agendá visitas sin intervención manual.
           </p>
         </div>
         <button
@@ -199,7 +164,7 @@ function Topbar({ onBack }: { onBack: () => void }) {
         >d</div>
         <div>
           <p className="text-white font-bold text-sm leading-tight">dataria</p>
-          <p className="text-[11px] leading-tight" style={{ color: 'rgba(255,255,255,0.6)' }}>Respondedor de consultas</p>
+          <p className="text-[11px] leading-tight" style={{ color: 'rgba(255,255,255,0.6)' }}>Agente de consultas</p>
         </div>
       </div>
       <button
@@ -232,7 +197,7 @@ function ChatBubble({ msg }: { msg: Msg }) {
           className="max-w-[78%] px-3.5 py-2.5 rounded-2xl rounded-bl-sm text-sm leading-relaxed text-white"
           style={{ backgroundColor: '#306ECF' }}
         >
-          {msg.streaming ? (
+          {msg.streaming && !msg.content ? (
             <span className="flex gap-1 items-center" style={{ height: 18 }}>
               {[0, 150, 300].map(d => (
                 <span key={d} className="w-1.5 h-1.5 rounded-full bg-white/70 animate-bounce" style={{ animationDelay: `${d}ms` }} />
@@ -404,44 +369,72 @@ export default function RespondedorDemo({ onBack }: { onBack: () => void }) {
   const [etapaCRM, setEtapaCRM]       = useState<EtapaCRM>(null)
   const [propIds, setPropIds]         = useState<number[]>([])
   const [showDayChips, setShowDayChips] = useState(false)
+  const [userMsgCount, setUserMsgCount] = useState(0)
 
   const msgsRef  = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
+
+  const limitReached = userMsgCount >= LIMITE_MENSAJES
 
   useEffect(() => {
     const el = msgsRef.current
     if (el) el.scrollTop = el.scrollHeight
   }, [msgs])
 
-  const sendMessage = (text: string) => {
-    if (!text.trim() || isStreaming) return
+  const sendMessage = async (text: string) => {
+    if (!text.trim() || isStreaming || limitReached) return
 
     const userMsg: Msg = { id: `u${Date.now()}`, role: 'user', content: text.trim() }
     const streamId     = `a${Date.now()}`
+    const historyForApi = [...msgs, userMsg]
 
     setMsgs(prev => [...prev, userMsg, { id: streamId, role: 'agent', content: '', streaming: true }])
     setInput('')
     setIsStreaming(true)
     setShowDayChips(false)
+    setUserMsgCount(c => c + 1)
 
-    const result = matchTrigger(text, chatState)
+    // Heurística local — sólo alimenta el panel derecho (calificación / CRM / props)
+    const local = matchTrigger(text, chatState)
+    setChatState(local.nextState)
+    setCalificacion(local.calificacion)
+    if (local.etapa) setEtapaCRM(local.etapa)
+    if (local.addPropIds.length > 0) {
+      setPropIds(prev => {
+        const next = [...prev]
+        local.addPropIds.forEach(id => { if (!next.includes(id)) next.push(id) })
+        return next
+      })
+    }
+    if (local.showDayChips) setShowDayChips(true)
 
-    setTimeout(() => {
-      setMsgs(prev => prev.map(m => m.id === streamId ? { ...m, content: result.response, streaming: false } : m))
-      setIsStreaming(false)
-      setChatState(result.nextState)
-      setCalificacion(result.calificacion)
-      if (result.etapa) setEtapaCRM(result.etapa)
-      if (result.addPropIds.length > 0) {
-        setPropIds(prev => {
-          const next = [...prev]
-          result.addPropIds.forEach(id => { if (!next.includes(id)) next.push(id) })
-          return next
-        })
+    try {
+      const res = await fetch('/api/anthropic/inmobiliaria', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: toApiMessages(historyForApi) }),
+      })
+      if (!res.ok || !res.body) throw new Error(`API respondió ${res.status}`)
+
+      const reader = res.body.getReader()
+      const decoder = new TextDecoder()
+      let acc = ''
+      while (true) {
+        const { done, value } = await reader.read()
+        if (done) break
+        acc += decoder.decode(value, { stream: true })
+        setMsgs(prev => prev.map(m => m.id === streamId ? { ...m, content: acc, streaming: true } : m))
       }
-      if (result.showDayChips) setShowDayChips(true)
+      setMsgs(prev => prev.map(m => m.id === streamId ? { ...m, content: acc || 'No pude generar una respuesta. Probá de nuevo.', streaming: false } : m))
+    } catch (err) {
+      console.error('[RespondedorDemo] Error al conectar con la IA:', err)
+      setMsgs(prev => prev.map(m => m.id === streamId
+        ? { ...m, content: 'Hubo un error de conexión con el asistente. Probá de nuevo en unos segundos.', streaming: false }
+        : m))
+    } finally {
+      setIsStreaming(false)
       inputRef.current?.focus()
-    }, 900)
+    }
   }
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -453,7 +446,7 @@ export default function RespondedorDemo({ onBack }: { onBack: () => void }) {
   }
 
   return (
-    <div className="flex flex-col" style={{ minHeight: 560 }}>
+    <div className="flex flex-col" style={{ minHeight: 580 }}>
       <Topbar onBack={() => setPhase('splash')} />
 
       <div className="flex flex-1 min-h-0 overflow-hidden">
@@ -494,7 +487,7 @@ export default function RespondedorDemo({ onBack }: { onBack: () => void }) {
           </div>
 
           {/* Day chips (shown when waitingForDay) */}
-          {showDayChips && (
+          {showDayChips && !limitReached && (
             <div
               className="px-4 py-2 flex gap-2 flex-wrap border-t shrink-0"
               style={{ borderColor: '#DCE5E9', backgroundColor: '#fff' }}
@@ -518,46 +511,66 @@ export default function RespondedorDemo({ onBack }: { onBack: () => void }) {
             </div>
           )}
 
-          {/* Input */}
-          <div
-            className="flex items-center gap-2 px-4 py-3 border-t shrink-0"
-            style={{ borderColor: '#DCE5E9', backgroundColor: '#fff' }}
-          >
-            <input
-              ref={inputRef}
-              type="text"
-              value={input}
-              onChange={e => setInput(e.target.value)}
-              onKeyDown={handleKeyDown}
-              disabled={isStreaming}
-              placeholder={
-                chatState === 'waitingForDay'
-                  ? 'Escribí el día de tu preferencia...'
-                  : 'Escribí tu consulta...'
-              }
-              className="flex-1 text-sm px-3 py-2 rounded-lg outline-none"
-              style={{
-                border: '1px solid #DCE5E9',
-                backgroundColor: isStreaming ? '#F3F6F5' : '#fff',
-                color: '#353C42',
-              }}
-              onFocus={e => (e.target.style.borderColor = '#306ECF')}
-              onBlur={e => (e.target.style.borderColor = '#DCE5E9')}
-            />
-            <button
-              onClick={() => sendMessage(input)}
-              disabled={!input.trim() || isStreaming}
-              className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 transition-opacity"
-              style={{
-                backgroundColor: input.trim() && !isStreaming ? '#1B5BC1' : '#DCE5E9',
-                cursor: input.trim() && !isStreaming ? 'pointer' : 'not-allowed',
-              }}
+          {/* Input / rate limit */}
+          {limitReached ? (
+            <div
+              className="flex flex-col items-center gap-3 px-4 py-4 border-t shrink-0 text-center"
+              style={{ borderColor: '#DCE5E9', backgroundColor: '#fff' }}
             >
-              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="white" strokeWidth={2.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
-              </svg>
-            </button>
-          </div>
+              <p className="text-sm font-medium" style={{ color: '#353C42' }}>
+                Llegaste al límite de mensajes de la demo. Para continuar, agendá una reunión con nuestro equipo.
+              </p>
+              <a
+                href={CALENDAR_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center h-[42px] px-6 rounded-[10px] text-white font-bold tracking-[0.04em] uppercase text-[12px] transition-opacity hover:opacity-85"
+                style={{ backgroundColor: '#306ECF' }}
+              >
+                Agendar reunión
+              </a>
+            </div>
+          ) : (
+            <div
+              className="flex items-center gap-2 px-4 py-3 border-t shrink-0"
+              style={{ borderColor: '#DCE5E9', backgroundColor: '#fff' }}
+            >
+              <input
+                ref={inputRef}
+                type="text"
+                value={input}
+                onChange={e => setInput(e.target.value)}
+                onKeyDown={handleKeyDown}
+                disabled={isStreaming}
+                placeholder={
+                  chatState === 'waitingForDay'
+                    ? 'Escribí el día de tu preferencia...'
+                    : 'Escribí tu consulta...'
+                }
+                className="flex-1 text-sm px-3 py-2 rounded-lg outline-none"
+                style={{
+                  border: '1px solid #DCE5E9',
+                  backgroundColor: isStreaming ? '#F3F6F5' : '#fff',
+                  color: '#353C42',
+                }}
+                onFocus={e => (e.target.style.borderColor = '#306ECF')}
+                onBlur={e => (e.target.style.borderColor = '#DCE5E9')}
+              />
+              <button
+                onClick={() => sendMessage(input)}
+                disabled={!input.trim() || isStreaming}
+                className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 transition-opacity"
+                style={{
+                  backgroundColor: input.trim() && !isStreaming ? '#1B5BC1' : '#DCE5E9',
+                  cursor: input.trim() && !isStreaming ? 'pointer' : 'not-allowed',
+                }}
+              >
+                <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="white" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+                </svg>
+              </button>
+            </div>
+          )}
         </div>
 
         {/* ── Side panel ──────────────────────────────────────────────────── */}

@@ -5,7 +5,6 @@ import dynamic from 'next/dynamic'
 
 const GastronomiaDemo   = dynamic(() => import('./gastronomia/GastronomiaDemo'),   { ssr: false })
 const DistribuidorasHub  = dynamic(() => import('./distribuidoras/DistribuidorasHub'),  { ssr: false })
-const SaludHub          = dynamic(() => import('./salud/SaludHub'),                 { ssr: false })
 const InmobiliariasDemo = dynamic(() => import('./inmobiliarias/InmobiliariasDemo'), { ssr: false })
 const EcommerceDemo     = dynamic(() => import('./ecommerce/EcommerceDemo'),         { ssr: false })
 
@@ -27,16 +26,6 @@ const industries = [
     icon: (
       <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13V7m0 0l6-3m-6 3l6 3m6-3v13.5a.5.5 0 01-.5.5H15" />
-      </svg>
-    ),
-  },
-  {
-    id: 'salud',
-    label: 'Salud',
-    tag: 'Agenda',
-    icon: (
-      <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
       </svg>
     ),
   },
@@ -73,7 +62,6 @@ export default function DemoHub() {
       case 'distribuidoras': return <DistribuidorasHub />
 case 'inmobiliarias':  return <InmobiliariasDemo />
       case 'ecommerce':      return <EcommerceDemo />
-      case 'salud':          return <SaludHub />
       default:               return null
     }
   }

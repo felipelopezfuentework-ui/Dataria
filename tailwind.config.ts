@@ -39,7 +39,8 @@ const config: Config = {
         'gradient-hero':    'linear-gradient(180deg, #F3F6F5 0%, #EAF5FD 100%)',
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['var(--font-text)', 'Inter', 'sans-serif'],
+        display: ['var(--font-display)', 'Plus Jakarta Sans', 'sans-serif'],
       },
       borderRadius: {
         xs:   '4px',

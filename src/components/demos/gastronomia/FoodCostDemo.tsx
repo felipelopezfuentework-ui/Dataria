@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import Modal from '@/components/ui/Modal'
 import Button from '@/components/ui/Button'
 import Input from '@/components/ui/Input'
@@ -577,7 +578,7 @@ function MainPanel({ onBack }: { onBack: () => void }) {
   const [provs, setProvs]     = useState(initProveedores)
 
   return (
-    <div className="flex flex-col min-h-[480px]">
+    <div className="flex flex-col min-h-[560px]">
       {/* Header */}
       <div style={{ backgroundColor: '#1B5BC1' }} className="flex items-center justify-between px-5 py-3 shrink-0">
         <div className="flex items-center gap-2.5">
@@ -624,7 +625,7 @@ function MainPanel({ onBack }: { onBack: () => void }) {
 function Splash({ onBack, onEnter }: { onBack: () => void; onEnter: () => void }) {
   return (
     <div
-      className="min-h-[480px] flex flex-col"
+      className="min-h-[560px] flex flex-col"
       style={{ background: 'linear-gradient(160deg, #1B5BC1 0%, #2a6fd4 50%, #45B5F3 100%)' }}
     >
       <div className="p-4">
@@ -638,9 +639,8 @@ function Splash({ onBack, onEnter }: { onBack: () => void; onEnter: () => void }
       </div>
 
       <div className="flex-1 flex flex-col items-center justify-center gap-6 px-8 pb-8">
-        <div className="w-16 h-16 rounded-2xl flex items-center justify-center text-white text-3xl font-extrabold"
-          style={{ backgroundColor: 'rgba(255,255,255,0.15)' }}>
-          d
+        <div className="w-20 h-20 rounded-2xl bg-white shadow-soft p-3 flex items-center justify-center">
+          <Image src="/isologo-dataria.png" alt="Dataria" width={64} height={64} className="w-full h-full object-contain" />
         </div>
         <div className="text-center">
           <p className="text-2xl font-extrabold text-white mb-1.5">

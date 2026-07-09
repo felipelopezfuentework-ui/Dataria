@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import Modal from '@/components/ui/Modal'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -82,6 +83,16 @@ function sugerencia(p: Producto): string {
   const fechaStr = fechaLimite.toLocaleDateString('es-AR', { day: 'numeric', month: 'numeric' })
   return `Tenés stock para ${Math.round(dias)} días · Podés esperar hasta ${fechaStr} para hacer el pedido`
 }
+function cantidadSugerida(p: Producto) {
+  return Math.max(p.stockMinimo, Math.ceil(p.ventaDiaria * p.leadTime * 1.5) - p.stock)
+}
+function mailtoPedido(p: Producto) {
+  const subject = encodeURIComponent('Solicitud de reposición de stock')
+  const body = encodeURIComponent(
+    `Producto: ${p.nombre} | Cantidad sugerida: ${cantidadSugerida(p)} | Proveedor: ${p.proveedor}`
+  )
+  return `mailto:datariaai@gmail.com?subject=${subject}&body=${body}`
+}
 function todayInput() {
   return new Date().toISOString().slice(0, 10)
 }
@@ -96,7 +107,7 @@ function formatFechaInput(dateStr: string) {
 function Splash({ onBack, onEnter }: { onBack: () => void; onEnter: () => void }) {
   return (
     <div
-      className="min-h-[480px] flex flex-col"
+      className="min-h-[560px] flex flex-col"
       style={{ background: 'linear-gradient(160deg, #1B5BC1 0%, #2a6fd4 50%, #45B5F3 100%)' }}
     >
       <div className="p-4">
@@ -110,9 +121,8 @@ function Splash({ onBack, onEnter }: { onBack: () => void; onEnter: () => void }
       </div>
 
       <div className="flex-1 flex flex-col items-center justify-center gap-6 px-8 pb-8">
-        <div className="w-16 h-16 rounded-2xl flex items-center justify-center text-white text-3xl font-extrabold"
-          style={{ backgroundColor: 'rgba(255,255,255,0.15)' }}>
-          d
+        <div className="w-20 h-20 rounded-2xl bg-white shadow-soft p-3 flex items-center justify-center">
+          <Image src="/isologo-dataria.png" alt="Dataria" width={64} height={64} className="w-full h-full object-contain" />
         </div>
         <div className="text-center">
           <p className="text-2xl font-extrabold text-white mb-1.5">
@@ -309,12 +319,12 @@ function InventarioTab({
       <div className="bg-white rounded-xl border border-[#DCE5E9] shadow-sm overflow-hidden">
         <table className="w-full text-sm table-fixed">
           <colgroup>
-            <col style={{ width: '21%' }} />
-            <col style={{ width: '11%' }} />
+            <col style={{ width: '19%' }} />
             <col style={{ width: '10%' }} />
-            <col style={{ width: '15%' }} />
-            <col style={{ width: '31%' }} />
-            <col style={{ width: '12%' }} />
+            <col style={{ width: '9%' }} />
+            <col style={{ width: '14%' }} />
+            <col style={{ width: '28%' }} />
+            <col style={{ width: '20%' }} />
           </colgroup>
           <thead>
             <tr className="text-left text-[11px] uppercase tracking-wide text-[#5A6871] bg-[#F3F6F5]">
@@ -340,14 +350,21 @@ function InventarioTab({
                 <td className="py-3 px-3 text-right tabular-nums text-[#353C42]">{Math.round(diasStock(p))}d</td>
                 <td className="py-3 px-3"><EstadoBadge estado={estado} /></td>
                 <td className="py-3 px-3 text-xs text-[#5A6871] leading-relaxed">{sugerencia(p)}</td>
-                <td className="py-3 px-3 text-right">
+                <td className="py-3 px-3 text-right space-y-1.5">
                   <button
                     onClick={() => setModalProducto(p)}
-                    className="h-auto min-h-8 px-2 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-wide text-white leading-tight transition-opacity hover:opacity-85"
+                    className="w-full h-auto min-h-8 px-2 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-wide text-white leading-tight transition-opacity hover:opacity-85"
                     style={{ backgroundColor: '#306ECF' }}
                   >
                     Registrar entrada
                   </button>
+                  <a
+                    href={mailtoPedido(p)}
+                    className="block w-full h-auto min-h-8 px-2 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-wide leading-tight transition-colors hover:bg-[#EAF5FD]"
+                    style={{ color: '#1B5BC1', border: '1px solid rgba(27,91,193,0.25)' }}
+                  >
+                    Hacer pedido
+                  </a>
                 </td>
               </tr>
             ))}
@@ -593,7 +610,7 @@ function MainPanel({ onBack }: { onBack: () => void }) {
   }
 
   return (
-    <div className="flex flex-col min-h-[480px]">
+    <div className="flex flex-col min-h-[560px]">
       <Topbar onBack={onBack} />
       <TabBar tab={tab} setTab={setTab} />
       <div className="flex-1 overflow-auto p-4" style={{ backgroundColor: '#F3F6F5' }}>

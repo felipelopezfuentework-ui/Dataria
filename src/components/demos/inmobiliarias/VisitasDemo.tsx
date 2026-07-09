@@ -1,15 +1,16 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 
 // ─── Types & Constants ─────────────────────────────────────────────────────────
 
 type Phase = 'splash' | 'tool'
-type ProfId = 1 | 2
+type AgenteId = 1 | 2
 
-const PROFS: Record<ProfId, { name: string; specialty: string }> = {
-  1: { name: 'Dra. Valeria Suárez', specialty: 'Clínica médica' },
-  2: { name: 'Dr. Joaquín Beltrán', specialty: 'Odontología' },
+const AGENTES: Record<AgenteId, { name: string; specialty: string }> = {
+  1: { name: 'Lic. Valeria Suárez',  specialty: 'Agente comercial · Zona Norte'  },
+  2: { name: 'Lic. Joaquín Beltrán', specialty: 'Agente comercial · Zona Centro' },
 }
 
 const DAYS = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes']
@@ -62,27 +63,12 @@ function fmtShort(d: Date): string {
 function Splash({ onBack, onStart }: { onBack: () => void; onStart: () => void }) {
   return (
     <div
-      className="relative flex flex-col overflow-hidden"
-      style={{
-        minHeight: 520,
-        background: 'linear-gradient(140deg, #0A1829 0%, #0F2847 45%, #0A1E35 100%)',
-      }}
+      className="min-h-[580px] flex flex-col"
+      style={{ background: 'linear-gradient(160deg, #1B5BC1 0%, #2a6fd4 50%, #45B5F3 100%)' }}
     >
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: 'radial-gradient(circle, rgba(48,110,207,0.18) 1px, transparent 1px)',
-          backgroundSize: '26px 26px',
-        }}
-      />
-      <div className="relative p-5">
-        <button
-          onClick={onBack}
-          className="flex items-center gap-1.5 text-sm font-medium transition-colors"
-          style={{ color: 'rgba(255,255,255,0.6)' }}
-          onMouseEnter={e => ((e.currentTarget as HTMLButtonElement).style.color = '#fff')}
-          onMouseLeave={e => ((e.currentTarget as HTMLButtonElement).style.color = 'rgba(255,255,255,0.6)')}
-        >
+      <div className="p-4">
+        <button onClick={onBack}
+          className="flex items-center gap-1.5 text-white/70 hover:text-white text-sm font-medium transition-colors">
           <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
           </svg>
@@ -90,25 +76,19 @@ function Splash({ onBack, onStart }: { onBack: () => void; onStart: () => void }
         </button>
       </div>
       <div className="relative flex-1 flex flex-col items-center justify-center gap-6 text-center px-8 pb-10">
-        <div>
-          <div
-            className="w-20 h-20 rounded-2xl flex items-center justify-center text-white font-black text-4xl mx-auto mb-2"
-            style={{ backgroundColor: '#306ECF', fontStyle: 'italic', letterSpacing: '-0.03em', lineHeight: 1 }}
-          >
-            d
-          </div>
-          <p className="text-white font-bold text-lg" style={{ letterSpacing: '0.06em' }}>dataria</p>
+        <div className="w-20 h-20 rounded-2xl bg-white shadow-soft p-3 flex items-center justify-center">
+          <Image src="/isologo-dataria.png" alt="Dataria" width={64} height={64} className="w-full h-full object-contain" />
         </div>
         <div>
-          <p
-            className="text-[11px] font-bold uppercase tracking-widest mb-2"
-            style={{ color: '#5B9BF5' }}
-          >
-            Salud · Agenda
+          <p className="text-2xl font-extrabold text-white mb-1.5">
+            <span style={{ color: '#56BCFA' }}>d</span>ataria
           </p>
-          <h2 className="text-3xl font-bold text-white mb-3">Agenda de turnos</h2>
-          <p className="text-sm max-w-xs mx-auto leading-relaxed" style={{ color: 'rgba(255,255,255,0.5)' }}>
-            Gestioná los turnos de tu consultorio, agendá nuevos pacientes y enviá confirmaciones automáticas.
+          <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: 'rgba(255,255,255,0.65)' }}>
+            Inmobiliarias · Visitas
+          </p>
+          <h2 className="text-3xl font-bold text-white mb-3">Agenda de visitas</h2>
+          <p className="text-base max-w-xs mx-auto leading-relaxed" style={{ color: 'rgba(255,255,255,0.75)' }}>
+            Gestioná las visitas a propiedades de tu inmobiliaria, agendá nuevos interesados y enviá confirmaciones automáticas.
           </p>
         </div>
         <button
@@ -127,10 +107,7 @@ function Splash({ onBack, onStart }: { onBack: () => void; onStart: () => void }
 
 function Topbar({ onBack }: { onBack: () => void }) {
   return (
-    <div
-      className="flex items-center justify-between px-4 py-3 shrink-0"
-      style={{ backgroundColor: '#1B5BC1' }}
-    >
+    <div className="flex items-center justify-between px-4 py-3 shrink-0" style={{ backgroundColor: '#1B5BC1' }}>
       <div className="flex items-center gap-3">
         <div
           className="w-8 h-8 rounded-lg flex items-center justify-center font-black text-white text-xl shrink-0"
@@ -141,7 +118,7 @@ function Topbar({ onBack }: { onBack: () => void }) {
         <div>
           <p className="text-white font-bold text-sm leading-tight">dataria</p>
           <p className="text-[11px] leading-tight" style={{ color: 'rgba(255,255,255,0.6)' }}>
-            Agenda de turnos
+            Agenda de visitas
           </p>
         </div>
       </div>
@@ -165,14 +142,14 @@ function Topbar({ onBack }: { onBack: () => void }) {
 
 interface SelectedSlot { dayIdx: number; time: string }
 interface ConfirmedAppt extends SelectedSlot {
-  profId: ProfId
-  patient: string
+  agenteId: AgenteId
+  interesado: string
   phone: string
 }
 
-export default function AgendaDemo({ onBack }: { onBack: () => void }) {
+export default function VisitasDemo({ onBack }: { onBack: () => void }) {
   const [phase, setPhase]   = useState<Phase>('splash')
-  const [prof, setProf]     = useState<ProfId>(1)
+  const [agente, setAgente] = useState<AgenteId>(1)
   const [appts, setAppts]   = useState<ApptRecord>(INIT_APPTS)
   const [newKeys, setNewKeys] = useState<Set<string>>(new Set())
   const [slot, setSlot]     = useState<SelectedSlot | null>(null)
@@ -182,26 +159,26 @@ export default function AgendaDemo({ onBack }: { onBack: () => void }) {
 
   const weekDates = getWeekDates()
 
-  const key = (p: ProfId, d: number, t: string) => `${p}-${d}-${t}`
+  const key = (a: AgenteId, d: number, t: string) => `${a}-${d}-${t}`
 
   const handleCellClick = (dayIdx: number, time: string) => {
-    if (appts[key(prof, dayIdx, time)]) return
+    if (appts[key(agente, dayIdx, time)]) return
     setSlot({ dayIdx, time })
   }
 
   const handleConfirm = () => {
     if (!slot || !form.name.trim() || !form.phone.trim()) return
-    const k = key(prof, slot.dayIdx, slot.time)
+    const k = key(agente, slot.dayIdx, slot.time)
     setAppts(prev => ({ ...prev, [k]: form.name.trim() }))
     setNewKeys(prev => new Set([...prev, k]))
-    setModal({ ...slot, profId: prof, patient: form.name.trim(), phone: form.phone.trim() })
+    setModal({ ...slot, agenteId: agente, interesado: form.name.trim(), phone: form.phone.trim() })
     setSlot(null)
     setForm({ name: '', phone: '', reason: '' })
   }
 
   const handleCancelAppt = () => {
     if (!modal) return
-    const k = key(modal.profId, modal.dayIdx, modal.time)
+    const k = key(modal.agenteId, modal.dayIdx, modal.time)
     setAppts(prev => { const n = { ...prev }; delete n[k]; return n })
     setNewKeys(prev => { const n = new Set(prev); n.delete(k); return n })
     setModal(null)
@@ -236,20 +213,20 @@ export default function AgendaDemo({ onBack }: { onBack: () => void }) {
         {/* ── Calendar ──────────────────────────────────────────────────────── */}
         <div className="flex-1 min-w-0 p-4 flex flex-col gap-3">
 
-          {/* Prof tabs */}
+          {/* Agente tabs */}
           <div className="flex gap-1 rounded-sm p-1 w-fit" style={{ backgroundColor: '#F3F6F5' }}>
-            {([1, 2] as ProfId[]).map(pid => (
+            {([1, 2] as AgenteId[]).map(aid => (
               <button
-                key={pid}
-                onClick={() => { setProf(pid); setSlot(null) }}
+                key={aid}
+                onClick={() => { setAgente(aid); setSlot(null) }}
                 className="px-3 py-1.5 rounded-xs text-sm font-semibold transition-all duration-160 whitespace-nowrap"
                 style={
-                  prof === pid
+                  agente === aid
                     ? { backgroundColor: '#1B5BC1', color: '#fff' }
                     : { color: '#5A6871', backgroundColor: 'transparent' }
                 }
               >
-                {PROFS[pid].name}
+                {AGENTES[aid].name}
               </button>
             ))}
           </div>
@@ -285,9 +262,9 @@ export default function AgendaDemo({ onBack }: { onBack: () => void }) {
                       {time}
                     </td>
                     {DAYS.map((_, dayIdx) => {
-                      const k       = key(prof, dayIdx, time)
-                      const patient = appts[k]
-                      const occupied = !!patient
+                      const k       = key(agente, dayIdx, time)
+                      const interesado = appts[k]
+                      const occupied = !!interesado
                       const selected = slot?.dayIdx === dayIdx && slot.time === time
                       const isNew    = newKeys.has(k)
 
@@ -334,7 +311,7 @@ export default function AgendaDemo({ onBack }: { onBack: () => void }) {
                               }
                             }}
                           >
-                            {patient ?? ' '}
+                            {interesado ?? ' '}
                           </div>
                         </td>
                       )
@@ -351,20 +328,20 @@ export default function AgendaDemo({ onBack }: { onBack: () => void }) {
           className="shrink-0 border-t lg:border-t-0 lg:border-l p-4 flex flex-col gap-3"
           style={{ width: 284, borderColor: '#DCE5E9', backgroundColor: '#F3F6F5' }}
         >
-          <h3 className="text-sm font-bold" style={{ color: '#353C42' }}>Agendar turno</h3>
+          <h3 className="text-sm font-bold" style={{ color: '#353C42' }}>Agendar visita</h3>
 
-          {/* Prof info */}
+          {/* Agente info */}
           <div
             className="rounded-md p-3"
             style={{ backgroundColor: '#EAF5FD', border: '1px solid rgba(48,110,207,0.15)' }}
           >
             <p className="text-[10px] font-bold uppercase tracking-wide mb-0.5" style={{ color: '#5A6871' }}>
-              Profesional
+              Agente inmobiliario
             </p>
             <p className="text-sm font-semibold leading-tight" style={{ color: '#1B5BC1' }}>
-              {PROFS[prof].name}
+              {AGENTES[agente].name}
             </p>
-            <p className="text-xs" style={{ color: '#5A6871' }}>{PROFS[prof].specialty}</p>
+            <p className="text-xs" style={{ color: '#5A6871' }}>{AGENTES[agente].specialty}</p>
           </div>
 
           {/* Slot info */}
@@ -395,7 +372,7 @@ export default function AgendaDemo({ onBack }: { onBack: () => void }) {
           {/* Name */}
           <div>
             <label className="block text-[10px] font-bold uppercase tracking-wide mb-1" style={{ color: '#5A6871' }}>
-              Nombre del paciente
+              Nombre del interesado
             </label>
             <input
               type="text"
@@ -440,16 +417,16 @@ export default function AgendaDemo({ onBack }: { onBack: () => void }) {
             />
           </div>
 
-          {/* Reason */}
+          {/* Property of interest */}
           <div>
             <label className="block text-[10px] font-bold uppercase tracking-wide mb-1" style={{ color: '#5A6871' }}>
-              Motivo{' '}
+              Propiedad de interés{' '}
               <span style={{ fontWeight: 400, textTransform: 'none', letterSpacing: 0 }}>(opcional)</span>
             </label>
             <textarea
               value={form.reason}
               onChange={e => setForm(f => ({ ...f, reason: e.target.value }))}
-              placeholder="Control anual, dolor de muela..."
+              placeholder="Depto 2 amb Palermo, Casa Olivos..."
               disabled={!slot}
               rows={2}
               className="w-full px-3 py-2 rounded-sm text-sm resize-none"
@@ -476,7 +453,7 @@ export default function AgendaDemo({ onBack }: { onBack: () => void }) {
                 : { backgroundColor: '#DCE5E9', color: '#5A6871', cursor: 'not-allowed' }
             }
           >
-            Confirmar turno
+            Confirmar visita
           </button>
         </div>
       </div>
@@ -502,7 +479,7 @@ export default function AgendaDemo({ onBack }: { onBack: () => void }) {
               </div>
               <div className="min-w-0">
                 <p className="text-sm font-bold leading-tight truncate" style={{ color: '#353C42' }}>
-                  Mensaje enviado a {modal.patient}
+                  Mensaje enviado a {modal.interesado}
                 </p>
                 <p className="text-xs" style={{ color: '#5A6871' }}>{modal.phone}</p>
               </div>
@@ -520,7 +497,7 @@ export default function AgendaDemo({ onBack }: { onBack: () => void }) {
               ) : (
                 <div className="text-sm leading-relaxed space-y-1" style={{ color: '#353C42' }}>
                   <p className="font-semibold mb-2" style={{ color: '#1B5BC1' }}>
-                    ¡Hola {modal.patient.split(' ')[0]}! Tu turno con {PROFS[modal.profId].name} quedó confirmado:
+                    ¡Hola {modal.interesado.split(' ')[0]}! Tu visita con {AGENTES[modal.agenteId].name} quedó confirmada:
                   </p>
                   <p>📅 {DAYS[modal.dayIdx]} {fmtShort(weekDates[modal.dayIdx])}</p>
                   <p>🕐 {modal.time} hs</p>
@@ -549,7 +526,7 @@ export default function AgendaDemo({ onBack }: { onBack: () => void }) {
                   onMouseEnter={e => ((e.currentTarget as HTMLButtonElement).style.backgroundColor = '#F3F6F5')}
                   onMouseLeave={e => ((e.currentTarget as HTMLButtonElement).style.backgroundColor = '#fff')}
                 >
-                  Cancelar turno
+                  Cancelar visita
                 </button>
                 <button
                   onClick={() => setShowReschedule(true)}

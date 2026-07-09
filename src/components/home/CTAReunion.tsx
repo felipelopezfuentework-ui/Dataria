@@ -9,10 +9,10 @@ export default function CTAReunion() {
     <section id="contacto" className="py-20 md:py-24 bg-gradient-dataria">
       <div className="max-w-container mx-auto px-5 md:px-10 text-center">
 
-        <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-5 tracking-tight">
+        <h2 className="font-display text-3xl md:text-5xl font-extrabold text-white mb-5 tracking-[-0.02em]">
           Hablemos de tu operación
         </h2>
-        <p className="text-lg md:text-xl text-white/80 max-w-xl mx-auto mb-10">
+        <p className="font-display font-semibold text-lg md:text-xl text-white/80 max-w-xl mx-auto mb-10 tracking-[-0.01em]">
           Agendá una sesión de 15 minutos, sin costo, para analizar tu operación.
         </p>
 
@@ -21,7 +21,7 @@ export default function CTAReunion() {
             href="https://calendar.app.google/64ms78PrrpQv8x4n9"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2.5 h-[46px] px-6 rounded-[10px] bg-white text-azul-nucleo font-bold tracking-[0.04em] uppercase text-[13px] hover:bg-white/90 transition-colors shadow-soft"
+            className="inline-flex items-center justify-center gap-2.5 h-[46px] px-6 rounded-[10px] bg-white text-azul-nucleo font-semibold tracking-[0.02em] uppercase text-[13px] hover:bg-white/90 transition-colors shadow-soft"
           >
             Agendar reunión
             <span className="px-2 py-0.5 rounded-full bg-green-100 text-green-700 text-xs font-bold leading-none">
@@ -30,7 +30,7 @@ export default function CTAReunion() {
           </a>
           <button
             onClick={scrollToDemos}
-            className="inline-flex items-center justify-center h-[46px] px-6 rounded-[10px] bg-white/10 border-[1.5px] border-white/30 text-white font-semibold tracking-[0.04em] uppercase text-[13px] hover:bg-white/20 transition-colors"
+            className="inline-flex items-center justify-center h-[46px] px-6 rounded-[10px] bg-white/10 border-[1.5px] border-white/30 text-white font-semibold tracking-[0.02em] uppercase text-[13px] hover:bg-white/20 transition-colors"
           >
             Ver demos en vivo
           </button>

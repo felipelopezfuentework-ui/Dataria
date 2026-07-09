@@ -2,7 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --font-display: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --font-text: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+}
 
 @layer base {
   *, *::before, *::after {
@@ -33,6 +38,12 @@
 }
 
 @layer utilities {
+  /* Cualquier texto extrabold/black (títulos, KPIs y números grandes en toda
+     la web, incluidas las demos) pasa a la tipografía display automáticamente. */
+  .font-extrabold, .font-black {
+    font-family: var(--font-display);
+  }
+
   .line-clamp-2 {
     overflow: hidden;
     display: -webkit-box;

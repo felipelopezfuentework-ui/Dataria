@@ -89,13 +89,13 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-container mx-auto px-5 md:px-10 text-center">
         {/* Headline */}
-        <h1 className="text-5xl md:text-[72px] leading-[1.05] font-extrabold text-carbon mb-6 max-w-4xl mx-auto tracking-tight">
+        <h1 className="font-display text-5xl md:text-[72px] leading-[1.05] font-extrabold text-carbon mb-6 max-w-4xl mx-auto tracking-[-0.03em]">
           Menos datos sueltos.<br />
           <span className="bg-gradient-dataria bg-clip-text text-transparent">Mejores decisiones.</span>
         </h1>
 
         {/* Sub */}
-        <p className="text-lg md:text-xl font-light max-w-2xl mx-auto mb-10" style={{ color: '#5A6871', lineHeight: '1.6' }}>
+        <p className="font-display font-semibold text-lg md:text-xl max-w-2xl mx-auto mb-10 tracking-[-0.01em]" style={{ color: '#5A6871', lineHeight: '1.6' }}>
           Dataria crea herramientas de IA para que pymes y autónomos optimicen sus operaciones — desde el primer día.
         </p>
 
@@ -103,7 +103,7 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
           <button
             onClick={() => scrollTo('demos')}
-            className="inline-flex items-center justify-center h-[46px] px-6 rounded-[10px] bg-gradient-dataria text-white font-bold tracking-[0.04em] uppercase text-[13px] shadow-primary hover:opacity-90 transition-opacity duration-160"
+            className="inline-flex items-center justify-center h-[46px] px-6 rounded-[10px] bg-gradient-dataria text-white font-semibold tracking-[0.02em] uppercase text-[13px] shadow-primary hover:opacity-90 transition-opacity duration-160"
           >
             Ver demostraciones en vivo
           </button>
@@ -111,7 +111,7 @@ export default function Hero() {
             href="https://calendar.app.google/64ms78PrrpQv8x4n9"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center h-[46px] px-6 rounded-[10px] bg-white text-azul-nucleo font-semibold tracking-[0.04em] uppercase text-[13px] border-[1.5px] border-borde hover:border-azul-nucleo/30 transition-colors duration-160"
+            className="inline-flex items-center justify-center h-[46px] px-6 rounded-[10px] bg-white text-azul-nucleo font-semibold tracking-[0.02em] uppercase text-[13px] border-[1.5px] border-borde hover:border-azul-nucleo/30 transition-colors duration-160"
           >
             Agendar reunión
           </a>

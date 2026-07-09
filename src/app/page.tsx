@@ -10,20 +10,21 @@ export default function Home() {
     <main>
       <Hero />
       <IndustriesPreview />
-      <ClientLogos />
-      <CTAReunion />
 
       {/* Cómo trabajamos */}
       <section id="como-trabajamos">
         <HowItWorks />
       </section>
 
+      <ClientLogos />
+      <CTAReunion />
+
 
       {/* Preguntas frecuentes */}
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-container mx-auto px-5 md:px-10">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl font-bold text-carbon mb-8 text-center tracking-tight">Preguntas frecuentes</h2>
+            <h2 className="font-display text-2xl font-bold text-carbon mb-8 text-center tracking-[-0.02em]">Preguntas frecuentes</h2>
             <div className="space-y-4">
               {[
                 { q: '¿Cuánto tiempo lleva el setup?', a: 'Depende de la complejidad de la integración. Para la mayoría de los casos entregamos en 2 a 4 semanas.' },

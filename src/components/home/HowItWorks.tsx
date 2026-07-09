@@ -1,8 +1,8 @@
 const steps = [
   {
     num: '01',
-    name: 'Desarrollo Inicial',
-    tag: 'Sin mensualidad inicial',
+    name: 'Setup',
+    tag: 'Desarrollo inicial',
     desc: 'Configuramos las herramientas de IA desde cero, integradas con tus datos y adaptadas a tu operación específica. Entregamos en semanas, no en meses.',
     items: ['Diagnóstico de puntos críticos', 'Capacitación de equipos', 'Desarrollo interactivo'],
   },
@@ -27,8 +27,8 @@ export default function HowItWorks() {
     <section id="metodo" className="py-20 md:py-28 bg-fondo-suave">
       <div className="max-w-container mx-auto px-5 md:px-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-carbon mb-4 tracking-tight">Así se construye tu solución</h2>
-          <p className="text-xl text-texto-sec">Modelo de implementación por etapas, sin fricciones.</p>
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-carbon mb-4 tracking-[-0.02em]">Así se construye tu solución</h2>
+          <p className="font-display font-semibold text-xl text-texto-sec tracking-[-0.01em]">Modelo de implementación por etapas, sin fricciones.</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">

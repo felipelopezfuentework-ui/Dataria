@@ -44,7 +44,7 @@ export default function Header() {
             <Link
               key={l.href}
               href={l.href}
-              className="text-sm font-semibold text-texto-sec hover:text-azul-nucleo transition-colors duration-160"
+              className="text-sm font-medium text-texto-sec hover:text-azul-nucleo transition-colors duration-160"
             >
               {l.label}
             </Link>
@@ -55,7 +55,7 @@ export default function Header() {
         <div className="hidden md:block">
           <button
             onClick={scrollToContacto}
-            className="inline-flex items-center justify-center gap-2 h-[46px] px-6 rounded-[10px] bg-azul-nucleo text-white font-bold tracking-[0.04em] uppercase text-[13px] hover:bg-azul-accion transition-colors duration-160 shadow-primary"
+            className="inline-flex items-center justify-center gap-2 h-[46px] px-6 rounded-[10px] bg-azul-nucleo text-white font-semibold tracking-[0.02em] uppercase text-[13px] hover:bg-azul-accion transition-colors duration-160 shadow-primary"
           >
             Solicitar demo
             <span className="px-2 py-0.5 rounded-full bg-green-100 text-green-700 text-xs font-bold leading-none normal-case tracking-normal">
@@ -92,7 +92,7 @@ export default function Header() {
             ))}
             <button
               onClick={() => { setMenuOpen(false); scrollToContacto() }}
-              className="mt-3 inline-flex items-center justify-center gap-2 h-[46px] px-6 rounded-[10px] bg-azul-nucleo text-white font-bold tracking-[0.04em] uppercase text-[13px]"
+              className="mt-3 inline-flex items-center justify-center gap-2 h-[46px] px-6 rounded-[10px] bg-azul-nucleo text-white font-semibold tracking-[0.02em] uppercase text-[13px]"
             >
               Solicitar demo
               <span className="px-2 py-0.5 rounded-full bg-green-100 text-green-700 text-xs font-bold leading-none normal-case tracking-normal">

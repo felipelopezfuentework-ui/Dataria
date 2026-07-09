@@ -19,7 +19,22 @@
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://www.google.com --max-time 10)",
       "Bash(curl -v https://api.web3forms.com/submit --max-time 10)",
       "PowerShell(try { $r = Invoke-WebRequest -Uri \"https://www.google.com\" -TimeoutSec 10 -UseBasicParsing; Write-Output \"google.com status: $\\($r.StatusCode\\)\" } catch { Write-Output \"google.com FAILED: $\\($_.Exception.Message\\)\" })",
-      "Bash(env)"
+      "Bash(env)",
+      "Bash(node test-v3.js)",
+      "Bash(node test-v3b.js)",
+      "Bash(cd \"c:\\\\Users\\\\Usuario\\\\Documents\\\\3_Felipe Lopez Fuente\\\\Dataria\\\\0_Web dataria\" && find . -maxdepth 4 -iname \"*isolog*\" 2>/dev/null; echo \"---\"; find . -maxdepth 4 \\\\\\( -iname \"*.png\" -o -iname \"*.svg\" -o -iname \"*.jpg\" \\\\\\) 2>/dev/null | grep -v node_modules | grep -v dataria-web/public)",
+      "Read(//c/Users/Usuario/Documents/3_Felipe Lopez Fuente/Dataria/0_Web dataria/**)",
+      "Bash(python3 -c ' *)",
+      "Bash(node test-v4-panel.js)",
+      "Bash(node test-v4-demos.js)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" http://localhost:3001/isologo-dataria.png)",
+      "Bash(node -e \"console.log\\(require\\('fs'\\).readFileSync\\('.env.local','utf8'\\).split\\('\\\\n'\\).map\\(l=>l.split\\('='\\)[0]\\).join\\('\\\\n'\\)\\)\")",
+      "Bash(node test-v4-ai.js)",
+      "Bash(node test-v4-final.js)",
+      "Bash(node test-v4-clientes.js)",
+      "Bash(node test-v4-visitas.js)",
+      "Bash(node test-typography.js)",
+      "Bash(node test-typo-demo.js)"
     ]
   }
 }

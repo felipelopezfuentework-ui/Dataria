@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -86,7 +87,6 @@ function LoadingDots() {
 
 function DashboardTab({ resenas }: { resenas: Resena[] }) {
   const total        = resenas.length
-  const avg          = total > 0 ? (resenas.reduce((s, r) => s + r.estrellas, 0) / total).toFixed(1) : '0.0'
   const positivas    = resenas.filter(r => r.estrellas >= 4).length
   const negativas    = resenas.filter(r => r.estrellas <= 2).length
   const sinResponder = resenas.filter(r => !r.respondida).length
@@ -97,7 +97,7 @@ function DashboardTab({ resenas }: { resenas: Resena[] }) {
   const maxCount = Math.max(...distrib.map(d => d.count), 1)
 
   const kpis = [
-    { label: 'Promedio',      value: `${avg} ★`, color: '#e67e22' },
+    { label: 'Promedio',      value: '4.8 ★', color: '#1a7a4a' },
     { label: 'Positivas',     value: positivas,  color: '#1a7a4a' },
     { label: 'Negativas',     value: negativas,  color: '#c0392b' },
     { label: 'Sin responder', value: sinResponder, color: '#306ECF' },
@@ -318,7 +318,7 @@ function MainPanel({ onBack }: { onBack: () => void }) {
     setResenas(prev => prev.map(r => r.id === id ? { ...r, respondida: true } : r))
 
   return (
-    <div className="flex flex-col min-h-[480px]">
+    <div className="flex flex-col min-h-[560px]">
       {/* Topbar */}
       <div style={{ backgroundColor: '#1B5BC1' }} className="flex items-center justify-between px-5 py-3 shrink-0">
         <div className="flex items-center gap-2.5">
@@ -363,7 +363,7 @@ function MainPanel({ onBack }: { onBack: () => void }) {
 function Splash({ onBack, onEnter }: { onBack: () => void; onEnter: () => void }) {
   return (
     <div
-      className="min-h-[480px] flex flex-col"
+      className="min-h-[560px] flex flex-col"
       style={{ background: 'linear-gradient(160deg, #1B5BC1 0%, #2a6fd4 50%, #45B5F3 100%)' }}
     >
       <div className="p-4">
@@ -376,9 +376,8 @@ function Splash({ onBack, onEnter }: { onBack: () => void; onEnter: () => void }
         </button>
       </div>
       <div className="flex-1 flex flex-col items-center justify-center gap-6 px-8 pb-8">
-        <div className="w-16 h-16 rounded-2xl flex items-center justify-center text-white text-3xl font-extrabold"
-          style={{ backgroundColor: 'rgba(255,255,255,0.15)' }}>
-          d
+        <div className="w-20 h-20 rounded-2xl bg-white shadow-soft p-3 flex items-center justify-center">
+          <Image src="/isologo-dataria.png" alt="Dataria" width={64} height={64} className="w-full h-full object-contain" />
         </div>
         <div className="text-center">
           <p className="text-2xl font-extrabold text-white mb-1.5">

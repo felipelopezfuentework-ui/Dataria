@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import Modal from '@/components/ui/Modal'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -90,12 +91,10 @@ const SEGMENTO_COLOR: Record<Segmento, string> = {
   'Inactivo':  '#5A6871',
 }
 
-const SEGMENTO_SUGERENCIA: Record<Segmento, string> = {
-  'VIP':       'Cliente de alto valor. Invitalo a un programa de fidelidad o acceso anticipado a nuevos productos.',
-  'Regular':   'Cliente activo. Un descuento del 10% en su categoría preferida puede aumentar su frecuencia de compra.',
-  'En riesgo': 'Sin compras hace más de 30 días. Enviá un cupón de reactivación antes de que se vaya a la competencia.',
-  'Inactivo':  'Cliente perdido. Campaña de reactivación con descuento agresivo (20-30%) o dar de baja para no inflar la base.',
-}
+// Ventana de referencia usada para estimar cadencia de compra (6 meses)
+const VENTANA_DIAS = 180
+
+const TOTAL_INGRESOS = CLIENTES.reduce((a, c) => a + c.totalGastado, 0)
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -105,15 +104,35 @@ function fmt(n: number) {
 function ticketPromedio(c: Cliente) {
   return Math.round(c.totalGastado / c.compras)
 }
+function productosFrecuentes(cliente: Cliente): { nombre: string; count: number }[] {
+  const counts = new Map<string, number>()
+  for (const h of cliente.historial) {
+    const nombre = h.producto.replace(/\s*x\d+$/i, '').trim()
+    counts.set(nombre, (counts.get(nombre) ?? 0) + 1)
+  }
+  return [...counts.entries()]
+    .map(([nombre, count]) => ({ nombre, count }))
+    .sort((a, b) => b.count - a.count)
+}
 function statsSegmento(segmento: Segmento) {
   const clientes = CLIENTES.filter(c => c.segmento === segmento)
   const totalGastado = clientes.reduce((a, c) => a + c.totalGastado, 0)
   const totalCompras = clientes.reduce((a, c) => a + c.compras, 0)
+  const n = clientes.length
+  const frecuenciaPromedio = n
+    ? clientes.reduce((a, c) => a + c.compras / (VENTANA_DIAS / 30), 0) / n
+    : 0
+  const diasPromedioEntreCompras = n
+    ? Math.round(clientes.reduce((a, c) => a + VENTANA_DIAS / c.compras, 0) / n)
+    : 0
   return {
     segmento,
-    count: clientes.length,
+    count: n,
     totalGastado,
     ticketPromedio: totalCompras ? Math.round(totalGastado / totalCompras) : 0,
+    frecuenciaPromedio,
+    diasPromedioEntreCompras,
+    pctIngresos: TOTAL_INGRESOS ? (totalGastado / TOTAL_INGRESOS) * 100 : 0,
   }
 }
 const SEGMENTO_STATS = SEGMENTOS.map(statsSegmento)
@@ -124,7 +143,7 @@ const MAX_SEGMENTO_TOTAL = Math.max(...SEGMENTO_STATS.map(s => s.totalGastado))
 function Splash({ onBack, onEnter }: { onBack: () => void; onEnter: () => void }) {
   return (
     <div
-      className="min-h-[480px] flex flex-col"
+      className="min-h-[560px] flex flex-col"
       style={{ background: 'linear-gradient(160deg, #1B5BC1 0%, #2a6fd4 50%, #45B5F3 100%)' }}
     >
       <div className="p-4">
@@ -138,9 +157,8 @@ function Splash({ onBack, onEnter }: { onBack: () => void; onEnter: () => void }
       </div>
 
       <div className="flex-1 flex flex-col items-center justify-center gap-6 px-8 pb-8">
-        <div className="w-16 h-16 rounded-2xl flex items-center justify-center text-white text-3xl font-extrabold"
-          style={{ backgroundColor: 'rgba(255,255,255,0.15)' }}>
-          d
+        <div className="w-20 h-20 rounded-2xl bg-white shadow-soft p-3 flex items-center justify-center">
+          <Image src="/isologo-dataria.png" alt="Dataria" width={64} height={64} className="w-full h-full object-contain" />
         </div>
         <div className="text-center">
           <p className="text-2xl font-extrabold text-white mb-1.5">
@@ -330,22 +348,20 @@ function ClienteDetalleModal({ cliente, onClose }: { cliente: Cliente | null; on
           </div>
         </div>
 
-        {/* Marketing suggestion */}
-        <div className="rounded-xl p-4 text-white" style={{ background: 'linear-gradient(135deg, #1B5BC1, #45B5F3)' }}>
-          <div className="flex items-start gap-3">
-            <div className="shrink-0 mt-0.5 opacity-90">
-              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z" />
-              </svg>
-            </div>
-            <div>
-              <p className="text-[10px] font-bold uppercase tracking-widest mb-1.5" style={{ color: 'rgba(255,255,255,0.65)' }}>
-                Sugerencia de acción de marketing
-              </p>
-              <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.93)' }}>
-                {SEGMENTO_SUGERENCIA[cliente.segmento]}
-              </p>
-            </div>
+        {/* Segmentos de productos */}
+        <div>
+          <p className="text-xs font-semibold text-[#353C42] mb-2">Productos más comprados</p>
+          <div className="flex flex-wrap gap-2">
+            {productosFrecuentes(cliente).map(p => (
+              <span key={p.nombre} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold" style={{ backgroundColor: '#EAF5FD', color: '#1B5BC1' }}>
+                {p.nombre}
+                {p.count > 1 && (
+                  <span className="px-1.5 py-0.5 rounded-full text-[10px] font-bold" style={{ backgroundColor: '#1B5BC1', color: '#fff' }}>
+                    ×{p.count}
+                  </span>
+                )}
+              </span>
+            ))}
           </div>
         </div>
       </div>
@@ -446,13 +462,6 @@ function ClientesTab() {
 // ─── Tab: Segmentos ───────────────────────────────────────────────────────────
 
 function SegmentosTab() {
-  const [toast, setToast] = useState<string | null>(null)
-
-  const simularCampana = (s: typeof SEGMENTO_STATS[number]) => {
-    setToast(`Campaña lista para enviar a ${s.count} cliente${s.count === 1 ? '' : 's'} del segmento ${s.segmento}.`)
-    setTimeout(() => setToast(null), 3200)
-  }
-
   return (
     <div className="space-y-4 relative">
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
@@ -489,38 +498,36 @@ function SegmentosTab() {
         </div>
       </div>
 
-      <div className="bg-white rounded-xl border border-[#DCE5E9] p-4 shadow-sm">
-        <p className="text-sm font-semibold text-[#353C42] mb-4">Acciones de marketing sugeridas</p>
-        <div className="space-y-3">
-          {SEGMENTO_STATS.map(s => (
-            <div key={s.segmento} className="flex items-start justify-between gap-4 rounded-lg p-3" style={{ backgroundColor: '#F3F6F5' }}>
-              <div className="flex items-start gap-2.5 min-w-0">
-                <span className="w-2.5 h-2.5 rounded-full mt-1 shrink-0" style={{ backgroundColor: SEGMENTO_COLOR[s.segmento] }} />
-                <div>
-                  <p className="text-xs font-bold text-[#353C42] mb-0.5">{s.segmento}</p>
-                  <p className="text-xs text-[#5A6871] leading-relaxed">{SEGMENTO_SUGERENCIA[s.segmento]}</p>
-                </div>
-              </div>
-              <button
-                onClick={() => simularCampana(s)}
-                className="shrink-0 inline-flex items-center justify-center h-8 px-4 rounded-lg text-white font-bold tracking-[0.03em] uppercase text-[11px] transition-opacity hover:opacity-85"
-                style={{ backgroundColor: '#306ECF' }}
-              >
-                Simular campaña
-              </button>
-            </div>
-          ))}
-        </div>
+      <div className="bg-white rounded-xl border border-[#DCE5E9] shadow-sm overflow-x-auto">
+        <p className="text-sm font-semibold text-[#353C42] p-4 pb-0 mb-2">KPIs de seguimiento por segmento</p>
+        <table className="w-full text-sm">
+          <thead>
+            <tr className="text-left text-[11px] uppercase tracking-wide text-[#5A6871] bg-[#F3F6F5]">
+              <th className="py-2.5 px-4 font-semibold">Segmento</th>
+              <th className="py-2.5 px-4 font-semibold text-right">Ticket promedio</th>
+              <th className="py-2.5 px-4 font-semibold text-right">Frecuencia (compras/mes)</th>
+              <th className="py-2.5 px-4 font-semibold text-right">Días entre compras</th>
+              <th className="py-2.5 px-4 font-semibold text-right">% de ingresos</th>
+            </tr>
+          </thead>
+          <tbody>
+            {SEGMENTO_STATS.map(s => (
+              <tr key={s.segmento} className="border-t border-[#DCE5E9]">
+                <td className="py-3 px-4">
+                  <span className="inline-flex items-center gap-1.5 font-semibold text-[#353C42]">
+                    <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: SEGMENTO_COLOR[s.segmento] }} />
+                    {s.segmento}
+                  </span>
+                </td>
+                <td className="py-3 px-4 text-right tabular-nums text-[#353C42]">{fmt(s.ticketPromedio)}</td>
+                <td className="py-3 px-4 text-right tabular-nums text-[#353C42]">{s.frecuenciaPromedio.toFixed(1)}</td>
+                <td className="py-3 px-4 text-right tabular-nums text-[#353C42]">{s.diasPromedioEntreCompras}d</td>
+                <td className="py-3 px-4 text-right tabular-nums font-bold" style={{ color: SEGMENTO_COLOR[s.segmento] }}>{s.pctIngresos.toFixed(1)}%</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
-
-      {toast && (
-        <div
-          className="absolute left-1/2 -translate-x-1/2 bottom-2 px-4 py-2.5 rounded-lg text-sm font-medium text-white shadow-lg z-10 max-w-[90%] text-center"
-          style={{ backgroundColor: '#353C42' }}
-        >
-          {toast}
-        </div>
-      )}
     </div>
   )
 }
@@ -531,7 +538,7 @@ function MainPanel({ onBack }: { onBack: () => void }) {
   const [tab, setTab] = useState<TabId>('clientes')
 
   return (
-    <div className="flex flex-col min-h-[480px]">
+    <div className="flex flex-col min-h-[560px]">
       <Topbar onBack={onBack} />
       <TabBar tab={tab} setTab={setTab} />
       <div className="flex-1 overflow-auto p-4" style={{ backgroundColor: '#F3F6F5' }}>

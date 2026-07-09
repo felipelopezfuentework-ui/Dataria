@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
+import Image from 'next/image'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -16,25 +17,28 @@ interface Msg {
 interface OrderItem {
   nombre: string
   cantidad: number
+  neto: number
+  iva: number
   subtotal: number
 }
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
-const CATALOG_NAMES = [
-  'Aceite de girasol 1L',
-  'Harina 000 x 25kg',
-  'Azúcar x 50kg',
-  'Arroz largo fino x 5kg',
-  'Yerba mate x 1kg',
-]
+const CATALOGO: Record<string, number> = {
+  'Aceite de girasol 1L':   1250,
+  'Harina 000 x 25kg':      8900,
+  'Azúcar x 50kg':          14500,
+  'Arroz largo fino x 5kg': 3200,
+  'Yerba mate x 1kg':       2100,
+}
+const IVA_RATE = 0.21
 
 const TRACKER_STEPS = ['Pedido recibido', 'En preparación', 'En camino', 'Entregado']
 
 const CAPABILITIES = [
   'IA conversacional',
   'Reconoce clientes recurrentes',
-  'Sugiere complementarios',
+  'Desglose neto + IVA',
   'Resumen automático',
   'Tracker en tiempo real',
 ]
@@ -57,16 +61,47 @@ const INIT_MSGS: Msg[] = [
   },
 ]
 
-// ─── Icons ────────────────────────────────────────────────────────────────────
+const RECURRING_ORDER = [
+  { nombre: 'Aceite de girasol 1L', cantidad: 20 },
+  { nombre: 'Harina 000 x 25kg',    cantidad: 10 },
+  { nombre: 'Azúcar x 50kg',        cantidad: 5  },
+]
 
-function IcoWA() {
-  return (
-    <svg width="30" height="30" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" />
-      <path strokeLinecap="round" strokeLinejoin="round" d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" />
-    </svg>
-  )
+// ─── Helpers ──────────────────────────────────────────────────────────────────
+
+function computeItem(nombre: string, cantidad: number): OrderItem {
+  const precioUnitario = CATALOGO[nombre] ?? 0
+  const neto = precioUnitario * cantidad
+  const iva = Math.round(neto * IVA_RATE)
+  return { nombre, cantidad, neto, iva, subtotal: neto + iva }
 }
+
+// La API de Claude exige que la conversación empiece con role 'user' — los mensajes
+// de bienvenida hardcodeados (role 'agent') no cuentan como historial real.
+function toApiMessages(msgs: Msg[]): { role: 'user' | 'assistant'; content: string }[] {
+  const firstUserIdx = msgs.findIndex(m => m.role === 'user')
+  const trimmed = firstUserIdx === -1 ? [] : msgs.slice(firstUserIdx)
+  return trimmed.filter(m => m.content).map(m => ({ role: m.role === 'agent' ? 'assistant' : 'user', content: m.content }))
+}
+
+// Extrae el resumen de pedido que Claude devuelve en el formato acordado
+// (ver system prompt en /api/anthropic) para actualizar el panel en vivo.
+function parseOrderFromText(text: string): OrderItem[] | null {
+  const re = /^-\s*(.+?)\s*x\s*(\d+)\s*=\s*\$?\s*([\d.,]+)/i
+  const items: OrderItem[] = []
+  for (const line of text.split('\n')) {
+    const m = line.match(re)
+    if (!m) continue
+    const nombre = m[1].trim()
+    const cantidad = parseInt(m[2], 10)
+    const neto = parseFloat(m[3].replace(/\./g, '').replace(',', '.')) || 0
+    const iva = Math.round(neto * IVA_RATE)
+    items.push({ nombre, cantidad, neto, iva, subtotal: neto + iva })
+  }
+  return items.length > 0 ? items : null
+}
+
+// ─── Icons ────────────────────────────────────────────────────────────────────
 
 function IcoBack({ light, onClick }: { light?: boolean; onClick: () => void }) {
   return (
@@ -90,41 +125,27 @@ function IcoBack({ light, onClick }: { light?: boolean; onClick: () => void }) {
 function SplashScreen({ onBack, onStart }: { onBack: () => void; onStart: () => void }) {
   return (
     <div
-      className="relative flex flex-col overflow-hidden"
-      style={{
-        minHeight: 520,
-        background: 'linear-gradient(140deg, #0A1829 0%, #0F2847 45%, #0A1E35 100%)',
-      }}
+      className="min-h-[560px] flex flex-col"
+      style={{ background: 'linear-gradient(160deg, #1B5BC1 0%, #2a6fd4 50%, #45B5F3 100%)' }}
     >
-      {/* Dot pattern */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: 'radial-gradient(circle, rgba(48,110,207,0.18) 1px, transparent 1px)',
-          backgroundSize: '26px 26px',
-        }}
-      />
-      <div className="relative p-5">
+      <div className="p-4">
         <IcoBack onClick={onBack} light />
       </div>
-      <div className="relative flex-1 flex flex-col items-center justify-center gap-6 text-center px-8 pb-10">
-        <div
-          className="w-20 h-20 rounded-2xl flex items-center justify-center text-white"
-          style={{ backgroundColor: '#306ECF' }}
-        >
-          <IcoWA />
+      <div className="flex-1 flex flex-col items-center justify-center gap-6 text-center px-8 pb-10">
+        <div className="w-20 h-20 rounded-2xl bg-white shadow-soft p-3 flex items-center justify-center">
+          <Image src="/isologo-dataria.png" alt="Dataria" width={64} height={64} className="w-full h-full object-contain" />
         </div>
         <div>
-          <p
-            className="text-[11px] font-bold uppercase tracking-widest mb-2"
-            style={{ color: '#5B9BF5' }}
-          >
+          <p className="text-2xl font-extrabold text-white mb-1.5">
+            <span style={{ color: '#56BCFA' }}>d</span>ataria
+          </p>
+          <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: 'rgba(255,255,255,0.65)' }}>
             Distribuidoras · Demo
           </p>
           <h2 className="text-3xl font-bold text-white mb-3">Agente de pedidos</h2>
-          <p className="text-sm max-w-xs mx-auto leading-relaxed" style={{ color: 'rgba(255,255,255,0.5)' }}>
-            Tomá pedidos por WhatsApp con IA conversacional. Reconoce clientes recurrentes, sugiere
-            productos y genera resúmenes automáticos.
+          <p className="text-base max-w-xs mx-auto leading-relaxed mb-4" style={{ color: 'rgba(255,255,255,0.75)' }}>
+            Tomá pedidos por WhatsApp con IA conversacional real. Reconoce clientes recurrentes, calcula neto + IVA
+            y genera resúmenes automáticos.
           </p>
         </div>
         <div className="flex flex-wrap gap-2 justify-center max-w-sm">
@@ -133,9 +154,9 @@ function SplashScreen({ onBack, onStart }: { onBack: () => void; onStart: () => 
               key={c}
               className="px-3 py-1 rounded-full text-xs font-medium"
               style={{
-                backgroundColor: 'rgba(48,110,207,0.15)',
-                color: '#7BB3F0',
-                border: '1px solid rgba(48,110,207,0.25)',
+                backgroundColor: 'rgba(255,255,255,0.15)',
+                color: '#fff',
+                border: '1px solid rgba(255,255,255,0.25)',
               }}
             >
               {c}
@@ -311,15 +332,17 @@ function StepDot({ done, active }: { done: boolean; active: boolean }) {
 
 function OrderPanel({
   items,
-  total,
   step,
   onDownload,
 }: {
   items: OrderItem[]
-  total: number
   step: number
   onDownload: () => void
 }) {
+  const totalNeto = items.reduce((a, i) => a + i.neto, 0)
+  const totalIva  = items.reduce((a, i) => a + i.iva, 0)
+  const totalFinal = totalNeto + totalIva
+
   return (
     <div className="flex flex-col h-full">
       <p
@@ -351,27 +374,36 @@ function OrderPanel({
         </div>
       ) : (
         <div className="flex-shrink-0 mb-3">
-          <div className="space-y-2 mb-3">
+          <div className="space-y-2.5 mb-3">
             {items.map((item, i) => (
-              <div key={i} className="flex items-start justify-between gap-2 text-xs">
-                <div className="flex-1 min-w-0">
-                  <p className="font-medium text-carbon leading-tight truncate">{item.nombre}</p>
-                  <p style={{ color: '#5A6871' }}>×{item.cantidad}</p>
+              <div key={i} className="text-xs">
+                <div className="flex items-start justify-between gap-2 mb-0.5">
+                  <p className="font-medium text-carbon leading-tight truncate flex-1 min-w-0">{item.nombre}</p>
+                  <p className="font-bold flex-shrink-0" style={{ color: '#306ECF' }}>
+                    ${item.subtotal.toLocaleString('es-AR')}
+                  </p>
                 </div>
-                <p className="font-bold flex-shrink-0" style={{ color: '#306ECF' }}>
-                  ${item.subtotal.toLocaleString('es-AR')}
+                <p style={{ color: '#5A6871' }}>
+                  ×{item.cantidad} · neto ${item.neto.toLocaleString('es-AR')} + IVA ${item.iva.toLocaleString('es-AR')}
                 </p>
               </div>
             ))}
           </div>
-          <div
-            className="rounded-xl p-2.5 flex items-center justify-between"
-            style={{ backgroundColor: '#EAF5FD' }}
-          >
-            <p className="text-xs font-bold text-carbon">Total</p>
-            <p className="text-sm font-bold" style={{ color: '#306ECF' }}>
-              ${total.toLocaleString('es-AR')}
-            </p>
+          <div className="rounded-xl p-2.5 space-y-1" style={{ backgroundColor: '#EAF5FD' }}>
+            <div className="flex items-center justify-between">
+              <p className="text-[11px]" style={{ color: '#5A6871' }}>Neto</p>
+              <p className="text-xs font-semibold text-carbon">${totalNeto.toLocaleString('es-AR')}</p>
+            </div>
+            <div className="flex items-center justify-between">
+              <p className="text-[11px]" style={{ color: '#5A6871' }}>IVA (21%)</p>
+              <p className="text-xs font-semibold text-carbon">${totalIva.toLocaleString('es-AR')}</p>
+            </div>
+            <div className="flex items-center justify-between pt-1 border-t" style={{ borderColor: 'rgba(48,110,207,0.2)' }}>
+              <p className="text-xs font-bold text-carbon">Total</p>
+              <p className="text-sm font-bold" style={{ color: '#306ECF' }}>
+                ${totalFinal.toLocaleString('es-AR')}
+              </p>
+            </div>
           </div>
         </div>
       )}
@@ -432,41 +464,6 @@ function OrderPanel({
   )
 }
 
-// ─── Predefined bot responses ────────────────────────────────────────────────
-
-const RESP_CATALOG =
-  `¡Perfecto! Anotamos tu pedido. Tenemos disponible:\n• Aceite de girasol 1L → $1.250/u (stock: 48)\n• Harina 000 x 25kg → $8.900/bolsa (stock: 12)\n• Azúcar x 50kg → $14.500/saco (stock: 8)\n• Arroz largo fino x 5kg → $3.200/paquete (stock: 35)\n• Yerba mate x 1kg → $2.100/paquete (stock: 60)\n\n¿Qué productos y cantidades necesitás? Te confirmo el total al instante.`
-
-const RESP_PRICE =
-  `¡Claro! Estos son nuestros precios actualizados:\n• Aceite de girasol 1L → $1.250/u ✅ disponible\n• Harina 000 x 25kg → $8.900/bolsa ✅ disponible\n• Azúcar x 50kg → $14.500/saco ⚠️ stock limitado (8 unidades)\n• Arroz largo fino x 5kg → $3.200/paquete ✅ disponible\n• Yerba mate x 1kg → $2.100/paquete ✅ disponible\n\nLos precios incluyen IVA. ¿Querés hacer un pedido?`
-
-const RESP_CONFIRM =
-  `¡Pedido confirmado! 🎉\n\nResumen:\n• Aceite de girasol x10 → $12.500\n• Harina 000 x5 → $44.500\n• Yerba mate x20 → $42.000\nTotal: $99.000\n\nNúmero de pedido: #0047\nEntrega estimada: mañana entre 9 y 13hs.\n\nTe vamos a avisar por este mismo chat cuando el camión salga. ¡Gracias por tu pedido!`
-
-const RESP_DEFAULT =
-  `Hola, soy el asistente de Distribuidora Central. Puedo ayudarte con:\n• Consultar precios y disponibilidad de productos\n• Hacer un pedido\n• Confirmar una entrega\n\n¿En qué te puedo ayudar?`
-
-type BotType = 'catalog' | 'price' | 'confirm' | 'default'
-
-function getBotResponse(input: string): { text: string; type: BotType } {
-  const t = input.toLowerCase()
-  if (/\bsí\b|\bsi\b|confirmo|confirmar|listo|dale|\bok\b|perfecto|entrega|cuando|cuándo|despacho|envío|envio|dirección|direccion/.test(t))
-    return { type: 'confirm',  text: RESP_CONFIRM  }
-  if (/precio|costo|cuánto|cuanto|\bstock\b|\bhay\b|tenés|tienen|disponible|disponibilidad/.test(t))
-    return { type: 'price',   text: RESP_PRICE   }
-  if (/aceite|harina|azúcar|azucar|\barroz\b|yerba|necesito|quiero|\bpedido\b|\bpedir\b|cantidad|unidades|\bbolsas\b|\bsacos\b/.test(t))
-    return { type: 'catalog', text: RESP_CATALOG  }
-  return { type: 'default', text: RESP_DEFAULT }
-}
-
-const CONFIRM_ITEMS: OrderItem[] = [
-  { nombre: 'Aceite de girasol 1L', cantidad: 10, subtotal: 12500 },
-  { nombre: 'Harina 000 x 25kg',    cantidad: 5,  subtotal: 44500 },
-  { nombre: 'Yerba mate x 1kg',     cantidad: 20, subtotal: 42000 },
-]
-const CONFIRM_TOTAL = 99000
-const CONFIRM_COMP  = ['Azúcar x 50kg', 'Arroz largo fino x 5kg']
-
 // ─── Main component ───────────────────────────────────────────────────────────
 
 export default function AgenteDemo({ onBack }: { onBack: () => void }) {
@@ -475,7 +472,6 @@ export default function AgenteDemo({ onBack }: { onBack: () => void }) {
   const [inputValue, setInputValue] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [orderItems, setOrderItems] = useState<OrderItem[]>([])
-  const [orderTotal, setOrderTotal] = useState(0)
   const [trackerStep, setTrackerStep] = useState(-1)
   const [orderConfirmed, setOrderConfirmed] = useState(false)
   const [showRecurring, setShowRecurring] = useState(true)
@@ -503,13 +499,21 @@ export default function AgenteDemo({ onBack }: { onBack: () => void }) {
     }
   }, [orderConfirmed])
 
-  const sendMessage = (content: string) => {
+  const applyConfirmedOrder = (items: OrderItem[]) => {
+    setOrderItems(items)
+    setOrderConfirmed(true)
+    const ordered = items.map(i => i.nombre)
+    setComplementary(Object.keys(CATALOGO).filter(p => !ordered.includes(p)).slice(0, 2))
+  }
+
+  const sendMessage = async (content: string) => {
     if (!content.trim() || isLoading) return
 
     setShowRecurring(false)
     setComplementary([])
 
     const userMsg: Msg = { id: String(Date.now()), role: 'user', content }
+    const historyForApi = [...messages, userMsg]
     setMessages(prev => [...prev, userMsg])
     setInputValue('')
     setIsLoading(true)
@@ -517,34 +521,104 @@ export default function AgenteDemo({ onBack }: { onBack: () => void }) {
     const agentId = String(Date.now() + 1)
     setMessages(prev => [...prev, { id: agentId, role: 'agent', content: '', streaming: true }])
 
-    const { text, type } = getBotResponse(content)
+    try {
+      const res = await fetch('/api/anthropic', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: toApiMessages(historyForApi) }),
+      })
+      if (!res.ok || !res.body) throw new Error(`API respondió ${res.status}`)
 
-    setTimeout(() => {
-      setMessages(prev =>
-        prev.map(m => m.id === agentId ? { ...m, content: text, streaming: false } : m)
-      )
-      if (type === 'confirm' && !orderConfirmed) {
-        setOrderItems(CONFIRM_ITEMS)
-        setOrderTotal(CONFIRM_TOTAL)
-        setOrderConfirmed(true)
-        setComplementary(CONFIRM_COMP)
+      const reader = res.body.getReader()
+      const decoder = new TextDecoder()
+      let acc = ''
+      while (true) {
+        const { done, value } = await reader.read()
+        if (done) break
+        acc += decoder.decode(value, { stream: true })
+        setMessages(prev => prev.map(m => m.id === agentId ? { ...m, content: acc, streaming: true } : m))
       }
+      if (!acc) console.error('[AgenteDemo] La API devolvió una respuesta vacía.')
+      setMessages(prev => prev.map(m => m.id === agentId
+        ? { ...m, content: acc || 'No pude generar una respuesta. Probá de nuevo.', streaming: false }
+        : m))
+
+      if (!orderConfirmed) {
+        const parsed = parseOrderFromText(acc)
+        if (parsed) applyConfirmedOrder(parsed)
+      }
+    } catch (err) {
+      console.error('[AgenteDemo] Error al conectar con la IA:', err)
+      setMessages(prev => prev.map(m => m.id === agentId
+        ? { ...m, content: 'Hubo un error de conexión con el asistente. Probá de nuevo en unos segundos.', streaming: false }
+        : m))
+    } finally {
       setIsLoading(false)
       inputRef.current?.focus()
-    }, 1000)
+    }
+  }
+
+  const handleAcceptRecurring = () => {
+    setShowRecurring(false)
+    const items = RECURRING_ORDER.map(o => computeItem(o.nombre, o.cantidad))
+    applyConfirmedOrder(items)
+    const userMsg: Msg = {
+      id: String(Date.now()),
+      role: 'user',
+      content: 'Sí, repetir mi pedido habitual: Aceite de girasol 1L x20, Harina 000 x 25kg x10, Azúcar x 50kg x5',
+    }
+    setMessages(prev => [...prev, userMsg])
+    void sendFollowupConfirmation(userMsg, items)
+  }
+
+  // Pide a Claude una confirmación conversacional del pedido recurrente ya cargado.
+  const sendFollowupConfirmation = async (userMsg: Msg, items: OrderItem[]) => {
+    setIsLoading(true)
+    const agentId = String(Date.now() + 1)
+    setMessages(prev => [...prev, { id: agentId, role: 'agent', content: '', streaming: true }])
+    try {
+      const totalFinal = items.reduce((a, i) => a + i.subtotal, 0)
+      const res = await fetch('/api/anthropic', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: toApiMessages([...messages, userMsg]) }),
+      })
+      if (!res.ok || !res.body) throw new Error(`API respondió ${res.status}`)
+      const reader = res.body.getReader()
+      const decoder = new TextDecoder()
+      let acc = ''
+      while (true) {
+        const { done, value } = await reader.read()
+        if (done) break
+        acc += decoder.decode(value, { stream: true })
+        setMessages(prev => prev.map(m => m.id === agentId ? { ...m, content: acc, streaming: true } : m))
+      }
+      setMessages(prev => prev.map(m => m.id === agentId
+        ? { ...m, content: acc || `¡Listo! Repetimos tu pedido habitual. Total con IVA: $${totalFinal.toLocaleString('es-AR')}.`, streaming: false }
+        : m))
+    } catch (err) {
+      console.error('[AgenteDemo] Error al conectar con la IA:', err)
+      setMessages(prev => prev.map(m => m.id === agentId ? { ...m, content: 'Pedido registrado. (No pudimos conectar con el asistente para la confirmación por chat.)', streaming: false } : m))
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   const downloadOrder = () => {
     if (!orderItems.length) return
+    const totalNeto = orderItems.reduce((a, i) => a + i.neto, 0)
+    const totalIva  = orderItems.reduce((a, i) => a + i.iva, 0)
     const lines = [
       'DISTRIBUIDORA CENTRAL',
       '='.repeat(30),
       `Fecha: ${new Date().toLocaleString('es-AR')}`,
       '',
       'PEDIDO:',
-      ...orderItems.map(i => `- ${i.nombre} x${i.cantidad}  $${i.subtotal.toLocaleString('es-AR')}`),
+      ...orderItems.map(i => `- ${i.nombre} x${i.cantidad}  neto $${i.neto.toLocaleString('es-AR')}  IVA $${i.iva.toLocaleString('es-AR')}  subtotal $${i.subtotal.toLocaleString('es-AR')}`),
       '',
-      `TOTAL: $${orderTotal.toLocaleString('es-AR')}`,
+      `NETO: $${totalNeto.toLocaleString('es-AR')}`,
+      `IVA (21%): $${totalIva.toLocaleString('es-AR')}`,
+      `TOTAL: $${(totalNeto + totalIva).toLocaleString('es-AR')}`,
       '',
       `Estado: ${trackerStep >= 0 ? TRACKER_STEPS[trackerStep] : 'Procesando'}`,
     ].join('\n')
@@ -562,7 +636,7 @@ export default function AgenteDemo({ onBack }: { onBack: () => void }) {
   }
 
   return (
-    <div className="flex" style={{ height: 520 }}>
+    <div className="flex" style={{ height: 580 }}>
       {/* ── Chat column (60%) ── */}
       <div className="flex flex-col" style={{ width: '60%', borderRight: '1px solid #e5e7eb' }}>
         {/* Header */}
@@ -604,11 +678,7 @@ export default function AgenteDemo({ onBack }: { onBack: () => void }) {
 
           {showRecurring && !isLoading && (
             <RecurringChip
-              onAccept={() =>
-                sendMessage(
-                  'Sí, repetir mi pedido habitual: Aceite de girasol 1L x20, Harina 000 x 25kg x10, Azúcar x 50kg x5'
-                )
-              }
+              onAccept={handleAcceptRecurring}
               onReject={() => setShowRecurring(false)}
             />
           )}
@@ -658,7 +728,6 @@ export default function AgenteDemo({ onBack }: { onBack: () => void }) {
       <div className="overflow-y-auto p-4" style={{ width: '40%', backgroundColor: '#f9fafb' }}>
         <OrderPanel
           items={orderItems}
-          total={orderTotal}
           step={trackerStep}
           onDownload={downloadOrder}
         />
