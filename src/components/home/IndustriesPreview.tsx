@@ -12,6 +12,9 @@ const AgenteDemo      = dynamic(() => import('@/components/demos/distribuidoras/
 const AgendaDemo      = dynamic(() => import('@/components/demos/salud/AgendaDemo'),               { ssr: false })
 const CRMDemo            = dynamic(() => import('@/components/demos/inmobiliarias/CRMDemo'),              { ssr: false })
 const RespondedorDemo    = dynamic(() => import('@/components/demos/inmobiliarias/RespondedorDemo'),        { ssr: false })
+const ProyeccionesDemo   = dynamic(() => import('@/components/demos/ecommerce/ProyeccionesDemo'),          { ssr: false })
+const ClientesDemo       = dynamic(() => import('@/components/demos/ecommerce/ClientesDemo'),              { ssr: false })
+const StockDemo          = dynamic(() => import('@/components/demos/ecommerce/StockDemo'),                 { ssr: false })
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -74,11 +77,6 @@ const IcoCRM = () => (
     <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
   </svg>
 )
-const IcoGrid = () => (
-  <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
-  </svg>
-)
 const IcoLock = () => (
   <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
     <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
@@ -93,6 +91,16 @@ const IcoTrendingUp = () => (
   <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
     <polyline strokeLinecap="round" strokeLinejoin="round" points="3 17 9 11 13 15 21 7" />
     <polyline strokeLinecap="round" strokeLinejoin="round" points="14 7 21 7 21 14" />
+  </svg>
+)
+const IcoUsers = () => (
+  <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+  </svg>
+)
+const IcoPackage = () => (
+  <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
   </svg>
 )
 const IcoBrandWhatsapp = () => (
@@ -164,8 +172,9 @@ const industries: Industry[] = [
   {
     id: 'ecommerce', label: 'E-commerce', icon: <IcoEcom />,
     demos: [
-      { id: 'suite', label: 'Suite', icon: <IcoGrid />, enabled: true },
-      ...disabledCards(['Demo 2', 'Demo 3']),
+      { id: 'clientes', label: 'Panel de clientes', icon: <IcoUsers />, enabled: true },
+      { id: 'stock', label: 'Stock e inventario', icon: <IcoPackage />, enabled: true },
+      { id: 'proyecciones', label: 'Proyecciones de ventas', icon: <IcoTrendingUp />, enabled: true },
     ],
   },
 ]
@@ -270,6 +279,9 @@ export default function IndustriesPreview() {
     if (activeId === 'salud'          && activeDemoId === 'agenda')  return <AgendaDemo  onBack={goBack} />
     if (activeId === 'inmobiliarias'  && activeDemoId === 'crm')         return <CRMDemo          onBack={goBack} />
     if (activeId === 'inmobiliarias'  && activeDemoId === 'respondedor') return <RespondedorDemo  onBack={goBack} />
+    if (activeId === 'ecommerce'      && activeDemoId === 'proyecciones') return <ProyeccionesDemo onBack={goBack} />
+    if (activeId === 'ecommerce'      && activeDemoId === 'clientes')     return <ClientesDemo     onBack={goBack} />
+    if (activeId === 'ecommerce'      && activeDemoId === 'stock')        return <StockDemo        onBack={goBack} />
     const demo = activeIndustry.demos.find(d => d.id === activeDemoId)
     return <ProximamenteScreen label={demo?.label ?? ''} onBack={goBack} />
   }

@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx --yes playwright install chromium --with-deps)",
+      "Bash(npx --yes -p playwright node \"C:\\\\Users\\\\Usuario\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Usuario-Documents-3-Felipe-Lopez-Fuente-Dataria-0-Web-dataria-dataria-web\\\\979da193-a8a4-4690-a964-e0ddb3d59852\\\\scratchpad\\\\test-demo.js\")",
+      "Bash(npm init *)",
+      "Bash(npm install *)",
+      "Bash(node test-demo.js)",
+      "Bash(node -e ' *)",
+      "Bash(cmd //c \"taskkill /F /IM node.exe /T\")",
+      "Bash(node test-clientes.js)",
+      "Bash(timeout 30 bash -c 'until curl -sf http://localhost:3000 >/dev/null; do sleep 1; done')",
+      "Bash(node test-stock.js)"
+    ]
+  }
+}
