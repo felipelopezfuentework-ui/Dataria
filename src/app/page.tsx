@@ -3,6 +3,7 @@ import ClientLogos from '@/components/home/ClientLogos'
 import IndustriesPreview from '@/components/home/IndustriesPreview'
 import HowItWorks from '@/components/home/HowItWorks'
 import CTAReunion from '@/components/home/CTAReunion'
+import ContactoSection from '@/components/home/ContactoSection'
 
 export default function Home() {
   return (
@@ -27,8 +28,8 @@ export default function Home() {
               {[
                 { q: '¿Cuánto tiempo lleva el setup?', a: 'Depende de la complejidad de la integración. Para la mayoría de los casos entregamos en 2 a 4 semanas.' },
                 { q: '¿Necesito un equipo técnico interno?', a: 'No. Nos encargamos de todo: configuración, integración y capacitación. Tu equipo solo tiene que saber usar la herramienta.' },
-                { q: '¿Qué pasa si quiero cancelar el mantenimiento?', a: 'Podés cancelar en cualquier momento. Las herramientas siguen funcionando; simplemente dejan de tener soporte activo ni actualizaciones de modelo.' },
-                { q: '¿Puedo empezar con una sola herramienta?', a: 'Sí. El modelo está diseñado para crecer de a módulos. Empezás con lo que más necesitás y expandís cuando tenga sentido.' },
+                { q: '¿Mis datos están seguros?', a: 'Sí. Tus datos se procesan de forma segura, no se comparten con terceros ni se usan para entrenar modelos ajenos a tu operación.' },
+                { q: '¿Puedo empezar con una sola herramienta?', a: 'Sí, el modelo está diseñado para crecer de a módulos. Empezás con lo que más necesitás y expandís cuando tu operación lo requiera.' },
               ].map(({ q, a }) => (
                 <details key={q} className="rounded-lg border border-borde group">
                   <summary className="px-5 py-4 font-semibold text-carbon cursor-pointer select-none flex items-center justify-between text-sm list-none">
@@ -44,6 +45,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <ContactoSection />
 
     </main>
   )

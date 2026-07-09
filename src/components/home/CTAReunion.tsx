@@ -9,12 +9,6 @@ export default function CTAReunion() {
     <section id="contacto" className="py-20 md:py-24 bg-gradient-dataria">
       <div className="max-w-container mx-auto px-5 md:px-10 text-center">
 
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/15 border border-white/25 mb-7">
-          <span className="w-1.5 h-1.5 rounded-full bg-green-300" />
-          <span className="text-xs font-bold uppercase tracking-widest text-white">Sin costo</span>
-        </div>
-
         <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-5 tracking-tight">
           Hablemos de tu operación
         </h2>
@@ -29,7 +23,7 @@ export default function CTAReunion() {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2.5 h-[46px] px-6 rounded-[10px] bg-white text-azul-nucleo font-bold tracking-[0.04em] uppercase text-[13px] hover:bg-white/90 transition-colors shadow-soft"
           >
-            Agendar reunión gratis
+            Agendar reunión
             <span className="px-2 py-0.5 rounded-full bg-green-100 text-green-700 text-xs font-bold leading-none">
               Gratis
             </span>

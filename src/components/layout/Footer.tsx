@@ -12,12 +12,12 @@ export default function Footer() {
             <Image
               src="/dataria-sin-fondo.png"
               alt="Dataria"
-              width={110}
-              height={32}
-              className="h-7 w-auto brightness-0 invert mb-4"
+              width={150}
+              height={44}
+              className="h-11 w-auto brightness-0 invert mb-4"
             />
             <p className="text-sm text-white/60 leading-relaxed">
-              Inteligencia Artificial aplicada a negocios reales. Sobria, precisa y ágil en cada implementación.
+              Inteligencia Artificial aplicada a negocios reales. Precisa y ágil en cada implementación.
             </p>
           </div>
 

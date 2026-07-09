@@ -113,7 +113,7 @@ export default function Hero() {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center h-[46px] px-6 rounded-[10px] bg-white text-azul-nucleo font-semibold tracking-[0.04em] uppercase text-[13px] border-[1.5px] border-borde hover:border-azul-nucleo/30 transition-colors duration-160"
           >
-            Agendar reunión gratis
+            Agendar reunión
           </a>
         </div>
       </div>

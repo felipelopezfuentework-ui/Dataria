@@ -11,8 +11,8 @@ const clients = [
 
 function ClientCard({ name, src }: { name: string; src: string }) {
   return (
-    <div className="flex flex-col items-center gap-2.5 w-28">
-      <div className="relative w-20 h-12">
+    <div className="flex flex-col items-center gap-2.5 w-36">
+      <div className="relative w-28 h-16">
         <Image src={src} alt={name} fill className="object-contain" />
       </div>
       <span className="text-[11px] font-semibold uppercase tracking-widest text-texto-sec/50 text-center leading-tight">
@@ -27,7 +27,7 @@ export default function ClientLogos() {
     <section className="py-10 border-y border-borde bg-white overflow-hidden">
       <div className="max-w-container mx-auto px-5 md:px-10 mb-6">
         <p className="text-xs font-semibold uppercase tracking-widest text-texto-sec/60 text-center">
-          Empresas que ya optimizan su proceso
+          Empresas que ya optimizan sus procesos
         </p>
       </div>
       {/* Single track: each item owns its right padding so translateX(-50%) loops perfectly */}

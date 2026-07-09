@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
+import WhatsAppButton from '@/components/layout/WhatsAppButton'
 
 export const metadata: Metadata = {
   title: 'Dataria — Menos datos sueltos. Mejores decisiones.',
@@ -20,8 +21,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="es">
       <body>
         <Header />
-        <div className="pt-16 md:pt-20">{children}</div>
+        <div className="pt-[72px] md:pt-[88px]">{children}</div>
         <Footer />
+        <WhatsAppButton />
       </body>
     </html>
   )

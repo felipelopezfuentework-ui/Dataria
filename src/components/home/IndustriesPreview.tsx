@@ -297,7 +297,7 @@ export default function IndustriesPreview() {
             <h2 className="text-3xl md:text-4xl font-bold text-carbon mb-4 tracking-tight">
               Tu negocio optimizado
             </h2>
-            <p className="text-lg text-texto-sec max-w-xl mx-auto">
+            <p className="text-xl text-texto-sec max-w-xl mx-auto">
               Elegí tu industria y probá cómo Dataria transforma tu negocio.
             </p>
           </div>
@@ -319,7 +319,7 @@ export default function IndustriesPreview() {
                 <button
                   key={ind.id}
                   onClick={() => selectIndustry(ind.id)}
-                  className="flex flex-col items-center gap-1.5 px-4 py-3 text-xs font-semibold transition-all border-t-2"
+                  className="flex flex-col items-center gap-1.5 px-4 py-3 text-sm font-semibold transition-all border-t-2"
                   style={{
                     borderTopColor: isActive ? '#306ECF' : 'transparent',
                     color: isActive ? '#306ECF' : '#5A6871',

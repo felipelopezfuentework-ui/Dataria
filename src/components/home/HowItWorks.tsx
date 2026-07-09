@@ -1,7 +1,7 @@
 const steps = [
   {
     num: '01',
-    name: 'Setup',
+    name: 'Desarrollo Inicial',
     tag: 'Sin mensualidad inicial',
     desc: 'Configuramos las herramientas de IA desde cero, integradas con tus datos y adaptadas a tu operación específica. Entregamos en semanas, no en meses.',
     items: ['Diagnóstico de puntos críticos', 'Capacitación de equipos', 'Desarrollo interactivo'],
@@ -28,7 +28,7 @@ export default function HowItWorks() {
       <div className="max-w-container mx-auto px-5 md:px-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-carbon mb-4 tracking-tight">Así se construye tu solución</h2>
-          <p className="text-lg text-texto-sec">Modelo de implementación por etapas, sin fricciones.</p>
+          <p className="text-xl text-texto-sec">Modelo de implementación por etapas, sin fricciones.</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
@@ -43,16 +43,16 @@ export default function HowItWorks() {
                   {step.num}
                 </div>
                 <div>
-                  <p className="font-bold text-carbon text-lg leading-tight">{step.name}</p>
-                  <p className="text-xs text-texto-sec font-medium">{step.tag}</p>
+                  <p className="font-bold text-carbon text-xl leading-tight">{step.name}</p>
+                  <p className="text-sm text-texto-sec font-medium">{step.tag}</p>
                 </div>
               </div>
 
-              <p className="text-sm text-texto-sec leading-relaxed mb-5">{step.desc}</p>
+              <p className="text-base text-texto-sec leading-relaxed mb-5">{step.desc}</p>
 
               <ul className="space-y-2">
                 {step.items.map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm text-carbon">
+                  <li key={item} className="flex items-start gap-2 text-base text-carbon">
                     <svg className="mt-0.5 shrink-0 text-azul-nucleo" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>

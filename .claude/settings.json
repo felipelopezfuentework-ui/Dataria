@@ -10,7 +10,16 @@
       "Bash(cmd //c \"taskkill /F /IM node.exe /T\")",
       "Bash(node test-clientes.js)",
       "Bash(timeout 30 bash -c 'until curl -sf http://localhost:3000 >/dev/null; do sleep 1; done')",
-      "Bash(node test-stock.js)"
+      "Bash(node test-stock.js)",
+      "Bash(timeout 30 bash -c 'until curl -sf http://localhost:3001 >/dev/null; do sleep 1; done')",
+      "Bash(node test-landing.js)",
+      "Bash(node test-form-submit.js)",
+      "Bash(node test-form-submit2.js)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://api.web3forms.com/submit --max-time 10)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://www.google.com --max-time 10)",
+      "Bash(curl -v https://api.web3forms.com/submit --max-time 10)",
+      "PowerShell(try { $r = Invoke-WebRequest -Uri \"https://www.google.com\" -TimeoutSec 10 -UseBasicParsing; Write-Output \"google.com status: $\\($r.StatusCode\\)\" } catch { Write-Output \"google.com FAILED: $\\($_.Exception.Message\\)\" })",
+      "Bash(env)"
     ]
   }
 }

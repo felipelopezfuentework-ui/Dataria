@@ -11,6 +11,7 @@ export default function ContactoSection() {
   const [form, setForm]    = useState({ nombre: '', email: '', empresa: '', industria: '', mensaje: '' })
   const [sent, setSent]    = useState(false)
   const [loading, setLoad] = useState(false)
+  const [error, setError]  = useState<string | null>(null)
 
   const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
     setForm((f) => ({ ...f, [k]: e.target.value }))
@@ -18,13 +19,37 @@ export default function ContactoSection() {
   const submit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoad(true)
-    await new Promise((r) => setTimeout(r, 900))
-    setLoad(false)
-    setSent(true)
+    setError(null)
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
+          subject: `Nueva consulta de ${form.nombre} — Dataria`,
+          from_name: 'Formulario web — Dataria',
+          nombre: form.nombre,
+          email: form.email,
+          empresa: form.empresa,
+          industria: form.industria,
+          mensaje: form.mensaje,
+        }),
+      })
+      const data = await res.json()
+      if (data.success) {
+        setSent(true)
+      } else {
+        setError('No pudimos enviar tu consulta. Probá de nuevo o escribinos a datariaai@gmail.com.')
+      }
+    } catch {
+      setError('No pudimos enviar tu consulta. Probá de nuevo o escribinos a datariaai@gmail.com.')
+    } finally {
+      setLoad(false)
+    }
   }
 
   return (
-    <section id="contacto" className="py-16 md:py-20 bg-fondo-suave">
+    <section id="formulario-contacto" className="py-16 md:py-20 bg-fondo-suave">
       <div className="max-w-container mx-auto px-5 md:px-10">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-10">
@@ -60,6 +85,9 @@ export default function ContactoSection() {
                   placeholder="Describí brevemente el problema que querés resolver..."
                 />
               </div>
+              {error && (
+                <p className="text-sm text-error text-center">{error}</p>
+              )}
               <Button type="submit" size="lg" loading={loading} className="w-full">
                 Enviar y agendar diagnóstico
               </Button>

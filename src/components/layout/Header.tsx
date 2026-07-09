@@ -32,10 +32,10 @@ export default function Header() {
           : 'bg-white/80 backdrop-blur-sm'
       }`}
     >
-      <div className="max-w-container mx-auto px-5 md:px-10 flex items-center justify-between h-16 md:h-20">
+      <div className="max-w-container mx-auto px-5 md:px-10 flex items-center justify-between h-[72px] md:h-[88px]">
         {/* Logo */}
         <Link href="/" className="flex items-center shrink-0">
-          <Image src="/dataria-sin-fondo.png" alt="Dataria" width={300} height={90} priority className="h-[72px] md:h-[84px] w-auto" />
+          <Image src="/dataria-sin-fondo.png" alt="Dataria" width={300} height={90} priority className="h-[84px] md:h-[100px] w-auto" />
         </Link>
 
         {/* Desktop nav */}
@@ -55,9 +55,12 @@ export default function Header() {
         <div className="hidden md:block">
           <button
             onClick={scrollToContacto}
-            className="inline-flex items-center justify-center h-[46px] px-6 rounded-[10px] bg-azul-nucleo text-white font-bold tracking-[0.04em] uppercase text-[13px] hover:bg-azul-accion transition-colors duration-160 shadow-primary"
+            className="inline-flex items-center justify-center gap-2 h-[46px] px-6 rounded-[10px] bg-azul-nucleo text-white font-bold tracking-[0.04em] uppercase text-[13px] hover:bg-azul-accion transition-colors duration-160 shadow-primary"
           >
             Solicitar demo
+            <span className="px-2 py-0.5 rounded-full bg-green-100 text-green-700 text-xs font-bold leading-none normal-case tracking-normal">
+              Gratis
+            </span>
           </button>
         </div>
 
@@ -89,9 +92,12 @@ export default function Header() {
             ))}
             <button
               onClick={() => { setMenuOpen(false); scrollToContacto() }}
-              className="mt-3 inline-flex items-center justify-center h-[46px] px-6 rounded-[10px] bg-azul-nucleo text-white font-bold tracking-[0.04em] uppercase text-[13px]"
+              className="mt-3 inline-flex items-center justify-center gap-2 h-[46px] px-6 rounded-[10px] bg-azul-nucleo text-white font-bold tracking-[0.04em] uppercase text-[13px]"
             >
               Solicitar demo
+              <span className="px-2 py-0.5 rounded-full bg-green-100 text-green-700 text-xs font-bold leading-none normal-case tracking-normal">
+                Gratis
+              </span>
             </button>
           </nav>
         </div>
