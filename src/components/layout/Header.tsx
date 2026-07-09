@@ -32,10 +32,10 @@ export default function Header() {
           : 'bg-white/80 backdrop-blur-sm'
       }`}
     >
-      <div className="max-w-container mx-auto px-5 md:px-10 flex items-center justify-between h-[72px] md:h-[88px]">
+      <div className="max-w-container mx-auto px-6 flex items-center justify-between h-[72px] md:h-[88px]">
         {/* Logo */}
         <Link href="/" className="flex items-center shrink-0">
-          <Image src="/dataria-sin-fondo.png" alt="Dataria" width={300} height={90} priority className="h-[84px] md:h-[100px] w-auto" />
+          <Image src="/dataria-logo-header.png" alt="Dataria" width={495} height={167} priority className="h-9 md:h-11 w-auto" />
         </Link>
 
         {/* Desktop nav */}
@@ -44,7 +44,7 @@ export default function Header() {
             <Link
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-texto-sec hover:text-azul-nucleo transition-colors duration-160"
+              className="text-[15px] font-medium tracking-[0.01em] text-carbon hover:text-azul-nucleo transition-colors duration-160"
             >
               {l.label}
             </Link>
@@ -55,7 +55,7 @@ export default function Header() {
         <div className="hidden md:block">
           <button
             onClick={scrollToContacto}
-            className="inline-flex items-center justify-center gap-2 h-[46px] px-6 rounded-[10px] bg-azul-nucleo text-white font-semibold tracking-[0.02em] uppercase text-[13px] hover:bg-azul-accion transition-colors duration-160 shadow-primary"
+            className="inline-flex items-center justify-center gap-2 h-[46px] px-6 rounded-[10px] bg-azul-nucleo text-white font-semibold tracking-[0.02em] text-[15px] hover:bg-azul-accion hover:-translate-y-px hover:shadow-[0_4px_12px_rgba(48,110,207,0.35)] active:translate-y-0 transition-all duration-150 shadow-primary"
           >
             Solicitar demo
             <span className="px-2 py-0.5 rounded-full bg-green-100 text-green-700 text-xs font-bold leading-none normal-case tracking-normal">
@@ -85,14 +85,14 @@ export default function Header() {
                 key={l.href}
                 href={l.href}
                 onClick={() => setMenuOpen(false)}
-                className="text-sm font-semibold text-carbon hover:text-azul-nucleo py-3 border-b border-borde/50 last:border-0"
+                className="text-[15px] font-medium tracking-[0.01em] text-carbon hover:text-azul-nucleo py-3 border-b border-borde/50 last:border-0"
               >
                 {l.label}
               </Link>
             ))}
             <button
               onClick={() => { setMenuOpen(false); scrollToContacto() }}
-              className="mt-3 inline-flex items-center justify-center gap-2 h-[46px] px-6 rounded-[10px] bg-azul-nucleo text-white font-semibold tracking-[0.02em] uppercase text-[13px]"
+              className="mt-3 inline-flex items-center justify-center gap-2 h-[46px] px-6 rounded-[10px] bg-azul-nucleo text-white font-semibold tracking-[0.02em] text-[15px] hover:bg-azul-accion active:translate-y-0 transition-all duration-150"
             >
               Solicitar demo
               <span className="px-2 py-0.5 rounded-full bg-green-100 text-green-700 text-xs font-bold leading-none normal-case tracking-normal">

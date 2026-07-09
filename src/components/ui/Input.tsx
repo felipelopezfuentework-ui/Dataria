@@ -23,7 +23,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             placeholder:text-outline
             border-borde
             focus:outline-none focus:border-azul-accion focus:ring-2 focus:ring-azul-accion/15
-            transition-all duration-160
+            transition-all duration-200
             disabled:bg-fondo-suave disabled:opacity-60 disabled:cursor-not-allowed
             ${error ? 'border-error focus:border-error focus:ring-error/15' : ''}
             ${className}

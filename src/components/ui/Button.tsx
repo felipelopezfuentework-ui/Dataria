@@ -10,8 +10,8 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const variantClasses: Record<Variant, string> = {
-  primary:   'bg-gradient-dataria text-white font-semibold shadow-primary hover:opacity-90 active:scale-[.98]',
-  secondary: 'bg-tinte-interfaz text-azul-nucleo font-semibold border-[1.5px] border-azul-nucleo/20 hover:bg-azul-nucleo/10',
+  primary:   'bg-gradient-dataria text-white font-semibold shadow-primary hover:!bg-[#1B5BC1] hover:!bg-none hover:shadow-[0_4px_12px_rgba(48,110,207,0.35)] active:translate-y-0',
+  secondary: 'bg-tinte-interfaz text-azul-nucleo font-semibold border-[1.5px] border-azul-nucleo/20 hover:bg-azul-nucleo/10 hover:border-azul-accion',
   ghost:     'bg-transparent text-texto-sec font-semibold hover:bg-fondo-suave',
   danger:    'bg-error/10 text-error font-semibold border-[1.5px] border-error/20 hover:bg-error/20',
 }
@@ -30,8 +30,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         disabled={disabled || loading}
         className={`
           inline-flex items-center justify-center gap-2 tracking-[0.02em] uppercase
-          transition-all duration-160 whitespace-nowrap
-          disabled:opacity-50 disabled:cursor-not-allowed
+          transition-all duration-150 whitespace-nowrap
+          hover:-translate-y-px
+          disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0
           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-azul-nucleo/50
           ${variantClasses[variant]}
           ${sizeClasses[size]}

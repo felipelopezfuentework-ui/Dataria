@@ -22,7 +22,7 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(
             h-10 px-3 pr-8 rounded-sm border text-sm text-carbon bg-white
             border-borde appearance-none
             focus:outline-none focus:border-azul-accion focus:ring-2 focus:ring-azul-accion/15
-            transition-all duration-160
+            transition-all duration-200
             disabled:bg-fondo-suave disabled:opacity-60
             ${error ? 'border-error' : ''}
             ${className}

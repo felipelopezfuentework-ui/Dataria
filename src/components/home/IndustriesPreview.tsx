@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import dynamic from 'next/dynamic'
+import { useReveal } from '@/hooks/useReveal'
 
 // ─── Loading fallback (avoids the panel flashing blank while a demo chunk loads) ──
 
@@ -210,19 +211,19 @@ function ProximamenteScreen({ label, onBack }: { label: string; onBack: () => vo
 
 // ─── Card component ───────────────────────────────────────────────────────────
 
-function Card({ demo, onSelect }: { demo: DemoCard; onSelect: () => void }) {
+function Card({ demo, index, visible, onSelect }: { demo: DemoCard; index: number; visible: boolean; onSelect: () => void }) {
   return (
     <div
-      className="rounded-xl p-6 flex flex-col items-center gap-4 transition-all bg-white border border-[#DCE5E9] shadow-sm"
-      style={{ opacity: demo.enabled ? 1 : 0.5 }}
+      className={`rounded-xl p-6 flex flex-col items-center justify-center gap-4 bg-white border border-[#DCE5E9] shadow-sm min-h-[200px] reveal hover:-translate-y-1 hover:shadow-lg transition-[opacity,transform,box-shadow] duration-200 ${visible ? 'is-visible' : ''}`}
+      style={{ opacity: demo.enabled ? undefined : 0.5, transitionDelay: `${index * 100}ms` }}
     >
-      <div className="w-14 h-14 rounded-2xl flex items-center justify-center bg-[#EAF5FD] text-[#1B5BC1]">
+      <div className="w-20 h-20 rounded-2xl flex items-center justify-center bg-[#EAF5FD] text-[#1B5BC1] [&>svg]:w-12 [&>svg]:h-12">
         {demo.icon}
       </div>
-      <p className="text-[#353C42] font-bold text-center text-base leading-tight">{demo.label}</p>
+      <p className="text-[#353C42] font-semibold text-center text-[15px] leading-tight">{demo.label}</p>
       {demo.enabled ? (
         <button onClick={onSelect}
-          className="inline-flex items-center justify-center h-[46px] px-6 rounded-[10px] text-white font-semibold tracking-[0.02em] uppercase text-[13px] transition-opacity hover:opacity-85"
+          className="inline-flex items-center justify-center h-[46px] px-6 rounded-[10px] text-white font-semibold tracking-[0.02em] text-[15px] hover:!bg-[#1B5BC1] hover:-translate-y-px hover:shadow-[0_4px_12px_rgba(48,110,207,0.35)] active:translate-y-0 transition-all duration-150"
           style={{ backgroundColor: '#306ECF' }}>
           Ver demo
         </button>
@@ -236,14 +237,15 @@ function Card({ demo, onSelect }: { demo: DemoCard; onSelect: () => void }) {
 // ─── Level 2: cards grid ──────────────────────────────────────────────────────
 
 function CardsView({ industry, onSelect }: { industry: Industry; onSelect: (demoId: string) => void }) {
+  const { ref, visible } = useReveal<HTMLDivElement>(0.15)
   return (
-    <div className="min-h-[560px] flex flex-col p-8" style={{ backgroundColor: '#F3F6F5' }}>
-      <p className="text-sm font-bold uppercase tracking-widest mb-8 text-[#5A6871]">
+    <div ref={ref} className="min-h-[560px] flex flex-col p-8" style={{ backgroundColor: '#F3F6F5' }}>
+      <p className="text-[13px] font-bold uppercase tracking-[0.1em] mb-8 text-[#306ECF]">
         {industry.label}
       </p>
       <div className="grid grid-cols-3 gap-4">
-        {industry.demos.map(demo => (
-          <Card key={demo.id} demo={demo} onSelect={() => onSelect(demo.id)} />
+        {industry.demos.map((demo, i) => (
+          <Card key={demo.id} demo={demo} index={i} visible={visible} onSelect={() => onSelect(demo.id)} />
         ))}
       </div>
     </div>
@@ -302,7 +304,7 @@ function OtrosForm() {
     <div className="min-h-[560px] flex flex-col p-8" style={{ backgroundColor: '#F3F6F5' }}>
       <div className="max-w-lg mx-auto w-full">
         <div className="text-center mb-6">
-          <h3 className="font-display text-2xl font-extrabold text-[#353C42] mb-2 tracking-[-0.02em]">¿Tenés un proceso que querés automatizar?</h3>
+          <h3 className="font-display text-2xl font-extrabold text-[#353C42] mb-2 tracking-[-0.03em]">¿Tenés un proceso que querés automatizar?</h3>
           <p className="font-display font-semibold text-base text-[#5A6871] tracking-[-0.01em]">Contanos de qué se trata y te mostramos cómo Dataria puede ayudarte.</p>
         </div>
 
@@ -312,32 +314,32 @@ function OtrosForm() {
               <div>
                 <label className="text-xs font-semibold text-[#5A6871] uppercase tracking-wide">Nombre</label>
                 <input required value={form.nombre} onChange={set('nombre')} placeholder="Tu nombre"
-                  className="mt-1 w-full h-10 px-3 rounded-sm border border-[#DCE5E9] text-sm text-[#353C42] bg-white focus:outline-none focus:border-[#306ECF]" />
+                  className="mt-1 w-full h-10 px-3 rounded-sm border border-[#DCE5E9] text-sm text-[#353C42] bg-white focus:outline-none focus:border-[#306ECF] transition-colors duration-200" />
               </div>
               <div>
                 <label className="text-xs font-semibold text-[#5A6871] uppercase tracking-wide">Email</label>
                 <input required type="email" value={form.email} onChange={set('email')} placeholder="tucorreo@ejemplo.com"
-                  className="mt-1 w-full h-10 px-3 rounded-sm border border-[#DCE5E9] text-sm text-[#353C42] bg-white focus:outline-none focus:border-[#306ECF]" />
+                  className="mt-1 w-full h-10 px-3 rounded-sm border border-[#DCE5E9] text-sm text-[#353C42] bg-white focus:outline-none focus:border-[#306ECF] transition-colors duration-200" />
               </div>
             </div>
             <div>
               <label className="text-xs font-semibold text-[#5A6871] uppercase tracking-wide">Empresa / Proyecto</label>
               <input value={form.proyecto} onChange={set('proyecto')} placeholder="Nombre de tu empresa o proyecto"
-                className="mt-1 w-full h-10 px-3 rounded-sm border border-[#DCE5E9] text-sm text-[#353C42] bg-white focus:outline-none focus:border-[#306ECF]" />
+                className="mt-1 w-full h-10 px-3 rounded-sm border border-[#DCE5E9] text-sm text-[#353C42] bg-white focus:outline-none focus:border-[#306ECF] transition-colors duration-200" />
             </div>
             <div>
               <label className="text-xs font-semibold text-[#5A6871] uppercase tracking-wide">Industria</label>
               <input value={form.industria} onChange={set('industria')} placeholder="¿A qué industria pertenece tu negocio?"
-                className="mt-1 w-full h-10 px-3 rounded-sm border border-[#DCE5E9] text-sm text-[#353C42] bg-white focus:outline-none focus:border-[#306ECF]" />
+                className="mt-1 w-full h-10 px-3 rounded-sm border border-[#DCE5E9] text-sm text-[#353C42] bg-white focus:outline-none focus:border-[#306ECF] transition-colors duration-200" />
             </div>
             <div>
               <label className="text-xs font-semibold text-[#5A6871] uppercase tracking-wide">Descripción del proceso</label>
               <textarea rows={4} value={form.descripcion} onChange={set('descripcion')} placeholder="Contanos qué proceso te gustaría automatizar..."
-                className="mt-1 w-full px-3 py-2.5 rounded-sm border border-[#DCE5E9] text-sm text-[#353C42] bg-white focus:outline-none focus:border-[#306ECF] resize-none" />
+                className="mt-1 w-full px-3 py-2.5 rounded-sm border border-[#DCE5E9] text-sm text-[#353C42] bg-white focus:outline-none focus:border-[#306ECF] transition-colors duration-200 resize-none" />
             </div>
             {error && <p className="text-sm text-red-600 text-center">{error}</p>}
             <button type="submit" disabled={loading}
-              className="w-full h-[46px] rounded-[10px] text-white font-semibold text-[13px] tracking-[0.02em] uppercase transition-opacity hover:opacity-85 disabled:opacity-50"
+              className="w-full h-[46px] rounded-[10px] text-white font-semibold text-[15px] tracking-[0.02em] hover:!bg-[#1B5BC1] hover:-translate-y-px hover:shadow-[0_4px_12px_rgba(48,110,207,0.35)] active:translate-y-0 transition-all duration-150 disabled:opacity-50"
               style={{ backgroundColor: '#306ECF' }}>
               {loading ? 'Enviando…' : 'Enviar consulta'}
             </button>
@@ -349,7 +351,7 @@ function OtrosForm() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
               </svg>
             </div>
-            <h3 className="font-display text-xl font-bold text-[#353C42] tracking-[-0.02em]">¡Gracias! Te contactamos en menos de 24hs.</h3>
+            <h3 className="font-display text-xl font-extrabold text-[#353C42] tracking-[-0.03em]">¡Gracias! Te contactamos en menos de 24hs.</h3>
           </div>
         )}
       </div>
@@ -369,6 +371,8 @@ export default function IndustriesPreview() {
   const goBack = () => { setLevel('cards'); setActiveDemoId(null) }
 
   const activeIndustry = industries.find(i => i.id === activeId)!
+  const { ref: panelRef, visible: panelVisible } = useReveal<HTMLDivElement>(0.15)
+  const { ref: barRef, visible: barVisible } = useReveal<HTMLDivElement>(0.15)
 
   const renderDemo = () => {
     if (activeId === 'gastronomia'    && activeDemoId === 'food-cost') return <FoodCostDemo onBack={goBack} />
@@ -389,13 +393,12 @@ export default function IndustriesPreview() {
 
   return (
     <>
-      <div id="demos" />
-      <section id="industrias" className="py-20 md:py-28 bg-white">
-        <div className="max-w-container mx-auto px-5 md:px-10">
+      <section id="industrias" className="py-20 bg-[#F0F4F8] scroll-mt-[88px] md:scroll-mt-[104px]">
+        <div className="max-w-container mx-auto px-6">
 
           {/* Header */}
           <div className="text-center mb-10">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-carbon mb-4 tracking-[-0.02em]">
+            <h2 className="font-display text-3xl md:text-4xl font-extrabold text-carbon mb-4 tracking-[-0.03em]">
               Tu negocio optimizado
             </h2>
             <p className="font-display font-semibold text-xl text-texto-sec max-w-xl mx-auto tracking-[-0.01em]">
@@ -403,19 +406,35 @@ export default function IndustriesPreview() {
             </p>
           </div>
 
-          {/* Panel */}
-          <div className="max-w-[1040px] mx-auto rounded-2xl overflow-hidden shadow-soft"
-            style={{ boxShadow: '0 8px 48px rgba(0,0,0,0.14)' }}>
-            {activeId === 'otros'
-              ? <OtrosForm />
-              : level === 'cards'
-                ? <CardsView industry={activeIndustry} onSelect={selectDemo} />
-                : renderDemo()
-            }
-          </div>
+          {/* Anchor for "ver demo" CTAs: jumps straight to panel + industry tabs, skipping the title */}
+          <div id="demos" className="scroll-mt-[88px] md:scroll-mt-[104px]">
 
-          {/* Industry bar — below the panel */}
-          <div className="max-w-[1040px] mx-auto mt-0 flex flex-wrap justify-center">
+            {/* Panel — styled like a browser/desktop window floating over the section */}
+            <div ref={panelRef} className={`max-w-[900px] mx-auto rounded-[12px] overflow-hidden border reveal-scale ${panelVisible ? 'is-visible' : ''}`}
+              style={{
+                backgroundColor: '#FFFFFF',
+                borderColor: '#DCE5E9',
+                boxShadow: '0 8px 32px rgba(27, 91, 193, 0.08), 0 2px 8px rgba(0,0,0,0.06)',
+              }}>
+              {/* Window chrome bar */}
+              <div className="h-8 flex items-center gap-1.5 pl-[14px]" style={{ backgroundColor: '#E8EDF2' }}>
+                <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: '#FF5F57' }} />
+                <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: '#FEBC2E' }} />
+                <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: '#28C840' }} />
+              </div>
+              {/* key forces a remount on every industry/level/demo switch, replaying the crossfade */}
+              <div key={`${activeId}-${level}-${activeDemoId ?? ''}`} className="panel-content-fade">
+                {activeId === 'otros'
+                  ? <OtrosForm />
+                  : level === 'cards'
+                    ? <CardsView industry={activeIndustry} onSelect={selectDemo} />
+                    : renderDemo()
+                }
+              </div>
+            </div>
+
+            {/* Industry bar — below the panel */}
+            <div ref={barRef} className={`max-w-[900px] mx-auto mt-0 flex flex-wrap justify-center reveal ${barVisible ? 'is-visible' : ''}`} style={{ transitionDelay: '200ms' }}>
             {industries.map(ind => {
               const isActive = ind.id === activeId
               return (
@@ -434,6 +453,8 @@ export default function IndustriesPreview() {
                 </button>
               )
             })}
+            </div>
+
           </div>
 
         </div>

@@ -34,7 +34,15 @@
       "Bash(node test-v4-clientes.js)",
       "Bash(node test-v4-visitas.js)",
       "Bash(node test-typography.js)",
-      "Bash(node test-typo-demo.js)"
+      "Bash(node test-typo-demo.js)",
+      "Bash(break)",
+      "Bash(node \"C:\\\\Users\\\\Usuario\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Usuario-Documents-3-Felipe-Lopez-Fuente-Dataria-0-Web-dataria-dataria-web\\\\979da193-a8a4-4690-a964-e0ddb3d59852\\\\scratchpad\\\\test-fix.js\")",
+      "Bash(node \"C:\\\\Users\\\\Usuario\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Usuario-Documents-3-Felipe-Lopez-Fuente-Dataria-0-Web-dataria-dataria-web\\\\979da193-a8a4-4690-a964-e0ddb3d59852\\\\scratchpad\\\\test-err.js\")",
+      "Bash(taskkill /F /IM node.exe /T)",
+      "Bash(node \"C:\\\\Users\\\\Usuario\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Usuario-Documents-3-Felipe-Lopez-Fuente-Dataria-0-Web-dataria-dataria-web\\\\979da193-a8a4-4690-a964-e0ddb3d59852\\\\scratchpad\\\\test-v4.js\")",
+      "Bash(node \"C:\\\\Users\\\\Usuario\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Usuario-Documents-3-Felipe-Lopez-Fuente-Dataria-0-Web-dataria-dataria-web\\\\979da193-a8a4-4690-a964-e0ddb3d59852\\\\scratchpad\\\\test-v5.js\")",
+      "Bash(node \"C:\\\\Users\\\\Usuario\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Usuario-Documents-3-Felipe-Lopez-Fuente-Dataria-0-Web-dataria-dataria-web\\\\979da193-a8a4-4690-a964-e0ddb3d59852\\\\scratchpad\\\\test-v6.js\")",
+      "Bash(node \"C:\\\\Users\\\\Usuario\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-Usuario-Documents-3-Felipe-Lopez-Fuente-Dataria-0-Web-dataria-dataria-web\\\\979da193-a8a4-4690-a964-e0ddb3d59852\\\\scratchpad\\\\test-anim.js\")"
     ]
   }
 }

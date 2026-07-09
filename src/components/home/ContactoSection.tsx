@@ -12,6 +12,7 @@ export default function ContactoSection() {
   const [form, setForm] = useState({ nombre: '', email: '', proyecto: '', industria: '', proceso: '' })
   const [industriaOtra, setIndustriaOtra] = useState('')
   const [sent, setSent]    = useState(false)
+  const [leaving, setLeaving] = useState(false)
   const [loading, setLoad] = useState(false)
   const [error, setError]  = useState<string | null>(null)
 
@@ -60,7 +61,8 @@ export default function ContactoSection() {
       }
 
       if (res.ok && data?.success) {
-        setSent(true)
+        setLeaving(true)
+        window.setTimeout(() => setSent(true), 200)
       } else {
         console.error('[ContactoSection] Web3Forms rechazó el envío (status ' + res.status + '):', data)
         setError(data?.message || 'No pudimos enviar tu consulta. Probá de nuevo o escribinos a datariaai@gmail.com.')
@@ -74,12 +76,12 @@ export default function ContactoSection() {
   }
 
   return (
-    <section id="formulario-contacto" className="py-16 md:py-20 bg-fondo-suave">
-      <div className="max-w-container mx-auto px-5 md:px-10">
+    <section id="formulario-contacto" className="py-20 bg-[#F8FAFC]">
+      <div className="max-w-container mx-auto px-6">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-10">
             <p className="text-xs font-bold uppercase tracking-widest text-azul-nucleo mb-4">Contacto</p>
-            <h2 className="font-display text-3xl md:text-4xl font-extrabold text-carbon mb-4 tracking-[-0.02em]">
+            <h2 className="font-display text-3xl md:text-4xl font-extrabold text-carbon mb-4 tracking-[-0.03em]">
               Hablemos de tu caso
             </h2>
             <p className="font-display font-semibold text-lg text-texto-sec tracking-[-0.01em]">
@@ -88,7 +90,7 @@ export default function ContactoSection() {
           </div>
 
           {!sent ? (
-            <form onSubmit={submit} className="bg-white rounded-xl border border-borde shadow-soft p-8 space-y-5">
+            <form onSubmit={submit} className={`bg-white rounded-xl border border-borde shadow-soft p-8 space-y-5 ${leaving ? 'form-fade-out' : ''}`}>
               <div className="grid sm:grid-cols-2 gap-5">
                 <Input label="Nombre" required value={form.nombre} onChange={set('nombre')} placeholder="Tu nombre" />
                 <Input label="Email" type="email" required value={form.email} onChange={set('email')} placeholder="tucorreo@ejemplo.com" />
@@ -114,14 +116,14 @@ export default function ContactoSection() {
                   value={form.proceso}
                   onChange={set('proceso')}
                   rows={4}
-                  className="mt-1 w-full px-3 py-2.5 rounded-sm border border-borde text-sm text-carbon bg-white focus:outline-none focus:border-azul-accion focus:ring-2 focus:ring-azul-accion/15 resize-none"
+                  className="mt-1 w-full px-3 py-2.5 rounded-sm border border-borde text-sm text-carbon bg-white focus:outline-none focus:border-azul-accion focus:ring-2 focus:ring-azul-accion/15 transition-colors duration-200 resize-none"
                   placeholder="Describí brevemente el proceso que querés resolver..."
                 />
               </div>
               {error && (
                 <p className="text-sm text-error text-center">{error}</p>
               )}
-              <Button type="submit" size="lg" loading={loading} className="w-full">
+              <Button type="submit" size="lg" loading={loading} className="w-full !bg-[#306ECF] !bg-none !normal-case !text-[15px]">
                 Enviar consulta
               </Button>
             </form>
@@ -132,8 +134,8 @@ export default function ContactoSection() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                 </svg>
               </div>
-              <h2 className="font-display text-2xl font-bold text-carbon mb-3 tracking-[-0.02em]">¡Gracias! Te contactamos en menos de 24hs.</h2>
-              <Button variant="secondary" onClick={() => setSent(false)}>Enviar otra consulta</Button>
+              <h2 className="font-display text-2xl font-extrabold text-carbon mb-3 tracking-[-0.03em]">¡Gracias! Te contactamos en menos de 24hs.</h2>
+              <Button variant="secondary" className="!normal-case !text-[15px]" onClick={() => setSent(false)}>Enviar otra consulta</Button>
             </div>
           )}
         </div>

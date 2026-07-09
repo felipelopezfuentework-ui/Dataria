@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+/* Fuentes cargadas vía <link> en src/app/layout.tsx (head) */
 
 :root {
   --font-display: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Arial, sans-serif;
@@ -30,9 +30,12 @@
 
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
+      animation: none !important;
+      transition: none !important;
+    }
+    .reveal, .reveal-scale {
+      opacity: 1 !important;
+      transform: none !important;
     }
   }
 }
@@ -56,4 +59,54 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
   }
+
+  /* Scroll-triggered entrance animations, driven by useReveal (IntersectionObserver) */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1), transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-scale {
+    opacity: 0;
+    transform: scale(0.97);
+    transition: opacity 500ms cubic-bezier(0.16, 1, 0.3, 1), transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal-scale.is-visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .panel-content-fade {
+    animation: panelContentFade 250ms ease;
+  }
+
+  .accordion-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 300ms ease;
+  }
+  .accordion-content.is-open {
+    grid-template-rows: 1fr;
+  }
+  .accordion-content > div {
+    overflow: hidden;
+  }
+}
+
+@keyframes panelContentFade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes formFadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-8px); }
+}
+
+.form-fade-out {
+  animation: formFadeOut 200ms ease forwards;
 }

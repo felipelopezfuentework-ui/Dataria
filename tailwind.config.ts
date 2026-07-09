@@ -51,7 +51,7 @@ const config: Config = {
         card: '24px',
       },
       maxWidth: {
-        container: '1280px',
+        container: '1100px',
       },
       boxShadow: {
         soft:    '0 8px 32px rgba(53, 60, 66, 0.08)',

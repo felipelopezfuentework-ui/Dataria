@@ -1,3 +1,7 @@
+'use client'
+
+import { useReveal } from '@/hooks/useReveal'
+
 const steps = [
   {
     num: '01',
@@ -23,19 +27,35 @@ const steps = [
 ]
 
 export default function HowItWorks() {
+  const { ref: headerRef, visible: headerVisible } = useReveal<HTMLDivElement>(0.15)
+  const { ref: gridRef, visible: gridVisible } = useReveal<HTMLDivElement>(0.15)
+
   return (
-    <section id="metodo" className="py-20 md:py-28 bg-fondo-suave">
-      <div className="max-w-container mx-auto px-5 md:px-10">
-        <div className="text-center mb-16">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-carbon mb-4 tracking-[-0.02em]">Así se construye tu solución</h2>
-          <p className="font-display font-semibold text-xl text-texto-sec tracking-[-0.01em]">Modelo de implementación por etapas, sin fricciones.</p>
+    <section id="metodo" className="py-20 bg-[#F8FAFC]">
+      <div className="max-w-container mx-auto px-6">
+        <div ref={headerRef} className={`text-center mb-16 reveal ${headerVisible ? 'is-visible' : ''}`}>
+          <h2 className="font-display text-3xl md:text-4xl font-extrabold text-carbon mb-4 tracking-[-0.03em]">Así se construye tu solución</h2>
+          <p className="text-xl text-texto-sec font-normal">Modelo de implementación por etapas, sin fricciones.</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div ref={gridRef} className="relative grid md:grid-cols-3 gap-6">
+          {/* Connecting line: "dibuja" left-to-right, echoing a process that flows */}
+          <svg className="hidden md:block absolute left-0 right-0 pointer-events-none" style={{ top: '52px', height: 2, width: '100%' }}
+            viewBox="0 0 100 2" preserveAspectRatio="none">
+            <line x1="0" y1="1" x2="100" y2="1" pathLength="100" stroke="#45B5F3" strokeOpacity="0.5" strokeWidth="2"
+              style={{
+                strokeDasharray: 100,
+                strokeDashoffset: gridVisible ? 0 : 100,
+                transition: 'stroke-dashoffset 700ms cubic-bezier(0.16, 1, 0.3, 1)',
+              }}
+            />
+          </svg>
+
           {steps.map((step, i) => (
             <div
               key={step.num}
-              className="relative bg-white rounded-xl border border-borde p-8 shadow-card overflow-hidden"
+              className={`relative z-10 bg-white rounded-xl border border-borde p-8 shadow-card overflow-hidden reveal ${gridVisible ? 'is-visible' : ''}`}
+              style={{ transitionDelay: `${i * 100}ms` }}
             >
               {/* Content */}
               <div className="flex items-center gap-3 mb-5">
