@@ -8,15 +8,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
 
           {/* Brand */}
-          <div className="md:col-span-1">
+          <div className="md:col-span-1 flex flex-col gap-3">
             <Image
               src="/dataria-sin-fondo.png"
               alt="Dataria"
-              width={150}
-              height={44}
-              className="h-11 w-auto brightness-0 invert mb-4"
+              width={670}
+              height={373}
+              className="w-auto object-contain brightness-0 invert"
+              style={{ height: '54px', width: 'auto' }}
             />
-            <p className="text-sm text-white/60 leading-relaxed">
+            <p className="leading-relaxed" style={{ fontSize: '15px', color: 'rgba(255,255,255,0.7)', maxWidth: '280px' }}>
               Inteligencia Artificial aplicada a negocios reales. Precisa y ágil en cada implementación.
             </p>
           </div>

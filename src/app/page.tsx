@@ -12,12 +12,12 @@ export default function Home() {
       <Hero />
       <IndustriesPreview />
 
-      <ClientLogos />
-
       {/* Cómo trabajamos */}
       <section id="como-trabajamos">
         <HowItWorks />
       </section>
+
+      <ClientLogos />
 
       <CTAReunion />
 

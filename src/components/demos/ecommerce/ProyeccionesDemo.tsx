@@ -147,28 +147,16 @@ function Splash({ onBack, onEnter }: { onBack: () => void; onEnter: () => void }
 
 function Topbar({ onBack }: { onBack: () => void }) {
   return (
-    <div className="flex items-center justify-between px-4 py-3 shrink-0" style={{ backgroundColor: '#1B5BC1' }}>
-      <div className="flex items-center gap-3">
-        <div
-          className="w-8 h-8 rounded-lg flex items-center justify-center font-black text-white text-xl shrink-0"
-          style={{ backgroundColor: 'rgba(255,255,255,0.15)', fontStyle: 'italic', lineHeight: 1 }}
-        >
-          d
-        </div>
-        <div>
-          <p className="text-white font-bold text-sm leading-tight">dataria</p>
-          <p className="text-[11px] leading-tight" style={{ color: 'rgba(255,255,255,0.6)' }}>
-            Tablero de ventas
-          </p>
-        </div>
+    <div style={{ backgroundColor: '#1B5BC1' }} className="flex items-center justify-between px-5 py-3 shrink-0">
+      <div className="flex items-center gap-2.5">
+        <span className="font-extrabold text-lg text-white leading-none">
+          <span style={{ color: '#56BCFA' }}>d</span>ataria
+        </span>
+        <span className="text-white/40 text-sm">·</span>
+        <span className="text-white/75 text-sm">E-commerce · Proyecciones de ventas</span>
       </div>
-      <button
-        onClick={onBack}
-        className="flex items-center gap-1.5 text-sm font-medium transition-colors"
-        style={{ color: 'rgba(255,255,255,0.7)' }}
-        onMouseEnter={e => ((e.currentTarget as HTMLButtonElement).style.color = '#fff')}
-        onMouseLeave={e => ((e.currentTarget as HTMLButtonElement).style.color = 'rgba(255,255,255,0.7)')}
-      >
+      <button onClick={onBack}
+        className="flex items-center gap-1.5 text-white/60 hover:text-white text-sm font-medium transition-colors">
         <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
         </svg>

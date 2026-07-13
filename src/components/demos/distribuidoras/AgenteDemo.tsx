@@ -636,16 +636,33 @@ export default function AgenteDemo({ onBack }: { onBack: () => void }) {
   }
 
   return (
-    <div className="flex" style={{ height: 580 }}>
+    <div className="flex flex-col min-h-[560px]">
+      {/* Header */}
+      <div style={{ backgroundColor: '#1B5BC1' }} className="flex items-center justify-between px-5 py-3 shrink-0">
+        <div className="flex items-center gap-2.5">
+          <span className="font-extrabold text-lg text-white leading-none">
+            <span style={{ color: '#56BCFA' }}>d</span>ataria
+          </span>
+          <span className="text-white/40 text-sm">·</span>
+          <span className="text-white/75 text-sm">Distribuidoras · Agente de pedidos</span>
+        </div>
+        <button onClick={onBack}
+          className="flex items-center gap-1.5 text-white/60 hover:text-white text-sm font-medium transition-colors">
+          <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+          </svg>
+          Inicio
+        </button>
+      </div>
+
+      <div className="flex" style={{ height: 580 }}>
       {/* ── Chat column (60%) ── */}
       <div className="flex flex-col" style={{ width: '60%', borderRight: '1px solid #e5e7eb' }}>
-        {/* Header */}
+        {/* Contact bar */}
         <div
           className="flex items-center gap-2.5 px-3 py-2.5 flex-shrink-0"
           style={{ backgroundColor: '#306ECF', borderBottom: '1px solid #2558A8' }}
         >
-          <IcoBack onClick={onBack} light />
-          <div className="w-px h-4 flex-shrink-0" style={{ backgroundColor: 'rgba(255,255,255,0.25)' }} />
           <div
             className="w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0"
             style={{ backgroundColor: 'rgba(255,255,255,0.18)', color: '#fff' }}
@@ -731,6 +748,7 @@ export default function AgenteDemo({ onBack }: { onBack: () => void }) {
           step={trackerStep}
           onDownload={downloadOrder}
         />
+      </div>
       </div>
     </div>
   )

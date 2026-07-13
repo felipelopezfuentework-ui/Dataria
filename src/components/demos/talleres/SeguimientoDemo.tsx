@@ -493,19 +493,21 @@ export default function SeguimientoDemo({ onBack }: { onBack: () => void }) {
   return (
     <div className="relative flex flex-col overflow-hidden" style={{ height: 520, backgroundColor: '#F3F6F5' }}>
       {/* Topbar */}
-      <div className="flex items-center gap-3 px-4 py-2.5 flex-shrink-0" style={{ backgroundColor: '#1B5BC1' }}>
-        <button onClick={onBack}
-          className="flex items-center gap-1.5 text-sm font-medium transition-opacity hover:opacity-75"
-          style={{ color: 'rgba(255,255,255,0.75)' }}>
-          <IcoBack /> Inicio
-        </button>
-        <div className="w-px h-4" style={{ backgroundColor: 'rgba(255,255,255,0.25)' }} />
-        <div className="flex items-center gap-2">
-          <div className="w-6 h-6 rounded-md flex items-center justify-center font-black text-xs" style={{ backgroundColor: '#fff', color: '#1B5BC1' }}>d</div>
-          <span className="text-white font-bold text-sm">dataria</span>
-          <span className="text-white/40 mx-0.5">·</span>
-          <span className="text-sm" style={{ color: 'rgba(255,255,255,0.7)' }}>Seguimiento de reparación</span>
+      <div style={{ backgroundColor: '#1B5BC1' }} className="flex items-center justify-between px-5 py-3 shrink-0">
+        <div className="flex items-center gap-2.5">
+          <span className="font-extrabold text-lg text-white leading-none">
+            <span style={{ color: '#56BCFA' }}>d</span>ataria
+          </span>
+          <span className="text-white/40 text-sm">·</span>
+          <span className="text-white/75 text-sm">Talleres · Seguimiento de reparación</span>
         </div>
+        <button onClick={onBack}
+          className="flex items-center gap-1.5 text-white/60 hover:text-white text-sm font-medium transition-colors">
+          <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+          </svg>
+          Inicio
+        </button>
       </div>
 
       {/* Tabs */}

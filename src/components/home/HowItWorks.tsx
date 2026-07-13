@@ -39,18 +39,6 @@ export default function HowItWorks() {
         </div>
 
         <div ref={gridRef} className="relative grid md:grid-cols-3 gap-6">
-          {/* Connecting line: "dibuja" left-to-right, echoing a process that flows */}
-          <svg className="hidden md:block absolute left-0 right-0 pointer-events-none" style={{ top: '52px', height: 2, width: '100%' }}
-            viewBox="0 0 100 2" preserveAspectRatio="none">
-            <line x1="0" y1="1" x2="100" y2="1" pathLength="100" stroke="#45B5F3" strokeOpacity="0.5" strokeWidth="2"
-              style={{
-                strokeDasharray: 100,
-                strokeDashoffset: gridVisible ? 0 : 100,
-                transition: 'stroke-dashoffset 700ms cubic-bezier(0.16, 1, 0.3, 1)',
-              }}
-            />
-          </svg>
-
           {steps.map((step, i) => (
             <div
               key={step.num}
@@ -80,17 +68,6 @@ export default function HowItWorks() {
                   </li>
                 ))}
               </ul>
-
-              {/* Connector arrow between cards */}
-              {i < steps.length - 1 && (
-                <div className="hidden md:block absolute -right-4 top-1/2 -translate-y-1/2 z-10">
-                  <div className="w-8 h-8 bg-white rounded-full border border-borde flex items-center justify-center shadow-card">
-                    <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} className="text-azul-nucleo">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                    </svg>
-                  </div>
-                </div>
-              )}
             </div>
           ))}
         </div>
