@@ -75,7 +75,7 @@ export default function Footer() {
 
         <div className="mt-14 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/40">
           <span>© {new Date().getFullYear()} Dataria. Todos los derechos reservados.</span>
-          <span>Córdoba, Argentina</span>
+          <span>Buenos Aires, Argentina</span>
         </div>
       </div>
     </footer>

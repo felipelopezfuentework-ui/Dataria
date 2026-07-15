@@ -63,7 +63,7 @@ function fmtShort(d: Date): string {
 function Splash({ onBack, onStart }: { onBack: () => void; onStart: () => void }) {
   return (
     <div
-      className="min-h-[580px] flex flex-col"
+      className="min-h-[640px] flex flex-col"
       style={{ background: 'linear-gradient(160deg, #1B5BC1 0%, #2a6fd4 50%, #45B5F3 100%)' }}
     >
       <div className="p-4">
@@ -185,7 +185,7 @@ export default function VisitasDemo({ onBack }: { onBack: () => void }) {
   const canConfirm = !!slot && !!form.name.trim() && !!form.phone.trim()
 
   return (
-    <div className="flex flex-col" style={{ minHeight: 580 }}>
+    <div className="flex flex-col" style={{ minHeight: 640 }}>
       <style>{`
         @keyframes cellPop {
           0%   { opacity: 0; transform: scale(0.82); }

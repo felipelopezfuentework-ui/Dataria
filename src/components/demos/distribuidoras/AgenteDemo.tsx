@@ -125,7 +125,7 @@ function IcoBack({ light, onClick }: { light?: boolean; onClick: () => void }) {
 function SplashScreen({ onBack, onStart }: { onBack: () => void; onStart: () => void }) {
   return (
     <div
-      className="min-h-[560px] flex flex-col"
+      className="min-h-[620px] flex flex-col"
       style={{ background: 'linear-gradient(160deg, #1B5BC1 0%, #2a6fd4 50%, #45B5F3 100%)' }}
     >
       <div className="p-4">
@@ -636,7 +636,7 @@ export default function AgenteDemo({ onBack }: { onBack: () => void }) {
   }
 
   return (
-    <div className="flex flex-col min-h-[560px]">
+    <div className="flex flex-col min-h-[620px]">
       {/* Header */}
       <div style={{ backgroundColor: '#1B5BC1' }} className="flex items-center justify-between px-5 py-3 shrink-0">
         <div className="flex items-center gap-2.5">

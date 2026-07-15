@@ -143,7 +143,7 @@ const MAX_SEGMENTO_TOTAL = Math.max(...SEGMENTO_STATS.map(s => s.totalGastado))
 function Splash({ onBack, onEnter }: { onBack: () => void; onEnter: () => void }) {
   return (
     <div
-      className="min-h-[560px] flex flex-col"
+      className="min-h-[620px] flex flex-col"
       style={{ background: 'linear-gradient(160deg, #1B5BC1 0%, #2a6fd4 50%, #45B5F3 100%)' }}
     >
       <div className="p-4">
@@ -526,7 +526,7 @@ function MainPanel({ onBack }: { onBack: () => void }) {
   const [tab, setTab] = useState<TabId>('clientes')
 
   return (
-    <div className="flex flex-col min-h-[560px]">
+    <div className="flex flex-col min-h-[620px]">
       <Topbar onBack={onBack} />
       <TabBar tab={tab} setTab={setTab} />
       <div className="flex-1 overflow-auto p-4" style={{ backgroundColor: '#F3F6F5' }}>

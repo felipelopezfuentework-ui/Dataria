@@ -37,6 +37,9 @@
       opacity: 1 !important;
       transform: none !important;
     }
+    .animate-scroll {
+      animation: scroll 30s linear infinite !important;
+    }
   }
 }
 

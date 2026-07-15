@@ -110,7 +110,7 @@ function matchTrigger(text: string, state: ChatState): TriggerResult {
 function Splash({ onBack, onStart }: { onBack: () => void; onStart: () => void }) {
   return (
     <div
-      className="min-h-[560px] flex flex-col"
+      className="min-h-[620px] flex flex-col"
       style={{ background: 'linear-gradient(160deg, #1B5BC1 0%, #2a6fd4 50%, #45B5F3 100%)' }}
     >
       <div className="p-4">

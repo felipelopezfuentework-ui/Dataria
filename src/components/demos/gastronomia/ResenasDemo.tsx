@@ -110,7 +110,11 @@ function DashboardTab({ resenas }: { resenas: Resena[] }) {
         {kpis.map(k => (
           <div key={k.label} className="bg-white rounded-xl border border-[#DCE5E9] p-3.5 flex flex-col gap-1">
             <span className="text-[10px] font-bold uppercase tracking-wide text-[#5A6871]">{k.label}</span>
-            <span className="text-xl font-extrabold" style={{ color: k.color }}>{k.value}</span>
+            <span className="text-xl font-extrabold" style={{ color: k.color }}>
+              {k.label === 'Promedio'
+                ? <>4.8 <span style={{ color: '#f5a623' }}>★</span></>
+                : k.value}
+            </span>
           </div>
         ))}
       </div>
@@ -318,7 +322,7 @@ function MainPanel({ onBack }: { onBack: () => void }) {
     setResenas(prev => prev.map(r => r.id === id ? { ...r, respondida: true } : r))
 
   return (
-    <div className="flex flex-col min-h-[560px]">
+    <div className="flex flex-col min-h-[620px]">
       {/* Topbar */}
       <div style={{ backgroundColor: '#1B5BC1' }} className="flex items-center justify-between px-5 py-3 shrink-0">
         <div className="flex items-center gap-2.5">
@@ -363,7 +367,7 @@ function MainPanel({ onBack }: { onBack: () => void }) {
 function Splash({ onBack, onEnter }: { onBack: () => void; onEnter: () => void }) {
   return (
     <div
-      className="min-h-[560px] flex flex-col"
+      className="min-h-[620px] flex flex-col"
       style={{ background: 'linear-gradient(160deg, #1B5BC1 0%, #2a6fd4 50%, #45B5F3 100%)' }}
     >
       <div className="p-4">

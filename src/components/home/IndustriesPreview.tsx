@@ -239,7 +239,7 @@ function Card({ demo, index, visible, onSelect }: { demo: DemoCard; index: numbe
 function CardsView({ industry, onSelect }: { industry: Industry; onSelect: (demoId: string) => void }) {
   const { ref, visible } = useReveal<HTMLDivElement>(0.15)
   return (
-    <div ref={ref} className="min-h-[560px] flex flex-col p-8" style={{ backgroundColor: '#F3F6F5' }}>
+    <div ref={ref} className="min-h-[560px] flex flex-col p-10" style={{ backgroundColor: '#F3F6F5' }}>
       <p className="text-[13px] font-bold uppercase tracking-[0.1em] mb-8 text-[#306ECF]">
         {industry.label}
       </p>
@@ -301,7 +301,7 @@ function OtrosForm() {
   }
 
   return (
-    <div className="min-h-[560px] flex flex-col p-8" style={{ backgroundColor: '#F3F6F5' }}>
+    <div className="min-h-[560px] flex flex-col p-10" style={{ backgroundColor: '#F3F6F5' }}>
       <div className="max-w-lg mx-auto w-full">
         <div className="text-center mb-6">
           <h3 className="font-display text-2xl font-extrabold text-[#353C42] mb-2 tracking-[-0.03em]">¿Tenés un proceso que querés automatizar?</h3>
@@ -410,7 +410,7 @@ export default function IndustriesPreview() {
           <div id="demos" className="scroll-mt-[88px] md:scroll-mt-[104px]">
 
             {/* Panel — styled like a browser/desktop window floating over the section */}
-            <div ref={panelRef} className={`max-w-[900px] mx-auto rounded-[12px] overflow-hidden border reveal-scale ${panelVisible ? 'is-visible' : ''}`}
+            <div ref={panelRef} className={`max-w-[1000px] min-h-[560px] mx-auto rounded-[12px] overflow-hidden border reveal-scale ${panelVisible ? 'is-visible' : ''}`}
               style={{
                 backgroundColor: '#FFFFFF',
                 borderColor: '#DCE5E9',
@@ -434,7 +434,7 @@ export default function IndustriesPreview() {
             </div>
 
             {/* Industry bar — below the panel */}
-            <div ref={barRef} className={`max-w-[900px] mx-auto mt-0 flex flex-wrap justify-center reveal ${barVisible ? 'is-visible' : ''}`} style={{ transitionDelay: '200ms' }}>
+            <div ref={barRef} className={`max-w-[1000px] mx-auto mt-0 flex flex-wrap justify-center reveal ${barVisible ? 'is-visible' : ''}`} style={{ transitionDelay: '200ms' }}>
             {industries.map(ind => {
               const isActive = ind.id === activeId
               return (
