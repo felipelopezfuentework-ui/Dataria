@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dataria.com/sitemap.xml
+Sitemap: https://www.dataria.work/sitemap.xml
