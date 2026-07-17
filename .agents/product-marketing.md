@@ -1,6 +1,6 @@
 # Product Marketing Context
 
-**Document version:** v3
+**Document version:** v4
 **Last updated:** 2026-07-17
 
 ## Product Overview
@@ -45,10 +45,22 @@
 **Emotional tension:** Sensación de estar "a ciegas" en decisiones del día a día del negocio. También temor al crecimiento/desarrollo del propio negocio — avanzar sin saber si la estructura actual aguanta.
 
 ## Competitive Landscape
-**Direct:** Consultoras/agencias de automatización con IA para pymes en Argentina (investigado jul-2026): Duotach, Zent Agency, Tec5, AIKen, Neowyze, IA Aplicada Argentina, Develop Argentina. Casi todas son **consultoras genéricas** (n8n + chatbots + integraciones a medida), cobrando USD 1.500–15.000 por proyecto, partiendo de cero cada vez ("decinos qué querés automatizar y lo armamos").
-**Secondary:** Software genérico ya armado de cada rubro (ej. un CRM inmobiliario genérico, un software de rutas genérico) — no está hecho a medida ni incluye implementación asistida.
-**Indirect:** Procesos manuales / Excel / papel — "no uso ninguna herramienta". ERP antiguos
-*(confirmado con Imanol: la competencia real es un mix entre software puntual del rubro Y el proceso manual — no es solo uno de los dos)*
+⚠️ Actualizado jul-2026 con audit real: se le hicieron 7 preguntas realistas a Gemini (como las haría un cliente) y NINGUNO de los competidores de la búsqueda web genérica (Duotach, Zent Agency, Tec5, AIKen, Neowyze) apareció ni una sola vez. La competencia que realmente cita la IA es otra:
+
+**Direct, por vertical (lo que Gemini recomienda hoy):**
+- Gastronomía (food cost): **Gusti.co**, **Choco.com**, MarketMan
+- Distribuidoras (rutas): **QuadMinds** (nacida en Argentina), SimpliRoute (líder Latam), UNIGIS, Routific/Route4Me
+- Inmobiliarias (CRM): **Tokko Broker** (líder de mercado en Argentina, el más peligroso de los 4), Kommo/amoCRM, Wasi, Clientify
+- E-commerce (stock/proyecciones): Prediko, Inventoro, StockTrim, Inventory Planner
+- Consultoras generalistas de IA: RockingData, 7Puentes, Algeiba, Snoop Consulting, Axxon Consulting, BairesDev
+
+**Indirect (muy fuerte, no lo esperaba):** Gemini recomienda activamente "hacelo vos mismo con ChatGPT/Claude Plus, subí tu Excel y pedile el análisis" como opción gratuita — apareció en 4 de las 7 respuestas. Es una objeción real de venta a trabajar en el mensaje: por qué pagar un módulo mantenido en vez de un prompt suelto.
+**Secondary:** Software genérico ya armado de cada rubro sin implementación asistida (parcialmente solapa con el listado de arriba).
+*(confirmado con Imanol: la competencia real es un mix entre software puntual del rubro Y el proceso manual — se valida con el audit real)*
+
+**Validación del diferenciador:** en la pregunta 7 (consultora a medida vs. módulos armados por industria), la conclusión de la propia Gemini fue: *"para la mayoría de las pymes, el camino ideal es empezar con módulos armados"* — coincide exactamente con el posicionamiento de Dataria, sin haberlo mencionado.
+
+**Baseline de visibilidad en IA (jul-2026):** Dataria no apareció mencionado en ninguna de las 7 respuestas — 0 visibilidad hoy. Esperable para un sitio nuevo sin menciones ni backlinks. El plan de contenido debe apuntar a esto.
 
 ## Differentiation
 **Key differentiators:**
@@ -118,6 +130,7 @@
 
 ## Changelog
 *Newest first. One line per revision: what changed and why.*
+- v4 (2026-07-17) — Primer audit GEO real: 7 preguntas realistas consultadas a Gemini (gemini-flash-latest). Reemplazó la lista de competidores de búsqueda web genérica por la lista real de lo que la IA recomienda por vertical (muy distinta — 0% de solapamiento). Dataria: 0 menciones (baseline). El diferenciador de "módulos armados" quedó validado por la propia conclusión de Gemini en la pregunta 7. Guardado el detalle completo en scratchpad, no en el repo (son datos de auditoría puntual, no contexto de marca permanente).
 - v3 (2026-07-17) — Combinó ediciones simultáneas: Imanol editó directo en GitHub (target audience más amplio incluyendo proyectos en desarrollo, temor al crecimiento, matiz de que Dataria también resuelve problemas custom que trae el cliente — no solo módulos prefabricados, voz de marca, corrección de que los clientes no son 100% gastronomía) mientras se completaban en paralelo por chat el modelo de negocio, casos de Pariggi/Pollo Cocido, anti-persona y la nota de no inventar testimonios. Quedan [FALTA]: métricas reales de tráfico (dependen de GA4/Search Console).
 - v2 (2026-07-17) — Imanol completó: modelo de negocio (3 etapas + detalle interno de pago), por qué fallan Excel/ERP (con datos investigados), casos reales de Pariggi y Pollo Cocido, anti-persona, ansiedad de switching. Se agregó lenguaje de cliente en modo hipótesis (sin citas reales todavía) y se marcó explícitamente NO inventar testimonios atribuidos a clientes reales. Quedan [FALTA]: voz de marca (tono/personalidad), métricas concretas, y métricas actuales de tráfico (dependen de GA4/Search Console).
 - v1 (2026-07-17) — Contexto inicial armado a partir del código del sitio (Hero, FAQ, IndustriesPreview, ClientLogos) + lo confirmado por Imanol en conversación (rango de cliente amplio, competencia mixta, sin rubro prioritario definido todavía). Varias secciones quedan marcadas [FALTA] — requieren que Imanol las complete, no se pueden inferir del código.
