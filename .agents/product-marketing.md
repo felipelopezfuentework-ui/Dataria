@@ -11,9 +11,9 @@
 **Business model:** [FALTA — Imanol confirmar: ¿es una suscripción mensual, un pago por implementación, ambos? El sitio nunca muestra precios, todo redirige a consulta.]
 
 ## Target Audience
-**Target companies:** Pymes y autónomos, rango amplio — desde negocios chicos de un solo dueño hasta pymes con algo de estructura (no achicar el mensaje a "changuitos" solamente).
-**Decision-makers:** El dueño/dueña del negocio, o un gerente/encargado operativo en pymes con algo más de estructura — en ambos casos, alguien sin equipo técnico propio.
-**Primary use case:** Reemplazar procesos manuales/planillas sueltas por herramientas de IA que centralizan datos operativos del día a día.
+**Target companies:** Pymes y autónomos, rango amplio — desde negocios pequeños de un solo dueño o mismo autónomos hasta pymes con algo de estructura. Principalmente pymes y empresas y proyectosen desarrollo. 
+**Decision-makers:** El dueño/dueña del negocio, o un gerente/encargado operativo en pymes con algo más de estructura — en ambos casos, alguien sin equipo técnico propio. aunque si lo tiene no es excluyente.
+**Primary use case:** Reemplazar procesos manuales/planillas sueltas o sistemas de gestión por herramientas de IA que centralizan datos operativos del día a día.
 **Jobs to be done:**
 - Dejar de perder tiempo/plata por decisiones tomadas "a ojo" sin datos centralizados
 - Delegar tareas operativas repetitivas (responder reseñas, armar rutas, agendar turnos) a un agente/herramienta
@@ -35,12 +35,12 @@
 **Core problem:** Datos operativos dispersos ("datos sueltos") que impiden decisiones rápidas y buenas.
 **Why alternatives fall short:** [FALTA — Imanol: ¿qué usan hoy los clientes que después migran a Dataria? ¿Planillas, papel, otro software puntual?]
 **What it costs them:** [FALTA — ¿hay algún caso/cliente donde se pueda cuantificar el costo de no tener esto? tiempo perdido, plata perdida por mal cálculo de costos, etc.]
-**Emotional tension:** Sensación de estar "a ciegas" en decisiones del día a día del negocio.
+**Emotional tension:** Sensación de estar "a ciegas" en decisiones del día a día del negocio. Temor al crecimiento, al desarrollo
 
 ## Competitive Landscape
 **Direct:** Consultoras/agencias de automatización con IA para pymes en Argentina (investigado jul-2026): Duotach, Zent Agency, Tec5, AIKen, Neowyze, IA Aplicada Argentina, Develop Argentina. Casi todas son **consultoras genéricas** (n8n + chatbots + integraciones a medida), cobrando USD 1.500–15.000 por proyecto, partiendo de cero cada vez ("decinos qué querés automatizar y lo armamos").
 **Secondary:** Software genérico ya armado de cada rubro (ej. un CRM inmobiliario genérico, un software de rutas genérico) — no está hecho a medida ni incluye implementación asistida.
-**Indirect:** Procesos manuales / Excel / papel — "no uso ninguna herramienta".
+**Indirect:** Procesos manuales / Excel / papel — "no uso ninguna herramienta". ERP antiguos
 *(confirmado con Imanol: la competencia real es un mix entre software puntual del rubro Y el proceso manual — no es solo uno de los dos)*
 
 ## Differentiation
@@ -48,7 +48,7 @@
 - **Módulos ya armados y probables en vivo por industria** (food cost, CRM inmobiliario, rutas, stock, etc.) — el visitante los prueba en el sitio antes de hablar con nadie. Esto es lo que más distingue a Dataria de las consultoras de automatización genéricas del punto anterior, que parten de una hoja en blanco cada vez.
 - Implementación asistida completa (no es "self-service", Dataria configura e integra)
 - Modular: se empieza con un módulo y se agranda sin rehacer nada
-**How we do it differently:** A diferencia de una consultora que arma "lo que pidas" desde cero, Dataria ya tiene el módulo construido y demostrable — reduce el tiempo/riesgo de la primera decisión. Idea a validar/desarrollar: integraciones ya resueltas contra sistemas comunes de cada rubro (POS de gastronomía, planillas de distribuidoras, etc.) — todavía no confirmado como diferenciador técnico real, es una hipótesis a definir con Imanol.
+**How we do it differently:** A diferencia de una consultora que arma "lo que pidas" desde cero, Dataria ya tiene el módulo construido y demostrable — reduce el tiempo/riesgo de la primera decisión. Idea a validar/desarrollar: integraciones ya resueltas contra sistemas comunes de cada rubro (POS de gastronomía, planillas de distribuidoras, etc.) —Tambien igual trabajamos esperando a que el clienet venga a plantear problema sy traer SOLUCIONES, PALABRA IMPORTANTISIMA con sistemas o herramienta snuevas
 **Why that's better:** El cliente no necesita saber nada técnico ni contratar a alguien para mantenerlo, y puede "tocar" el producto antes de comprometerse — algo que ninguna consultora genérica ofrece.
 **Why customers choose us:** [FALTA — si tenés algún testimonio o razón que te hayan dicho directamente los clientes de Hibent/Padella/Pastas Pariggi/Pollo Cocido/Ragú/MP Catering, va acá]
 
@@ -59,13 +59,12 @@
 | "No tengo equipo técnico" | "Nos encargamos de todo: configuración, integración y capacitación" |
 | "¿Mis datos están seguros?" | Se procesan de forma segura, no se comparten con terceros ni se usan para entrenar modelos ajenos a la operación del cliente |
 | "¿Tengo que comprar todo junto?" | No, se puede empezar con un solo módulo y expandir |
-| [FALTA] | [Imanol: ¿qué objeción escuchás más seguido en una llamada real que NO esté en esta lista?] |
 
 **Anti-persona:** [FALTA — ¿a quién NO le sirve Dataria? ¿empresas muy grandes con área de sistemas propia? ¿alguien que busca la herramienta más barata posible sin importar el acompañamiento?]
 
 ## Switching Dynamics
 **Push:** Errores/pérdidas por decisiones sin datos, tiempo perdido en tareas manuales repetitivas.
-**Pull:** No hace falta saber de tecnología, te acompañan en todo el proceso, podés empezar chico.
+**Pull:** No hace falta saber de tecnología, te acompañan en todo el proceso, podés empezar sencillo.
 **Habit:** La comodidad de "así lo veníamos haciendo siempre" con Excel/papel/memoria.
 **Anxiety:** [FALTA — ¿qué les preocupa a los que dudan? ¿el costo, el tiempo de aprendizaje, depender de un proveedor externo, la seguridad de los datos del negocio?]
 
@@ -81,13 +80,13 @@
 | Agente de pedidos | Bot/asistente por WhatsApp que toma pedidos automáticamente |
 
 ## Brand Voice
-**Tone:** [FALTA — ¿cómo lo describirías vos? ¿cercano y directo, más corporativo/serio, técnico-confiable?]
+**Tone:** directo, conciso, eficaz. Solucion
 **Style:** Directo, sin tecnicismos, orientado a resultado ("optimizá tu negocio").
-**Personality:** [FALTA — 3-5 adjetivos que lo describan]
+**Personality:** Sencilla, directa, positiva
 
 ## Proof Points
-**Metrics:** [FALTA — ¿hay algún número real? ej. "reduce X horas por semana", "clientes ahorran X% en costos"]
-**Customers:** Hibent, Padella, Pastas Pariggi, Pollo Cocido, Ragú, MP Catering (todos rubro gastronómico/alimentos, Argentina)
+**Metrics:** no hay numeros, abria que ver que kpis se pueden sumar a la pagina a medida que avanzamos
+**Customers:** Hibent, Padella, Pastas Pariggi, Pollo Cocido, Ragú, MP Catering (En sumayortia gastronomia, aunnque hay biscileta sy demas marcas
 **Testimonials:** [FALTA — ¿tenés alguna cita textual de estos clientes?]
 **Value themes:**
 | Theme | Proof |
@@ -97,7 +96,7 @@
 | Seguro | Datos no compartidos ni usados para entrenar modelos de terceros |
 
 ## Goals
-**Primary business goal:** Conseguir más consultas/clientes en general (no hay foco exclusivo en un solo rubro por ahora — los 4 compiten parejo por prioridad).
+**Primary business goal:** Conseguir más consultas/clientes en general (no hay foco exclusivo en un solo rubro por ahora — los 4 compiten parejo por prioridad). Queremos expandir rubros, estos no son los unicos, ver a que otras variantes de rubros, actividades podemos aplicar. abrir abanico
 **Key conversion action:** Agendar una consulta gratuita de 15 minutos (o completar el formulario de "Otros").
 **Current metrics:** [FALTA — sin Google Analytics/Search Console todavía, no hay datos reales de tráfico/conversión]
 
