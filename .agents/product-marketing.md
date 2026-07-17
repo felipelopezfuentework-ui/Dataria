@@ -1,6 +1,6 @@
 # Product Marketing Context
 
-**Document version:** v2
+**Document version:** v3
 **Last updated:** 2026-07-17
 
 ## Product Overview
@@ -16,9 +16,9 @@
 *Detalle interno (NO publicar en la web tal cual): el Setup se cobra 50% al inicio y 50% en la entrega. El Seguimiento es la cuota mensual recurrente. La Expansión se presupuesta caso a caso.*
 
 ## Target Audience
-**Target companies:** Pymes y autónomos, rango amplio — desde negocios chicos de un solo dueño hasta pymes con algo de estructura (no achicar el mensaje a "changuitos" solamente).
-**Decision-makers:** El dueño/dueña del negocio, o un gerente/encargado operativo en pymes con algo más de estructura — en ambos casos, alguien sin equipo técnico propio.
-**Primary use case:** Reemplazar procesos manuales/planillas sueltas por herramientas de IA que centralizan datos operativos del día a día.
+**Target companies:** Pymes y autónomos, rango amplio — desde negocios pequeños de un solo dueño o mismo autónomos hasta pymes con algo de estructura. Principalmente pymes y empresas y proyectosen desarrollo. 
+**Decision-makers:** El dueño/dueña del negocio, o un gerente/encargado operativo en pymes con algo más de estructura — en ambos casos, alguien sin equipo técnico propio. aunque si lo tiene no es excluyente.
+**Primary use case:** Reemplazar procesos manuales/planillas sueltas o sistemas de gestión por herramientas de IA que centralizan datos operativos del día a día.
 **Jobs to be done:**
 - Dejar de perder tiempo/plata por decisiones tomadas "a ojo" sin datos centralizados
 - Delegar tareas operativas repetitivas (responder reseñas, armar rutas, agendar turnos) a un agente/herramienta
@@ -42,12 +42,12 @@
 - **Excel:** ~88% de las planillas tienen errores; cada área (ventas, administración, depósito) termina con "su propia versión de la realidad" en hojas separadas que no se cruzan; no escala — con archivos grandes las fórmulas se rompen y crece el riesgo de perder información.
 - **ERP tradicional:** diseñado para empresas grandes con procesos estandarizados — asume que el negocio funciona como otros miles de negocios que usan el mismo software. En una pyme con procesos armados a criterio del dueño, esa asunción falla: no se adapta el software al negocio, se adapta el negocio al software. Dato duro: ~21% de implementaciones de ERP se describen como fallidas, 75% se pasa del tiempo planeado, 55% se pasa del presupuesto.
 **What it costs them:** Caso real (Pastas Pariggi): sin visibilidad de cómo las comisiones de vendedores impactaban la rentabilidad por producto y por cliente, no podían estructurar bien los planes de comisiones — decidían "a ojo" sobre datos que no tenían cruzados. Con el módulo de costos de Dataria fue posible ver el mix rentabilidad-por-cliente/producto y ajustar la estructura de comisiones con datos reales.
-**Emotional tension:** Sensación de estar "a ciegas" en decisiones del día a día del negocio.
+**Emotional tension:** Sensación de estar "a ciegas" en decisiones del día a día del negocio. También temor al crecimiento/desarrollo del propio negocio — avanzar sin saber si la estructura actual aguanta.
 
 ## Competitive Landscape
 **Direct:** Consultoras/agencias de automatización con IA para pymes en Argentina (investigado jul-2026): Duotach, Zent Agency, Tec5, AIKen, Neowyze, IA Aplicada Argentina, Develop Argentina. Casi todas son **consultoras genéricas** (n8n + chatbots + integraciones a medida), cobrando USD 1.500–15.000 por proyecto, partiendo de cero cada vez ("decinos qué querés automatizar y lo armamos").
 **Secondary:** Software genérico ya armado de cada rubro (ej. un CRM inmobiliario genérico, un software de rutas genérico) — no está hecho a medida ni incluye implementación asistida.
-**Indirect:** Procesos manuales / Excel / papel — "no uso ninguna herramienta".
+**Indirect:** Procesos manuales / Excel / papel — "no uso ninguna herramienta". ERP antiguos
 *(confirmado con Imanol: la competencia real es un mix entre software puntual del rubro Y el proceso manual — no es solo uno de los dos)*
 
 ## Differentiation
@@ -55,7 +55,7 @@
 - **Módulos ya armados y probables en vivo por industria** (food cost, CRM inmobiliario, rutas, stock, etc.) — el visitante los prueba en el sitio antes de hablar con nadie. Esto es lo que más distingue a Dataria de las consultoras de automatización genéricas del punto anterior, que parten de una hoja en blanco cada vez.
 - Implementación asistida completa (no es "self-service", Dataria configura e integra)
 - Modular: se empieza con un módulo y se agranda sin rehacer nada
-**How we do it differently:** A diferencia de una consultora que arma "lo que pidas" desde cero, Dataria ya tiene el módulo construido y demostrable — reduce el tiempo/riesgo de la primera decisión. Idea a validar/desarrollar: integraciones ya resueltas contra sistemas comunes de cada rubro (POS de gastronomía, planillas de distribuidoras, etc.) — todavía no confirmado como diferenciador técnico real, es una hipótesis a definir con Imanol.
+**How we do it differently:** A diferencia de una consultora que arma "lo que pidas" desde cero, Dataria ya tiene el módulo construido y demostrable — reduce el tiempo/riesgo de la primera decisión. Idea a validar/desarrollar: integraciones ya resueltas contra sistemas comunes de cada rubro (POS de gastronomía, planillas de distribuidoras, etc.) —Tambien igual trabajamos esperando a que el clienet venga a plantear problema sy traer SOLUCIONES, PALABRA IMPORTANTISIMA con sistemas o herramienta snuevas
 **Why that's better:** El cliente no necesita saber nada técnico ni contratar a alguien para mantenerlo, y puede "tocar" el producto antes de comprometerse — algo que ninguna consultora genérica ofrece.
 **Why customers choose us:** Caso real (Pollo Cocido, contado por Imanol — no citado textual): a partir de conocer costos de personal, costos fijos y de vehículos con Dataria, decidieron tercerizar con distribuidoras parte del stock y las rutas de logística para clientes específicos con alta carga de tiempo. Beneficios adicionales plausibles de ese mismo caso (⚠️ hipótesis a confirmar con el cliente antes de publicar, no está verificado):
 - Horarios de reparto más cortos al no cargar rutas de baja rentabilidad con recursos propios
@@ -69,13 +69,12 @@
 | "No tengo equipo técnico" | "Nos encargamos de todo: configuración, integración y capacitación" |
 | "¿Mis datos están seguros?" | Se procesan de forma segura, no se comparten con terceros ni se usan para entrenar modelos ajenos a la operación del cliente |
 | "¿Tengo que comprar todo junto?" | No, se puede empezar con un solo módulo y expandir |
-| [FALTA] | [Imanol: ¿qué objeción escuchás más seguido en una llamada real que NO esté en esta lista?] |
 
 **Anti-persona:** Empresas multinacionales o de más de 100 empleados con ecosistemas y equipos técnicos propios (no necesitan el acompañamiento de Dataria). Tampoco un negocio 100% en papel, sin usar computadora, sin capital ni predisposición real al cambio — no está listo para dar el salto todavía.
 
 ## Switching Dynamics
 **Push:** Errores/pérdidas por decisiones sin datos, tiempo perdido en tareas manuales repetitivas.
-**Pull:** No hace falta saber de tecnología, te acompañan en todo el proceso, podés empezar chico.
+**Pull:** No hace falta saber de tecnología, te acompañan en todo el proceso, podés empezar sencillo.
 **Habit:** La comodidad de "así lo veníamos haciendo siempre" con Excel/papel/memoria.
 **Anxiety:** Miedo a perder sus datos, al proceso de implementación en sí, al costo, y al tiempo de aprendizaje. Dataria contrarresta esto transmitiendo orden y acompañamiento en todo el proceso (ver FAQ del sitio: "nos encargamos de todo").
 
@@ -97,13 +96,13 @@
 | Agente de pedidos | Bot/asistente por WhatsApp que toma pedidos automáticamente |
 
 ## Brand Voice
-**Tone:** [FALTA — ¿cómo lo describirías vos? ¿cercano y directo, más corporativo/serio, técnico-confiable?]
+**Tone:** directo, conciso, eficaz. Solucion
 **Style:** Directo, sin tecnicismos, orientado a resultado ("optimizá tu negocio").
-**Personality:** [FALTA — 3-5 adjetivos que lo describan]
+**Personality:** Sencilla, directa, positiva
 
 ## Proof Points
-**Metrics:** [FALTA — ¿hay algún número real? ej. "reduce X horas por semana", "clientes ahorran X% en costos"]
-**Customers:** Hibent, Padella, Pastas Pariggi, Pollo Cocido, Ragú, MP Catering (todos rubro gastronómico/alimentos, Argentina)
+**Metrics:** No hay números todavía — pendiente definir qué KPIs sumar a la página a medida que avanza el proyecto (ej. tiempo ahorrado, % de mejora en costos, etc., una vez que haya casos medidos).
+**Customers:** Hibent, Padella, Pastas Pariggi, Pollo Cocido, Ragú, MP Catering — en su mayoría gastronomía/alimentos, pero no exclusivamente (hay al menos una marca de bicicletería). No asumir que el 100% de la base de clientes es gastronómica.
 **Testimonials:** No hay citas textuales reales todavía. NO publicar frases inventadas entre comillas atribuidas a Pollo Cocido/Pastas Pariggi/etc. — son empresas reales identificables, y una cita falsa es un riesgo de confianza y de honestidad publicitaria. Alternativa segura ya usable: contar los casos como hecho objetivo sin comillas (ver "Why alternatives fall short" y "Why customers choose us" arriba). Para tener testimonios reales: pedirle 2-3 líneas a cada cliente por WhatsApp — es rápido y evita el problema.
 **Value themes:**
 | Theme | Proof |
@@ -113,11 +112,12 @@
 | Seguro | Datos no compartidos ni usados para entrenar modelos de terceros |
 
 ## Goals
-**Primary business goal:** Conseguir más consultas/clientes en general (no hay foco exclusivo en un solo rubro por ahora — los 4 compiten parejo por prioridad).
+**Primary business goal:** Conseguir más consultas/clientes en general (no hay foco exclusivo en un solo rubro por ahora — los 4 compiten parejo por prioridad). Queremos expandir rubros, estos no son los unicos, ver a que otras variantes de rubros, actividades podemos aplicar. abrir abanico
 **Key conversion action:** Agendar una consulta gratuita de 15 minutos (o completar el formulario de "Otros").
 **Current metrics:** [FALTA — sin Google Analytics/Search Console todavía, no hay datos reales de tráfico/conversión]
 
 ## Changelog
 *Newest first. One line per revision: what changed and why.*
+- v3 (2026-07-17) — Combinó ediciones simultáneas: Imanol editó directo en GitHub (target audience más amplio incluyendo proyectos en desarrollo, temor al crecimiento, matiz de que Dataria también resuelve problemas custom que trae el cliente — no solo módulos prefabricados, voz de marca, corrección de que los clientes no son 100% gastronomía) mientras se completaban en paralelo por chat el modelo de negocio, casos de Pariggi/Pollo Cocido, anti-persona y la nota de no inventar testimonios. Quedan [FALTA]: métricas reales de tráfico (dependen de GA4/Search Console).
 - v2 (2026-07-17) — Imanol completó: modelo de negocio (3 etapas + detalle interno de pago), por qué fallan Excel/ERP (con datos investigados), casos reales de Pariggi y Pollo Cocido, anti-persona, ansiedad de switching. Se agregó lenguaje de cliente en modo hipótesis (sin citas reales todavía) y se marcó explícitamente NO inventar testimonios atribuidos a clientes reales. Quedan [FALTA]: voz de marca (tono/personalidad), métricas concretas, y métricas actuales de tráfico (dependen de GA4/Search Console).
 - v1 (2026-07-17) — Contexto inicial armado a partir del código del sitio (Hero, FAQ, IndustriesPreview, ClientLogos) + lo confirmado por Imanol en conversación (rango de cliente amplio, competencia mixta, sin rubro prioritario definido todavía). Varias secciones quedan marcadas [FALTA] — requieren que Imanol las complete, no se pueden inferir del código.
