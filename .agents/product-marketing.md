@@ -1,6 +1,6 @@
 # Product Marketing Context
 
-**Document version:** v4
+**Document version:** v5
 **Last updated:** 2026-07-17
 
 ## Product Overview
@@ -104,8 +104,13 @@
 **Glossary:**
 | Term | Meaning |
 |------|---------|
-| Food cost | Costo de los ingredientes de un plato/menú en gastronomía |
+| Food cost | Costo de los ingredientes de un plato/menú en gastronomía. Ideal entre 28%-35% del precio de venta (dato de industria, confirmado por Gemini en el audit) |
+| Costo invisible | Extra ~10% de food cost que no son ingredientes principales (aceite, sal, descartables) — término real de industria, útil para copy de la demo de gastronomía |
 | Agente de pedidos | Bot/asistente por WhatsApp que toma pedidos automáticamente |
+| Ventana horaria | Horario específico en el que un comercio recibe mercadería — problema central del rubro distribuidoras (confirmado por Gemini) |
+| Escandallo | Sinónimo de food cost / ficha de costeo de una receta, muy usado en gastronomía hispanohablante |
+
+*(agregado tras el audit GEO — el 85% de las consultas inmobiliarias en Argentina se cierran por WhatsApp según Gemini: útil para el copy de la demo de inmobiliarias)*
 
 ## Brand Voice
 **Tone:** directo, conciso, eficaz. Solucion
@@ -130,6 +135,7 @@
 
 ## Changelog
 *Newest first. One line per revision: what changed and why.*
+- v5 (2026-07-17) — Glosario ampliado con términos reales de industria extraídos del audit GEO (food cost 28-35%, costo invisible, ventana horaria, escandallo, dato de WhatsApp en inmobiliarias). No son citas de clientes, son terminología de industria — sin riesgo de fabricación.
 - v4 (2026-07-17) — Primer audit GEO real: 7 preguntas realistas consultadas a Gemini (gemini-flash-latest). Reemplazó la lista de competidores de búsqueda web genérica por la lista real de lo que la IA recomienda por vertical (muy distinta — 0% de solapamiento). Dataria: 0 menciones (baseline). El diferenciador de "módulos armados" quedó validado por la propia conclusión de Gemini en la pregunta 7. Guardado el detalle completo en scratchpad, no en el repo (son datos de auditoría puntual, no contexto de marca permanente).
 - v3 (2026-07-17) — Combinó ediciones simultáneas: Imanol editó directo en GitHub (target audience más amplio incluyendo proyectos en desarrollo, temor al crecimiento, matiz de que Dataria también resuelve problemas custom que trae el cliente — no solo módulos prefabricados, voz de marca, corrección de que los clientes no son 100% gastronomía) mientras se completaban en paralelo por chat el modelo de negocio, casos de Pariggi/Pollo Cocido, anti-persona y la nota de no inventar testimonios. Quedan [FALTA]: métricas reales de tráfico (dependen de GA4/Search Console).
 - v2 (2026-07-17) — Imanol completó: modelo de negocio (3 etapas + detalle interno de pago), por qué fallan Excel/ERP (con datos investigados), casos reales de Pariggi y Pollo Cocido, anti-persona, ansiedad de switching. Se agregó lenguaje de cliente en modo hipótesis (sin citas reales todavía) y se marcó explícitamente NO inventar testimonios atribuidos a clientes reales. Quedan [FALTA]: voz de marca (tono/personalidad), métricas concretas, y métricas actuales de tráfico (dependen de GA4/Search Console).
