@@ -4,10 +4,14 @@ import { useState } from 'react'
 import { useReveal } from '@/hooks/useReveal'
 
 const faqs = [
-  { q: '¿Cuánto tiempo lleva el setup?', a: 'Depende de la complejidad de la integración. Para la mayoría de los casos entregamos en 2 a 4 semanas.' },
-  { q: '¿Necesito un equipo técnico interno?', a: 'No. Nos encargamos de todo: configuración, integración y capacitación. Tu equipo solo tiene que saber usar la herramienta.' },
-  { q: '¿Mis datos están seguros?', a: 'Sí. Tus datos se procesan de forma segura, no se comparten con terceros ni se usan para entrenar modelos ajenos a tu operación.' },
-  { q: '¿Puedo empezar con una sola herramienta?', a: 'Sí, el modelo está diseñado para crecer de a módulos. Empezás con lo que más necesitás y expandís cuando tu operación lo requiera.' },
+  { q: '¿Cuánto tiempo lleva el setup?', a: 'Depende de la complejidad de la integración, pero en la mayoría de los casos entregamos el primer módulo funcionando en 2 a 4 semanas. Arrancamos con una reunión de diagnóstico gratuita para entender tu operación, y desde ahí armamos un presupuesto y un cronograma concreto — no vas a estar meses esperando sin saber en qué etapa estás.' },
+  { q: '¿Necesito un equipo técnico interno?', a: 'No. Nos encargamos de todo: configuración, integración con tus sistemas actuales y capacitación de tu equipo. Vos y tu gente solo tienen que saber usar la herramienta del día a día — nosotros mantenemos las conexiones, actualizamos los modelos y resolvemos cualquier problema técnico por vos.' },
+  { q: '¿Mis datos están seguros?', a: 'Sí. Tus datos se procesan de forma segura, no se comparten con terceros ni se usan para entrenar modelos ajenos a tu operación. Toda la información que cargamos (costos, clientes, rutas, stock) queda disponible exclusivamente para tu negocio.' },
+  { q: '¿Puedo empezar con una sola herramienta?', a: 'Sí, el modelo está diseñado para crecer de a módulos. Empezás con la herramienta que más necesitás hoy (por ejemplo, food cost si sos un restaurante) y expandís cuando tu operación lo requiera, sin tener que rehacer nada de lo ya implementado.' },
+  { q: '¿Cuánto cuesta?', a: 'Depende del alcance de tu proyecto — no hay un precio fijo publicado porque cada implementación se adapta a tu operación. Después de la reunión de diagnóstico gratuita te pasamos un presupuesto concreto para el Setup inicial, y luego hay una cuota mensual de Seguimiento que cubre soporte, actualizaciones y mantenimiento de las conexiones.' },
+  { q: '¿Qué pasa si mi negocio no es gastronomía, distribuidoras, inmobiliarias o e-commerce?', a: 'Esos son los 4 rubros donde ya tenemos módulos armados y demostrables, pero no son los únicos que atendemos. Si tu negocio es de otro rubro, contanos tu caso desde el formulario de contacto — evaluamos cada proyecto según el problema puntual que quieras resolver.' },
+  { q: '¿Por qué no uso directamente ChatGPT o una planilla de Excel?', a: 'Podés hacerlo, y de hecho es un buen punto de partida gratuito. La diferencia es que un prompt suelto no queda conectado a tus datos reales ni se actualiza solo — tenés que volver a cargar todo cada vez. Dataria te arma un módulo integrado a tu operación (tus costos, tus proveedores, tus clientes) que se mantiene actualizado sin que tengas que hacerlo vos a mano cada semana.' },
+  { q: '¿Qué pasa si mi negocio crece y necesito más funciones?', a: 'Es la tercera etapa de nuestro modelo: Expansión. Podemos sumar nuevos módulos, integrar otros sistemas o abrir nuevas áreas del negocio a medida que crecés, sin tener que empezar de cero — el mismo acompañamiento que tuviste en el Setup se mantiene en cada etapa nueva.' },
 ]
 
 function FAQItem({ q, a, index }: { q: string; a: string; index: number }) {
