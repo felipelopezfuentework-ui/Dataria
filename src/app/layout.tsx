@@ -16,6 +16,17 @@ export const metadata: Metadata = {
   },
 }
 
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Dataria',
+  url: 'https://www.dataria.work',
+  description:
+    'Dataria crea herramientas de inteligencia artificial a medida para pymes y autónomos en gastronomía, distribución, inmobiliarias y e-commerce.',
+  email: 'datariaai@gmail.com',
+  areaServed: 'AR',
+}
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es">
@@ -25,6 +36,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link
           href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,800&family=Inter:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
       </head>
       <body>

@@ -34,11 +34,25 @@ function FAQItem({ q, a, index }: { q: string; a: string; index: number }) {
   )
 }
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(faq => ({
+    '@type': 'Question',
+    name: faq.q,
+    acceptedAnswer: { '@type': 'Answer', text: faq.a },
+  })),
+}
+
 export default function FAQSection() {
   const { ref, visible } = useReveal<HTMLDivElement>(0.15)
 
   return (
     <section className="py-20 bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div className="max-w-container mx-auto px-6">
         <div ref={ref} className={`max-w-3xl mx-auto reveal ${visible ? 'is-visible' : ''}`}>
           <h2 className="font-display text-3xl md:text-4xl font-extrabold text-carbon mb-8 text-center tracking-[-0.03em]">Preguntas frecuentes</h2>
