@@ -9,7 +9,7 @@ const industries = ['Gastronomía', 'Distribuidoras de Alimentos', 'Inmobiliaria
 const ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY
 
 export default function ContactoSection() {
-  const [form, setForm] = useState({ nombre: '', email: '', proyecto: '', industria: '', proceso: '' })
+  const [form, setForm] = useState({ nombre: '', email: '', telefono: '', proyecto: '', industria: '', proceso: '' })
   const [industriaOtra, setIndustriaOtra] = useState('')
   const [sent, setSent]    = useState(false)
   const [leaving, setLeaving] = useState(false)
@@ -44,6 +44,7 @@ export default function ContactoSection() {
           from_name: 'Formulario web — Dataria',
           nombre: form.nombre,
           email: form.email,
+          telefono: form.telefono,
           proyecto: form.proyecto,
           industria: industriaFinal,
           proceso: form.proceso,
@@ -95,6 +96,7 @@ export default function ContactoSection() {
                 <Input label="Nombre" required value={form.nombre} onChange={set('nombre')} placeholder="Tu nombre" />
                 <Input label="Email" type="email" required value={form.email} onChange={set('email')} placeholder="tucorreo@ejemplo.com" />
               </div>
+              <Input label="Teléfono" type="tel" value={form.telefono} onChange={set('telefono')} placeholder="Tu teléfono (opcional)" />
               <Input label="Empresa / Proyecto" value={form.proyecto} onChange={set('proyecto')} placeholder="Nombre de tu proyecto o negocio (opcional)" />
               <Select label="Industria" value={form.industria} onChange={set('industria')}>
                 <option value="">Seleccionar</option>
