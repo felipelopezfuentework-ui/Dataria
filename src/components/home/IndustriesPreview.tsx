@@ -1,39 +1,17 @@
 'use client'
 
 import { useState } from 'react'
-import dynamic from 'next/dynamic'
+import Link from 'next/link'
 import { useReveal } from '@/hooks/useReveal'
 
-// ─── Loading fallback (avoids the panel flashing blank while a demo chunk loads) ──
-
-function DemoLoading() {
-  return (
-    <div className="min-h-[560px] flex items-center justify-center" style={{ backgroundColor: '#F3F6F5' }}>
-      <div className="flex items-center gap-2">
-        {[0, 1, 2].map(i => (
-          <span
-            key={i}
-            className="w-2.5 h-2.5 rounded-full animate-pulse"
-            style={{ backgroundColor: '#306ECF', animationDelay: `${i * 160}ms` }}
-          />
-        ))}
-      </div>
-    </div>
-  )
+// Cada industria vive ahora en su propia página (SEO/GEO: ver .agents/gemini-consultas/001-*).
+// Las demos interactivas se mudaron ahí — acá solo queda la vidriera que linkea a cada una.
+const industryRoutes: Record<string, string> = {
+  gastronomia: '/gastronomia',
+  distribuidoras: '/distribuidoras',
+  inmobiliarias: '/inmobiliarias',
+  ecommerce: '/ecommerce',
 }
-
-const FoodCostDemo = dynamic(() => import('@/components/demos/gastronomia/FoodCostDemo'),       { ssr: false, loading: DemoLoading })
-const ResenasDemo  = dynamic(() => import('@/components/demos/gastronomia/ResenasDemo'),        { ssr: false, loading: DemoLoading })
-const TurnosDemo   = dynamic(() => import('@/components/demos/gastronomia/TurnosDemo'),         { ssr: false, loading: DemoLoading })
-const RutasDemo    = dynamic(() => import('@/components/demos/distribuidoras/RutasDemo'),       { ssr: false, loading: DemoLoading })
-const DemandaDemo  = dynamic(() => import('@/components/demos/distribuidoras/DemandaDemo'),     { ssr: false, loading: DemoLoading })
-const AgenteDemo      = dynamic(() => import('@/components/demos/distribuidoras/AgenteDemo'),      { ssr: false, loading: DemoLoading })
-const VisitasDemo     = dynamic(() => import('@/components/demos/inmobiliarias/VisitasDemo'),      { ssr: false, loading: DemoLoading })
-const CRMDemo            = dynamic(() => import('@/components/demos/inmobiliarias/CRMDemo'),              { ssr: false, loading: DemoLoading })
-const RespondedorDemo    = dynamic(() => import('@/components/demos/inmobiliarias/RespondedorDemo'),        { ssr: false, loading: DemoLoading })
-const ProyeccionesDemo   = dynamic(() => import('@/components/demos/ecommerce/ProyeccionesDemo'),          { ssr: false, loading: DemoLoading })
-const ClientesDemo       = dynamic(() => import('@/components/demos/ecommerce/ClientesDemo'),              { ssr: false, loading: DemoLoading })
-const StockDemo          = dynamic(() => import('@/components/demos/ecommerce/StockDemo'),                 { ssr: false, loading: DemoLoading })
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -180,38 +158,9 @@ const industries: Industry[] = [
   { id: 'otros', label: 'Otros', icon: <IcoOtros />, demos: [] },
 ]
 
-// ─── Próximamente placeholder ─────────────────────────────────────────────────
-
-function ProximamenteScreen({ label, onBack }: { label: string; onBack: () => void }) {
-  return (
-    <div className="min-h-[560px] flex flex-col" style={{ backgroundColor: '#F3F6F5' }}>
-      <div className="p-4">
-        <button onClick={onBack}
-          className="flex items-center gap-1.5 text-sm font-medium transition-colors text-[#5A6871] hover:text-[#1B5BC1]">
-          <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
-          </svg>
-          Volver
-        </button>
-      </div>
-      <div className="flex-1 flex flex-col items-center justify-center gap-4 text-center px-8 pb-8">
-        <div className="w-16 h-16 rounded-2xl flex items-center justify-center bg-white border border-[#DCE5E9]">
-          <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} className="text-[#5A6871]">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-        </div>
-        <div>
-          <p className="font-bold text-xl mb-1 text-[#353C42]">{label}</p>
-          <p className="text-base text-[#5A6871]">Esta demo estará disponible próximamente.</p>
-        </div>
-      </div>
-    </div>
-  )
-}
-
 // ─── Card component ───────────────────────────────────────────────────────────
 
-function Card({ demo, index, visible, onSelect }: { demo: DemoCard; index: number; visible: boolean; onSelect: () => void }) {
+function Card({ demo, index, visible, href }: { demo: DemoCard; index: number; visible: boolean; href: string }) {
   return (
     <div
       className={`rounded-xl p-6 flex flex-col items-center justify-center gap-4 bg-white border border-[#DCE5E9] shadow-sm min-h-[200px] reveal hover:-translate-y-1 hover:shadow-lg transition-[opacity,transform,box-shadow] duration-200 ${visible ? 'is-visible' : ''}`}
@@ -222,11 +171,11 @@ function Card({ demo, index, visible, onSelect }: { demo: DemoCard; index: numbe
       </div>
       <p className="text-[#353C42] font-semibold text-center text-[15px] leading-tight">{demo.label}</p>
       {demo.enabled ? (
-        <button onClick={onSelect}
+        <Link href={href}
           className="inline-flex items-center justify-center h-[46px] px-6 rounded-[10px] text-white font-semibold tracking-[0.02em] text-[15px] hover:!bg-[#1B5BC1] hover:-translate-y-px hover:shadow-[0_4px_12px_rgba(48,110,207,0.35)] active:translate-y-0 transition-all duration-150"
           style={{ backgroundColor: '#306ECF' }}>
           Ver demo
-        </button>
+        </Link>
       ) : (
         <span className="text-xs font-medium text-[#5A6871]">Próximamente</span>
       )}
@@ -236,8 +185,9 @@ function Card({ demo, index, visible, onSelect }: { demo: DemoCard; index: numbe
 
 // ─── Level 2: cards grid ──────────────────────────────────────────────────────
 
-function CardsView({ industry, onSelect }: { industry: Industry; onSelect: (demoId: string) => void }) {
+function CardsView({ industry }: { industry: Industry }) {
   const { ref, visible } = useReveal<HTMLDivElement>(0.15)
+  const industryHref = industryRoutes[industry.id] ?? '/'
   return (
     <div ref={ref} className="min-h-[560px] flex flex-col p-10" style={{ backgroundColor: '#F3F6F5' }}>
       <p className="text-[13px] font-bold uppercase tracking-[0.1em] mb-8 text-[#306ECF]">
@@ -245,7 +195,7 @@ function CardsView({ industry, onSelect }: { industry: Industry; onSelect: (demo
       </p>
       <div className="grid grid-cols-3 gap-4">
         {industry.demos.map((demo, i) => (
-          <Card key={demo.id} demo={demo} index={i} visible={visible} onSelect={() => onSelect(demo.id)} />
+          <Card key={demo.id} demo={demo} index={i} visible={visible} href={`${industryHref}#demos`} />
         ))}
       </div>
     </div>
@@ -362,34 +312,13 @@ function OtrosForm() {
 // ─── Root component ───────────────────────────────────────────────────────────
 
 export default function IndustriesPreview() {
-  const [activeId, setActiveId]       = useState('gastronomia')
-  const [level, setLevel]             = useState<'cards' | 'demo'>('cards')
-  const [activeDemoId, setActiveDemoId] = useState<string | null>(null)
+  const [activeId, setActiveId] = useState('gastronomia')
 
-  const selectIndustry = (id: string) => { setActiveId(id); setLevel('cards'); setActiveDemoId(null) }
-  const selectDemo = (demoId: string) => { setActiveDemoId(demoId); setLevel('demo') }
-  const goBack = () => { setLevel('cards'); setActiveDemoId(null) }
+  const selectIndustry = (id: string) => { setActiveId(id) }
 
   const activeIndustry = industries.find(i => i.id === activeId)!
   const { ref: panelRef, visible: panelVisible } = useReveal<HTMLDivElement>(0.15)
   const { ref: barRef, visible: barVisible } = useReveal<HTMLDivElement>(0.15)
-
-  const renderDemo = () => {
-    if (activeId === 'gastronomia'    && activeDemoId === 'food-cost') return <FoodCostDemo onBack={goBack} />
-    if (activeId === 'gastronomia'    && activeDemoId === 'resenas')   return <ResenasDemo  onBack={goBack} />
-    if (activeId === 'gastronomia'    && activeDemoId === 'turnos')    return <TurnosDemo   onBack={goBack} />
-    if (activeId === 'distribuidoras' && activeDemoId === 'rutas')   return <RutasDemo   onBack={goBack} />
-    if (activeId === 'distribuidoras' && activeDemoId === 'demanda') return <DemandaDemo onBack={goBack} />
-    if (activeId === 'distribuidoras' && activeDemoId === 'agente')  return <AgenteDemo  onBack={goBack} />
-    if (activeId === 'inmobiliarias'  && activeDemoId === 'crm')         return <CRMDemo          onBack={goBack} />
-    if (activeId === 'inmobiliarias'  && activeDemoId === 'respondedor') return <RespondedorDemo  onBack={goBack} />
-    if (activeId === 'inmobiliarias'  && activeDemoId === 'agenda')      return <VisitasDemo      onBack={goBack} />
-    if (activeId === 'ecommerce'      && activeDemoId === 'proyecciones') return <ProyeccionesDemo onBack={goBack} />
-    if (activeId === 'ecommerce'      && activeDemoId === 'clientes')     return <ClientesDemo     onBack={goBack} />
-    if (activeId === 'ecommerce'      && activeDemoId === 'stock')        return <StockDemo        onBack={goBack} />
-    const demo = activeIndustry.demos.find(d => d.id === activeDemoId)
-    return <ProximamenteScreen label={demo?.label ?? ''} onBack={goBack} />
-  }
 
   return (
     <>
@@ -422,13 +351,11 @@ export default function IndustriesPreview() {
                 <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: '#FEBC2E' }} />
                 <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: '#28C840' }} />
               </div>
-              {/* key forces a remount on every industry/level/demo switch, replaying the crossfade */}
-              <div key={`${activeId}-${level}-${activeDemoId ?? ''}`} className="panel-content-fade">
+              {/* key forces a remount on every industry switch, replaying the crossfade */}
+              <div key={activeId} className="panel-content-fade">
                 {activeId === 'otros'
                   ? <OtrosForm />
-                  : level === 'cards'
-                    ? <CardsView industry={activeIndustry} onSelect={selectDemo} />
-                    : renderDemo()
+                  : <CardsView industry={activeIndustry} />
                 }
               </div>
             </div>
