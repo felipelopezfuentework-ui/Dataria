@@ -207,7 +207,7 @@ function CardsView({ industry }: { industry: Industry }) {
 const OTROS_ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY
 
 function OtrosForm() {
-  const [form, setForm] = useState({ nombre: '', email: '', proyecto: '', industria: '', descripcion: '' })
+  const [form, setForm] = useState({ nombre: '', email: '', telefono: '', proyecto: '', industria: '', descripcion: '' })
   const [sent, setSent] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -271,6 +271,11 @@ function OtrosForm() {
                 <input required type="email" value={form.email} onChange={set('email')} placeholder="tucorreo@ejemplo.com"
                   className="mt-1 w-full h-10 px-3 rounded-sm border border-[#DCE5E9] text-sm text-[#353C42] bg-white focus:outline-none focus:border-[#306ECF] transition-colors duration-200" />
               </div>
+            </div>
+            <div>
+              <label className="text-xs font-semibold text-[#5A6871] uppercase tracking-wide">Teléfono</label>
+              <input type="tel" value={form.telefono} onChange={set('telefono')} placeholder="Tu teléfono (opcional)"
+                className="mt-1 w-full h-10 px-3 rounded-sm border border-[#DCE5E9] text-sm text-[#353C42] bg-white focus:outline-none focus:border-[#306ECF] transition-colors duration-200" />
             </div>
             <div>
               <label className="text-xs font-semibold text-[#5A6871] uppercase tracking-wide">Empresa / Proyecto</label>
