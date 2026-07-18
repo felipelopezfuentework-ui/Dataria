@@ -27,13 +27,28 @@ export default function Footer() {
             <p className="text-xs font-bold uppercase tracking-widest text-white/40 mb-4">Producto</p>
             <ul className="space-y-3">
               <li>
-                <Link href="/#industrias" className="text-sm text-white/70 hover:text-white transition-colors duration-160">
-                  Industrias
+                <Link href="/gastronomia" className="text-sm text-white/70 hover:text-white transition-colors duration-160">
+                  Gastronomía
                 </Link>
               </li>
               <li>
-                <Link href="/#demos" className="text-sm text-white/70 hover:text-white transition-colors duration-160">
-                  Demos en vivo
+                <Link href="/distribuidoras" className="text-sm text-white/70 hover:text-white transition-colors duration-160">
+                  Distribuidoras
+                </Link>
+              </li>
+              <li>
+                <Link href="/inmobiliarias" className="text-sm text-white/70 hover:text-white transition-colors duration-160">
+                  Inmobiliarias
+                </Link>
+              </li>
+              <li>
+                <Link href="/ecommerce" className="text-sm text-white/70 hover:text-white transition-colors duration-160">
+                  E-commerce
+                </Link>
+              </li>
+              <li>
+                <Link href="/#industrias" className="text-sm text-white/70 hover:text-white transition-colors duration-160">
+                  Ver todas las industrias
                 </Link>
               </li>
             </ul>
