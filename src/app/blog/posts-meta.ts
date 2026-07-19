@@ -18,8 +18,8 @@ export const posts: PostMeta[] = [
   },
   {
     slug: 'costo-combustible-rutas-reparto-distribuidoras',
-    title: 'Gasoil a USD 1,60: por qué ya no alcanza con planificar las rutas de reparto a mano',
-    excerpt: 'El combustible representa hasta 35% del costo de una distribuidora y ya está entre los más caros de la región. Qué significa esto para las rutas de reparto de una pyme argentina.',
+    title: 'Ventana horaria: el problema que le cuesta plata a las distribuidoras y nadie nombra',
+    excerpt: 'Cada cliente espera su pedido en un horario distinto, y armar la vuelta a mano deja recorridos ineficientes. Con el combustible pesando cada vez más en la estructura de costos, planificar bien la ruta ya no es un detalle.',
     date: '2026-07-19',
     industria: 'Distribuidoras',
     industriaHref: '/distribuidoras',
@@ -34,8 +34,8 @@ export const posts: PostMeta[] = [
   },
   {
     slug: 'evitar-quiebre-stock-hot-sale-ecommerce',
-    title: 'Cómo no quedarte sin stock (ni con stock de más) en el Hot Sale, sin un equipo de datos propio',
-    excerpt: 'El e-commerce argentino factura por encima de la inflación, pero el volumen de ventas casi no crece — cada cliente compra más caro y es más exigente. Por qué el quiebre de stock hoy sale más caro que nunca.',
+    title: 'Cómo no quedarte sin stock (ni con stock de más) sin un equipo de datos propio',
+    excerpt: 'Cada cliente de tu tienda online compra más caro y es más exigente que antes. Por qué anticipar la demanda, y no solo mirar el stock de hoy, es lo que evita perder la venta más grande del mes.',
     date: '2026-07-19',
     industria: 'E-commerce',
     industriaHref: '/ecommerce',
