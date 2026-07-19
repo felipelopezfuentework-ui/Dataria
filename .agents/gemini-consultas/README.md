@@ -14,7 +14,7 @@ Script: `_call_gemini_script.js` — `node _call_gemini_script.js <prompt.txt> <
 
 | # | Fecha | Tema | Archivo |
 |---|-------|------|---------|
-| — | 2026-07-17 | Audit GEO inicial (7 preguntas simulando consultas de clientes, sin registro crudo — se hizo antes de crear esta carpeta). Resultado resumido en `.agents/product-marketing.md`, sección "Competitive Landscape". | *(no preservado, sin archivo crudo)* |
+| 000 | 2026-07-17 | Audit GEO inicial (7 preguntas simulando consultas de clientes). Se había hecho antes de crear esta carpeta y el archivo original se perdió — **recuperado el 2026-07-19** desde el transcript de la sesión original. Resumen también en `.agents/product-marketing.md`, sección "Competitive Landscape". | `000-audit-geo-inicial-7-preguntas.md` |
 | 001 | 2026-07-18 | ¿Conviene separar las 4 verticales en páginas propias? Recomendación, orden de prioridad, estructura de cada página, riesgos. | `001-separar-verticales-paginas-propias.md` |
 | 002 | 2026-07-18 | Contenido específico por rubro: slug de URL para e-commerce, alcance geográfico, términos de búsqueda reales, herramientas locales a mencionar, FAQ por rubro, segmentación dentro de cada rubro. | `002-contenido-especifico-por-rubro.md` |
 
