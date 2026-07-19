@@ -14,8 +14,7 @@ export default function Footer() {
               alt="Dataria"
               width={545}
               height={217}
-              className="w-auto object-contain"
-              style={{ height: '76px', width: 'auto' }}
+              className="h-9 md:h-11 w-auto object-contain"
             />
             <p className="leading-relaxed" style={{ fontSize: '15px', color: 'rgba(255,255,255,0.7)', maxWidth: '280px' }}>
               Inteligencia Artificial aplicada a negocios reales. Precisa y ágil en cada implementación.
