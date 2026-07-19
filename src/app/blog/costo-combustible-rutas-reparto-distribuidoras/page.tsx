@@ -21,33 +21,37 @@ export default function Page() {
       <BlogHeader title={meta.title} date={meta.date} industria={meta.industria} />
       <ArticleProse>
         <p>
-          En marzo de 2026, los costos del transporte de cargas en Argentina subieron 10,15% en un solo mes — la
-          suba mensual más alta en dos años, según la{' '}
+          Armar la vuelta de reparto todas las mañanas a mano —a criterio del chofer, con una lista de pedidos y un
+          mapa mental de la zona— funciona hasta que dos o tres clientes tienen ventanas horarias que se pisan entre
+          sí. Ahí aparece el problema real de cualquier distribuidora: no alcanza con encontrar el camino más corto,
+          hay que respetar el horario en el que cada cliente puede recibir la entrega, sin dejar a nadie afuera ni
+          hacer esperar al camión. A eso se le suma que el combustible viene subiendo con fuerza: según la{' '}
           <a href="https://www.fadeeac.org.ar/2026/04/01/los-costos-de-transporte-saltan-un-1015-en-marzo-la-cifra-mas-alta-en-dos-anos/" target="_blank" rel="noopener noreferrer">
             Federación Argentina de Entidades Empresarias del Autotransporte de Cargas (FADEEAC)
           </a>
-          . El principal responsable fue el combustible: el gasoil aumentó 24,7% en marzo y llegó a los USD 1,60 por
-          litro, uno de los valores más altos de la última década y de toda la región. En el primer trimestre de
-          2026 el combustible ya acumulaba una suba de 29%, y los costos logísticos totales treparon 22,2% en el
-          primer semestre, según el índice CEDOL-UTN. El combustible representa entre 33% y 35% de la estructura de
-          costos de una distribuidora — así que cada kilómetro de más, cada camión que sale medio vacío, pesa directo
-          en el margen del mes.
+          , los costos de transporte de cargas subieron 10,15% solo en marzo de 2026 —la suba mensual más alta en dos
+          años— empujados principalmente por el combustible. Cada recorrido de más, cada vuelta mal coordinada, pesa
+          más que antes.
         </p>
 
-        <h2>Un costo que ya no perdona la ruta improvisada</h2>
+        <h2>Qué es la "ventana horaria" y por qué arruina una ruta armada a mano</h2>
         <p>
-          Cuando el combustible pesaba menos en la estructura de costos, ir 10 kilómetros de más por una ruta mal
-          planificada no se sentía tanto en el bolsillo. Con el gasoil en dólares en uno de sus niveles más altos de
-          la última década, ese margen de error desapareció: cada recorrido ineficiente, cada vuelta que se podría
-          haber evitado agrupando pedidos de la misma zona, hoy cuesta real y se nota en el cierre del mes.
+          La ventana horaria es, simplemente, el rango de tiempo en el que un cliente puede recibir su pedido —
+          porque abre a determinada hora, porque tiene su propio delivery a coordinar, o porque no tiene a nadie que
+          reciba mercadería fuera de ese horario. Cuando la ruta se arma a mano, es fácil perder de vista estas
+          restricciones y terminar armando un recorrido que, aunque parezca lógico en el mapa, obliga al camión a
+          esperar en un lugar o a volver más tarde a otro. Cada una de esas ineficiencias es tiempo y combustible que
+          se podrían haber evitado.
         </p>
 
-        <h2>No es solo el combustible: los peajes también empujan</h2>
+        <h2>Los costos de transporte no dan tregua</h2>
         <p>
-          Detrás del combustible, el segundo componente que más subió en marzo fue Peajes, con un 8,26% — impulsado
-          por nuevos incrementos en los accesos a CABA, según el mismo informe de FADEEAC. Es la combinación de varios
-          costos moviéndose al mismo tiempo lo que hace que el índice acumulado de seis meses (22,2%) sea más
-          representativo del golpe real que cualquier aumento puntual.
+          El combustible representa entre 33% y 35% de la estructura de costos de una distribuidora, según el mismo
+          informe de FADEEAC, que también señala que los costos logísticos acumularon una suba de 22,2% en el primer
+          semestre de 2026 (índice CEDOL-UTN). No es un solo componente el que empuja: detrás del combustible, los
+          peajes subieron 8,26% en marzo por los incrementos en los accesos a CABA. Es la combinación de varios
+          costos moviéndose al mismo tiempo lo que explica por qué una ruta ineficiente, que antes pasaba
+          desapercibida, hoy se nota en el cierre del mes.
         </p>
 
         <h2>Qué cambia con una ruta armada por IA en vez de a mano</h2>
@@ -55,8 +59,9 @@ export default function Page() {
           El módulo de rutas de Dataria no reemplaza el conocimiento de tus choferes sobre la calle — cruza los
           pedidos del día, la ventana horaria de cada cliente y la capacidad de carga de cada camión, teniendo en
           cuenta restricciones reales como el tránsito pesado, para armar la vuelta más corta posible sin perder
-          entregas ni forzar horarios que tus clientes no aceptan. Con el combustible en los valores actuales, ese
-          ajuste de recorrido deja de ser un detalle y pasa a ser parte del margen operativo de la distribuidora.
+          entregas ni forzar horarios que tus clientes no aceptan. Con los costos de transporte en los niveles
+          actuales, ese ajuste de recorrido deja de ser un detalle y pasa a ser parte del margen operativo de la
+          distribuidora.
         </p>
       </ArticleProse>
       <BlogCTA industria={meta.industria} industriaHref={meta.industriaHref} />
