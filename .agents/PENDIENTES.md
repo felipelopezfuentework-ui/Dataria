@@ -71,7 +71,9 @@ Priorizados según la auditoría Gemini 003 (los directorios de software en ingl
 
 **Prioridad media (solo por backlink):**
 - **AlternativeTo** — listado como alternativa a herramientas puntuales por rubro (Tokko Broker, SimpliRoute, Choco.com, según el módulo). **Estado (2026-07-19):** no deja sumar nada los fines de semana — retomar el lunes.
-- **Toolify.ai** — categoría "Business AI Tools". Tiene versión **gratis** (revisión en 2-4 semanas) y una paga de ~USD 99 solo para saltar la cola (revisión en 24-72hs) — decisión: ir por la gratis, no hay apuro.
+
+**Prioridad baja (2026-07-19, bajada de prioridad):**
+- **Toolify.ai** — categoría "Business AI Tools". Chequeado en la práctica: **no tiene versión gratis**, cobra USD 99 pago único (listado en <48hs, borde destacado, 6 backlinks dofollow, listado permanente). **Motivo de la baja prioridad:** ya es de por sí un directorio "solo por backlink" de bajo impacto directo para clientes argentinos; ese mismo valor indirecto ya se consigue gratis con Google Business Profile/Crunchbase/AlternativeTo; Dataria todavía no gastó nada en marketing pago, y si hay presupuesto para gastar tiene más sentido reservarlo para Google Ads (el canal pago real ya planeado) en vez de un directorio de nicho. No descartado del todo — reconsiderar solo si sobra presupuesto de marketing más adelante.
 
 **Descartado por ahora:** Futurepedia, TAAFT, SaaSHub, Future Tools — mucho esfuerzo de mantenimiento para nulo retorno de tráfico local.
 
