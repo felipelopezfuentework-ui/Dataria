@@ -1,5 +1,7 @@
 'use client'
 
+import { trackEvent } from '@/lib/analytics'
+
 export default function WhatsAppButton() {
   return (
     <a
@@ -7,6 +9,7 @@ export default function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Escribinos por WhatsApp"
+      onClick={() => trackEvent('click_whatsapp', { link_location: 'floating_button' })}
       className="fixed bottom-6 left-6 z-40 w-14 h-14 rounded-full bg-[#25D366] flex items-center justify-center shadow-lg hover:scale-105 transition-transform duration-160"
     >
       <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
