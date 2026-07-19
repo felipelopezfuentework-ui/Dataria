@@ -70,8 +70,8 @@ Priorizados según la auditoría Gemini 003 (los directorios de software en ingl
   - **Estado (2026-07-19):** perfil creado (crunchbase.com/organization/dataria-2b90) con Description corta, Industries, teléfono y mail ya bien cargados. **Pausado**: la edición no guarda algunos campos (Imanol reintentará más adelante). **Antes de retomar, corregir:** la fecha de fundación quedó mal cargada como "23 may 2004" (hay que poner la fecha real); confirmar si "Vicente López, Buenos Aires" es la ubicación correcta o se prefiere dejar más genérico; resolver si Legal Name = "Felipe Lopez Fuente" es la razón social real; cargar la Full Description (versión sin nombres de clientes, ver más abajo); decidir Founders.
 
 **Prioridad media (solo por backlink):**
-- **AlternativeTo** — listado como alternativa a herramientas puntuales por rubro (Tokko Broker, SimpliRoute, Choco.com, según el módulo).
-- **Toolify.ai** — categoría "Business AI Tools".
+- **AlternativeTo** — listado como alternativa a herramientas puntuales por rubro (Tokko Broker, SimpliRoute, Choco.com, según el módulo). **Estado (2026-07-19):** no deja sumar nada los fines de semana — retomar el lunes.
+- **Toolify.ai** — categoría "Business AI Tools". Tiene versión **gratis** (revisión en 2-4 semanas) y una paga de ~USD 99 solo para saltar la cola (revisión en 24-72hs) — decisión: ir por la gratis, no hay apuro.
 
 **Descartado por ahora:** Futurepedia, TAAFT, SaaSHub, Future Tools — mucho esfuerzo de mantenimiento para nulo retorno de tráfico local.
 
