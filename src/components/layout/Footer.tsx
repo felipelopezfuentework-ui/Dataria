@@ -1,5 +1,8 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
+import { trackEvent } from '@/lib/analytics'
 
 export default function Footer() {
   return (
@@ -89,6 +92,7 @@ export default function Footer() {
                   href="https://wa.me/5491134881235"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackEvent('click_whatsapp', { link_location: 'footer' })}
                   className="text-sm text-white/70 hover:text-white transition-colors duration-160"
                 >
                   +54 9 11 3488-1235
