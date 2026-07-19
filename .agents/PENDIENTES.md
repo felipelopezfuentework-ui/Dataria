@@ -57,6 +57,15 @@ Priorizados según la auditoría Gemini 003 (los directorios de software en ingl
 
 **Alta prioridad:**
 - **Google Business Profile** (business.google.com) — requiere cuenta de Google de Imanol y verificación (teléfono o correo postal), no lo puede hacer Claude. Categoría sugerida: "Empresa de software" o "Consultora de automatización". Zona de servicio: Argentina.
+  - **Estado (2026-07-19):** Imanol cargó la mayoría de los datos, pero el perfil no está cargando/mostrando bien ahora mismo — revisar juntos cuando esté visible.
+  - **Checklist para hacer todo junto cuando se revise:**
+    1. Terminar la verificación (sin esto no aparece públicamente).
+    2. Subir fotos: logo (isologo) + al menos una foto de portada.
+    3. Cargar horario (aunque sea "atención remota"/horario de oficina).
+    4. Confirmar que la zona de servicio quedó en Argentina (no una dirección física puntual).
+    5. Cargar los 4 módulos como "servicios" (food cost, rutas, CRM inmobiliario, stock).
+    6. Publicar un primer "Post" (ej. anunciando el blog) — señal de perfil activo.
+    7. Una vez verificado: pedirle a Mariana, Luciano y Gabriel (los mismos 3 que ya aprobaron testimonios reales por WhatsApp) una reseña real de Google — el paso de mayor impacto para un perfil nuevo.
 - **Crunchbase** (crunchbase.com) — cuenta gratuita, sin verificación física. Categorías: Artificial Intelligence, SaaS, Enterprise Software. Ubicación: Buenos Aires, Argentina.
 
 **Prioridad media (solo por backlink):**
