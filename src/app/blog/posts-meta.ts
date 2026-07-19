@@ -34,7 +34,7 @@ export const posts: PostMeta[] = [
   },
   {
     slug: 'evitar-quiebre-stock-hot-sale-ecommerce',
-    title: 'Predicción de stock: cómo evitar quedarte sin mercadería (o con demasiada) sin un equipo de datos propio',
+    title: 'Predicción de stock: cómo no quedarte sin mercadería, sin un equipo de datos propio',
     excerpt: 'Cada cliente de tu tienda online compra más caro y es más exigente que antes. Por qué anticipar la demanda, y no solo mirar el stock de hoy, es lo que evita perder la venta más grande del mes.',
     date: '2026-07-19',
     industria: 'E-commerce',
