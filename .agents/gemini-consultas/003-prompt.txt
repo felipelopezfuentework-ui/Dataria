@@ -1,0 +1,38 @@
+Sos un consultor de marketing digital (SEO/GEO + Google Ads) revisando el estado actual de Dataria (dataria.work), un producto real en producción. Tenés herramienta de búsqueda web y de lectura de URLs — usalas para revisar de verdad el sitio antes de responder, no asumas nada de memoria.
+
+URLs a revisar en vivo:
+- https://www.dataria.work/ (home)
+- https://www.dataria.work/gastronomia
+- https://www.dataria.work/distribuidoras
+- https://www.dataria.work/inmobiliarias
+- https://www.dataria.work/ecommerce
+
+Contexto de lo que cambió desde la última consulta (jul-18): se separaron las 4 verticales en páginas propias (ya hecho), se activaron demos de IA reales conectadas a Claude en distribuidoras e inmobiliarias, se agregó teléfono/WhatsApp funcional en el footer y el formulario de contacto, Google Search Console y GA4 están configurados y el sitemap fue indexado.
+
+Necesito que revises el estado actual y me des recomendaciones concretas en CUATRO frentes. Sé específico y priorizado — no me des un framework genérico, decime qué harías primero y por qué, basado en lo que realmente ves en el sitio.
+
+## 1. Plan de contenido / blog
+Ya tenemos 5 pilares de contenido definidos (títulos + dato real que los respalda, sin testimonios inventados):
+1. General: "Excel, ERP o IA a medida: qué le conviene a tu pyme según el momento en el que estás" (dato: ~88% de planillas de Excel tienen errores, ~21% de implementaciones de ERP fallan).
+2. Gastronomía: "Food cost: cómo calcular cuánto te cuesta realmente cada plato" (dato: food cost ideal 28-35%, "costo invisible" ~10%).
+3. Distribuidoras: "Ventana horaria: el problema que le cuesta plata a las distribuidoras y nadie nombra" (dato: ahorro de combustible ~20% optimizando rutas).
+4. Inmobiliarias: "Por qué el 85% de las consultas inmobiliarias en Argentina se cierran por WhatsApp" (dato: ese mismo %, panorama de Tokko Broker sin atacarlo).
+5. E-commerce: "Cómo no quedarte sin stock (ni con stock de más) sin un equipo de datos propio".
+
+Preguntas: ¿con cuál arrancarías primero y por qué? ¿Falta algún ángulo importante para AI citation (GEO) que no esté cubierto? ¿Conviene crear ya la sección /blog o esperar a tener 2-3 posts escritos primero?
+
+## 2. Directorios (TAAFT, Futurepedia, Toolify, Future Tools, AlternativeTo, SaaSHub, Crunchbase, LinkedIn company page)
+El público real de Dataria son dueños de pymes argentinas que buscan en español, no en inglés. Estos directorios son mayormente en inglés y de audiencia global/SaaS internacional. Dame tu opinión honesta: ¿vale la pena el esfuerzo (backlinks + posible cita en IA) para un negocio B2B local argentino, o es más ruido que señal en esta etapa? Si vale la pena, ¿cuáles de la lista priorizarías y cuáles directamente descartarías?
+
+## 3. Testimonios reales
+Estamos por conseguir 2-3 testimonios reales por WhatsApp de clientes existentes (Ragú, Padella o Pastas Pariggi — nunca inventamos citas). Una vez que los tengamos: ¿cómo los aprovecharías mejor para SEO/GEO? (¿schema de Review/Testimonial? ¿página de casos de éxito? ¿fragmentos citables en cada página de rubro?). Priorizá 2-3 acciones concretas, no una lista larga.
+
+## 4. Puntos a revisar antes de lanzar campañas de Google Ads
+Todavía no lanzamos ninguna campaña — la idea es dejarla para el final del roadmap, pero quiero saber HOY qué falta resolver para que, cuando llegue el momento, no tiremos plata. Contexto: GA4 ya trackea el evento `generate_lead` en los dos formularios (recién confirmado, sin still marcar como key event). Basándote en lo que viste del sitio real, decime:
+- ¿Las 4 páginas de rubro sirven como landing pages de Ads tal como están (message match con búsquedas de alta intención tipo "ia para distribuidoras argentina"), o les falta algo puntual?
+- ¿Qué tan lista está la medición (generate_lead como único conversion event) para arrancar campañas, y qué le faltaría idealmente antes de invertir presupuesto real?
+- Dame una primera lista de keywords de alta intención en español/Argentina por rubro (lenguaje real de dueños de pymes, no genérico) para arrancar la investigación.
+- Dame una lista base de negative keywords en español relevantes para este rubro (ej. términos de "gratis", "curso", "empleo", "tutorial", etc. adaptados a este contexto).
+- Dado que Dataria no tiene aún reconocimiento de marca, ¿por dónde empezarías la escalera de intención (alta intención no-marca por rubro, no marca todavía, no competidores todavía)?
+
+Cerrá con un párrafo de 3-4 líneas con tu prioridad #1 entre estos 4 frentes, la que más impacto tendría ahora mismo dado el estado real del sitio.
