@@ -5,6 +5,7 @@ import { IndustryIntegrations } from '@/components/industry/IndustryIntegrations
 import { IndustryHowItWorks } from '@/components/industry/IndustryHowItWorks'
 import { IndustryFAQ } from '@/components/industry/IndustryFAQ'
 import { IndustrySchema } from '@/components/industry/IndustrySchema'
+import { TestimonialQuotes } from '@/components/industry/TestimonialQuotes'
 import CTAReunion from '@/components/home/CTAReunion'
 import { DistribuidorasDemos } from './demos-client'
 
@@ -26,6 +27,14 @@ const faqs = [
   {
     q: '¿Qué pasa si un cliente manda un pedido por WhatsApp de forma desordenada?',
     a: 'Nuestra IA de procesamiento de pedidos está entrenada para entender el lenguaje coloquial y las abreviaturas típicas de WhatsApp: identifica los productos de tu catálogo y te lo traduce a un formato limpio, listo para facturar.',
+  },
+]
+
+const reviews = [
+  {
+    quote: 'Con Dataria dejamos de armar las rutas de reparto a mano cada mañana. Ahora el sistema arma la vuelta según los pedidos del día y no perdemos tiempo yendo y viniendo. Se nota en la nafta y en que llegamos más rápido a los mismos clientes de siempre.',
+    name: 'Gabriel Morales',
+    company: 'Pollo Cocido',
   },
 ]
 
@@ -69,6 +78,7 @@ export default function DistribuidorasPage() {
         tools={['Tango', 'Bejerman', 'Excel / CSV']}
       />
       <IndustryHowItWorks steps={steps} />
+      <TestimonialQuotes items={reviews} />
       <CTAReunion />
       <IndustryFAQ faqs={faqs} />
       <IndustrySchema
@@ -77,6 +87,7 @@ export default function DistribuidorasPage() {
         serviceDescription="Módulos de inteligencia artificial a medida para distribuidoras mayoristas en Argentina: optimización de rutas, predicción de demanda y agente de pedidos por WhatsApp."
         breadcrumbCurrent="Distribuidoras"
         faqs={faqs}
+        reviews={reviews}
       />
     </main>
   )
