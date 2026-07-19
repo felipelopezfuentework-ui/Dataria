@@ -67,6 +67,7 @@ Priorizados según la auditoría Gemini 003 (los directorios de software en ingl
     6. Publicar un primer "Post" (ej. anunciando el blog) — señal de perfil activo.
     7. Una vez verificado: pedirle a Mariana, Luciano y Gabriel (los mismos 3 que ya aprobaron testimonios reales por WhatsApp) una reseña real de Google — el paso de mayor impacto para un perfil nuevo.
 - **Crunchbase** (crunchbase.com) — cuenta gratuita, sin verificación física. Categorías: Artificial Intelligence, SaaS, Enterprise Software. Ubicación: Buenos Aires, Argentina.
+  - **Estado (2026-07-19):** perfil creado (crunchbase.com/organization/dataria-2b90) con Description corta, Industries, teléfono y mail ya bien cargados. **Pausado**: la edición no guarda algunos campos (Imanol reintentará más adelante). **Antes de retomar, corregir:** la fecha de fundación quedó mal cargada como "23 may 2004" (hay que poner la fecha real); confirmar si "Vicente López, Buenos Aires" es la ubicación correcta o se prefiere dejar más genérico; resolver si Legal Name = "Felipe Lopez Fuente" es la razón social real; cargar la Full Description (versión sin nombres de clientes, ver más abajo); decidir Founders.
 
 **Prioridad media (solo por backlink):**
 - **AlternativeTo** — listado como alternativa a herramientas puntuales por rubro (Tokko Broker, SimpliRoute, Choco.com, según el módulo).
