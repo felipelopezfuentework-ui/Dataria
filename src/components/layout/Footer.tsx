@@ -83,6 +83,16 @@ export default function Footer() {
                   datariaai@gmail.com
                 </a>
               </li>
+              <li>
+                <a
+                  href="https://wa.me/5491134881235"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-white/70 hover:text-white transition-colors duration-160"
+                >
+                  +54 9 11 3488-1235
+                </a>
+              </li>
             </ul>
           </div>
 
