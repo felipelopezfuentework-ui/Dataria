@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Input from '@/components/ui/Input'
 import Button from '@/components/ui/Button'
 import Select from '@/components/ui/Select'
+import { trackEvent } from '@/lib/analytics'
 
 const industries = ['Gastronomía', 'Distribuidoras de Alimentos', 'Inmobiliarias', 'E-commerce', 'Otro']
 const ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY
@@ -62,6 +63,7 @@ export default function ContactoSection() {
       }
 
       if (res.ok && data?.success) {
+        trackEvent('generate_lead', { form_name: 'contacto_principal', industria: industriaFinal })
         setLeaving(true)
         window.setTimeout(() => setSent(true), 200)
       } else {

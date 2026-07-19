@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { useReveal } from '@/hooks/useReveal'
+import { trackEvent } from '@/lib/analytics'
 
 // Cada industria vive ahora en su propia página (SEO/GEO: ver .agents/gemini-consultas/001-*).
 // Las demos interactivas se mudaron ahí — acá solo queda la vidriera que linkea a cada una.
@@ -237,6 +238,7 @@ function OtrosForm() {
       })
       const data = await res.json().catch(() => null)
       if (res.ok && data?.success) {
+        trackEvent('generate_lead', { form_name: 'otros_demos', industria: form.industria })
         setSent(true)
       } else {
         console.error('[OtrosForm] Web3Forms rechazó el envío:', res.status, data)
