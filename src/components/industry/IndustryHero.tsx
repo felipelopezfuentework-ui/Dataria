@@ -51,6 +51,10 @@ export function IndustryHero({
             Agendar reunión
           </a>
         </div>
+
+        <p className={`mt-4 text-sm reveal ${v}`} style={{ color: '#5A6871', transitionDelay: '550ms' }}>
+          No necesitás equipo técnico propio — nosotros nos encargamos de toda la configuración e integración.
+        </p>
       </div>
     </section>
   )
