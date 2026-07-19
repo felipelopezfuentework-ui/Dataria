@@ -348,6 +348,8 @@ function InventarioTab({
                   </button>
                   <a
                     href={mailtoPedido(p)}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block w-full h-auto min-h-8 px-2 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-wide leading-tight transition-colors hover:bg-[#EAF5FD]"
                     style={{ color: '#1B5BC1', border: '1px solid rgba(27,91,193,0.25)' }}
                   >

@@ -78,6 +78,8 @@ export default function Footer() {
               <li>
                 <a
                   href="mailto:datariaai@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-sm text-white/70 hover:text-white transition-colors duration-160"
                 >
                   datariaai@gmail.com
