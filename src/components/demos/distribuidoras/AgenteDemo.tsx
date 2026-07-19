@@ -457,7 +457,7 @@ function OrderPanel({
           <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
           </svg>
-          Descargar resumen
+          Descargar PDF
         </button>
       )}
     </div>
@@ -611,31 +611,125 @@ export default function AgenteDemo({ onBack }: { onBack: () => void }) {
     }
   }
 
-  const downloadOrder = () => {
+  const downloadOrder = async () => {
     if (!orderItems.length) return
+
+    const fmt = (n: number) => `$${n.toLocaleString('es-AR')}`
     const totalNeto = orderItems.reduce((a, i) => a + i.neto, 0)
     const totalIva  = orderItems.reduce((a, i) => a + i.iva, 0)
-    const lines = [
-      'DISTRIBUIDORA CENTRAL',
-      '='.repeat(30),
-      `Fecha: ${new Date().toLocaleString('es-AR')}`,
-      '',
-      'PEDIDO:',
-      ...orderItems.map(i => `- ${i.nombre} x${i.cantidad}  neto $${i.neto.toLocaleString('es-AR')}  IVA $${i.iva.toLocaleString('es-AR')}  subtotal $${i.subtotal.toLocaleString('es-AR')}`),
-      '',
-      `NETO: $${totalNeto.toLocaleString('es-AR')}`,
-      `IVA (21%): $${totalIva.toLocaleString('es-AR')}`,
-      `TOTAL: $${(totalNeto + totalIva).toLocaleString('es-AR')}`,
-      '',
-      `Estado: ${trackerStep >= 0 ? TRACKER_STEPS[trackerStep] : 'Procesando'}`,
-    ].join('\n')
+    const totalFinal = totalNeto + totalIva
 
-    const url = URL.createObjectURL(new Blob([lines], { type: 'text/plain; charset=utf-8' }))
-    const a = Object.assign(document.createElement('a'), { href: url, download: 'pedido-distribuidora.txt' })
-    document.body.appendChild(a)
-    a.click()
-    document.body.removeChild(a)
-    URL.revokeObjectURL(url)
+    const { jsPDF } = await import('jspdf')
+    const doc = new jsPDF({ unit: 'pt', format: 'a4' })
+    const pageW = doc.internal.pageSize.getWidth()
+    const marginX = 40
+
+    // ── Header band (degradé Dataria simulado con 3 franjas) ──
+    doc.setFillColor(27, 91, 193)   // azul-nucleo
+    doc.rect(0, 0, pageW, 100, 'F')
+    doc.setFillColor(48, 110, 207)  // azul-accion
+    doc.rect(0, 0, pageW * 0.66, 100, 'F')
+    doc.setFillColor(69, 181, 243)  // celeste-dataria
+    doc.rect(0, 0, pageW * 0.33, 100, 'F')
+
+    let logoW = 0
+    try {
+      const res = await fetch('/isologo-dataria.png')
+      const blob = await res.blob()
+      const dataUrl = await new Promise<string>((resolve, reject) => {
+        const reader = new FileReader()
+        reader.onloadend = () => resolve(reader.result as string)
+        reader.onerror = reject
+        reader.readAsDataURL(blob)
+      })
+      doc.addImage(dataUrl, 'PNG', marginX, 25, 50, 50)
+      logoW = 66
+    } catch {
+      // Si no carga el logo, seguimos solo con el texto — no bloquea la descarga.
+    }
+
+    doc.setTextColor(255, 255, 255)
+    doc.setFont('helvetica', 'bold')
+    doc.setFontSize(24)
+    doc.text('d', marginX + logoW, 55)
+    const dWidth = doc.getTextWidth('d')
+    doc.setTextColor(255, 255, 255)
+    doc.text('ataria', marginX + logoW + dWidth, 55)
+    doc.setFont('helvetica', 'normal')
+    doc.setFontSize(11)
+    doc.setTextColor(230, 240, 255)
+    doc.text('Distribuidora Central · Resumen de pedido', marginX + logoW, 74)
+
+    // ── Meta ──
+    let y = 135
+    doc.setTextColor(90, 104, 113)
+    doc.setFontSize(10)
+    doc.text(`Fecha: ${new Date().toLocaleString('es-AR')}`, marginX, y)
+    doc.text(`Estado: ${trackerStep >= 0 ? TRACKER_STEPS[trackerStep] : 'Procesando'}`, pageW - marginX, y, { align: 'right' })
+    y += 30
+
+    // ── Tabla ──
+    const col = { prod: marginX, cant: pageW - marginX - 230, neto: pageW - marginX - 165, iva: pageW - marginX - 95, sub: pageW - marginX }
+    doc.setFillColor(234, 245, 253) // celeste claro
+    doc.rect(marginX, y - 14, pageW - marginX * 2, 22, 'F')
+    doc.setFont('helvetica', 'bold')
+    doc.setFontSize(9)
+    doc.setTextColor(27, 58, 92)
+    doc.text('PRODUCTO', col.prod + 6, y)
+    doc.text('CANT.', col.cant, y, { align: 'right' })
+    doc.text('NETO', col.neto, y, { align: 'right' })
+    doc.text('IVA', col.iva, y, { align: 'right' })
+    doc.text('SUBTOTAL', col.sub, y, { align: 'right' })
+    y += 22
+
+    doc.setFont('helvetica', 'normal')
+    doc.setFontSize(10)
+    for (const item of orderItems) {
+      doc.setTextColor(26, 37, 48)
+      doc.text(item.nombre, col.prod + 6, y)
+      doc.setTextColor(90, 104, 113)
+      doc.text(String(item.cantidad), col.cant, y, { align: 'right' })
+      doc.text(fmt(item.neto), col.neto, y, { align: 'right' })
+      doc.text(fmt(item.iva), col.iva, y, { align: 'right' })
+      doc.setTextColor(48, 110, 207)
+      doc.setFont('helvetica', 'bold')
+      doc.text(fmt(item.subtotal), col.sub, y, { align: 'right' })
+      doc.setFont('helvetica', 'normal')
+      y += 20
+      doc.setDrawColor(229, 231, 235)
+      doc.line(marginX, y - 12, pageW - marginX, y - 12)
+    }
+
+    // ── Totales ──
+    y += 10
+    doc.setFillColor(234, 245, 253)
+    doc.roundedRect(pageW - marginX - 200, y - 16, 200, 76, 6, 6, 'F')
+    doc.setFontSize(10)
+    doc.setTextColor(90, 104, 113)
+    doc.text('Neto', pageW - marginX - 190, y)
+    doc.text(fmt(totalNeto), pageW - marginX - 10, y, { align: 'right' })
+    y += 18
+    doc.text('IVA (21%)', pageW - marginX - 190, y)
+    doc.text(fmt(totalIva), pageW - marginX - 10, y, { align: 'right' })
+    y += 22
+    doc.setDrawColor(48, 110, 207)
+    doc.line(pageW - marginX - 190, y - 12, pageW - marginX - 10, y - 12)
+    doc.setFont('helvetica', 'bold')
+    doc.setFontSize(13)
+    doc.setTextColor(27, 91, 193)
+    doc.text('Total', pageW - marginX - 190, y + 6)
+    doc.text(fmt(totalFinal), pageW - marginX - 10, y + 6, { align: 'right' })
+
+    // ── Footer ──
+    const pageH = doc.internal.pageSize.getHeight()
+    doc.setDrawColor(229, 231, 235)
+    doc.line(marginX, pageH - 50, pageW - marginX, pageH - 50)
+    doc.setFont('helvetica', 'normal')
+    doc.setFontSize(8)
+    doc.setTextColor(150, 160, 168)
+    doc.text('Generado automáticamente por el agente de pedidos de Dataria — dataria.work', marginX, pageH - 32)
+
+    doc.save(`pedido-distribuidora-central-${Date.now()}.pdf`)
   }
 
   if (phase === 'splash') {
