@@ -527,7 +527,11 @@ export default function AgenteDemo({ onBack }: { onBack: () => void }) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ messages: toApiMessages(historyForApi) }),
       })
-      if (!res.ok || !res.body) throw new Error(`API respondió ${res.status}`)
+      if (!res.ok || !res.body) {
+        let friendly = ''
+        try { friendly = (await res.json())?.error ?? '' } catch {}
+        throw new Error(friendly || `API respondió ${res.status}`)
+      }
 
       const reader = res.body.getReader()
       const decoder = new TextDecoder()
@@ -549,9 +553,8 @@ export default function AgenteDemo({ onBack }: { onBack: () => void }) {
       }
     } catch (err) {
       console.error('[AgenteDemo] Error al conectar con la IA:', err)
-      setMessages(prev => prev.map(m => m.id === agentId
-        ? { ...m, content: 'Hubo un error de conexión con el asistente. Probá de nuevo en unos segundos.', streaming: false }
-        : m))
+      const msg = err instanceof Error && err.message ? err.message : 'Hubo un error de conexión con el asistente. Probá de nuevo en unos segundos.'
+      setMessages(prev => prev.map(m => m.id === agentId ? { ...m, content: msg, streaming: false } : m))
     } finally {
       setIsLoading(false)
       inputRef.current?.focus()
@@ -583,7 +586,11 @@ export default function AgenteDemo({ onBack }: { onBack: () => void }) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ messages: toApiMessages([...messages, userMsg]) }),
       })
-      if (!res.ok || !res.body) throw new Error(`API respondió ${res.status}`)
+      if (!res.ok || !res.body) {
+        let friendly = ''
+        try { friendly = (await res.json())?.error ?? '' } catch {}
+        throw new Error(friendly || `API respondió ${res.status}`)
+      }
       const reader = res.body.getReader()
       const decoder = new TextDecoder()
       let acc = ''
