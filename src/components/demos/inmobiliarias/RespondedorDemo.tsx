@@ -406,7 +406,11 @@ export default function RespondedorDemo({ onBack }: { onBack: () => void }) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ messages: toApiMessages(historyForApi) }),
       })
-      if (!res.ok || !res.body) throw new Error(`API respondió ${res.status}`)
+      if (!res.ok || !res.body) {
+        let friendly = ''
+        try { friendly = (await res.json())?.error ?? '' } catch {}
+        throw new Error(friendly || `API respondió ${res.status}`)
+      }
 
       const reader = res.body.getReader()
       const decoder = new TextDecoder()
@@ -420,9 +424,8 @@ export default function RespondedorDemo({ onBack }: { onBack: () => void }) {
       setMsgs(prev => prev.map(m => m.id === streamId ? { ...m, content: acc || 'No pude generar una respuesta. Probá de nuevo.', streaming: false } : m))
     } catch (err) {
       console.error('[RespondedorDemo] Error al conectar con la IA:', err)
-      setMsgs(prev => prev.map(m => m.id === streamId
-        ? { ...m, content: 'Hubo un error de conexión con el asistente. Probá de nuevo en unos segundos.', streaming: false }
-        : m))
+      const msg = err instanceof Error && err.message ? err.message : 'Hubo un error de conexión con el asistente. Probá de nuevo en unos segundos.'
+      setMsgs(prev => prev.map(m => m.id === streamId ? { ...m, content: msg, streaming: false } : m))
     } finally {
       setIsStreaming(false)
       inputRef.current?.focus()

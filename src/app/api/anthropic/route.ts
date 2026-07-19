@@ -1,7 +1,10 @@
 import Anthropic from '@anthropic-ai/sdk'
 import { NextRequest } from 'next/server'
+import { checkRateLimit, getClientIp } from '@/lib/rateLimit'
 
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY })
+
+const MAX_MESSAGES_PER_CONVERSATION = 20
 
 const SYSTEM_PROMPT = `Sos el asistente de pedidos de Distribuidora Central. Tu rol es tomar pedidos de clientes de manera eficiente y amigable.
 
@@ -32,11 +35,24 @@ Reglas:
 
 export async function POST(req: NextRequest) {
   try {
+    const ip = getClientIp(req)
+    const { allowed, resetAt } = checkRateLimit(ip)
+    if (!allowed) {
+      const minutes = Math.ceil((resetAt - Date.now()) / 60000)
+      return Response.json(
+        { error: `Alcanzaste el límite de mensajes de esta demo. Probá de nuevo en ${minutes} minutos, o agendá una reunión para ver el módulo completo.` },
+        { status: 429 }
+      )
+    }
+
     const { messages } = await req.json()
+    if (!Array.isArray(messages) || messages.length > MAX_MESSAGES_PER_CONVERSATION) {
+      return Response.json({ error: 'Esta conversación de demo llegó a su límite. Reiniciá la demo para seguir probando.' }, { status: 400 })
+    }
 
     const stream = client.messages.stream({
       model: 'claude-haiku-4-5-20251001',
-      max_tokens: 1024,
+      max_tokens: 700,
       system: SYSTEM_PROMPT,
       messages,
     })
