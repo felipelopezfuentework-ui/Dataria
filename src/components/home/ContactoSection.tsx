@@ -137,7 +137,18 @@ export default function ContactoSection() {
                 </svg>
               </div>
               <h2 className="font-display text-2xl font-extrabold text-carbon mb-3 tracking-[-0.03em]">¡Gracias! Te contactamos en menos de 24hs.</h2>
-              <Button variant="secondary" className="!normal-case !text-[15px]" onClick={() => setSent(false)}>Enviar otra consulta</Button>
+              <Button
+                variant="secondary"
+                className="!normal-case !text-[15px]"
+                onClick={() => {
+                  setForm({ nombre: '', email: '', telefono: '', proyecto: '', industria: '', proceso: '' })
+                  setIndustriaOtra('')
+                  setLeaving(false)
+                  setSent(false)
+                }}
+              >
+                Enviar otra consulta
+              </Button>
             </div>
           )}
         </div>
