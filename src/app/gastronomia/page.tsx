@@ -5,6 +5,7 @@ import { IndustryIntegrations } from '@/components/industry/IndustryIntegrations
 import { IndustryHowItWorks } from '@/components/industry/IndustryHowItWorks'
 import { IndustryFAQ } from '@/components/industry/IndustryFAQ'
 import { IndustrySchema } from '@/components/industry/IndustrySchema'
+import { TestimonialQuotes } from '@/components/industry/TestimonialQuotes'
 import ClientLogos from '@/components/home/ClientLogos'
 import CTAReunion from '@/components/home/CTAReunion'
 import { GastronomiaDemos } from './demos-client'
@@ -27,6 +28,19 @@ const faqs = [
   {
     q: '¿Cómo me ayuda la IA a no perder margen con la inflación de los proveedores?',
     a: 'Analiza las facturas de compra que subís al sistema, detecta qué insumos aumentaron por encima del promedio y te alerta qué platos de tu menú están perdiendo rentabilidad para que puedas ajustar precios a tiempo.',
+  },
+]
+
+const reviews = [
+  {
+    quote: 'Lo que más me sirvió fue poder ver el costo real de cada evento sin sentarme a calcular todo a mano. Antes el food cost lo sacaba más o menos, ahora lo veo evento por evento.',
+    name: 'Mariana Pages',
+    company: 'MP Catering',
+  },
+  {
+    quote: 'Antes mirábamos las ventas en una planilla y era un lío cruzar los datos. Con Dataria vemos rápido qué producto se mueve más y en qué momento, y eso nos ayuda a decidir mejor qué producir cada semana.',
+    name: 'Luciano Lopez Fuente',
+    company: 'Pastas Pariggi',
   },
 ]
 
@@ -71,6 +85,7 @@ export default function GastronomiaPage() {
       />
       <IndustryHowItWorks steps={steps} />
       <ClientLogos />
+      <TestimonialQuotes items={reviews} />
       <CTAReunion />
       <IndustryFAQ faqs={faqs} />
       <IndustrySchema
@@ -79,6 +94,7 @@ export default function GastronomiaPage() {
         serviceDescription="Módulos de inteligencia artificial a medida para restaurantes y locales gastronómicos en Argentina: cálculo de food cost, gestión de reseñas y planificador de turnos."
         breadcrumbCurrent="Gastronomía"
         faqs={faqs}
+        reviews={reviews}
       />
     </main>
   )

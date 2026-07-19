@@ -1,5 +1,6 @@
 import { breadcrumbSchema } from './Breadcrumb'
 import { faqPageSchema, type FAQItemData } from './faq-schema'
+import type { Testimonial } from './TestimonialQuotes'
 
 export function IndustrySchema({
   path,
@@ -7,24 +8,36 @@ export function IndustrySchema({
   serviceDescription,
   breadcrumbCurrent,
   faqs,
+  reviews,
 }: {
   path: string
   serviceName: string
   serviceDescription: string
   breadcrumbCurrent: string
   faqs: FAQItemData[]
+  reviews?: Testimonial[]
 }) {
+  const service: Record<string, unknown> = {
+    '@type': 'Service',
+    name: serviceName,
+    description: serviceDescription,
+    provider: { '@type': 'Organization', name: 'Dataria', url: 'https://www.dataria.work' },
+    areaServed: 'AR',
+    url: `https://www.dataria.work${path}`,
+  }
+
+  if (reviews?.length) {
+    service.review = reviews.map((r) => ({
+      '@type': 'Review',
+      reviewBody: r.quote,
+      author: { '@type': 'Person', name: r.name, worksFor: { '@type': 'Organization', name: r.company } },
+    }))
+  }
+
   const graph = {
     '@context': 'https://schema.org',
     '@graph': [
-      {
-        '@type': 'Service',
-        name: serviceName,
-        description: serviceDescription,
-        provider: { '@type': 'Organization', name: 'Dataria', url: 'https://www.dataria.work' },
-        areaServed: 'AR',
-        url: `https://www.dataria.work${path}`,
-      },
+      service,
       faqPageSchema(faqs),
       breadcrumbSchema(breadcrumbCurrent, path),
     ],
