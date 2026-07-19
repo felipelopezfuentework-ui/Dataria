@@ -19,4 +19,6 @@ Script: `_call_gemini_script.js` — `node _call_gemini_script.js <prompt.txt> <
 | 002 | 2026-07-18 | Contenido específico por rubro: slug de URL para e-commerce, alcance geográfico, términos de búsqueda reales, herramientas locales a mencionar, FAQ por rubro, segmentación dentro de cada rubro. | `002-contenido-especifico-por-rubro.md` |
 | 003 | 2026-07-19 | Auditoría de estado tras separar verticales + activar demos de IA: por dónde arrancar el plan de contenido, si vale la pena el esfuerzo de directorios para una pyme argentina, cómo aprovechar testimonios reales, y checklist + keywords/negative keywords antes de lanzar Google Ads. Nota: la lectura en vivo de las URLs falló (`URL_RETRIEVAL_STATUS_ERROR`), la respuesta se apoya en el contexto de marca completo + búsqueda web. | `003-auditoria-contenido-directorios-testimonios-ads.md` |
 
+| 004 | 2026-07-19 | Investigación de datos/noticias reales y actuales de Argentina (2025-2026) para los 4 posts de blog por industria: food cost (INDEC/AHRCC), gasoil/logística (FADEEAC/CEDOL), mercado inmobiliario (Colegio de Escribanos), e-commerce (CACE/Tiendanube). Cada dato verificado con búsqueda propia además de la de Gemini, con fuentes citables. | `004-investigacion-datos-actuales-4-industrias.md` |
+
 *(Actualizar esta tabla cada vez que se agregue una consulta nueva.)*

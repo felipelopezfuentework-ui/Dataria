@@ -1,0 +1,19 @@
+Sos un investigador de mercado para Dataria, buscando datos y noticias REALES y ACTUALES de Argentina (2025-2026, o lo más reciente que encuentres) para escribir 4 posts de blog, uno por cada industria en la que trabajamos. Usá de verdad la búsqueda web — necesito datos citables, no genéricos. Para cada dato que des, indicá la fuente (medio, informe, organismo) y si podés la fecha aproximada. Si no encontrás algo suficientemente específico o reciente, decilo explícitamente en vez de inventar un número.
+
+No necesito que redactes los posts — eso lo hago yo después. Necesito la MATERIA PRIMA: datos, noticias, informes reales que estén "sonando fuerte" o sean relevantes hoy en cada rubro en Argentina, y tu razonamiento honesto de cómo se conecta (o no) con lo que hace Dataria en cada caso. Si en algún rubro no hay nada realmente noticiable o relevante ahora mismo, decime eso también — prefiero saber que no hay nada bueno a que inventes una conexión forzada.
+
+## 1. Gastronomía — food cost / rentabilidad de restaurantes en Argentina
+Buscá: inflación de insumos gastronómicos reciente, cierres o dificultades de restaurantes por rentabilidad, informes de cámaras gastronómicas (AHRCC, FEHGRA), notas periodísticas sobre food cost o márgenes en gastronomía argentina en los últimos meses. ¿Hay algún dato de aumento de costos de insumos específico (carne, aceite, harina, alquileres) con fecha reciente?
+
+## 2. Distribuidoras — logística, combustible, rutas de reparto en Argentina
+Buscá: evolución reciente del precio del combustible/gasoil en Argentina y su impacto en logística de reparto, informes de cámaras de distribuidores mayoristas, notas sobre costos logísticos para pymes, adopción de tecnología/IA en distribución en Argentina.
+
+## 3. Inmobiliarias — mercado inmobiliario y WhatsApp en Argentina
+Buscá: datos recientes del mercado inmobiliario argentino (operaciones, precios, zonas con más movimiento), notas sobre cómo se cierran operaciones inmobiliarias por WhatsApp en Argentina, uso de CRM/Tokko Broker, cualquier estudio o nota reciente sobre digitalización de inmobiliarias argentinas.
+
+## 4. E-commerce — stock, Mercado Libre, Tiendanube en Argentina
+Buscá: datos recientes de e-commerce en Argentina (CACE — Cámara Argentina de Comercio Electrónico — u otras fuentes), tendencias de venta online, problemas de quiebre de stock o sobrestock reportados, fechas de eventos de alta demanda relevantes (Hot Sale, CyberMonday) y cómo afectan a pymes.
+
+## Para cada uno de los 4, además de los datos/noticias, dame:
+- Un ángulo concreto de cómo Dataria (herramientas de IA a medida, no un SaaS genérico) se conecta honestamente con esa noticia/dato — sin exagerar ni prometer de más.
+- Si el dato es lo suficientemente fuerte como para ser el gancho de apertura de un post de blog, o si es mejor usarlo como apoyo en el medio del texto.

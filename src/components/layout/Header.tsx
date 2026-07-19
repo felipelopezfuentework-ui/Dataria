@@ -7,6 +7,7 @@ import Image from 'next/image'
 const navLinks = [
   { label: 'Industrias',      href: '/#industrias'      },
   { label: 'Cómo trabajamos', href: '/#como-trabajamos' },
+  { label: 'Blog',            href: '/blog'             },
   { label: 'Contacto',        href: '/#contacto'        },
 ]
 

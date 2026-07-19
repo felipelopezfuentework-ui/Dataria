@@ -1,0 +1,875 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Como investigador de mercado para **Dataria**, analicé en profundidad la coyuntura económica y sectorial de Argentina durante **2025 y el primer semestre de 2026**. \n\nA continuación, te presento la materia prima: datos reales, noticias de último momento, fuentes citables y el razonamiento de cómo conectar honestamente cada rubro con la propuesta de valor de Dataria (módulos de IA a medida, no SaaS genéricos).\n\n---\n\n### 1. Gastronomía: La soga al cuello de la rentabilidad\n*El control milimétrico del CMV (Costo de Mercadería Vendida) en la era de las mesas vacías.*\n\n#### Los Datos y Noticias Reales (Argentina, 2025-2026)\n*   **Caída del consumo:** Según datos de la **AHRCC (Asociación de Hoteles, Restaurantes, Confiterías y Cafés)** publicados por *Ámbito Financiero* (17 de julio de 2026), el consumo en bares y restaurantes **cayó entre un 30% y un 40%** en los últimos dos años. El presidente de la Cámara de Restaurantes, Carlos Yanelli, advirtió que *\"los restaurantes no pueden trasladar los aumentos de costos porque la demanda no convalida mayores precios\"*.\n*   **Cambio de hábitos:** Los clientes ahora consumen más en grupo, comparten platos y migran hacia opciones más económicas (bodegones o pizzerías), lo que reduce el ticket promedio real.\n*   **La paradoja de los costos:** Aunque la inflación general muestra signos de desaceleración (1,9% mensual en junio de 2026, según el **INDEC**), los insumos clave siguen desbocados. Datos del INDEC a abril de 2026 revelan que, en el acumulado interanual, **la carne picada común subió un 57,2%** y **el aceite de girasol un 53,8%**, muy por encima de la inflación general.\n*   **Presión salarial:** Las paritarias de **UTHGRA y FEHGRA** para el período 2025/2026 mantuvieron constantes actualizaciones mensuales (con sumas no remunerativas que se absorbieron al básico en junio de 2026), encareciendo el costo laboral.\n\n#### El Ángulo de Conexión de Dataria\nEn un escenario donde no podés subir los precios de tu carta porque la gente deja de ir, y donde tus insumos (carne, aceite) suben más del 50% interanual, **la única forma de no quebrar es optimizar el Costo de Mercadería Vendida (CMV)**. \nUn SaaS genérico de gastronomía te da una planilla estándar para que cargues recetas. **Dataria hace algo distinto:** conecta mediante IA tus facturas de proveedores digitalizadas (vía WhatsApp o mail) con tu sistema de ventas (POS) en tiempo real. El módulo de *food cost* de Dataria recalcula automáticamente el escandallo cada vez que el carnicero o el proveedor de aceite te cambia el precio, alertándote de qué platos específicos están perdiendo margen antes de que termine el mes.\n\n#### ¿Es un gancho de apertura (Hook) o apoyo?\n**Es un HOOK de apertura indiscutible.** El dolor es total y urgente. \n*   *Propuesta de gancho:* \"El consumo en restaurantes cayó un 30%, pero la carne picada subió un 57%. Si seguís calculando tus costos 'a ojo' una vez al mes, estás perdiendo plata en cada plato que servís\".\n\n---\n\n### 2. Distribuidoras: El laberinto del gasoil a USD 1,60\n*Eficiencia de rutas obligatoria ante el récord histórico de costos de transporte.*\n\n#### Los Datos y Noticias Reales (Argentina, 2025-2026)\n*   **El salto de marzo 2026:** Según la **FADEEAC (Federación Argentina de Entidades Empresarias del Autotransporte de Cargas)**, en marzo de 2026 los costos del transporte de cargas registraron un incremento del **10,15% en un solo mes** (el más alto en dos años).\n*   **El gasoil como enemigo número uno:** Este salto fue impulsado por un aumento promedio del **24,7% en el precio del gasoil** en marzo de 2026. El gasoil grado 2 superó los **$2.100 pesos por litro**. Medido en dólares (alrededor de **USD 1,50 - 1,60 por litro**), se convirtió en uno de los valores más altos de la última década y de los más caros de la región. El combustible representa entre el **33% y el 35% de la estructura total de costos** de una distribuidora.\n*   **Costos acumulados:** En el primer semestre de 2026 (enero-junio), los costos logísticos con transporte acumularon una suba del **22,20%** (según el índice **CEDOL-UTN**).\n*   **Pymes operando a pérdida:** Cristian Sanz (presidente de FADEEAC) advirtió que muchas de las 6.500 pymes del sector operan con tarifas previamente pactadas, lo que les genera **pérdidas de hasta el 20%** en algunos contratos debido a la velocidad de las subas.\n\n#### El Ángulo de Conexión de Dataria\nCon el gasoil a USD 1,60 el litro y representando más de un tercio de tus costos, **hacer un kilómetro de más o mandar un camión semivacío es un lujo que ninguna distribuidora pyme se puede dar**. \nDataria no te vende un software de GPS genérico. Dataria arma un **módulo de optimización de rutas con IA a medida** que cruza tus pedidos del día, las ventanas horarias de tus clientes y la capacidad de carga de tu flota. No solo te dice cuál es el camino más corto para ahorrar combustible, sino que, mediante su **predictor de demanda**, ayuda a consolidar cargas para evitar los \"viajes fantasma\" o devoluciones que duplican el costo logístico.\n\n#### ¿Es un gancho de apertura (Hook) o apoyo?\n**HOOK de apertura.** El precio del combustible en dólares es un dato durísimo que afecta el flujo de caja diario de cualquier distribuidor.\n*   *Propuesta de gancho:* \"Con el gasoil a USD 1,60 el litro (el más caro de la región en la última década), planificar las rutas de reparto con un mapa de papel o por 'intuición del chofer' te está costando un 20% de tu margen operativo\".\n\n---\n\n### 3. Inmobiliarias: La paradoja del WhatsApp lleno y las oficinas vacías\n*Cómo filtrar el \"lead de baja intención\" en un mercado que se ameseta.*\n\n#### Los Datos y Noticias Reales (Argentina, 2025-2026)\n*   **Enfriamiento del mercado tras el boom de 2025:** El mercado inmobiliario consolidó una gran recuperación en 2025 gracias al regreso del crédito hipotecario UVA. Sin embargo, el **primer semestre de 2026 muestra un freno o \"amesetamiento\"**.\n*   **Caída de escrituras e hipotecas:** Según el **Colegio de Escribanos de la Provincia de Buenos Aires** (datos de julio de 2026), en el primer semestre de 2026 se escrituraron 55.035 propiedades, lo que representa una **caída del 7,8% interanual** respecto de 2025. En CABA, el Colegio de Escribanos reportó que en mayo de 2026 las escrituras con hipoteca **se desplomaron un 54,8% interanual**. El encarecimiento de las tasas enfrió el financiamiento.\n*   **La paradoja de la hiperconectividad:** Un informe sectorial de *Webkonect* (2026) titulado *\"Mercado inmobiliario Argentina 2026: ¿WhatsApp lleno y cero ventas?\"* describe un fenómeno clave: las inmobiliarias están inundadas de consultas por WhatsApp y portales, pero **no se traducen en firmas**. \n*   **El \"Lead de baja intención\":** Al ser tan fácil consultar por celular, el compromiso del usuario es mínimo. Las inmobiliarias pymes cometen el error de tratar a todas las consultas con la misma intensidad, **agotando a sus equipos comerciales** en responder preguntas repetitivas a personas que solo están \"curioseando\" o comparando precios.\n\n#### El Ángulo de Conexión de Dataria\nEn un mercado donde las ventas reales cayeron casi un 8% y el crédito se enfrió, tus agentes inmobiliarios no pueden perder tiempo chateando 4 horas con alguien que no califica para un crédito o no tiene el dinero. \nDataria soluciona esto implementando un **Agente de IA por WhatsApp integrado a tu CRM (como Tokko Broker)**. Este agente no es un bot rígido de \"marque 1 para ver deptos\". Es un asistente con IA que conversa de forma natural, califica al lead (le pregunta presupuesto, zona, si tiene crédito preaprobado o efectivo) y **solo deriva al agente humano a aquellos leads con alta intención de compra**, agendando la visita automáticamente.\n\n#### ¿Es un gancho de apertura (Hook) o apoyo?\n**HOOK de apertura.** La frustración de los martilleros de \"estar todo el día respondiendo WhatsApps para no cerrar nada\" es un sentimiento generalizado hoy en el sector.\n*   *Propuesta de gancho:* \"¿Tu inmobiliaria tiene el WhatsApp estallado de consultas pero las escrituras no suben? En 2026, el mercado inmobiliario bonaerense cayó un 7,8%. No necesitás más consultas; necesitás filtrar a los curiosos y enfocarte en los compradores reales\".\n\n---\n\n### 4. E-commerce: La batalla por el \"Fill Rate\" en la era del comercio agéntico\n*Evitar el quiebre de stock en los picos de demanda (Hot Sale / CyberMonday).*\n\n#### Los Datos y Noticias Reales (Argentina, 2025-2026)\n*   **Crecimiento real sobre la inflación:** El Estudio Anual de la **CACE (Cámara Argentina de Comercio Electrónico)** publicado en marzo de 2026 reveló que el e-commerce en Argentina facturó $34 billones de pesos en 2025 (un 55% más que en 2024). Por su parte, el informe **NubeCommerce 2025/2026 de Tiendanube** (febrero de 2026) detalló que las marcas con tienda propia facturaron casi $2 billones, logrando un **crecimiento neto del 40,2%**, superando la inflación anual del INDEC de 2025 (que cerró en 31,5%).\n*   **Consumidor racional y selectivo:** El mercado maduró. El ticket promedio subió, pero las órdenes de compra solo crecieron un 3%. Esto significa que el argentino concentra sus compras, busca financiación (cuotas) y es extremadamente exigente con la entrega.\n*   **La tendencia del \"Comercio Agéntico\":** El informe NubeCommerce 2026 destaca que la nueva frontera del e-commerce es la eficiencia operativa y la adopción de **IA para automatizar procesos**.\n*   **El peligro de los eventos pico:** En fechas como el **Hot Sale 2026** (mayo de 2026) o el **CyberMonday 2025** (noviembre de 2025), las ventas de una pyme se pueden multiplicar por 5 en 48 horas. El gran desafío operativo es el **OTIF (On Time In Full)** y evitar el **quiebre de stock (stockouts)**. Vender un producto que no tenés en el depósito durante el Hot Sale significa cancelaciones, multas de Mercado Libre y destrucción de tu reputación.\n\n#### El Ángulo de Conexión de Dataria\nPara una pyme que vende online, el stock es dinero inmovilizado. Si te sobrestoqueás para el Hot Sale, perdés liquidez; si te quedás corto, quebrás stock, perdés ventas y la plataforma te penaliza. Los sistemas tradicionales (ERP o el panel de Tiendanube) te dicen qué tenés hoy, pero no qué vas a necesitar mañana.\nDataria desarrolla un **módulo de predicción de demanda y gestión de stock con IA a medida**. Este módulo se conecta a tu historial de ventas, analiza las tendencias de búsqueda y el comportamiento de eventos anteriores (como el Hot Sale) para predecir con precisión matemática qué productos específicos van a rotar más. Te ayuda a optimizar tu *Fill Rate* (despachar todo sin faltantes) sin ahogar financieramente a tu pyme.\n\n#### ¿Es un gancho de apertura (Hook) o apoyo?\n**Es mejor usarlo como APOYO de desarrollo medio.** Aunque el Hot Sale y CyberMonday son muy populares, el problema del stock es más técnico y \"frío\" que el dolor del gasoil o las mesas vacías. Es ideal para abrir hablando de la madurez del e-commerce argentino en 2026 (creciendo por encima de la inflación) y luego meterse de lleno en cómo la IA operativa (comercio agéntico) define quién gana y quién pierde en logística y stock.",
+            "thoughtSignature": "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"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "index": 0,
+      "groundingMetadata": {
+        "searchEntryPoint": {
+          "renderedContent": "<style>\n.container {\n  align-items: center;\n  border-radius: 8px;\n  display: flex;\n  font-family: Google Sans, Roboto, sans-serif;\n  font-size: 14px;\n  line-height: 20px;\n  padding: 8px 12px;\n}\n.chip {\n  display: inline-block;\n  border: solid 1px;\n  border-radius: 16px;\n  min-width: 14px;\n  padding: 5px 16px;\n  text-align: center;\n  user-select: none;\n  margin: 0 8px;\n  -webkit-tap-highlight-color: transparent;\n}\n.carousel {\n  overflow: auto;\n  scrollbar-width: none;\n  white-space: nowrap;\n  margin-right: -12px;\n}\n.headline {\n  display: flex;\n  margin-right: 4px;\n}\n.gradient-container {\n  position: relative;\n}\n.gradient {\n  position: absolute;\n  transform: translate(3px, -9px);\n  height: 36px;\n  width: 9px;\n}\n@media (prefers-color-scheme: light) {\n  .container {\n    background-color: #fafafa;\n    box-shadow: 0 0 0 1px #0000000f;\n  }\n  .headline-label {\n    color: #1f1f1f;\n  }\n  .chip {\n    background-color: #ffffff;\n    border-color: #d2d2d2;\n    color: #5e5e5e;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #f2f2f2;\n  }\n  .chip:focus {\n    background-color: #f2f2f2;\n  }\n  .chip:active {\n    background-color: #d8d8d8;\n    border-color: #b6b6b6;\n  }\n  .logo-dark {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #fafafa 15%, #fafafa00 100%);\n  }\n}\n@media (prefers-color-scheme: dark) {\n  .container {\n    background-color: #1f1f1f;\n    box-shadow: 0 0 0 1px #ffffff26;\n  }\n  .headline-label {\n    color: #fff;\n  }\n  .chip {\n    background-color: #2c2c2c;\n    border-color: #3c4043;\n    color: #fff;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #353536;\n  }\n  .chip:focus {\n    background-color: #353536;\n  }\n  .chip:active {\n    background-color: #464849;\n    border-color: #53575b;\n  }\n  .logo-light {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #1f1f1f 15%, #1f1f1f00 100%);\n  }\n}\n</style>\n<div class=\"container\">\n  <div class=\"headline\">\n    <svg class=\"logo-light\" width=\"18\" height=\"18\" viewBox=\"9 9 35 35\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M42.8622 27.0064C42.8622 25.7839 42.7525 24.6084 42.5487 23.4799H26.3109V30.1568H35.5897C35.1821 32.3041 33.9596 34.1222 32.1258 35.3448V39.6864H37.7213C40.9814 36.677 42.8622 32.2571 42.8622 27.0064V27.0064Z\" fill=\"#4285F4\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 43.8555C30.9659 43.8555 34.8687 42.3195 37.7213 39.6863L32.1258 35.3447C30.5898 36.3792 28.6306 37.0061 26.3109 37.0061C21.8282 37.0061 18.0195 33.9811 16.6559 29.906H10.9194V34.3573C13.7563 39.9841 19.5712 43.8555 26.3109 43.8555V43.8555Z\" fill=\"#34A853\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M16.6559 29.8904C16.3111 28.8559 16.1074 27.7588 16.1074 26.6146C16.1074 25.4704 16.3111 24.3733 16.6559 23.3388V18.8875H10.9194C9.74388 21.2072 9.06992 23.8247 9.06992 26.6146C9.06992 29.4045 9.74388 32.022 10.9194 34.3417L15.3864 30.8621L16.6559 29.8904V29.8904Z\" fill=\"#FBBC05\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 16.2386C28.85 16.2386 31.107 17.1164 32.9095 18.8091L37.8466 13.8719C34.853 11.082 30.9659 9.3736 26.3109 9.3736C19.5712 9.3736 13.7563 13.245 10.9194 18.8875L16.6559 23.3388C18.0195 19.2636 21.8282 16.2386 26.3109 16.2386V16.2386Z\" fill=\"#EA4335\"/>\n    </svg>\n    <svg class=\"logo-dark\" width=\"18\" height=\"18\" viewBox=\"0 0 48 48\" xmlns=\"http://www.w3.org/2000/svg\">\n      <circle cx=\"24\" cy=\"23\" fill=\"#FFF\" r=\"22\"/>\n      <path d=\"M33.76 34.26c2.75-2.56 4.49-6.37 4.49-11.26 0-.89-.08-1.84-.29-3H24.01v5.99h8.03c-.4 2.02-1.5 3.56-3.07 4.56v.75l3.91 2.97h.88z\" fill=\"#4285F4\"/>\n      <path d=\"M15.58 25.77A8.845 8.845 0 0 0 24 31.86c1.92 0 3.62-.46 4.97-1.31l4.79 3.71C31.14 36.7 27.65 38 24 38c-5.93 0-11.01-3.4-13.45-8.36l.17-1.01 4.06-2.85h.8z\" fill=\"#34A853\"/>\n      <path d=\"M15.59 20.21a8.864 8.864 0 0 0 0 5.58l-5.03 3.86c-.98-2-1.53-4.25-1.53-6.64 0-2.39.55-4.64 1.53-6.64l1-.22 3.81 2.98.22 1.08z\" fill=\"#FBBC05\"/>\n      <path d=\"M24 14.14c2.11 0 4.02.75 5.52 1.98l4.36-4.36C31.22 9.43 27.81 8 24 8c-5.93 0-11.01 3.4-13.45 8.36l5.03 3.85A8.86 8.86 0 0 1 24 14.14z\" fill=\"#EA4335\"/>\n    </svg>\n    <div class=\"gradient-container\"><div class=\"gradient\"></div></div>\n  </div>\n  <div class=\"carousel\">\n<a class=\"chip\" href=\"https://www.google.com/search?q=hot+sale+cybermonday+pymes+argentina+2025+2026&client=app-vertex-grounding&safesearch=active\">hot sale cybermonday pymes argentina 2025 2026</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=costos+gastronomia+argentina+2025+2026&client=app-vertex-grounding&safesearch=active\">costos gastronomia argentina 2025 2026</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=inflacion+insumos+gastronomicos+argentina+2025+2026&client=app-vertex-grounding&safesearch=active\">inflacion insumos gastronomicos argentina 2025 2026</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=rentabilidad+restaurantes+argentina+2025+2026&client=app-vertex-grounding&safesearch=active\">rentabilidad restaurantes argentina 2025 2026</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=AHRCC+FEHGRA+informes+costos+2025+2026&client=app-vertex-grounding&safesearch=active\">AHRCC FEHGRA informes costos 2025 2026</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=precio+combustible+gasoil+logistica+argentina+2025+2026&client=app-vertex-grounding&safesearch=active\">precio combustible gasoil logistica argentina 2025 2026</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=costos+logisticos+argentina+2025+2026+CEDOL&client=app-vertex-grounding&safesearch=active\">costos logisticos argentina 2025 2026 CEDOL</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=mercado+inmobiliario+argentina+2025+2026+operaciones&client=app-vertex-grounding&safesearch=active\">mercado inmobiliario argentina 2025 2026 operaciones</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=digitalizacion+inmobiliarias+argentina+2025+2026&client=app-vertex-grounding&safesearch=active\">digitalizacion inmobiliarias argentina 2025 2026</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=tiendanube+informe+anual+argentina+2025+2026&client=app-vertex-grounding&safesearch=active\">tiendanube informe anual argentina 2025 2026</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=inmobiliarias+whatsapp+argentina+2025+2026&client=app-vertex-grounding&safesearch=active\">inmobiliarias whatsapp argentina 2025 2026</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=quiebre+de+stock+e-commerce+argentina+2025+2026&client=app-vertex-grounding&safesearch=active\">quiebre de stock e-commerce argentina 2025 2026</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=CACE+e-commerce+argentina+2025+2026+informe&client=app-vertex-grounding&safesearch=active\">CACE e-commerce argentina 2025 2026 informe</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=ventas+propiedades+caba+2025+2026+colegio+escribanos&client=app-vertex-grounding&safesearch=active\">ventas propiedades caba 2025 2026 colegio escribanos</a>\n  </div>\n</div>"
+        },
+        "groundingChunks": [
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRW6Fh50-80FeUih81gqduapUpaYoFmAxeHNYjZPXUuCj6QTPN4BqJ8dPk5sCPu0qYhNQCGgNg81JfWLEpDfolNop_meWQ77_4_9_sh3qI3gVXDvfXExEh9HcV5LKF5z7sDHIhNFRNdw9fJOT431boqyq920tlaJerqKNHyKtNZW4ww6T-J9uM5A8rJhRsED_4061SH-V7OaRIJwGCLmH7PaxoF0XSTmq-VGxK_x0KrYIKznHyGJJt_wCwQGgAni8f6N3vfkRNog==",
+              "title": "ambito.com"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVBmfai5BKh3ZyC4EIF54Ncaj6Xn0_lRAXMzBwEnKF7WDyDL-fX57zhi8SQttMMHoJ-jQ9H0d9IzpFSvxFArMsjVQKO5swHtfRPSRTaURF6L2GssPfzkKWciCbDvKOUiLc61Hj0ZJt6nbZw05fa5BqC5Sca_tTiucS0eMZlMJjt9tUxh6MSSks1O2YuwFMJSvLNDa_WKc=",
+              "title": "laverdadonline.com"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8wzTz2N3_ajR8z7RSipqivqfdtOPkG4NFayKc_KB453DTgpTlU99kB9dASAIrzYpcy2S5wwkZI8NdC8JmLiRXBEMAlO1hsX-WCXi1q_E_Wu9Z3tO9sWwP1YplZ_BVcTYpY3VJX0Rsu0jh8DjA4LLI1Hz69K3TmG-ADFJxIY9xYH60Pq4eI0buwFV9jgJnsNgBhokpbC4pKSE3ZlWPPBYaAv_Y6tYXVAht2wER",
+              "title": "diarioelargentino.com"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG55WRUNPjblnucKeN1KGRkuNYnfy9tc4KY5hH0ShdIUXwza6nVdkhurI72t9sI6jDkymOQWv52UNlmDgXZKMxw3KsFgIVQxHoCzwWEUbz2SnsRdJeMtBcSFegl2ADNwJIC38hDWKPEQVGcCJWiIy6nNGmt-wdRB2MJ-cIK-zgaTvyKNtVBNQNtjcYWOCl_H3dE0Yxx-mvvm_381vyH5srHfafLF9JFGD7qgEDgAeOJlRIc7n1hkJQYTnETszSm",
+              "title": "infobae.com"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9qk2f-0hrvx_upHpT0HTTSO0POZgUiqaxRPzxssw1yfsZci9w__TNrMPo879F7AQSrHqRpNbSp9wD3RTY_gpok3UTWH903KzGtWxDEMuvvig2uQznAl7YcIdMgoRKWsczh3Qd2tg9f1ddC11vBBxAnIh7aWA0gt2-3DcLVaHSbWKuv5uWlYTl4j2RX_OGVk8EYSnYEIodIyyoQ71C4SA=",
+              "title": "chequeado.com"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBdNRLc0Q2Jy7VQhlui0cOXUrCWFgMgCNAWK7O7t3HwuYvg_JNcBP8Rj5oz2wcbGxre9YCcvIXqCj5nZ7tA3-hdqsHic84uw6OL-h0y0NL4gOjw-wIvDeEpZwZp1oDyz3WIj-Pz0Gue-ot350Hqp0hzPY8gXbPaWea8zdu18kFh911",
+              "title": "xinhuanet.com"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjHXgAz7y8lnMzX8IROxVtd1HQpgx5I__8K-mrl3SnxqWJLi68518LCmbqPiVwO1BnlooyutBnyD_LPg9orVCPO8DR-CS2xhKE1OmGbmof_Ph2lchDoNV8iHoOvVxdNQ7qYO3FaOQLnywYHyIrJ2VA4nFhdG5ATgWD96RvACL4Im-bQ6KgwSzbHbH9zkaJphaOE10S4bSUOKijnAzJKJCF9b_xsihwePjIBEGHHYuodDbf0Y5PvYGAdlJYvy_Llgf_ioQj9rSz-aCoJjDTtqe7icWSdZ1YFTVKrCFXOidlcg==",
+              "title": "infobae.com"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1eePYsKvXxoSiUbmNAhvaxTfTeVXUlFVb1TvwgkZJOneUg--dlNU84819xYThM89r8ugpXnX6BLq6FNiOqZehiQDwP1FFEYM0v4Vrpng-z3vbakCs7YO5oEa55Lvk4BXdvqpK7mkJOZBb9JBM7-QhW_uGnkN78h1JSQ27bYVo",
+              "title": "consejosalta.org.ar"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEAcHNvGykZDhMZeZNt23jqyhkER9R1WTGfdM8IkiQ-H0B5jNPUZQuaj8g7raaZQxBcORlMoCfFkgjBZ_oEG8GCjPUNZCObPZP1qtpodmr2ODzY_gfrOuwt2TEO1sUYenECD5ecAsiwmK8db_zsML4PlZ1bTmIV_1zDTAA8drDKZwoiGN7vJ_777mMQglnVO-h6MenKuA5AHjFg9Pos84uA7XKKE4jS1GcCas4SDNSJqsBF7NS4xvAj3rxu6JZN42CI-d-s4Ro5SB1xQZvGb1RZkBlfZw==",
+              "title": "adnsur.com.ar"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdiJg9NWipsKntbi-RJH-wUXXxRguTvwxx8gkiRjxMgPUsjWVx-ZAdP-uiVvEiFXxJAHaKuJU3bEz1ZF7aA_axg0sQnUKA4J6iP_Rv5QDFYIOm-8Y7IYtI2jWK46RTjwZrjYEr4XUMLUQ9tzy8lw==",
+              "title": "restaurantargentina.com"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElBuit-zVvUUb87W7DqGpGvSkOEKXA_g5eTtN8L2-O8Pv8wV8iDbPATTfILRtC0NtARKAvMy37-7OZoPtlKMJPERn1fhkmsC010tl2Me51FSqKR30lD3f_VvMd70QdXCQnW112PmgvFX5lCpYf1j5e517Kn_bsRPME8mp4ti4=",
+              "title": "caminogastronomico.com.ar"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBnDSwoS2XoK0VRH82C3B_OrPyDJCfSks2Kt-hvo796HVMTqPSygTeZXZ06F1nzqnJsllwaAiOVBDIbykBjDHOcGI9MsJlHS618gfaeiHIDiAlKp_Pm5_d7Xx4R9ZUytjUXgsg5bpd-7GegJHKs81gT6jK2Nq6qAoTFsttAgadGHW94QdHFT7iwlCP",
+              "title": "webpicking.com"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmkNyv2y9y4JGA_pVG11pHTZMK_8qq_bMvQ4jIEUadZxkL56AW6hLzP3CnUH6Hj6G5X17aNcARCzmWAkfIRsl4knNZtt4Hhe82LOy60TPCl306KWp4mcUhRSqf3SDNEIOABp6s37On2O4LtLPi0KwIxpybMr99D_m13LmHpvANLlZ4j7Rz6Cuy_h_srv79zmXG8eJCJOb04awsSAgpXfAOuLqyE5AD",
+              "title": "mdzol.com"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKTjCxc2YhVQBfQuXIX01k1u1DZ4TIEuklTKLoWP2qGvjRtj-uGSmn9xbjvw9PYFCJ8o_5tPWT6jki8xMjtDmbuZsu05XJMZuw85q8okg8APJ6NrbbPSWxP6YMqDYY3oyh0KcekDz8rX1JbvLo4EfDUKHpgUbZrTLGkc27lJkrtmoOb2V3vOKzzXLYIJWGbsHYOkzigmUYKo3GD0TwlI31j2TxIWc77AbT0bIFN2n2OXw4jGkK_9xO46cEydEoy-2jZjXypXxXO1BPmC5G7-yhgg==",
+              "title": "fadeeac.org.ar"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1xcSezmZ61-Dv4Nb_HWDEuDNcgpIgDiszu0wacBjOvzkaj93ExJuzjGDEqsdxiX2PQI_k7gadtGistB4CqEZ0u6EB7URrN303aWqI399C7xWbjnSpIpdTehvRRlr7VNNGDNwMp9klsNHkup38nb5Wggv94AIuA3U67huBf0xEx1Kv1lMUQe4NA1we9nfrZYhmk-9I-8e-OtqeFlwjO7sT0g==",
+              "title": "argenports.com"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEewlP2xxwI5QNnw5F2rDKn8K3eAHgBJFlDpK26Qn0SW1k7HXP4dmkLKLC4EB9MEZHuqNRYltbAiF5w3nDW1I4s_B1R14ZhPCDw-dQ51QtR-r8eb-ORtVUXEiqn4oKs8ueRni47OVBnPsGGtXHmvoi-FURB9WuRdbFNGJX1bUNqGhnYBcuX0TM=",
+              "title": "cedol.org.ar"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgR58uUO16rLrgSoj3SFZSuXtGYVzruR5z9950s3L_Cc9O7x4zB0FJkqTcSNb1hjdD7-PE5AdMHMp7O81ihGFn8C8DELVmQJg6Da_YYEERQ0ezMoKXKK1Gwe5BnapU3lY6uaQC68C7cay1qAK2f1u2TsLk6hDStTafrkEmXy23csFF8zHt_O1ErVscjXcJEEhKbDbMPokBb03BNGERL6wK0fXtwbwUwogEJAluO-o=",
+              "title": "alertastransito.com"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG41NkHwt5tBtwV_k17Gp6Fh7iPi45j9TtUbX2sqx1KW67W5U4pBK8_QX8JI6EI1Td2I47Uhmef0L2vfeGszJrMk17sNQOc0UDhwUP-rVSW4dw8EGgTBPWsoOr2RYNnUqYGqjOZ7603ePPoZLsGeVcnCFVumg0J7nydjVoy0yIsaDc2H9W6ueGVg6sA1OzewyCsGw220xHxC4cUYK8IvUfm2HebhS-dvM_vBE3BJ8fSfVD0Pe1PgZT4qoFxmLJVZwimnUdFew==",
+              "title": "bbva.com"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEiLHjPPxYMQ2xCjzexNvqPeYhCmX1BtbbmhMo4w-GyuhArZKseqOK-2_KIpR6maPzyA8rU0wV4q06RNUEbHFD9fFcQrttquJDTwsL1ALnLJ10zs7hg1TzM01qXUfA3sRtHuYCHZK_WKHyS-bepDlLqTDptOoV9rpFw9wEUnpjS2DfXJqIDgc3UoOWA91HGjRb9aoqtLsOA45bE4U0=",
+              "title": "elfuertediario.com.ar"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJ2QJkr0Qfs4b5SWu4Xw3A25R9FNHOy4wkpt_qmCNm9IBnwaaSoy5GojgrFbQgbYaa6hj3Aq7v3vQsgEdj47RvaugEctjIorWMRX53pl7NJ1aDw-iNG8MgJ43Yn8HICsUZdhH8GeIbFmIsGJhmNgUDHZB41OYaoizWN3z9wRYiEA==",
+              "title": "reporteinmobiliario.com"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXxR6dm2wPrxlsAUiopaZ6BbiVomAbNeYJ7ZH95432RGliDB5_HNexj2Lcoam85bOMguPngNI2IGHbM05oFOIHTWTOjYlGpyQ9x1oNvVeV5vLnIUms_jvi4ZGeasFwXfGPfl1iwlrOoIHWuuuN_PiBXESseJRy5xOCjJbRes0lX39QbMBCoaMAAQlJ7UhMmPR3nAWRE0sUQQsLYlchofCjo8fI052NYBdyJme7B_wD",
+              "title": "infobonaerenses.com.ar"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHRD2DK_Dc4SeUV0eIDpcWZPhhjFQ0eZ79s-Sld4LKYxGy9XQcM7bGQt8LccbPtk3DuIVXcum9IJ1UrvF8A7P8e9Rl380XyMzLdYb2glts_DHXzBDz6ZiOpAe2e-CP1vzX17-WXb4fxB_lqu3BQOAt4rirF1OakGz2vG4jCWpwPdJnEK9O5QY8grUz00Kw_Z0548mCOXLnWkrK1tHN9HjjGvK5ans_3DpYMM2kuc14InA5j1A==",
+              "title": "eleco.com.ar"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPUDKe5yDGI1fyegvDlsM1BFgcgWwzfk4DFyW0X-SjQdDt14aW11NG09myUg32woh7koBc62kUxOuU18S7zR1aNa-whYQnIQ9UFXG2gxzC2t0-fJPf72b9Ulp-xRqfOVG0BPD3p6Tbaeih2cwTbcnJ19JrAI_hILEI0a6a6iwXgAcjlxnTLer7FPWiEudheJlHiUsZEIlF-MkOAEwyHPxPzF8AuTE=",
+              "title": "colegio-escribanos.org.ar"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqf3PQf6HggY2F3a0xuuaMgM8q9JhSK2VXEPgUr2fj6-YTPkJJOOU13b03ICzXX175_qKMAsVMNmZYqzFZecZExz3-bpFhPRinELc2OURrKq00VUsP4JIeM2iBB6NJDryoaH_o2Hm_dM4SWyDqlTg0tanz_9fla0o9KePU237LxSO4y3QtcopaKUc=",
+              "title": "webkonect.com"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0BMepSYnJ1Bq3mEC4K_kEdEObohe0_1io5brPLtMTeD6OiTv_YtV3wrxqAo7pTX1UB5i-iaty_kqG-NMGWl9purMqrMSVxhSYyWMVESUr9y6UD6agFDPb4Wu9LQRqJLhp2rz-8MVM9_egAWp5jN6j2YeU4pMMfs_biaB669-gDAuR8v46zJlE6qPMRuqi9Y5yTvHZjh6lXe1no1dKkCk=",
+              "title": "mdzol.com"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGN5OKq0gZgTQcmsW0F3njAejItQn3OA-g3SU45mpNHDNNnyltPvp9ycUV9fXgFNLmpNrsgZN-1xFqpkWaEwDZ52UfQ88jb9_2srcssikj7udYU3kEawyIcs7-Tq1KyvIzvwvUWn7KE4GsusMBjmWxhKrqtLNlUg4ENCGAW4emHLzDSJxKO61Nf6KulrkfIxQ2ONsn2SYLgZXErW1-ebxTjfdLWU5lGA4EyRZupUXR7JCQQRdQxap-tA==",
+              "title": "impulsobaires.com.ar"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGitE1VoPMqf3_2fWKQ-s979ujLgt5FiMXOwsZ7vAO2sH6YRFjxQfEqS6vx1iWBobI9YcZKgKGAHtgFXF2Wuv-k5G_g01FslPwnlbsRPi5i2rA_ifg7b_Nw3Mr_kaBup0VraoH9ydJInHk8Oj116eIKsL8lVtwACiBpRv_KQ8g_bZzi_2NOAXjbdmCPArPqjuaP8Dz7mtdDbwi7AhM85mxQpuoFy8v8jsshRXDbSkSkErgCEn4rVMIxkoiWZTId45kyJKiGUA==",
+              "title": "forbesargentina.com"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHyfvX4Ln2Uh2pfHa2-8UxNq0HkNGXr1p4lMJH5TCmt0N1uP8BtAAs-CYVbfCr2rkyG9yPwFha203lU5CZucqHkauUyBQxJy9jZpPbou7VKtxCrSaonZ_FWEwf8a6UCI0SjuayfSE5mn8cKhI-4CBrZTgjxD1c8i8RJVmsPS41j94WdcTSLKAo3hxx15bchtgDf1WuRNUthAYLQ3yMAB6kP-bjoTOjjw8E=",
+              "title": "iproup.com"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrVcQxrWnyCm3P6TGTIpf7nP8qtDarNtqdoHX-pbTF6RElxUrMJNi3r2ow0-Y_7NEgOWGj61PlAewhLLdBeTfJhJ68OLJdK3Z9HIHeNadbXcs6DDh0fUa-uK2jw3VTCDywsJw5uMcyXpLwRd6TkTMTef2HfXK-59OLVrVlgIk72qECV32daBmH80tghVhIOQPEa94Y0ED1r7vlET9gB-IdyvJ4IxbywgDO4EtzaKbZ",
+              "title": "tn.com.ar"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELh_RUKaY_YoIHs3fpnNWh54e-sKlaiWkbry73bgiaEhNzs-v0XpMY5bKtjMYZrU3oHasu3fqa_2vAGfV97psW3PTfGL0T1SB3FRG2CLiyGkordLUc50e5FFKzthq7EgVlKLVzFyD5OB_-3TozSNKV732X",
+              "title": "memo.com.ar"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEI5Zvfg7mz5-Mp3sqfY0lEkTXGb2Bs9WHOMaIxWl45-QePmPQijO-uT3ozfThsiHg5gEY_amnWlqRHglJspG3mnge0ibL8_C6rR7ym7DTLa_7J5Vnl2Pv4q0nE4e8HBBcygutxEeqhDOV_s2lRzZYnsTz_npqJ_O6iH3nCcHbsmLluRnGJ8P1PHgHTAC63--GkM2x8tPb5MZ0rNd3-PR5v9pBXm-gTl7uBNz4uSnosfjKMPld_",
+              "title": "infobae.com"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHW_j2tiKDlAuNxJ8ijAQPatIQV4rtq8BsXVwjjLciOlsSIffF8KxLWrMLhjpsZBFzdp8FJ3Ev_oaqOI1JnYDOWOxanMtBzwGtrds756u0digJmkSFJiWxE9-Ic_CSGpitGv8yzkLea_dv3RWc-5r7gRYMWxcdmsMlhlev6Ugai145hYHQ_WakdFyF7ycUTLid0kExvPWrKnHXlHcFeFUiQdoK1diD_60OpqSnhGExM2K1yI743Z3N0nocH-H51CEHJTdh0iAJ6xL3ctaNDLXLSbbaphr9m",
+              "title": "itsitio.com"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-Oa0Kg2LasvY9OeE2wzSmmrVVUteETyPQ223IolnzBa5jc9V8cEFX0vWxFTNsdGteELfkiWc8UIbEk9G6gNpMWSd5hAhcN-KoDI25yS9EyAM8U4UFvao7lpb_Z5_sE4KpE6FcsL44-ZhDPMuSukBdxqctpGaW8TQ6S3Y43UtkInM9g056J0AFB5u7JVPypb4OJN6YGad8_j0-HMx0bN2BoQ==",
+              "title": "mercado.com.ar"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFT7vD9wrv_w6DFJYDaWHOfrRjqv6mFTOZuw_mW17xbzaPAz5u3GtDpgp5t0NkXgSwCsX_yH4_u6bDCSpuMvmrBTwtyMS5iqbIJU5npvppH8m1_FVYvR3HJhqLNtuBt9998kK3TnZaFwKKACYAWvOLqI0jScSu35Yu1z1n7iyj1Fh8qPZ9FIBEGZEvEPxpYEauGEorxHKrvFidpYfwMqk-UQRDRkMuOkPgPCN9-nVC-8oxjIYE=",
+              "title": "infobae.com"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHRbrFPZOsDvNmyKQ2JnDZUtztOGsNufdMMnGIitNVGjwK25xYdp2A_3KKZDuNBtsf_uNi7Pi4KrfuAiwKxQcIPO0cWJd8dCxksABgRGOD2rKdunOg1vevJ0hVGmDiTsBvNggSj9NfA7STl8bOSPsDS_w==",
+              "title": "base.com"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEShaBjqS2lnd2n4VrjFLf5-wlGwnME7QDnhpTuT1dAg7E8tmMQNp0wLcs4vN8daETNEy3DQArUAaedZxcQkFjGiGQuSPZpbUesxxvoGkIhbpCsEKU5htaIdqAF1VO0yCCQXQZHbLMQvydk59ZW1MuDpnpv7BEXE4dJRc5VBA-u00RLX8OI6GCyU3rBSUGLA_h8fvCo6GsqbIA=",
+              "title": "zipnova.com"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0TTV3ueSMt3H9bCXGfDZRYxppNK8nHcdwDUYDH49ajcmjXMbZn5f3HffMc9srzL6e01fqX-X8uLQMx1zgqRxjTiew0aH6PdloruflchOpcWHRCCuRU-X95F29OYsi-VL00MZJup9Mi-DIzoS7_dNRhhyk1oPLLHoxIZQeVyWNV2jr",
+              "title": "id4you.com"
+            }
+          }
+        ],
+        "groundingSupports": [
+          {
+            "segment": {
+              "startIndex": 582,
+              "endIndex": 814,
+              "text": "#### Los Datos y Noticias Reales (Argentina, 2025-2026)\n*   **Caída del consumo:** Según datos de la **AHRCC (Asociación de Hoteles, Restaurantes, Confiterías y Cafés)** publicados por *Ámbito Financiero* (17 de julio de 2026)"
+            },
+            "groundingChunkIndices": [
+              0
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 582,
+              "endIndex": 908,
+              "text": "#### Los Datos y Noticias Reales (Argentina, 2025-2026)\n*   **Caída del consumo:** Según datos de la **AHRCC (Asociación de Hoteles, Restaurantes, Confiterías y Cafés)** publicados por *Ámbito Financiero* (17 de julio de 2026), el consumo en bares y restaurantes **cayó entre un 30% y un 40%** en los últimos dos años"
+            },
+            "groundingChunkIndices": [
+              0,
+              1
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 910,
+              "endIndex": 1095,
+              "text": "El presidente de la Cámara de Restaurantes, Carlos Yanelli, advirtió que *\"los restaurantes no pueden trasladar los aumentos de costos porque la demanda no convalida mayores precios\"*"
+            },
+            "groundingChunkIndices": [
+              2
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 1097,
+              "endIndex": 1250,
+              "text": "*   **Cambio de hábitos:** Los clientes ahora consumen más en grupo, comparten platos y migran hacia opciones más económicas (bodegones o pizzerías)"
+            },
+            "groundingChunkIndices": [
+              1
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 1097,
+              "endIndex": 1289,
+              "text": "*   **Cambio de hábitos:** Los clientes ahora consumen más en grupo, comparten platos y migran hacia opciones más económicas (bodegones o pizzerías), lo que reduce el ticket promedio real"
+            },
+            "groundingChunkIndices": [
+              3,
+              1
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 1291,
+              "endIndex": 1441,
+              "text": "*   **La paradoja de los costos:** Aunque la inflación general muestra signos de desaceleración (1,9% mensual en junio de 2026, según el **INDEC**)"
+            },
+            "groundingChunkIndices": [
+              4,
+              5
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 1480,
+              "endIndex": 1631,
+              "text": "Datos del INDEC a abril de 2026 revelan que, en el acumulado interanual, **la carne picada común subió un 57,2%** y **el aceite de girasol un 53,8%**"
+            },
+            "groundingChunkIndices": [
+              6
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 1674,
+              "endIndex": 1890,
+              "text": "*   **Presión salarial:** Las paritarias de **UTHGRA y FEHGRA** para el período 2025/2026 mantuvieron constantes actualizaciones mensuales (con sumas no remunerativas que se absorbieron al básico en junio de 2026)"
+            },
+            "groundingChunkIndices": [
+              7
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 1674,
+              "endIndex": 1921,
+              "text": "*   **Presión salarial:** Las paritarias de **UTHGRA y FEHGRA** para el período 2025/2026 mantuvieron constantes actualizaciones mensuales (con sumas no remunerativas que se absorbieron al básico en junio de 2026), encareciendo el costo laboral"
+            },
+            "groundingChunkIndices": [
+              2,
+              8
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 1924,
+              "endIndex": 2052,
+              "text": "#### El Ángulo de Conexión de Dataria\nEn un escenario donde no podés subir los precios de tu carta porque la gente deja de ir"
+            },
+            "groundingChunkIndices": [
+              2
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 1924,
+              "endIndex": 2119,
+              "text": "#### El Ángulo de Conexión de Dataria\nEn un escenario donde no podés subir los precios de tu carta porque la gente deja de ir, y donde tus insumos (carne, aceite) suben más del 50% interanual"
+            },
+            "groundingChunkIndices": [
+              6
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 1924,
+              "endIndex": 2205,
+              "text": "#### El Ángulo de Conexión de Dataria\nEn un escenario donde no podés subir los precios de tu carta porque la gente deja de ir, y donde tus insumos (carne, aceite) suben más del 50% interanual, **la única forma de no quebrar es optimizar el Costo de Mercadería Vendida (CMV)**"
+            },
+            "groundingChunkIndices": [
+              9,
+              10
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 2852,
+              "endIndex": 2892,
+              "text": "\"El consumo en restaurantes cayó un 30%"
+            },
+            "groundingChunkIndices": [
+              2
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 2852,
+              "endIndex": 2928,
+              "text": "\"El consumo en restaurantes cayó un 30%, pero la carne picada subió un 57%"
+            },
+            "groundingChunkIndices": [
+              6
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 3189,
+              "endIndex": 3514,
+              "text": "#### Los Datos y Noticias Reales (Argentina, 2025-2026)\n*   **El salto de marzo 2026:** Según la **FADEEAC (Federación Argentina de Entidades Empresarias del Autotransporte de Cargas)**, en marzo de 2026 los costos del transporte de cargas registraron un incremento del **10,15% en un solo mes** (el más alto en dos años)"
+            },
+            "groundingChunkIndices": [
+              11,
+              12
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 3516,
+              "endIndex": 3663,
+              "text": "*   **El gasoil como enemigo número uno:** Este salto fue impulsado por un aumento promedio del **24,7% en el precio del gasoil** en marzo de 2026"
+            },
+            "groundingChunkIndices": [
+              11,
+              12
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 3665,
+              "endIndex": 3721,
+              "text": "El gasoil grado 2 superó los **$2.100 pesos por litro**"
+            },
+            "groundingChunkIndices": [
+              13,
+              14
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 3723,
+              "endIndex": 3890,
+              "text": "Medido en dólares (alrededor de **USD 1,50 - 1,60 por litro**), se convirtió en uno de los valores más altos de la última década y de los más caros de la región"
+            },
+            "groundingChunkIndices": [
+              13,
+              11
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 3892,
+              "endIndex": 3997,
+              "text": "El combustible representa entre el **33% y el 35% de la estructura total de costos** de una distribuidora"
+            },
+            "groundingChunkIndices": [
+              13,
+              11
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 3999,
+              "endIndex": 4177,
+              "text": "*   **Costos acumulados:** En el primer semestre de 2026 (enero-junio), los costos logísticos con transporte acumularon una suba del **22,20%** (según el índice **CEDOL-UTN**)"
+            },
+            "groundingChunkIndices": [
+              15
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 4179,
+              "endIndex": 4447,
+              "text": "*   **Pymes operando a pérdida:** Cristian Sanz (presidente de FADEEAC) advirtió que muchas de las 6.500 pymes del sector operan con tarifas previamente pactadas, lo que les genera **pérdidas de hasta el 20%** en algunos contratos debido a la velocidad de las subas"
+            },
+            "groundingChunkIndices": [
+              13,
+              16
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 4450,
+              "endIndex": 4523,
+              "text": "#### El Ángulo de Conexión de Dataria\nCon el gasoil a USD 1,60 el litro"
+            },
+            "groundingChunkIndices": [
+              11
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 4450,
+              "endIndex": 4571,
+              "text": "#### El Ángulo de Conexión de Dataria\nCon el gasoil a USD 1,60 el litro y representando más de un tercio de tus costos"
+            },
+            "groundingChunkIndices": [
+              13
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 5368,
+              "endIndex": 5453,
+              "text": "\"Con el gasoil a USD 1,60 el litro (el más caro de la región en la última década)"
+            },
+            "groundingChunkIndices": [
+              13,
+              11
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 5368,
+              "endIndex": 5585,
+              "text": "\"Con el gasoil a USD 1,60 el litro (el más caro de la región en la última década), planificar las rutas de reparto con un mapa de papel o por 'intuición del chofer' te está costando un 20% de tu margen operativo"
+            },
+            "groundingChunkIndices": [
+              16
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 5746,
+              "endIndex": 5970,
+              "text": "#### Los Datos y Noticias Reales (Argentina, 2025-2026)\n*   **Enfriamiento del mercado tras el boom de 2025:** El mercado inmobiliario consolidó una gran recuperación en 2025 gracias al regreso del crédito hipotecario UVA"
+            },
+            "groundingChunkIndices": [
+              17,
+              18
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 5972,
+              "endIndex": 6050,
+              "text": "Sin embargo, el **primer semestre de 2026 muestra un freno o \"amesetamiento\"**"
+            },
+            "groundingChunkIndices": [
+              18,
+              19
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 6052,
+              "endIndex": 6323,
+              "text": "*   **Caída de escrituras e hipotecas:** Según el **Colegio de Escribanos de la Provincia de Buenos Aires** (datos de julio de 2026), en el primer semestre de 2026 se escrituraron 55.035 propiedades, lo que representa una **caída del 7,8% interanual** respecto de 2025"
+            },
+            "groundingChunkIndices": [
+              20,
+              21
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 6325,
+              "endIndex": 6454,
+              "text": "En CABA, el Colegio de Escribanos reportó que en mayo de 2026 las escrituras con hipoteca **se desplomaron un 54,8% interanual**"
+            },
+            "groundingChunkIndices": [
+              22
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 6456,
+              "endIndex": 6512,
+              "text": "El encarecimiento de las tasas enfrió el financiamiento"
+            },
+            "groundingChunkIndices": [
+              18,
+              20
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 6514,
+              "endIndex": 6819,
+              "text": "*   **La paradoja de la hiperconectividad:** Un informe sectorial de *Webkonect* (2026) titulado *\"Mercado inmobiliario Argentina 2026: ¿WhatsApp lleno y cero ventas?\"* describe un fenómeno clave: las inmobiliarias están inundadas de consultas por WhatsApp y portales, pero **no se traducen en firmas**"
+            },
+            "groundingChunkIndices": [
+              23
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 6822,
+              "endIndex": 6937,
+              "text": "*   **El \"Lead de baja intención\":** Al ser tan fácil consultar por celular, el compromiso del usuario es mínimo"
+            },
+            "groundingChunkIndices": [
+              23
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 6939,
+              "endIndex": 7172,
+              "text": "Las inmobiliarias pymes cometen el error de tratar a todas las consultas con la misma intensidad, **agotando a sus equipos comerciales** en responder preguntas repetitivas a personas que solo están \"curioseando\" o comparando precios"
+            },
+            "groundingChunkIndices": [
+              23
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 7175,
+              "endIndex": 7271,
+              "text": "#### El Ángulo de Conexión de Dataria\nEn un mercado donde las ventas reales cayeron casi un 8%"
+            },
+            "groundingChunkIndices": [
+              20
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 7175,
+              "endIndex": 7296,
+              "text": "#### El Ángulo de Conexión de Dataria\nEn un mercado donde las ventas reales cayeron casi un 8% y el crédito se enfrió"
+            },
+            "groundingChunkIndices": [
+              18,
+              20
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 7175,
+              "endIndex": 7431,
+              "text": "#### El Ángulo de Conexión de Dataria\nEn un mercado donde las ventas reales cayeron casi un 8% y el crédito se enfrió, tus agentes inmobiliarios no pueden perder tiempo chateando 4 horas con alguien que no califica para un crédito o no tiene el dinero"
+            },
+            "groundingChunkIndices": [
+              23
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 7434,
+              "endIndex": 7542,
+              "text": "Dataria soluciona esto implementando un **Agente de IA por WhatsApp integrado a tu CRM (como Tokko Broker)**"
+            },
+            "groundingChunkIndices": [
+              24
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 7942,
+              "endIndex": 8094,
+              "text": "** La frustración de los martilleros de \"estar todo el día respondiendo WhatsApps para no cerrar nada\" es un sentimiento generalizado hoy en el sector"
+            },
+            "groundingChunkIndices": [
+              23
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 8123,
+              "endIndex": 8212,
+              "text": "\"¿Tu inmobiliaria tiene el WhatsApp estallado de consultas pero las escrituras no suben?"
+            },
+            "groundingChunkIndices": [
+              23
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 8213,
+              "endIndex": 8270,
+              "text": "En 2026, el mercado inmobiliario bonaerense cayó un 7,8%"
+            },
+            "groundingChunkIndices": [
+              20
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 8272,
+              "endIndex": 8373,
+              "text": "No necesitás más consultas; necesitás filtrar a los curiosos y enfocarte en los compradores reales"
+            },
+            "groundingChunkIndices": [
+              23
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 8544,
+              "endIndex": 8853,
+              "text": "#### Los Datos y Noticias Reales (Argentina, 2025-2026)\n*   **Crecimiento real sobre la inflación:** El Estudio Anual de la **CACE (Cámara Argentina de Comercio Electrónico)** publicado en marzo de 2026 reveló que el e-commerce en Argentina facturó $34 billones de pesos en 2025 (un 55% más que en 2024)"
+            },
+            "groundingChunkIndices": [
+              25
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 8855,
+              "endIndex": 9123,
+              "text": "Por su parte, el informe **NubeCommerce 2025/2026 de Tiendanube** (febrero de 2026) detalló que las marcas con tienda propia facturaron casi $2 billones, logrando un **crecimiento neto del 40,2%**, superando la inflación anual del INDEC de 2025 (que cerró en 31,5%)"
+            },
+            "groundingChunkIndices": [
+              26,
+              27
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 9125,
+              "endIndex": 9184,
+              "text": "*   **Consumidor racional y selectivo:** El mercado maduró"
+            },
+            "groundingChunkIndices": [
+              28,
+              29
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 9186,
+              "endIndex": 9261,
+              "text": "El ticket promedio subió, pero las órdenes de compra solo crecieron un 3%"
+            },
+            "groundingChunkIndices": [
+              25,
+              28
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 9263,
+              "endIndex": 9390,
+              "text": "Esto significa que el argentino concentra sus compras, busca financiación (cuotas) y es extremadamente exigente con la entrega"
+            },
+            "groundingChunkIndices": [
+              25,
+              28,
+              30
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 9392,
+              "endIndex": 9590,
+              "text": "*   **La tendencia del \"Comercio Agéntico\":** El informe NubeCommerce 2026 destaca que la nueva frontera del e-commerce es la eficiencia operativa y la adopción de **IA para automatizar procesos**"
+            },
+            "groundingChunkIndices": [
+              31,
+              32,
+              33
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 9592,
+              "endIndex": 9792,
+              "text": "*   **El peligro de los eventos pico:** En fechas como el **Hot Sale 2026** (mayo de 2026) o el **CyberMonday 2025** (noviembre de 2025), las ventas de una pyme se pueden multiplicar por 5 en 48 horas"
+            },
+            "groundingChunkIndices": [
+              34,
+              35
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 9794,
+              "endIndex": 9898,
+              "text": "El gran desafío operativo es el **OTIF (On Time In Full)** y evitar el **quiebre de stock (stockouts)**"
+            },
+            "groundingChunkIndices": [
+              36
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 9900,
+              "endIndex": 10050,
+              "text": "Vender un producto que no tenés en el depósito durante el Hot Sale significa cancelaciones, multas de Mercado Libre y destrucción de tu reputación"
+            },
+            "groundingChunkIndices": [
+              34
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 10158,
+              "endIndex": 10294,
+              "text": "Si te sobrestoqueás para el Hot Sale, perdés liquidez; si te quedás corto, quebrás stock, perdés ventas y la plataforma te penaliza"
+            },
+            "groundingChunkIndices": [
+              34
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 10515,
+              "endIndex": 10661,
+              "text": "Este módulo se conecta a tu historial de ventas, analiza las tendencias de búsqueda y el comportamiento de eventos anteriores (como el Hot Sale)"
+            },
+            "groundingChunkIndices": [
+              34,
+              35
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 10749,
+              "endIndex": 10815,
+              "text": "Te ayuda a optimizar tu *Fill Rate* (despachar todo sin faltantes)"
+            },
+            "groundingChunkIndices": [
+              36
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 10952,
+              "endIndex": 11005,
+              "text": "** Aunque el Hot Sale y CyberMonday son muy populares"
+            },
+            "groundingChunkIndices": [
+              34,
+              35
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 11101,
+              "endIndex": 11216,
+              "text": "Es ideal para abrir hablando de la madurez del e-commerce argentino en 2026 (creciendo por encima de la inflación)"
+            },
+            "groundingChunkIndices": [
+              26,
+              33
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 11101,
+              "endIndex": 11344,
+              "text": "Es ideal para abrir hablando de la madurez del e-commerce argentino en 2026 (creciendo por encima de la inflación) y luego meterse de lleno en cómo la IA operativa (comercio agéntico) define quién gana y quién pierde en logística y stock"
+            },
+            "groundingChunkIndices": [
+              31,
+              33
+            ]
+          }
+        ],
+        "webSearchQueries": [
+          "hot sale cybermonday pymes argentina 2025 2026",
+          "costos gastronomia argentina 2025 2026",
+          "inflacion insumos gastronomicos argentina 2025 2026",
+          "rentabilidad restaurantes argentina 2025 2026",
+          "AHRCC FEHGRA informes costos 2025 2026",
+          "precio combustible gasoil logistica argentina 2025 2026",
+          "costos logisticos argentina 2025 2026 CEDOL",
+          "mercado inmobiliario argentina 2025 2026 operaciones",
+          "digitalizacion inmobiliarias argentina 2025 2026",
+          "tiendanube informe anual argentina 2025 2026",
+          "inmobiliarias whatsapp argentina 2025 2026",
+          "quiebre de stock e-commerce argentina 2025 2026",
+          "CACE e-commerce argentina 2025 2026 informe",
+          "ventas propiedades caba 2025 2026 colegio escribanos"
+        ]
+      }
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 7017,
+    "candidatesTokenCount": 3586,
+    "totalTokenCount": 14547,
+    "cachedContentTokenCount": 4025,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 7017
+      }
+    ],
+    "cacheTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 4025
+      }
+    ],
+    "thoughtsTokenCount": 3944,
+    "serviceTier": "standard"
+  },
+  "modelVersion": "gemini-3.5-flash",
+  "responseId": "dldcapWxNaqDkdUP86TnuQ8"
+}
