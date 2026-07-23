@@ -219,7 +219,7 @@ function ProyeccionTab({ productos }: { productos: Producto[] }) {
       </div>
 
       {/* KPI grid */}
-      <div className="grid grid-cols-3 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
         <KpiCard label="Demanda proyectada S7" value={`${proj} ${prod.unit}`} color="#306ECF" />
         <KpiCard label="Stock actual"          value={`${prod.stock} ${prod.unit}`} />
         <KpiCard
@@ -330,8 +330,8 @@ function ProductosTab({ productos, setProductos }: {
       </div>
 
       {modal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/30">
-          <div className="bg-white rounded-xl shadow-xl p-6 w-[380px]">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 p-4">
+          <div className="bg-white rounded-xl shadow-xl p-6 w-full max-w-[380px]">
             <p className="text-sm font-bold text-carbon mb-4">Nuevo producto</p>
             <div className="flex flex-col gap-3">
               <FieldInput label="Nombre del producto" placeholder="ej: Aceite de girasol 1L"

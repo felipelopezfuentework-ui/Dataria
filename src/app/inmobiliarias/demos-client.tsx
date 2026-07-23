@@ -15,5 +15,5 @@ const demos: IndustryDemo[] = [
 ]
 
 export function InmobiliariasDemos() {
-  return <IndustryDemoPanel demos={demos} industryLabel="Inmobiliarias" />
+  return <IndustryDemoPanel demos={demos} industryLabel="Inmobiliarias" industryId="inmobiliarias" />
 }

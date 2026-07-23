@@ -195,8 +195,8 @@ function ResumenTab({ asig }: { asig: Asignaciones }) {
   return (
     <div className="p-4">
       {/* Table */}
-      <div className="rounded-xl border border-[#DCE5E9] overflow-hidden mb-4">
-        <table className="w-full">
+      <div className="rounded-xl border border-[#DCE5E9] overflow-x-auto mb-4">
+        <table className="w-full min-w-[640px]">
           <thead>
             <tr style={{ backgroundColor: '#F3F6F5' }}>
               {['Empleado', 'Turnos asignados', 'Horas', 'Costo est.', 'Estado', ''].map(h => (
@@ -237,7 +237,7 @@ function ResumenTab({ asig }: { asig: Asignaciones }) {
       </div>
 
       {/* Totals */}
-      <div className="grid grid-cols-3 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
         {[
           { label: 'Horas totales',    value: `${totalHoras} hs`             },
           { label: 'Costo semanal',    value: fmt(totalCosto)                },

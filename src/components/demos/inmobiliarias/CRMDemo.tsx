@@ -534,7 +534,7 @@ function ConversionTab({ leads }: { leads: Lead[] }) {
       </div>
 
       {/* Summary */}
-      <div className="grid grid-cols-3 gap-3 pt-4 border-t" style={{ borderColor: '#DCE5E9' }}>
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4 border-t" style={{ borderColor: '#DCE5E9' }}>
         <div className="rounded-lg p-3 text-center" style={{ backgroundColor: '#F3F6F5' }}>
           <p className="text-2xl font-black" style={{ color: '#1B5BC1' }}>{leads.length}</p>
           <p className="text-[11px] font-semibold mt-0.5 leading-tight" style={{ color: '#5A6871' }}>
