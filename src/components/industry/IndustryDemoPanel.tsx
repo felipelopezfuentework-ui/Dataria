@@ -1,13 +1,55 @@
 'use client'
 
 import { useState, type ComponentType, type ReactNode } from 'react'
+import Link from 'next/link'
 import { useReveal } from '@/hooks/useReveal'
+import { IcoGastro, IcoDist, IcoInmo, IcoEcom } from './icons'
 
 export interface IndustryDemo {
   id: string
   label: string
   icon: ReactNode
   Component: ComponentType<{ onBack: () => void }>
+}
+
+export type IndustryId = 'gastronomia' | 'distribuidoras' | 'inmobiliarias' | 'ecommerce'
+
+const ALL_INDUSTRIES: { id: IndustryId; label: string; href: string; icon: ReactNode }[] = [
+  { id: 'gastronomia', label: 'Gastronomía', href: '/gastronomia', icon: <IcoGastro /> },
+  { id: 'distribuidoras', label: 'Distribuidoras', href: '/distribuidoras', icon: <IcoDist /> },
+  { id: 'inmobiliarias', label: 'Inmobiliarias', href: '/inmobiliarias', icon: <IcoInmo /> },
+  { id: 'ecommerce', label: 'E-commerce', href: '/ecommerce', icon: <IcoEcom /> },
+]
+
+// Barra debajo del panel para saltar a las demos de otro rubro sin volver a la home.
+function IndustrySwitcher({ current }: { current: IndustryId }) {
+  const { ref, visible } = useReveal<HTMLDivElement>(0.15)
+  return (
+    <div
+      ref={ref}
+      className={`max-w-[1000px] mx-auto mt-0 flex flex-wrap justify-center reveal ${visible ? 'is-visible' : ''}`}
+      style={{ transitionDelay: '200ms' }}
+    >
+      {ALL_INDUSTRIES.map((ind) => {
+        const isActive = ind.id === current
+        return (
+          <Link
+            key={ind.id}
+            href={`${ind.href}#demos`}
+            className="flex flex-col items-center gap-1.5 px-4 py-3 text-base font-medium transition-all border-t-2"
+            style={{
+              borderTopColor: isActive ? '#306ECF' : 'transparent',
+              color: isActive ? '#306ECF' : '#5A6871',
+              backgroundColor: isActive ? '#EAF5FD' : 'transparent',
+            }}
+          >
+            <span style={{ color: isActive ? '#306ECF' : '#5A6871' }}>{ind.icon}</span>
+            {ind.label}
+          </Link>
+        )
+      })}
+    </div>
+  )
 }
 
 function DemoLoading() {
@@ -61,7 +103,7 @@ function CardsView({ demos, industryLabel, onSelect }: { demos: IndustryDemo[]; 
   )
 }
 
-export function IndustryDemoPanel({ demos, industryLabel }: { demos: IndustryDemo[]; industryLabel: string }) {
+export function IndustryDemoPanel({ demos, industryLabel, industryId }: { demos: IndustryDemo[]; industryLabel: string; industryId: IndustryId }) {
   const [activeDemoId, setActiveDemoId] = useState<string | null>(null)
   const { ref: panelRef, visible: panelVisible } = useReveal<HTMLDivElement>(0.15)
 
@@ -89,6 +131,7 @@ export function IndustryDemoPanel({ demos, industryLabel }: { demos: IndustryDem
             {active ? <active.Component onBack={goBack} /> : <CardsView demos={demos} industryLabel={industryLabel} onSelect={setActiveDemoId} />}
           </div>
         </div>
+        <IndustrySwitcher current={industryId} />
       </div>
     </section>
   )

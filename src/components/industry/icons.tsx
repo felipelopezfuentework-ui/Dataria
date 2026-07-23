@@ -1,6 +1,31 @@
 // Íconos compartidos por las páginas de industria (/gastronomia, /distribuidoras, /inmobiliarias, /ecommerce).
 // Mismos trazos que ya usa IndustriesPreview.tsx en la home, para mantener la identidad visual idéntica.
 
+// Íconos de rubro (usados en el switcher de industria del panel de demos — mismos trazos que IndustriesPreview.tsx)
+export const IcoGastro = () => (
+  <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M8.5 11.5c-1.5-.5-2.5-2-2.5-3.75A3.75 3.75 0 019.75 4c.5 0 1 .1 1.4.3A3.5 3.5 0 0115 3c1.7 0 3.1 1.2 3.4 2.85.15-.02.3-.03.45-.03a3.25 3.25 0 013.25 3.25c0 1.65-.9 3.1-2.35 3.65M8.5 11.5h9M8.5 11.5v6.75c0 .69.56 1.25 1.25 1.25h4.5c.69 0 1.25-.56 1.25-1.25V11.5" />
+  </svg>
+)
+export const IcoDist = () => (
+  <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5V6.75A.75.75 0 013.75 6h9a.75.75 0 01.75.75v9.75M3 16.5h10.5M3 16.5H2.25m11.25 0h4.19a.75.75 0 00.61-.315l1.83-2.562a.75.75 0 00.12-.408V10.5a.75.75 0 00-.75-.75h-3.5m-2.5 0h2.5m0 0V7.5" />
+    <circle cx="6.75" cy="16.5" r="1.75" />
+    <circle cx="16.5" cy="16.5" r="1.75" />
+  </svg>
+)
+export const IcoInmo = () => (
+  <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M3 9.75L12 3l9 6.75V20.25a.75.75 0 01-.75.75H3.75a.75.75 0 01-.75-.75V9.75z" />
+    <path strokeLinecap="round" strokeLinejoin="round" d="M9 20.25V12h6v8.25" />
+  </svg>
+)
+export const IcoEcom = () => (
+  <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+  </svg>
+)
+
 export const IcoCoin = () => (
   <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
     <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />

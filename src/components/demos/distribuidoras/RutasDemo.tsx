@@ -105,8 +105,8 @@ const IcoTrash = () => (
 
 function MiniModal({ title, onClose, children }: { title: string; onClose: () => void; children: React.ReactNode }) {
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/30">
-      <div className="bg-white rounded-xl shadow-xl p-6 w-80">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 p-4">
+      <div className="bg-white rounded-xl shadow-xl p-6 w-full max-w-[320px]">
         <p className="text-sm font-bold text-carbon mb-4">{title}</p>
         {children}
       </div>
@@ -218,14 +218,14 @@ function RutasTab({ empleados, vehiculos, precioCombustible, onConfirmar }: {
   }
 
   return (
-    <div className="flex gap-4" style={{ minHeight: 310 }}>
+    <div className="flex flex-col md:flex-row gap-4">
       {/* Map */}
       <div className="flex-1 rounded-lg overflow-hidden border border-borde" style={{ minHeight: 290 }}>
         <MapaRutas selectedIds={selectedIds} />
       </div>
 
       {/* Right panel */}
-      <div className="w-[228px] shrink-0 flex flex-col gap-3 overflow-y-auto">
+      <div className="w-full md:w-[228px] md:shrink-0 flex flex-col gap-3 overflow-y-auto">
 
         {/* Client list */}
         <div>
@@ -620,7 +620,7 @@ function MainPanel({ onBack }: { onBack: () => void }) {
 
       {/* Toast */}
       {toast && (
-        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] px-5 py-3 rounded-xl shadow-xl text-white text-sm font-semibold whitespace-nowrap"
+        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] max-w-[calc(100%-32px)] px-5 py-3 rounded-xl shadow-xl text-white text-sm font-semibold text-center"
           style={{ backgroundColor: '#1a7a4a' }}>
           {toast}
         </div>

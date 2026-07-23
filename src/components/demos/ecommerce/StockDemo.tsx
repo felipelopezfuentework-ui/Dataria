@@ -304,8 +304,8 @@ function InventarioTab({
 
       <AlertaCard count={alertaCount} />
 
-      <div className="bg-white rounded-xl border border-[#DCE5E9] shadow-sm overflow-hidden">
-        <table className="w-full text-sm table-fixed">
+      <div className="bg-white rounded-xl border border-[#DCE5E9] shadow-sm overflow-x-auto">
+        <table className="w-full text-sm table-fixed min-w-[640px]">
           <colgroup>
             <col style={{ width: '19%' }} />
             <col style={{ width: '10%' }} />

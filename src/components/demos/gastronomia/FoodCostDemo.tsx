@@ -511,8 +511,8 @@ function ProveedoresTab({ proveedores, setProveedores }: {
         <Button size="sm" onClick={() => setModal(true)}>+ Agregar</Button>
       </div>
 
-      <div className="rounded-lg border border-borde overflow-hidden">
-        <table className="w-full text-sm">
+      <div className="rounded-lg border border-borde overflow-x-auto">
+        <table className="w-full text-sm min-w-[560px]">
           <thead>
             <tr className="bg-fondo-suave text-left">
               {['#','Rubro','Nombre','Contacto','Teléfono',''].map(h => (

@@ -106,7 +106,7 @@ function DashboardTab({ resenas }: { resenas: Resena[] }) {
   return (
     <div className="p-4 space-y-4">
       {/* KPIs */}
-      <div className="grid grid-cols-4 gap-2.5">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
         {kpis.map(k => (
           <div key={k.label} className="bg-white rounded-xl border border-[#DCE5E9] p-3.5 flex flex-col gap-1">
             <span className="text-[10px] font-bold uppercase tracking-wide text-[#5A6871]">{k.label}</span>
@@ -120,7 +120,7 @@ function DashboardTab({ resenas }: { resenas: Resena[] }) {
       </div>
 
       {/* 2 columns */}
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         {/* Left */}
         <div className="space-y-3">
           <div className="bg-white rounded-xl border border-[#DCE5E9] p-4">
@@ -225,7 +225,7 @@ function RespuestasTab({ resenas, onResponder }: { resenas: Resena[]; onResponde
   const tonoLabels: Record<Tono, string> = { profesional: 'Profesional', cercano: 'Cercano', empatico: 'Empático' }
 
   return (
-    <div className="p-4 grid grid-cols-2 gap-4">
+    <div className="p-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
       {/* Left: lista */}
       <div className="space-y-2">
         {resenas.map(r => (
