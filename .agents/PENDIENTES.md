@@ -56,16 +56,8 @@ Además del resultado del audit de 7 preguntas (ver `.agents/gemini-consultas/00
 Priorizados según la auditoría Gemini 003 (los directorios de software en inglés son 95% ruido para captar clientes directos en Argentina, pero tienen valor indirecto de linkbuilding/GEO):
 
 **Alta prioridad:**
-- **Google Business Profile** (business.google.com) — requiere cuenta de Google de Imanol y verificación (teléfono o correo postal), no lo puede hacer Claude. Categoría sugerida: "Empresa de software" o "Consultora de automatización". Zona de servicio: Argentina.
-  - **Estado (2026-07-19):** Imanol cargó la mayoría de los datos, pero el perfil no está cargando/mostrando bien ahora mismo — revisar juntos cuando esté visible.
-  - **Checklist para hacer todo junto cuando se revise:**
-    1. Terminar la verificación (sin esto no aparece públicamente).
-    2. Subir fotos: logo (isologo) + al menos una foto de portada.
-    3. Cargar horario (aunque sea "atención remota"/horario de oficina).
-    4. Cargar los 4 módulos como "servicios" (food cost, rutas, CRM inmobiliario, stock).
-    5. Publicar un primer "Post" (ej. anunciando el blog) — señal de perfil activo.
-    6. Una vez verificado: pedirle a Mariana, Luciano y Gabriel (los mismos 3 que ya aprobaron testimonios reales por WhatsApp) una reseña real de Google — el paso de mayor impacto para un perfil nuevo.
-  - **Nota (2026-07-23):** el perfil quedó con dirección física puntual (Roca 2253, Vicente López) en vez de zona de servicio genérica — decisión de Imanol de dejarlo así, no es un problema a resolver.
+- **Google Business Profile** (business.google.com) — ✅ **Completo (confirmado por Imanol, 2026-07-23).** Verificación, fotos, horario, servicios y URL de reserva (link directo al Google Calendar de agendamiento, mismo que usa la web) ya cargados. Dirección quedó física (Roca 2253, Vicente López) en vez de zona de servicio genérica — decisión de Imanol, no es un problema.
+  - **Única tarea activa que queda:** seguir sumando reseñas reales de Google — candidatos naturales son Mariana, Luciano y Gabriel (los mismos 3 que aprobaron los testimonios de la web), más cualquier cliente real nuevo que se sume a futuro. Es un trabajo continuo, no un paso único a tildar.
 
 **Prioridad media (solo por backlink):**
 - **AlternativeTo** — listado como alternativa a herramientas puntuales por rubro (Tokko Broker, SimpliRoute, Choco.com, según el módulo). **Estado (2026-07-19):** no dejaba sumar nada los fines de semana. **Estado (2026-07-23):** bloqueo distinto encontrado — la cuenta de Imanol necesita tener al menos 7 días de antigüedad para poder sugerir un producto nuevo. Cuenta creada el 2026-07-19, así que se puede recién a partir del **2026-07-26**. El copy ya está listo más abajo, solo falta esperar y cargarlo ese día.
