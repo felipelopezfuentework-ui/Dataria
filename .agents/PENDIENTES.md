@@ -28,9 +28,9 @@ La cuenta de Imanol necesita 7 días de antigüedad para poder sugerir un produc
 ### 2. Google Business Profile — solo falta sumar reseñas
 Perfil completo (verificación, fotos, horario, servicios, URL de reserva). Tarea continua: pedir reseñas reales a clientes (Mariana, Luciano, Gabriel y los que se sumen).
 
-### 3. Plan de contenido — 2 piezas que faltaron de la primera tanda del blog
-- 5° post general/transversal ("Excel, ERP o IA a medida...").
-- Ángulo de integración con sistemas de facturación/POS (Fudo, Maxirest) — sugerido por Gemini.
+### 3. Plan de contenido — ✅ completo (2026-07-23)
+- Ángulo de integración con Fudo/Maxirest: ya estaba resuelto en la sección "IndustryIntegrations" de las 4 páginas de rubro (no hacía falta un post nuevo).
+- 5° post general "Excel, ERP o IA a medida" (`/blog/excel-erp-ia-medida-pymes-argentina`): escrito y publicado, con 3 datos reales verificados (FUNDAR/UTDT/Observatorio PYME/BID, Ray Panko sobre errores en Excel, Panorama Consulting sobre fracasos de ERP) y revisado por Gemini antes de publicar (ver `.agents/gemini-consultas/005-*`).
 
 ### 4. Google Ads (al final, cuando llegue el momento)
 Checklist de landing pages, keywords de alta intención por rubro y negative keywords ya armado en `.agents/gemini-consultas/003-*.md`.

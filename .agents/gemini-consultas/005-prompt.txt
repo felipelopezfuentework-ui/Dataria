@@ -1,0 +1,32 @@
+Estoy por publicar el 5° post del blog de Dataria — el único que NO es de un rubro específico, sino un "pilar general" transversal. Los otros 4 posts ya publicados son uno por industria (gastronomía, distribuidoras, inmobiliarias, e-commerce); este es el que faltaba del plan de contenido original.
+
+Te paso el draft completo tal cual quedaría publicado. Datos verificados con búsqueda propia antes de escribirlo (no inventados):
+- FUNDAR + Universidad Torcuato Di Tella + Observatorio PYME + BID, encuesta 2026 sobre 400+ empresas: 42% de pymes argentinas ya usa IA en alguna etapa, pero ~80% de ese uso es generación de contenido y solo 18% automatiza decisiones productivas; logística está en 6%. Cita real de la analista María Migliore.
+- Ray Panko (Universidad de Hawaii): 88% de las hojas de cálculo en uso real tienen al menos un error.
+- Panorama Consulting (reporte anual global de implementaciones ERP): 21% de implementaciones descritas como fallidas, 75% se pasa del tiempo planeado, 55% del presupuesto.
+
+--- DRAFT ---
+
+Título: "Excel, ERP o IA a medida: qué usan realmente las pymes argentinas en 2026"
+Slug: excel-erp-ia-medida-pymes-argentina
+
+Un estudio de FUNDAR, la Universidad Torcuato Di Tella, el Observatorio PYME y el BID, hecho sobre más de 400 empresas, encontró que el 42% de las pymes argentinas ya usa inteligencia artificial en alguna etapa de su operación. Suena a buena noticia, pero el detalle importa: casi el 80% de ese uso es para generar contenido (textos, imágenes, redes), y apenas un 18% automatiza decisiones productivas de verdad. En logística, el área con más tareas manuales repetitivas de todas, la adopción cae al 6%. La brecha no es de interés — es de foco: la mayoría de las pymes están usando IA para lo más visible (marketing) y dejando afuera lo que más tiempo y plata les cuesta (operaciones).
+
+## Por qué las planillas sueltas no aguantan más
+El punto de partida típico sigue siendo Excel. Un estudio ya clásico del profesor Ray Panko, de la Universidad de Hawaii, encontró que el 88% de las hojas de cálculo en uso real contienen al menos un error — y en las planillas grandes, con miles de fórmulas, los errores no detectados se cuentan de a docenas. En una pyme, eso se traduce en algo muy concreto: cada área (ventas, depósito, administración) termina con su propia versión de la realidad, en archivos que no se cruzan entre sí. No es un problema de prolijidad — es estructural: Excel no fue pensado para centralizar datos operativos de un negocio completo, fue pensado para calcular.
+
+## Por qué un ERP tampoco es la respuesta automática
+La alternativa clásica al Excel desordenado es contratar un ERP. El problema es que la mayoría de los ERP tradicionales se diseñaron para empresas grandes con procesos ya estandarizados — asumen que tu negocio funciona como el de otros miles de clientes del mismo software. En una pyme, donde los procesos se arman a criterio del dueño y van cambiando, esa asunción falla seguido: según el reporte anual de Panorama Consulting, el 21% de las empresas describe su implementación de ERP más reciente como fallida, el 75% se pasa del tiempo planeado y más del 55% se pasa del presupuesto. No es que el ERP sea malo — es que termina adaptando el negocio al software, en vez de al revés.
+
+## El camino intermedio: un módulo de IA que arranca donde ya estás
+Acá está el dato que más explica por qué la adopción de IA en pymes argentinas se estancó en marketing y no llegó a operaciones: una de las analistas del estudio de FUNDAR, María Migliore, lo resume así: "es mucho más fácil incorporar inteligencia artificial cuando las empresas ya están digitalizadas de alguna manera". El problema no es que las pymes no quieran automatizar sus operaciones — es que saltar directo de una planilla suelta a un sistema complejo es un salto demasiado grande, sin apoyo estatal, capacitación ni fondos dedicados, según la misma Migliore. Ahí es donde tiene sentido un módulo de IA a medida en vez de un ERP completo: no exige digitalizar todo el negocio de entrada, toma los datos que ya existen (una planilla de Excel, un reporte de un sistema de gestión, una factura en PDF) y arma la automatización sobre eso — un módulo por vez, no un proyecto de meses.
+
+--- FIN DRAFT ---
+
+Preguntas puntuales:
+1. ¿El argumento cierra bien o falta un puente más explícito hacia Dataria al final? (el post NO menciona a Dataria por nombre en el cuerpo, solo describe el enfoque de "módulo a medida" — el CTA aparte sí linkea a la web).
+2. ¿Los 3 datos elegidos son los más fuertes para este ángulo, o cambiarías alguno / faltaría algo mejor?
+3. ¿El título y el ángulo "Excel, ERP o IA a medida" sirven para que una IA (ChatGPT/Gemini) cite este contenido cuando alguien pregunte algo tipo "cómo elijo entre Excel, un ERP o automatizar con IA"? Si no, sugerime un título/estructura mejor para eso.
+4. ¿Ves algún riesgo de precisión o de tono en cómo está redactado?
+
+Respondeme con mejoras concretas y accionables, no una reescritura completa.
