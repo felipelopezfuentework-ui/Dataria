@@ -28,15 +28,14 @@ La cuenta de Imanol necesita 7 días de antigüedad para poder sugerir un produc
 ### 2. Google Business Profile — solo falta sumar reseñas
 Perfil completo (verificación, fotos, horario, servicios, URL de reserva). Tarea continua: pedir reseñas reales a clientes (Mariana, Luciano, Gabriel y los que se sumen).
 
-### 3. Plan de contenido — ✅ completo (2026-07-23)
-- Ángulo de integración con Fudo/Maxirest: ya estaba resuelto en la sección "IndustryIntegrations" de las 4 páginas de rubro (no hacía falta un post nuevo).
-- 5° post general "Excel, ERP o IA a medida" (`/blog/excel-erp-ia-medida-pymes-argentina`): escrito y publicado, con 3 datos reales verificados (FUNDAR/UTDT/Observatorio PYME/BID, Ray Panko sobre errores en Excel, Panorama Consulting sobre fracasos de ERP) y revisado por Gemini antes de publicar (ver `.agents/gemini-consultas/005-*`).
-
-### 4. Google Ads (al final, cuando llegue el momento)
+### 3. Google Ads — activo, Imanol le dedica el fin de semana del 25-26/jul
 Checklist de landing pages, keywords de alta intención por rubro y negative keywords ya armado en `.agents/gemini-consultas/003-*.md`.
 
-### 5. Idea sin desarrollar (retomar cuando Imanol quiera profundizarla)
-Una herramienta de Google para buscar frases/palabras y ver su repercusión en internet, para ir mejorando el SEO/GEO de forma continua. No se investigó qué herramienta es ni cómo se conectaría.
+### 4. Idea sin desarrollar — agente que optimice la campaña de Ads de forma continua
+Conectar un agente que tenga el contexto y el análisis de la campaña de Google Ads de Dataria, vinculado a Google Trends (o algo similar) para ir detectando cambios/oportunidades y sugiriendo mejoras a la campaña con el tiempo. Idea todavía sin definir del todo (ni Imanol la tiene clara) — no se investigó qué herramienta puntual usar ni cómo conectarla. Retomar una vez que la campaña de Ads esté andando (no tiene sentido optimizar algo que todavía no existe).
+
+### 5. Blog — mantenimiento a demanda
+Imanol va a ir pasando modificaciones puntuales a los posts ya publicados a medida que las necesite.
 
 ---
 
