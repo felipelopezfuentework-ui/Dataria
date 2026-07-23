@@ -40,4 +40,12 @@ export const posts: PostMeta[] = [
     industria: 'E-commerce',
     industriaHref: '/ecommerce',
   },
+  {
+    slug: 'excel-erp-ia-medida-pymes-argentina',
+    title: 'Excel, ERP o IA a medida: qué usan realmente las pymes argentinas en 2026',
+    excerpt: 'El 42% de las pymes argentinas ya usa IA, pero casi el 80% de ese uso es para generar contenido y apenas un 18% automatiza decisiones productivas. Por qué el problema no es de interés, sino de foco — y cuándo conviene Excel, un ERP o un módulo de IA a medida.',
+    date: '2026-07-23',
+    industria: 'General',
+    industriaHref: '/',
+  },
 ]
