@@ -66,8 +66,16 @@ Priorizados según la auditoría Gemini 003 (los directorios de software en ingl
     5. Cargar los 4 módulos como "servicios" (food cost, rutas, CRM inmobiliario, stock).
     6. Publicar un primer "Post" (ej. anunciando el blog) — señal de perfil activo.
     7. Una vez verificado: pedirle a Mariana, Luciano y Gabriel (los mismos 3 que ya aprobaron testimonios reales por WhatsApp) una reseña real de Google — el paso de mayor impacto para un perfil nuevo.
-- **Crunchbase** (crunchbase.com) — cuenta gratuita, sin verificación física. Categorías: Artificial Intelligence, SaaS, Enterprise Software. Ubicación: Buenos Aires, Argentina.
-  - **Estado (2026-07-19):** perfil creado (crunchbase.com/organization/dataria-2b90) con Description corta, Industries, teléfono y mail ya bien cargados. **Pausado**: la edición no guarda algunos campos (Imanol reintentará más adelante). **Antes de retomar, corregir:** la fecha de fundación quedó mal cargada como "23 may 2004" (hay que poner la fecha real); confirmar si "Vicente López, Buenos Aires" es la ubicación correcta o se prefiere dejar más genérico; resolver si Legal Name = "Felipe Lopez Fuente" es la razón social real; cargar la Full Description (versión sin nombres de clientes, ver más abajo); decidir Founders.
+- **Crunchbase** (crunchbase.com) — cuenta gratuita, sin verificación física. Categorías: Artificial Intelligence, SaaS, Enterprise Software. Ubicación: Buenos Aires, Argentina (genérico, sin especificar Vicente López).
+  - **Estado (2026-07-19):** perfil creado (crunchbase.com/organization/dataria-2b90) con Description corta, Industries, teléfono y mail ya bien cargados. **Pausado**: la edición no guarda algunos campos (Imanol reintentará más adelante).
+  - **Estado (2026-07-23) — todos los datos ya resueltos, listo para retomar la carga:**
+    - Legal Name: "Felipe Lopez Fuente" — **confirmado correcto** (es el monotributo real), no cambiar.
+    - Founded Date: **2025** (mes exacto no especificado — cargar solo el año si el campo lo permite).
+    - Location: **Buenos Aires, Argentina** (genérico — Imanol prefirió no especificar Vicente López).
+    - Number of Employees: **1-10**.
+    - Founders: **Felipe López Fuente e Imanol** (ambos, no solo Felipe).
+    - Full Description: usar la versión sin nombres de clientes (ver más abajo en "Copy redactado").
+  - Sigue pendiente solo la ejecución manual: Imanol tiene que volver a entrar a Crunchbase y cargar estos campos ya resueltos (la edición no guardaba antes — probar de nuevo).
 
 **Prioridad media (solo por backlink):**
 - **AlternativeTo** — listado como alternativa a herramientas puntuales por rubro (Tokko Broker, SimpliRoute, Choco.com, según el módulo). **Estado (2026-07-19):** no dejaba sumar nada los fines de semana. **Estado (2026-07-23):** bloqueo distinto encontrado — la cuenta de Imanol necesita tener al menos 7 días de antigüedad para poder sugerir un producto nuevo. Cuenta creada el 2026-07-19, así que se puede recién a partir del **2026-07-26**. El copy ya está listo más abajo, solo falta esperar y cargarlo ese día.
@@ -89,11 +97,7 @@ Priorizados según la auditoría Gemini 003 (los directorios de software en ingl
 
 **Descartado por ahora:** Futurepedia, TAAFT, SaaSHub, Future Tools — mucho esfuerzo de mantenimiento para nulo retorno de tráfico local.
 
-**Crunchbase — en progreso (2026-07-19):** Imanol está cargando el perfil. Decidido: Profile Type = "Company", Description corta = "IA a medida para pymes, por industria", Industries = Artificial Intelligence/SaaS/Enterprise Software, Facebook/LinkedIn/X en blanco, sin funding. **Preguntas sin responder todavía** (datos reales que Claude no puede completar):
-1. Legal Name apareció precargado como "Felipe Lopez Fuente" — confirmar si es la razón social real (monotributo de Felipe) o un error de carga.
-2. Founded Date — fecha real de inicio del negocio.
-3. Number of Employees — ¿"1-10" o número exacto?
-4. Founders — ¿solo Felipe, o también Imanol (hoy figura como "colaborador" del repo)?
+**Crunchbase — en progreso (2026-07-19), datos ya resueltos (2026-07-23):** Imanol está cargando el perfil. Decidido: Profile Type = "Company", Description corta = "IA a medida para pymes, por industria", Industries = Artificial Intelligence/SaaS/Enterprise Software, Facebook/LinkedIn/X en blanco, sin funding. Legal Name = "Felipe Lopez Fuente" (confirmado, es el monotributo real). Founded Date = 2025. Location = Buenos Aires, Argentina (genérico). Number of Employees = 1-10. Founders = Felipe López Fuente e Imanol (ambos). Full Description = ver versión sin nombres de clientes más abajo. Ya no quedan preguntas abiertas — solo falta que Imanol vuelva a entrar y cargue estos campos (la edición fallaba antes, probar de nuevo).
 
 **Copy redactado (2026-07-19, reemplaza el que se perdió):**
 - **Tagline:** "IA a medida para pymes argentinas, sin equipo técnico"
