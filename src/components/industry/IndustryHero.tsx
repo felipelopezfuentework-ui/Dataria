@@ -2,6 +2,7 @@
 
 import { useReveal } from '@/hooks/useReveal'
 import { WavyBackground } from '@/components/ui/WavyBackground'
+import { trackEvent } from '@/lib/analytics'
 
 function scrollTo(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -46,6 +47,7 @@ export function IndustryHero({
             href="https://calendar.app.google/64ms78PrrpQv8x4n9"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackEvent('click_agendar_reunion', { link_location: 'hero_industria' })}
             className="inline-flex items-center justify-center h-[46px] px-6 rounded-[10px] bg-white text-azul-nucleo font-semibold tracking-[0.02em] text-[15px] border-[1.5px] border-borde hover:bg-[#EAF5FD] hover:border-azul-accion transition-all duration-150"
           >
             Agendar reunión

@@ -8,6 +8,7 @@ import { IndustrySchema } from '@/components/industry/IndustrySchema'
 import { TestimonialQuotes } from '@/components/industry/TestimonialQuotes'
 import ClientLogos from '@/components/home/ClientLogos'
 import CTAReunion from '@/components/home/CTAReunion'
+import ContactoSection from '@/components/home/ContactoSection'
 import { GastronomiaDemos } from './demos-client'
 
 export const metadata: Metadata = {
@@ -87,6 +88,7 @@ export default function GastronomiaPage() {
       <ClientLogos />
       <TestimonialQuotes items={reviews} />
       <CTAReunion />
+      <ContactoSection defaultIndustria="Gastronomía" formName="contacto_gastronomia" />
       <IndustryFAQ faqs={faqs} />
       <IndustrySchema
         path="/gastronomia"

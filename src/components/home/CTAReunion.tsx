@@ -1,5 +1,7 @@
 'use client'
 
+import { trackEvent } from '@/lib/analytics'
+
 function scrollToDemos() {
   document.getElementById('demos')?.scrollIntoView({ behavior: 'smooth' })
 }
@@ -21,6 +23,7 @@ export default function CTAReunion() {
             href="https://calendar.app.google/64ms78PrrpQv8x4n9"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackEvent('click_agendar_reunion', { link_location: 'cta_reunion' })}
             className="inline-flex items-center justify-center gap-2.5 h-[46px] px-6 rounded-[10px] bg-white text-azul-nucleo font-semibold tracking-[0.02em] text-[15px] hover:bg-white/90 hover:-translate-y-px active:translate-y-0 transition-all duration-150 shadow-soft"
           >
             Agendar reunión

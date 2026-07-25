@@ -7,6 +7,7 @@ import { IndustryFAQ } from '@/components/industry/IndustryFAQ'
 import { IndustrySchema } from '@/components/industry/IndustrySchema'
 import { TestimonialQuotes } from '@/components/industry/TestimonialQuotes'
 import CTAReunion from '@/components/home/CTAReunion'
+import ContactoSection from '@/components/home/ContactoSection'
 import { DistribuidorasDemos } from './demos-client'
 
 export const metadata: Metadata = {
@@ -80,6 +81,7 @@ export default function DistribuidorasPage() {
       <IndustryHowItWorks steps={steps} />
       <TestimonialQuotes items={reviews} />
       <CTAReunion />
+      <ContactoSection defaultIndustria="Distribuidoras de Alimentos" formName="contacto_distribuidoras" />
       <IndustryFAQ faqs={faqs} />
       <IndustrySchema
         path="/distribuidoras"

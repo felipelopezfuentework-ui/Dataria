@@ -1,0 +1,24 @@
+Necesito que antes de responder intentes leer en vivo estas 2 páginas reales del sitio (usá tu herramienta de lectura de URL / búsqueda web, no respondas solo con el contexto que te paso):
+- https://www.dataria.work/gastronomia
+- https://www.dataria.work/
+
+Si no podés leerlas en vivo, decímelo explícitamente al principio de tu respuesta (no lo ocultes ni lo asumas resuelto).
+
+Contexto real del código (por si la lectura en vivo falla): hoy el sitio tiene DOS mecanismos de contacto distintos, y NO son lo mismo:
+1. Un botón "Agendar reunión" que abre en pestaña nueva un link externo de Google Calendar (calendar.app.google/...) donde el visitante reserva un horario de 15 minutos. Este botón aparece en TODAS las páginas (home + las 4 páginas de rubro) bajo la sección con id "contacto". Hoy este clic NO tiene ningún tracking en Google Analytics 4 (GA4) — es invisible para las métricas.
+2. Un formulario real (nombre, teléfono, email, mensaje) que se envía a través de Web3Forms y sí dispara un evento `generate_lead` en GA4. Pero este formulario SOLO existe en la página de inicio (Home) — las 4 páginas de rubro (gastronomia, distribuidoras, inmobiliarias, ecommerce), que son justamente las páginas donde vamos a mandar tráfico pago de Google Ads, NO tienen el formulario, solo tienen el botón de "Agendar reunión".
+
+El link de "Contacto" en el menú de navegación (header y footer) hoy lleva a la sección del botón "Agendar reunión" (opción 1), no al formulario (opción 2).
+
+Estamos por lanzar las primeras campañas de Google Ads apuntando a las páginas de rubro (gastronomia, distribuidoras). El dueño del proyecto tiene una duda real: como a veces el propio equipo de Dataria agenda o bloquea manualmente espacios en el Google Calendar (para organizar su propia disponibilidad), le preocupa que medir el simple clic en "Agendar reunión" no refleje bien un lead real, y no sabe si conviene:
+(a) que la página de rubro y el link de Contacto sigan apuntando a "Agendar reunión" (calendario externo), o
+(b) agregar el formulario real también a las páginas de rubro y que el link de Contacto apunte a eso, o
+(c) hacer convivir ambas opciones, y en ese caso qué debería usarse como el conversion goal principal en Google Ads.
+
+Preguntas concretas:
+1. Dado que hoy las páginas de rubro NO tienen formulario, ¿recomendás agregarlo (duplicando el mismo formulario de Web3Forms de la Home en cada página de rubro) antes de lanzar Ads, o alcanza con dejar solo "Agendar reunión" como única vía de contacto en esas páginas?
+2. Sobre la preocupación de que el equipo agende/bloquee espacios manualmente: ¿esto realmente contamina la métrica de "clic en Agendar reunión" (que solo mide que alguien HIZO CLIC para abrir el calendario, no que se completó una reserva)? ¿Hay alguna razón real para no usar ese clic como key event, más allá de excluir el tráfico interno del propio equipo en GA4?
+3. Para la campaña de Google Ads: en el asistente de creación de campaña, Google pregunta el objetivo (ej. "Los clientes piden una cita" vs "Los clientes rellenan un formulario de información"). Con el mix real que tiene el sitio hoy, ¿qué deberíamos elegir, y debería Google Ads optimizar hacia UN solo evento o hacia varios en simultáneo (clic en agendar reunión + envío de formulario si lo agregamos + clic a WhatsApp)?
+4. Recomendación final y concreta: ¿a dónde debería apuntar el link "Contacto" del menú en las páginas de rubro específicamente?
+
+Danos una recomendación clara y accionable, no una lista de opciones sin conclusión.
