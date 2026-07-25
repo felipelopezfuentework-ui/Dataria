@@ -466,7 +466,7 @@ function MainPanel({ onBack }: { onBack: () => void }) {
             <span style={{ color: '#56BCFA' }}>d</span>ataria
           </span>
           <span className="text-white/40 text-sm">·</span>
-          <span className="text-white/75 text-sm">Distribuidoras · Predictor de demanda</span>
+          <span className="text-white/75 text-sm">Distribuidoras · Stock y proyección de demanda</span>
         </div>
         <button onClick={onBack}
           className="flex items-center gap-1.5 text-white/60 hover:text-white text-sm font-medium transition-colors">

@@ -1,0 +1,16 @@
+Seguimos con la decisión del stock en Gastronomía (ver la consulta anterior: recomendaste sumarlo como 4° demo). El dueño del proyecto frenó antes de implementarlo porque hoy los 4 rubros de Dataria tienen exactamente 3 demos cada uno (simetría deliberada del sitio), y agregar un 4° demo solo en Gastronomía rompe esa simetría y es trabajo extra. Antes de decidir, quiere evaluar una alternativa: en vez de SUMAR un 4° demo, ¿conviene REEMPLAZAR uno de los 3 demos actuales de Gastronomía por el de stock?
+
+Los 3 demos actuales de Gastronomía, con lo que muestra cada uno:
+1. **Food cost / Escandallo** — calculadora de costo de plato, food cost ideal 28-35%, "costo invisible" ~10%. Es el demo con más prueba social (2 testimonios reales de clientes: MP Catering y Pastas Pariggi lo mencionan).
+2. **Gestión de reseñas** — responder reseñas de Google/redes con IA.
+3. **Planificador de turnos** — arma turnos de personal, envía calendario.
+
+Preguntas:
+1. De estos 3, ¿cuál te parece el de menor valor de marketing/keyword (el que, si tuviera que elegir uno para reemplazar por Stock, tiene menos intención de búsqueda real o menos diferenciación) versus cuál definitivamente no debería tocarse?
+2. ¿Tiene sentido la regla de "3 demos por rubro, siempre" como principio de diseño del sitio, o es una limitación artificial que no debería frenar sumar un 4° demo cuando hay evidencia real de demanda (como en este caso)?
+
+Segunda pregunta, sobre Distribuidoras: ese rubro también tiene 3 demos: Rutas, Predictor de demanda, y Agente de pedidos (WhatsApp). El dueño planteó la idea de que el demo de "Predictor de demanda" podría ampliarse/renombrarse para cubrir también stock ("Stock y predictor de demanda" o similar), ya que conceptualmente predecir demanda y gestionar stock están relacionados en una distribuidora (a diferencia de gastronomía, donde el food cost y el stock de insumos son cosas distintas).
+
+3. ¿Tiene sentido fusionar "Predictor de demanda" con una capa de stock/inventario en Distribuidoras (ampliando ese mismo demo, no agregando uno nuevo), o son lo suficientemente distintos como para no mezclarlos? Si tiene sentido fusionarlos, ¿qué nombre y qué keywords de alta intención (Argentina, español) cubriría ese demo ampliado que hoy no estén cubiertas por las keywords de rutas ya existentes?
+
+Danos una recomendación concreta y accionable para ambos rubros, no una lista de opciones sin conclusión.

@@ -1,0 +1,17 @@
+Estamos por lanzar las primeras campañas de Google Ads de Dataria (Search, alta intención, sin marca todavía). Al armar el ad group de Gastronomía retomamos una keyword que vos mismo sugeriste en la auditoría 003 ("control de stock gastronómico software"), pero encontramos un problema real: la página /gastronomia hoy NO tiene ningún demo de control de stock. Los 3 demos reales que existen y están en producción en esa página son:
+
+1. Food cost / escandallo (calculadora de costo de plato, con "costo invisible" ~10% extra y food cost ideal 28-35%)
+2. Gestión de reseñas (responder reseñas de Google/redes con IA)
+3. Planificador de turnos de personal
+
+Nota importante: en la auditoría 003 la lectura en vivo de las URLs del sitio falló (URL_RETRIEVAL_STATUS_ERROR), así que esa keyword de stock se sugirió sin saber realmente cuáles eran los 3 demos reales de esta página — fue una inferencia genérica de "qué suele necesitar un restaurante", no una validación contra el sitio real.
+
+Dato técnico relevante: SÍ existe ya un demo de "Control de stock e inventario" completamente funcional, construido para la vertical de e-commerce (tabla de inventario con estados Quiebre/Pedido urgente/Pedir pronto/OK, sugerencia de cuándo y cuánto reponer, registro de entradas/movimientos). Adaptarlo a Gastronomía sería técnicamente simple: cambiar "productos" por "insumos/ingredientes" (ej. harina, aceite, carne) y ajustar el copy — la lógica de cálculo (días de stock restante, alerta de quiebre, sugerencia de reposición) ya funciona igual para ambos casos.
+
+Preguntas concretas:
+1. Con este contexto real (no genérico), ¿control de stock de insumos/ingredientes es realmente un dolor de cabeza frecuente y buscado por dueños de restaurantes/gastronómicos en Argentina, al nivel de justificar sumarlo como 4to demo de la vertical? ¿O el food cost ya cubre suficiente esa necesidad y sumar stock es redundante/diluye el mensaje de la página?
+2. Si conviene sumarlo: ¿qué nombre/framing le pondrías para que no compita ni se confunda con el demo de food cost (que ya habla de costos de ingredientes)?
+3. ¿La keyword "control de stock gastronómico software" (y variantes como "control de stock de insumos restaurante", "gestión de inventario de ingredientes software") tiene intención de búsqueda real en Argentina para este público, o es más ruido de e-commerce/retail?
+4. Si NO conviene sumarlo ahora: ¿qué keyword de reemplazo (real, de alta intención) cubriría mejor el hueco que iba a llenar esa keyword en el ad group de Gastronomía, dado que solo tenemos 3 keywords de food cost hoy?
+
+Necesitamos una recomendación clara de sí/no, no una lista de pros y contras sin conclusión.
