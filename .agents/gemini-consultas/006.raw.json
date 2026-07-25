@@ -1,0 +1,173 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "### Recomendación Conclusiva\n**SÍ, rotundo.** Conviene sumar **Control de stock de insumos/ingredientes** como el 4.º demo de la vertical `/gastronomia` antes de lanzar las campañas. \n\nNo es redundante con Food Cost, resuelve un dolor operativo crítico en la gastronomía argentina, la intención de búsqueda es muy alta y la factibilidad técnica para Dataria es inmediata (ya tienen el motor resuelto en e-commerce).\n\n---\n\n### 1. ¿Es un dolor real o es redundante con Food Cost?\n**No es redundante en absoluto; son dos caras distintas de la gestión de cocina:**\n\n* **Food Cost / Escandallo (Económico / Teórico):** Responde a *\"¿Cuánto me cuesta este plato en la carta y a cuánto lo tengo que vender para ganar dinero?\"* Mide margen, receta ideal y costo invisible.\n* **Control de Stock de Insumos (Físico / Operativo):** Responde a *\"¿Cuántos kilos de muzzarella u hormas de queso quedan en la cámara, qué se venció/mermó, qué falta y qué tengo que comprarle al proveedor hoy antes del pico del fin de semana?\"*\n\nEn la pyme gastronómica argentina (con alta inflación, márgenes finos y rotación de personal), las pérdidas más grandes no ocurren solo por calcular mal el precio de la carta (food cost), sino por **mermas, desperdicio, \"robo hormiga\" y quiebres de stock** en pleno servicio (quedarse sin un insumo clave un viernes a la noche). \n\nSumar este demo le da a la página de Dataria una cobertura integral de los problemas reales del gastronómico (Costos + Depósito + Personal + Reseñas).\n\n---\n\n### 2. Framing y Naming para no confundir ambos demos\n\nPara que el usuario no sienta que ambos demos hacen lo mismo, el framing en la página debe separar **\"Recetas/Precios\"** de **\"Depósito/Ingredientes\"**:\n\n| Módulo | Nombre Sugerido para la Demo | Foco de Valor en la Web (Copy) |\n| :--- | :--- | :--- |\n| **Demo 1 (Existente)** | **Calculadora de Food Cost y Escandallo** | *\"Ajustá precios de carta, calculá margen por plato y absorbé costos invisibles.\"* |\n| **Demo 4 (Nuevo)** | **Control de Stock de Insumos y Compras** | *\"Monitoreá insumos en depósito, detectá mermas y recibí alertas antes de quedarte sin stock el fin de semana.\"* |\n\n**Ajuste simple al re-skin de e-commerce:**\n* Cambiar la tabla de productos por ingredientes gastronómicos (ej.: *Harina 0000, Queso Muzzarella, Aceite de Girasol, Carne Vacuna*).\n* Cambiar las métricas de estado a lenguaje gastronómico: *OK / Reponer urgente / Riesgo de quiebre para el finde*.\n\n---\n\n### 3. ¿Tiene intención de búsqueda real en Argentina o es ruido de retail?\n\n**Tiene intención de búsqueda real, específica y de alta conversión.** En Argentina, \"software de control de stock para restaurantes\" es uno de los términos con más intención de contratación en el rubro gastronómico.\n\n**Cómo evitar el ruido de retail / e-commerce en Google Ads:**\nNo usen keywords genéricas como `control de stock software` (eso sí trae tráfico de ropa/indumentaria). Califiquen siempre la búsqueda con el modificador de industria mediante **Concordancia de Frase** o **Exacta**:\n\n* `\"control de stock gastronomico software\"`\n* `\"control de stock insumos restaurante\"`\n* `\"gestión de inventario de ingredientes software\"`\n* `\"software inventario cocina restaurante\"`\n\n---\n\n### 4. Reemplazos (Solo si decidieran NO subirlo ahora)\n\nSi por alguna restricción de tiempo decidieran no subir el demo esta semana, **no reemplacen la keyword con otra invención genérica**. Dejen cubrir ese hueco de presupuesto reforzando las keywords de alta intención basadas en los otros 2 demos funcionales que ya tienen:\n\n1. **Eje Personal / HR:** `\"software turnos personal restaurante\"` / `\"planificador horarios gastronomia\"`.\n2. **Eje Reputación / Reseñas:** `\"gestión de reseñas google restaurantes\"` / `\"responder reseñas restaurante software\"`.\n3. **Eje Costos / Escandallo:** `\"software escandallo gastronomia\"` / `\"calculadora costo de plato restaurante\"`.\n\n**Conclusión final:** Adapten el demo de e-commerce a insumos gastronómicos esta semana. Lleva mínimo esfuerzo técnico, eleva el valor percibido del sitio y valida directamente las keywords de más alta intención del ad group.",
+            "thoughtSignature": "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"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "index": 0,
+      "groundingMetadata": {
+        "searchEntryPoint": {
+          "renderedContent": "<style>\n.container {\n  align-items: center;\n  border-radius: 8px;\n  display: flex;\n  font-family: Google Sans, Roboto, sans-serif;\n  font-size: 14px;\n  line-height: 20px;\n  padding: 8px 12px;\n}\n.chip {\n  display: inline-block;\n  border: solid 1px;\n  border-radius: 16px;\n  min-width: 14px;\n  padding: 5px 16px;\n  text-align: center;\n  user-select: none;\n  margin: 0 8px;\n  -webkit-tap-highlight-color: transparent;\n}\n.carousel {\n  overflow: auto;\n  scrollbar-width: none;\n  white-space: nowrap;\n  margin-right: -12px;\n}\n.headline {\n  display: flex;\n  margin-right: 4px;\n}\n.gradient-container {\n  position: relative;\n}\n.gradient {\n  position: absolute;\n  transform: translate(3px, -9px);\n  height: 36px;\n  width: 9px;\n}\n@media (prefers-color-scheme: light) {\n  .container {\n    background-color: #fafafa;\n    box-shadow: 0 0 0 1px #0000000f;\n  }\n  .headline-label {\n    color: #1f1f1f;\n  }\n  .chip {\n    background-color: #ffffff;\n    border-color: #d2d2d2;\n    color: #5e5e5e;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #f2f2f2;\n  }\n  .chip:focus {\n    background-color: #f2f2f2;\n  }\n  .chip:active {\n    background-color: #d8d8d8;\n    border-color: #b6b6b6;\n  }\n  .logo-dark {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #fafafa 15%, #fafafa00 100%);\n  }\n}\n@media (prefers-color-scheme: dark) {\n  .container {\n    background-color: #1f1f1f;\n    box-shadow: 0 0 0 1px #ffffff26;\n  }\n  .headline-label {\n    color: #fff;\n  }\n  .chip {\n    background-color: #2c2c2c;\n    border-color: #3c4043;\n    color: #fff;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #353536;\n  }\n  .chip:focus {\n    background-color: #353536;\n  }\n  .chip:active {\n    background-color: #464849;\n    border-color: #53575b;\n  }\n  .logo-light {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #1f1f1f 15%, #1f1f1f00 100%);\n  }\n}\n</style>\n<div class=\"container\">\n  <div class=\"headline\">\n    <svg class=\"logo-light\" width=\"18\" height=\"18\" viewBox=\"9 9 35 35\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M42.8622 27.0064C42.8622 25.7839 42.7525 24.6084 42.5487 23.4799H26.3109V30.1568H35.5897C35.1821 32.3041 33.9596 34.1222 32.1258 35.3448V39.6864H37.7213C40.9814 36.677 42.8622 32.2571 42.8622 27.0064V27.0064Z\" fill=\"#4285F4\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 43.8555C30.9659 43.8555 34.8687 42.3195 37.7213 39.6863L32.1258 35.3447C30.5898 36.3792 28.6306 37.0061 26.3109 37.0061C21.8282 37.0061 18.0195 33.9811 16.6559 29.906H10.9194V34.3573C13.7563 39.9841 19.5712 43.8555 26.3109 43.8555V43.8555Z\" fill=\"#34A853\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M16.6559 29.8904C16.3111 28.8559 16.1074 27.7588 16.1074 26.6146C16.1074 25.4704 16.3111 24.3733 16.6559 23.3388V18.8875H10.9194C9.74388 21.2072 9.06992 23.8247 9.06992 26.6146C9.06992 29.4045 9.74388 32.022 10.9194 34.3417L15.3864 30.8621L16.6559 29.8904V29.8904Z\" fill=\"#FBBC05\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 16.2386C28.85 16.2386 31.107 17.1164 32.9095 18.8091L37.8466 13.8719C34.853 11.082 30.9659 9.3736 26.3109 9.3736C19.5712 9.3736 13.7563 13.245 10.9194 18.8875L16.6559 23.3388C18.0195 19.2636 21.8282 16.2386 26.3109 16.2386V16.2386Z\" fill=\"#EA4335\"/>\n    </svg>\n    <svg class=\"logo-dark\" width=\"18\" height=\"18\" viewBox=\"0 0 48 48\" xmlns=\"http://www.w3.org/2000/svg\">\n      <circle cx=\"24\" cy=\"23\" fill=\"#FFF\" r=\"22\"/>\n      <path d=\"M33.76 34.26c2.75-2.56 4.49-6.37 4.49-11.26 0-.89-.08-1.84-.29-3H24.01v5.99h8.03c-.4 2.02-1.5 3.56-3.07 4.56v.75l3.91 2.97h.88z\" fill=\"#4285F4\"/>\n      <path d=\"M15.58 25.77A8.845 8.845 0 0 0 24 31.86c1.92 0 3.62-.46 4.97-1.31l4.79 3.71C31.14 36.7 27.65 38 24 38c-5.93 0-11.01-3.4-13.45-8.36l.17-1.01 4.06-2.85h.8z\" fill=\"#34A853\"/>\n      <path d=\"M15.59 20.21a8.864 8.864 0 0 0 0 5.58l-5.03 3.86c-.98-2-1.53-4.25-1.53-6.64 0-2.39.55-4.64 1.53-6.64l1-.22 3.81 2.98.22 1.08z\" fill=\"#FBBC05\"/>\n      <path d=\"M24 14.14c2.11 0 4.02.75 5.52 1.98l4.36-4.36C31.22 9.43 27.81 8 24 8c-5.93 0-11.01 3.4-13.45 8.36l5.03 3.85A8.86 8.86 0 0 1 24 14.14z\" fill=\"#EA4335\"/>\n    </svg>\n    <div class=\"gradient-container\"><div class=\"gradient\"></div></div>\n  </div>\n  <div class=\"carousel\">\n<a class=\"chip\" href=\"https://www.google.com/search?q=control+de+stock+restaurante+software+argentina&client=app-vertex-grounding&safesearch=active\">control de stock restaurante software argentina</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=gesti%C3%B3n+de+inventario+insumos+gastronom%C3%ADa+argentina&client=app-vertex-grounding&safesearch=active\">gestión de inventario insumos gastronomía argentina</a>\n  </div>\n</div>"
+        },
+        "groundingChunks": [
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlrZAW71uG6QM71OPkcr3Gd1RomGT-H9xshLUWsFjlrSNLEtYF6l0BzUBvwsiJteMlKmOwkr6H7P_ot3y7gVkFLjtu8vGkbbnGJXb3gz3rjTevwc7f2u2uprgRlWRr8ZhcgmwYYIbBay_Jl-OMZdfbmjBfB8EtnQ==",
+              "title": "toteat.com"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQ-jLTBjh1jSLjyy3IoAPTFlztOYgAVq3h5_EtTl_XCs0_G-hj1dOwnfZiqSdfymlIFWyafiY-pdJ76wqEMomL6siFa6V5N1j3b_8IlSegoGCw1hX137-Tn7qdyuXMrdeRvLrFj4Uit1FdNXenn67KsQmY7kCaXaCQVHKIzRj4jMFGscIZcw==",
+              "title": "nestleprofessional-latam.com"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHdSJ0DQ_FbCxHIpE9iAIu7it70x51Pe6etSH2V3G6v7BBpbCcS_x77Mk-E5osgD-06gG5S_eC4tXIip7ODBjIC7IUtgx88eDe1iR71EXga4AmkHVd3AskG1LlpY0jfGIXwBwtZbBDMk3dMoI296DIQpfnw",
+              "title": "bistrosoft.com"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGIYQ-3EU0UFLLlGvObZoJfAwqOEf6sW-tV4fp13v61cYhI8yPskaWefrxOWKbxWiNhtrzE-nk-86G7W_MckOq6zU92mQax9QlApxJro9FKVsrtIayO2SWVaFAARZhwPLSsFpaBWH5ZAPCvqRzcK99ibJvLSIUIDpL4bnRWnE7o3uMPaGUFTklm6IU=",
+              "title": "bistrosoft.com"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhEOfOZh1b129BB_PQ1aVEEHxwsUjEDYP7-pWEVg6dqJvW5XRxrDUZ3wCGheCKsLzuz-AZSk3Hz0EXlKWtbgGU3__iJO8BLUtEW8iEqBNnQaY2Wr2AAZFShvwYyk0TL5T-WfU=",
+              "title": "nucleoit.com.ar"
+            }
+          }
+        ],
+        "groundingSupports": [
+          {
+            "segment": {
+              "startIndex": 573,
+              "endIndex": 735,
+              "text": "* **Food Cost / Escandallo (Económico / Teórico):** Responde a *\"¿Cuánto me cuesta este plato en la carta y a cuánto lo tengo que vender para ganar dinero?\"*"
+            },
+            "groundingChunkIndices": [
+              0,
+              1
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 781,
+              "endIndex": 1036,
+              "text": "* **Control de Stock de Insumos (Físico / Operativo):** Responde a *\"¿Cuántos kilos de muzzarella u hormas de queso quedan en la cámara, qué se venció/mermó, qué falta y qué tengo que comprarle al proveedor hoy antes del pico del fin de semana?\"*"
+            },
+            "groundingChunkIndices": [
+              0,
+              2
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 1038,
+              "endIndex": 1371,
+              "text": "En la pyme gastronómica argentina (con alta inflación, márgenes finos y rotación de personal), las pérdidas más grandes no ocurren solo por calcular mal el precio de la carta (food cost), sino por **mermas, desperdicio, \"robo hormiga\" y quiebres de stock** en pleno servicio (quedarse sin un insumo clave un viernes a la noche)"
+            },
+            "groundingChunkIndices": [
+              0,
+              2
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 2577,
+              "endIndex": 2648,
+              "text": "**Tiene intención de búsqueda real, específica y de alta conversión"
+            },
+            "groundingChunkIndices": [
+              0,
+              3
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 2649,
+              "endIndex": 2801,
+              "text": "** En Argentina, \"software de control de stock para restaurantes\" es uno de los términos con más intención de contratación en el rubro gastronómico"
+            },
+            "groundingChunkIndices": [
+              3,
+              4
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 3089,
+              "endIndex": 3133,
+              "text": "* `\"control de stock gastronomico software\"`"
+            },
+            "groundingChunkIndices": [
+              0
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 3089,
+              "endIndex": 3176,
+              "text": "* `\"control de stock gastronomico software\"`\n* `\"control de stock insumos restaurante\"`"
+            },
+            "groundingChunkIndices": [
+              0,
+              2
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 3089,
+              "endIndex": 3230,
+              "text": "* `\"control de stock gastronomico software\"`\n* `\"control de stock insumos restaurante\"`\n* `\"gestión de inventario de ingredientes software\"`"
+            },
+            "groundingChunkIndices": [
+              0,
+              1
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 3089,
+              "endIndex": 3275,
+              "text": "* `\"control de stock gastronomico software\"`\n* `\"control de stock insumos restaurante\"`\n* `\"gestión de inventario de ingredientes software\"`\n* `\"software inventario cocina restaurante\"`"
+            },
+            "groundingChunkIndices": [
+              0,
+              1
+            ]
+          }
+        ],
+        "webSearchQueries": [
+          "control de stock restaurante software argentina",
+          "gestión de inventario insumos gastronomía argentina"
+        ]
+      }
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 1999,
+    "candidatesTokenCount": 1166,
+    "totalTokenCount": 5742,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1999
+      }
+    ],
+    "thoughtsTokenCount": 2577,
+    "serviceTier": "standard"
+  },
+  "modelVersion": "gemini-3.6-flash",
+  "responseId": "0aFkasGhJ-2zxN8PprPh2Qs"
+}

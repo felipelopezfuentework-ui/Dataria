@@ -24,8 +24,8 @@
 - Delegar tareas operativas repetitivas (responder reseñas, armar rutas, agendar turnos) a un agente/herramienta
 - Tener visibilidad (proyecciones, stock, demanda) sin tener que armar reportes a mano
 **Use cases confirmados por rubro:**
-- Gastronomía: food cost, gestión de reseñas, planificador de turnos
-- Distribuidoras: rutas, predictor de demanda, agente de pedidos (vía WhatsApp)
+- Gastronomía: food cost, control de stock de insumos, planificador de turnos
+- Distribuidoras: rutas, control de stock y proyección de demanda, agente de pedidos (vía WhatsApp)
 - Inmobiliarias: CRM, agente de consultas, agenda de visitas
 - E-commerce: panel de clientes, stock e inventario, proyecciones de ventas
 - Cualquier otro rubro: formulario "Otros" — a definir caso a caso
@@ -135,6 +135,7 @@
 
 ## Changelog
 *Newest first. One line per revision: what changed and why.*
+- v6 (2026-07-25) — Antes de lanzar Google Ads se detectó que la keyword de stock sugerida para Gastronomía no calzaba con los 3 demos reales de la página. Se consultó a Gemini dos veces (006, 007) con contexto real: confirmó que stock de insumos es un dolor operativo real (validado con competencia real: Toteat, Bistrosoft, Nucleo IT) y recomendó reemplazar "Gestión de reseñas" (menor intención de compra, problema de marketing) por "Control de stock" en vez de sumar un 4° demo, protegiendo Food Cost como intocable. Se implementó: nuevo demo de Stock en Gastronomía (adaptado del ya existente en e-commerce), y en Distribuidoras se renombró "Predictor de demanda" a "Control de stock y proyección de demanda" sin cambios funcionales (el demo ya trackeaba stock, alertas y sugería compras). `ResenasDemo.tsx` se dejó en el repo sin usar, no se borró, por si se retoma más adelante.
 - v5 (2026-07-17) — Glosario ampliado con términos reales de industria extraídos del audit GEO (food cost 28-35%, costo invisible, ventana horaria, escandallo, dato de WhatsApp en inmobiliarias). No son citas de clientes, son terminología de industria — sin riesgo de fabricación.
 - v4 (2026-07-17) — Primer audit GEO real: 7 preguntas realistas consultadas a Gemini (gemini-flash-latest). Reemplazó la lista de competidores de búsqueda web genérica por la lista real de lo que la IA recomienda por vertical (muy distinta — 0% de solapamiento). Dataria: 0 menciones (baseline). El diferenciador de "módulos armados" quedó validado por la propia conclusión de Gemini en la pregunta 7. Guardado el detalle completo en scratchpad, no en el repo (son datos de auditoría puntual, no contexto de marca permanente).
 - v3 (2026-07-17) — Combinó ediciones simultáneas: Imanol editó directo en GitHub (target audience más amplio incluyendo proyectos en desarrollo, temor al crecimiento, matiz de que Dataria también resuelve problemas custom que trae el cliente — no solo módulos prefabricados, voz de marca, corrección de que los clientes no son 100% gastronomía) mientras se completaban en paralelo por chat el modelo de negocio, casos de Pariggi/Pollo Cocido, anti-persona y la nota de no inventar testimonios. Quedan [FALTA]: métricas reales de tráfico (dependen de GA4/Search Console).

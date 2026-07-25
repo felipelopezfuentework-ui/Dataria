@@ -10,7 +10,7 @@ const AgenteDemo  = dynamic(() => import('@/components/demos/distribuidoras/Agen
 
 const demos: IndustryDemo[] = [
   { id: 'rutas',   label: 'Rutas',                 icon: <IcoRoute />,         Component: RutasDemo   },
-  { id: 'demanda', label: 'Predictor de demanda',  icon: <IcoTrendingUp />,    Component: DemandaDemo },
+  { id: 'demanda', label: 'Stock y demanda',       icon: <IcoTrendingUp />,    Component: DemandaDemo },
   { id: 'agente',  label: 'Agente de pedidos',     icon: <IcoBrandWhatsapp />, Component: AgenteDemo  },
 ]
 
