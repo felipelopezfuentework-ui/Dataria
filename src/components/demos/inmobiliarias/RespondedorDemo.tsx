@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
+import { trackEvent } from '@/lib/analytics'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -519,6 +520,7 @@ export default function RespondedorDemo({ onBack }: { onBack: () => void }) {
                 href={CALENDAR_URL}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackEvent('click_agendar_reunion', { link_location: 'demo_respondedor' })}
                 className="inline-flex items-center justify-center h-[42px] px-6 rounded-[10px] text-white font-bold tracking-[0.04em] uppercase text-[12px] transition-opacity hover:opacity-85"
                 style={{ backgroundColor: '#306ECF' }}
               >

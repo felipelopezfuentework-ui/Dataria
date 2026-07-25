@@ -9,8 +9,14 @@ import { trackEvent } from '@/lib/analytics'
 const industries = ['Gastronomía', 'Distribuidoras de Alimentos', 'Inmobiliarias', 'E-commerce', 'Otro']
 const ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY
 
-export default function ContactoSection() {
-  const [form, setForm] = useState({ nombre: '', email: '', telefono: '', proyecto: '', industria: '', proceso: '' })
+export default function ContactoSection({
+  defaultIndustria = '',
+  formName = 'contacto_principal',
+}: {
+  defaultIndustria?: string
+  formName?: string
+} = {}) {
+  const [form, setForm] = useState({ nombre: '', email: '', telefono: '', proyecto: '', industria: defaultIndustria, proceso: '' })
   const [industriaOtra, setIndustriaOtra] = useState('')
   const [sent, setSent]    = useState(false)
   const [leaving, setLeaving] = useState(false)
@@ -63,7 +69,7 @@ export default function ContactoSection() {
       }
 
       if (res.ok && data?.success) {
-        trackEvent('generate_lead', { form_name: 'contacto_principal', industria: industriaFinal })
+        trackEvent('generate_lead', { form_name: formName, industria: industriaFinal })
         setLeaving(true)
         window.setTimeout(() => setSent(true), 200)
       } else {
@@ -143,7 +149,7 @@ export default function ContactoSection() {
                 variant="secondary"
                 className="!normal-case !text-[15px]"
                 onClick={() => {
-                  setForm({ nombre: '', email: '', telefono: '', proyecto: '', industria: '', proceso: '' })
+                  setForm({ nombre: '', email: '', telefono: '', proyecto: '', industria: defaultIndustria, proceso: '' })
                   setIndustriaOtra('')
                   setLeaving(false)
                   setSent(false)

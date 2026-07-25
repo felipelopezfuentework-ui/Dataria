@@ -128,7 +128,7 @@ const industries: Industry[] = [
     id: 'gastronomia', label: 'Gastronomía', icon: <IcoGastro />,
     demos: [
       { id: 'food-cost', label: 'Food cost',               icon: <IcoCoin />,     enabled: true  },
-      { id: 'resenas',   label: 'Gestión de reseñas',    icon: <IcoStar />,     enabled: true  },
+      { id: 'stock',     label: 'Control de stock',        icon: <IcoPackage />,  enabled: true  },
       { id: 'turnos',    label: 'Planificador de turnos', icon: <IcoCalendar />, enabled: true  },
     ],
   },
@@ -136,7 +136,7 @@ const industries: Industry[] = [
     id: 'distribuidoras', label: 'Distribuidoras', icon: <IcoDist />,
     demos: [
       { id: 'rutas',    label: 'Rutas',                  icon: <IcoRoute />,          enabled: true  },
-      { id: 'demanda',  label: 'Predictor de demanda',   icon: <IcoTrendingUp />,     enabled: true  },
+      { id: 'demanda',  label: 'Stock y demanda',        icon: <IcoTrendingUp />,     enabled: true  },
       { id: 'agente',   label: 'Agente de pedidos',      icon: <IcoBrandWhatsapp />,  enabled: true  },
     ],
   },

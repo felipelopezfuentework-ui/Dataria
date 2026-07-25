@@ -6,6 +6,7 @@ import { IndustryHowItWorks } from '@/components/industry/IndustryHowItWorks'
 import { IndustryFAQ } from '@/components/industry/IndustryFAQ'
 import { IndustrySchema } from '@/components/industry/IndustrySchema'
 import CTAReunion from '@/components/home/CTAReunion'
+import ContactoSection from '@/components/home/ContactoSection'
 import { EcommerceDemos } from './demos-client'
 
 export const metadata: Metadata = {
@@ -70,6 +71,7 @@ export default function EcommercePage() {
       />
       <IndustryHowItWorks steps={steps} />
       <CTAReunion />
+      <ContactoSection defaultIndustria="E-commerce" formName="contacto_ecommerce" />
       <IndustryFAQ faqs={faqs} />
       <IndustrySchema
         path="/ecommerce"
