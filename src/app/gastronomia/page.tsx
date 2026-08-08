@@ -13,7 +13,7 @@ import { GastronomiaDemos } from './demos-client'
 
 export const metadata: Metadata = {
   title: 'Inteligencia Artificial para Gastronomía en Argentina | Dataria',
-  description: 'Food cost, gestión de reseñas y planificador de turnos con IA para restaurantes y locales gastronómicos en Argentina. Probá la demo antes de contratar.',
+  description: 'Food cost, control de stock de insumos y planificador de turnos con IA para restaurantes y locales gastronómicos en Argentina. Probá la demo antes de contratar.',
   alternates: { canonical: 'https://www.dataria.work/gastronomia' },
 }
 
@@ -50,7 +50,7 @@ const steps = [
     num: '01',
     name: 'Setup',
     tag: 'Desarrollo inicial',
-    desc: 'Diagnosticamos tu carta, tus recetas y tus proveedores actuales, y armamos el módulo de food cost, reseñas o turnos integrado a los datos que ya tenés (Excel, tu sistema de gestión o reportes de proveedores). Entregamos en semanas, no en meses.',
+    desc: 'Diagnosticamos tu carta, tus recetas y tus proveedores actuales, y armamos el módulo de food cost, control de stock o turnos integrado a los datos que ya tenés (Excel, tu sistema de gestión o reportes de proveedores). Entregamos en semanas, no en meses.',
     items: ['Diagnóstico de recetas y costos actuales', 'Capacitación del equipo de cocina y salón', 'Carga inicial de insumos y proveedores'],
   },
   {
@@ -64,7 +64,7 @@ const steps = [
     num: '03',
     name: 'Expansión',
     tag: 'A demanda',
-    desc: 'Sumá reseñas, turnos u otros módulos cuando tu operación lo necesite, sin rehacer lo ya implementado.',
+    desc: 'Sumá control de stock, turnos u otros módulos cuando tu operación lo necesite, sin rehacer lo ya implementado.',
     items: ['Nuevos módulos gastronómicos', 'Integraciones con otras plataformas', 'Misma implementación, más alcance'],
   },
 ]
@@ -76,7 +76,7 @@ export default function GastronomiaPage() {
       <IndustryHero
         titleLine1="Inteligencia Artificial para"
         titleLine2="gastronomía en Argentina"
-        subtitle="Calculá food cost, gestioná reseñas y armá turnos sin perder tiempo en planillas — probá la demo antes de hablar con nosotros."
+        subtitle="Calculá food cost, controlá el stock de insumos y armá turnos sin perder tiempo en planillas — probá la demo antes de hablar con nosotros."
       />
       <GastronomiaDemos />
       <IndustryIntegrations
@@ -93,7 +93,7 @@ export default function GastronomiaPage() {
       <IndustrySchema
         path="/gastronomia"
         serviceName="Herramientas de IA para gastronomía"
-        serviceDescription="Módulos de inteligencia artificial a medida para restaurantes y locales gastronómicos en Argentina: cálculo de food cost, gestión de reseñas y planificador de turnos."
+        serviceDescription="Módulos de inteligencia artificial a medida para restaurantes y locales gastronómicos en Argentina: cálculo de food cost, control de stock de insumos e inventario de cocina, y planificador de turnos."
         breadcrumbCurrent="Gastronomía"
         faqs={faqs}
         reviews={reviews}

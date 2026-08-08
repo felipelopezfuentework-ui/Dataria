@@ -12,7 +12,7 @@ import { DistribuidorasDemos } from './demos-client'
 
 export const metadata: Metadata = {
   title: 'Inteligencia Artificial para Distribuidoras en Argentina | Dataria',
-  description: 'Optimización de rutas, predicción de demanda y agente de pedidos por WhatsApp con IA para distribuidoras mayoristas en Argentina. Probá la demo antes de contratar.',
+  description: 'Optimización de rutas, control de stock y proyección de demanda, y agente de pedidos por WhatsApp con IA para distribuidoras mayoristas en Argentina. Probá la demo antes de contratar.',
   alternates: { canonical: 'https://www.dataria.work/distribuidoras' },
 }
 
@@ -44,7 +44,7 @@ const steps = [
     num: '01',
     name: 'Setup',
     tag: 'Desarrollo inicial',
-    desc: 'Diagnosticamos tus rutas, tu flota y cómo te llegan los pedidos hoy (WhatsApp, planillas, tu sistema de facturación), y armamos el módulo de rutas, demanda o pedidos integrado a esos datos. Entregamos en semanas, no en meses.',
+    desc: 'Diagnosticamos tus rutas, tu flota y cómo te llegan los pedidos hoy (WhatsApp, planillas, tu sistema de facturación), y armamos el módulo de rutas, stock y demanda o pedidos integrado a esos datos. Entregamos en semanas, no en meses.',
     items: ['Diagnóstico de rutas y volumen de pedidos actual', 'Capacitación del equipo de logística', 'Carga inicial de clientes y zonas de reparto'],
   },
   {
@@ -58,7 +58,7 @@ const steps = [
     num: '03',
     name: 'Expansión',
     tag: 'A demanda',
-    desc: 'Sumá predicción de demanda, el agente de pedidos u otros módulos cuando tu operación lo necesite, sin rehacer lo ya implementado.',
+    desc: 'Sumá control de stock y proyección de demanda, el agente de pedidos u otros módulos cuando tu operación lo necesite, sin rehacer lo ya implementado.',
     items: ['Nuevos módulos logísticos', 'Integraciones con otras plataformas', 'Misma implementación, más alcance'],
   },
 ]
@@ -70,7 +70,7 @@ export default function DistribuidorasPage() {
       <IndustryHero
         titleLine1="Inteligencia Artificial para"
         titleLine2="distribuidoras en Argentina"
-        subtitle="Optimizá rutas, predecí demanda y automatizá pedidos por WhatsApp sin cambiar tu sistema actual."
+        subtitle="Optimizá rutas, controlá el stock y proyectá la demanda, y automatizá pedidos por WhatsApp sin cambiar tu sistema actual."
       />
       <DistribuidorasDemos />
       <IndustryIntegrations
@@ -86,7 +86,7 @@ export default function DistribuidorasPage() {
       <IndustrySchema
         path="/distribuidoras"
         serviceName="Herramientas de IA para distribuidoras"
-        serviceDescription="Módulos de inteligencia artificial a medida para distribuidoras mayoristas en Argentina: optimización de rutas, predicción de demanda y agente de pedidos por WhatsApp."
+        serviceDescription="Módulos de inteligencia artificial a medida para distribuidoras mayoristas en Argentina: optimización de rutas, control de stock y proyección de demanda, y agente de pedidos por WhatsApp."
         breadcrumbCurrent="Distribuidoras"
         faqs={faqs}
         reviews={reviews}
