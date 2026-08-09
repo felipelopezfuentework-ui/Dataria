@@ -1,0 +1,236 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Acá tenés la auditoría crítica e impiadosa de tu plan de Google Ads. Hay decisiones estratégicas muy acertadas en la estructura técnica, pero también **2 errores de concepto graves** que podrían paralizar la campaña o hacerte perder presupuesto las primeras dos semanas si salís a la cancha tal como está planteada.\n\n---\n\n### 1. ¿Dos campañas o una sola?\n**Diagnóstico: Error crítico de fragmentación.**\nDebés hacer **UNA SOLA campaña de USD 15/día** (ej. `Search - Pymes Argentina`) con los 4 grupos de anuncios adentro.\n\n* **Por qué:** Con USD 8/día y USD 7/día tenés ~$210-$240/mes por campaña. A un CPC promedio estimado en B2B Argentina de USD 0.50 a USD 1.00, cada campaña va a conseguir entre 7 y 14 clics diarios. Eso genera de 2 a 4 leads al mes por campaña. Con ese volumen de conversión tan bajo, el algoritmo de Google tarda meses en \"aprender\", se queda bloqueado en estado de aprendizaje (*Learning*) y la puja no optimiza nunca.\n* **Beneficio de unificar:** Al juntar los USD 15/día en una sola campaña, acumulás todas las conversiones en un único motor de aprendizaje, le das $450/mes de aire a Google Ads y dejás que el presupuesto fluya naturalmente hacia los grupos de anuncios que mejor conviertan o reciban más volumen.\n\n---\n\n### 2. Estrategia de puja para arrancar de cero\n**Diagnóstico: \"Maximizar conversiones\" desde el día 1 con 0 conversiones es un riesgo alto.**\n\n* **Lo que pasa en la realidad:** Sin historial, Google no sabe qué perfil de usuario convierte. \"Maximizar conversiones\" sin datos tiende a inflar los CPCs en las primeras subastas pagando precios altísimos por clic, o gasta el presupuesto diario en 5 clics de mañana.\n* **Lo que tenés que hacer (lo que hacen las cuentas B2B chicas que cuidan la caja):**\n  1. **Fase 1 (Días 1 a 20):** Arrancá con **Maximizar clics** y fijá un **Límite de CPC máximo** (por ejemplo, USD 0.80 o su equivalente en ARS). Esto te garantiza recibir volumen constante de tráfico, verificar qué términos de búsqueda entran, ir limpiando negativos y conseguir las primeras 10-15 conversiones reales sin sobrepagar los clics.\n  2. **Fase 2 (Día 21 en adelante):** Una vez que juntes al menos 10 o 15 conversiones registradas en la cuenta, recién ahí cambiás la estrategia de puja a **Maximizar conversiones**.\n\n---\n\n### 3. Volumen real de las keywords en Argentina y reemplazos\n**Diagnóstico: Hay un error recurrente: pegar la palabra \"argentina\" adentro de la keyword.**\nSi la campaña ya está configurada con ubicación geográfica \"Argentina\", incluir \"argentina\" en una keyword en coincidencia frase/exacta mata el volumen de búsqueda a casi cero. Nadie escribe `software calcular food cost argentina` en Google; buscan `software calcular food cost` estando ubicados en Argentina.\n\n* **Gastronomía - Food Cost:**\n  * ❌ `software calcular food cost argentina` → ⚠️ Casi 0 volumen por el sufijo.\n  * ❌ `planilla de escandallo gastronomia` → \"Escandallo\" es un término técnico/español peninsular. En Argentina los dueños de locales buscan \"costo de platos\" o \"recetario\".\n  * ✅ **Reemplazos reales:** `\"software calcular costo de platos\"`, `\"calcular food cost restaurante\"`, `\"software costeo gastronomico\"`, `\"control de costos restaurante\"`.\n* **Gastronomía - Control de Stock:**\n  * ❌ `control de stock gastronomico software` → Demasiado rígido.\n  * ✅ **Reemplazos reales:** `\"control de stock restaurantes\"`, `\"sistema de stock para gastronomia\"`, `\"software inventario restaurante\"`.\n* **Distribuidoras - Rutas:**\n  * ❌ `organizar entregas distribuidora argentina` / `ruteador de entregas pyme` → Volumen bajísimo.\n  * ✅ **Reemplazos reales:** `\"optimizador de rutas de reparto\"`, `\"software de ruteo logistico\"`, `\"app para planificar rutas\"`, `\"planificador de rutas de entregas\"`.\n* **Distribuidoras - Stock y Demanda:**\n  * ❌ `evitar quiebre de stock distribuidora` → Término de artículo/blog, no de búsqueda comercial.\n  * ✅ **Reemplazos reales:** `\"software de stock para distribuidoras\"`, `\"sistema de gestion para distribuidoras\"`, `\"software inventario mayorista\"`.\n\n---\n\n### 4. ¿Descartar Performance Max fue correcto?\n**Respuesta: 100% CORRECTO.**\nCon USD 15/día, sin pixel histórico y en B2B consultivo, PMax hubiera gastado el 70% de tu presupuesto en la Red de Display, Gmail y ubicaciones spam (juegos móviles) buscando clics baratos que nunca convierten. Búsqueda pura (Search) es la única vía limpia para validar intención de compra directa.\n\n---\n\n### 5. Concordancia frase + exacta vs. Coincidencia Amplia\n**Respuesta: Mantené Frase + Exacta.**\nEn un mercado de nicho y con presupuesto medido, la coincidencia amplia (*broad match*) con $15/día te va a traer búsquedas como *\"cursos gratis de logística\"*, *\"excel para restaurantes\"* o *\"trabajo de chofer de reparto\"*.\n* **¿Cuándo pasar a amplia?** Únicamente cuando la campaña tenga **más de 30 conversiones mensuales sustentables**, esté corriendo bajo Maximizar Conversiones o CPA Objetivo y el listado de palabras negativas esté hipermaduro. Hoy sería un suicidio de presupuesto.\n\n---\n\n### 6. Presupuesto (USD 15/día)\n**Respuesta: SÍ alcanza para validar en 30 días, con las condiciones arriba mencionadas.**\nEn Argentina, los clics B2B en Búsqueda suelen oscilar entre USD 0.40 y USD 0.90.\n* Con USD 15/día ($450/mes) vas a obtener entre **500 y 800 clics calificados al mes**.\n* Con una landing optimizada que convierta entre el 3% y el 5%, deberías recibir entre **15 y 30 leads (formularios)** por mes.\n* Esto es volumen más que suficiente para saber en 30 días si el mensaje cierra y si el costo por lead (CPL) te da margen comercial.\n\n---\n\n### 7. Lo que te estás perdiendo (El error más caro no contemplado)\n\nHay 2 puntos ciegos en tu plan actual que te pueden costar caro:\n\n1. **La fuga de negativos de competidores de \"ingreso/soporte/software tradicional\":**\n   Los usuarios en Argentina buscan marcas competidoras no para comprar, sino para entrar a sus paneles o pedir soporte. Si no negativizás la intención de navegación/login de otros sistemas, vas a pagar clics tirados.\n   * **Negativos indispensables a sumar urgente:** `login`, `ingresar`, `soporte`, `telefono`, `atencion al cliente`, `facturacion afip`, `maxirest`, `bistrosoft`, `toteat`, `quadminds login`, `simpliroute login`, `tokko broker ingresar`.\n2. **El hábito de conversión del usuario argentino desde celular (Móvil):**\n   El ~70% del tráfico B2B pyme en Argentina va a entrar desde el celular. El dueño de un restaurante o distribuidora que está en la calle o en la cocina odia llenar formularios largos de 5 campos.\n   * Si elegiste `generate_lead` (formulario Web3Forms) como única conversión principal para Google Ads, **asegurate de que el formulario en la versión mobile sea minimalista (3 campos: Nombre, WhatsApp, Nombre del negocio)** y esté visible arriba (*above the fold*), sin requerir scroll infinito. Si el formulario es pesado, el usuario se va a ir a tocar el botón de WhatsApp (que dejaste como secundario) y Google Ads va a interpretar que la campaña \"no está convirtiendo\".\n\n---\n\n### Resumen de acción antes de prender el gasto:\n\n1. **Unificá** todo en 1 sola campaña de USD 15/día.\n2. Usá **Maximizar clics** con tope de CPC max (USD 0.80) las primeras 2-3 semanas.\n3. **Limpiá las keywords:** sacá la palabra \"argentina\" del texto de la keyword y reemplazá términos rígidos/técnicos (como \"escandallo\") por cómo busca el cliente real.\n4. Cargá los **negativos de competidores/login/soporte** antes de apretar \"Activar\".",
+            "thoughtSignature": "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"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "index": 0,
+      "groundingMetadata": {
+        "searchEntryPoint": {
+          "renderedContent": "<style>\n.container {\n  align-items: center;\n  border-radius: 8px;\n  display: flex;\n  font-family: Google Sans, Roboto, sans-serif;\n  font-size: 14px;\n  line-height: 20px;\n  padding: 8px 12px;\n}\n.chip {\n  display: inline-block;\n  border: solid 1px;\n  border-radius: 16px;\n  min-width: 14px;\n  padding: 5px 16px;\n  text-align: center;\n  user-select: none;\n  margin: 0 8px;\n  -webkit-tap-highlight-color: transparent;\n}\n.carousel {\n  overflow: auto;\n  scrollbar-width: none;\n  white-space: nowrap;\n  margin-right: -12px;\n}\n.headline {\n  display: flex;\n  margin-right: 4px;\n}\n.gradient-container {\n  position: relative;\n}\n.gradient {\n  position: absolute;\n  transform: translate(3px, -9px);\n  height: 36px;\n  width: 9px;\n}\n@media (prefers-color-scheme: light) {\n  .container {\n    background-color: #fafafa;\n    box-shadow: 0 0 0 1px #0000000f;\n  }\n  .headline-label {\n    color: #1f1f1f;\n  }\n  .chip {\n    background-color: #ffffff;\n    border-color: #d2d2d2;\n    color: #5e5e5e;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #f2f2f2;\n  }\n  .chip:focus {\n    background-color: #f2f2f2;\n  }\n  .chip:active {\n    background-color: #d8d8d8;\n    border-color: #b6b6b6;\n  }\n  .logo-dark {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #fafafa 15%, #fafafa00 100%);\n  }\n}\n@media (prefers-color-scheme: dark) {\n  .container {\n    background-color: #1f1f1f;\n    box-shadow: 0 0 0 1px #ffffff26;\n  }\n  .headline-label {\n    color: #fff;\n  }\n  .chip {\n    background-color: #2c2c2c;\n    border-color: #3c4043;\n    color: #fff;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #353536;\n  }\n  .chip:focus {\n    background-color: #353536;\n  }\n  .chip:active {\n    background-color: #464849;\n    border-color: #53575b;\n  }\n  .logo-light {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #1f1f1f 15%, #1f1f1f00 100%);\n  }\n}\n</style>\n<div class=\"container\">\n  <div class=\"headline\">\n    <svg class=\"logo-light\" width=\"18\" height=\"18\" viewBox=\"9 9 35 35\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M42.8622 27.0064C42.8622 25.7839 42.7525 24.6084 42.5487 23.4799H26.3109V30.1568H35.5897C35.1821 32.3041 33.9596 34.1222 32.1258 35.3448V39.6864H37.7213C40.9814 36.677 42.8622 32.2571 42.8622 27.0064V27.0064Z\" fill=\"#4285F4\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 43.8555C30.9659 43.8555 34.8687 42.3195 37.7213 39.6863L32.1258 35.3447C30.5898 36.3792 28.6306 37.0061 26.3109 37.0061C21.8282 37.0061 18.0195 33.9811 16.6559 29.906H10.9194V34.3573C13.7563 39.9841 19.5712 43.8555 26.3109 43.8555V43.8555Z\" fill=\"#34A853\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M16.6559 29.8904C16.3111 28.8559 16.1074 27.7588 16.1074 26.6146C16.1074 25.4704 16.3111 24.3733 16.6559 23.3388V18.8875H10.9194C9.74388 21.2072 9.06992 23.8247 9.06992 26.6146C9.06992 29.4045 9.74388 32.022 10.9194 34.3417L15.3864 30.8621L16.6559 29.8904V29.8904Z\" fill=\"#FBBC05\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 16.2386C28.85 16.2386 31.107 17.1164 32.9095 18.8091L37.8466 13.8719C34.853 11.082 30.9659 9.3736 26.3109 9.3736C19.5712 9.3736 13.7563 13.245 10.9194 18.8875L16.6559 23.3388C18.0195 19.2636 21.8282 16.2386 26.3109 16.2386V16.2386Z\" fill=\"#EA4335\"/>\n    </svg>\n    <svg class=\"logo-dark\" width=\"18\" height=\"18\" viewBox=\"0 0 48 48\" xmlns=\"http://www.w3.org/2000/svg\">\n      <circle cx=\"24\" cy=\"23\" fill=\"#FFF\" r=\"22\"/>\n      <path d=\"M33.76 34.26c2.75-2.56 4.49-6.37 4.49-11.26 0-.89-.08-1.84-.29-3H24.01v5.99h8.03c-.4 2.02-1.5 3.56-3.07 4.56v.75l3.91 2.97h.88z\" fill=\"#4285F4\"/>\n      <path d=\"M15.58 25.77A8.845 8.845 0 0 0 24 31.86c1.92 0 3.62-.46 4.97-1.31l4.79 3.71C31.14 36.7 27.65 38 24 38c-5.93 0-11.01-3.4-13.45-8.36l.17-1.01 4.06-2.85h.8z\" fill=\"#34A853\"/>\n      <path d=\"M15.59 20.21a8.864 8.864 0 0 0 0 5.58l-5.03 3.86c-.98-2-1.53-4.25-1.53-6.64 0-2.39.55-4.64 1.53-6.64l1-.22 3.81 2.98.22 1.08z\" fill=\"#FBBC05\"/>\n      <path d=\"M24 14.14c2.11 0 4.02.75 5.52 1.98l4.36-4.36C31.22 9.43 27.81 8 24 8c-5.93 0-11.01 3.4-13.45 8.36l5.03 3.85A8.86 8.86 0 0 1 24 14.14z\" fill=\"#EA4335\"/>\n    </svg>\n    <div class=\"gradient-container\"><div class=\"gradient\"></div></div>\n  </div>\n  <div class=\"carousel\">\n<a class=\"chip\" href=\"https://www.google.com/search?q=software+calcular+food+cost+argentina+busquedas&client=app-vertex-grounding&safesearch=active\">software calcular food cost argentina busquedas</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=optimizador+de+rutas+de+reparto+argentina+software&client=app-vertex-grounding&safesearch=active\">optimizador de rutas de reparto argentina software</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=control+de+stock+distribuidoras+argentina+software&client=app-vertex-grounding&safesearch=active\">control de stock distribuidoras argentina software</a>\n  </div>\n</div>"
+        },
+        "groundingChunks": [
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_ejJL9iHeMblSq2RHfaU-0bu7BiEvo1twO7lpPmza4umc0zh5OfqKgfNRtD9hv2lTycwG7B2VppsAyzK5ezThMMp8XLgq_86sFeSQpg9JdFi1hvGiaZoeFlF7_8NFs7GOO7ed_gPpJKacy7FPraeMQJrgkQkEIrUn-oR4",
+              "title": "trakkea.com"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFnCHFbaF_ZsWa5IgAVOBy7L4NZxs3eXxv4R_hfb1y1fWLe6djZd_bs_Vp0Escz9QrJC3X2N--2KR2IjbuaotFFOoRBdnh1e_pFrUuugUIoHmRujqSbsPTDJtyG5tJWYTNYZwSlfZ2I2j6tvZg52a4e_xdctRPq",
+              "title": "bcnsoft.com.ar"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6T1EJCwUB5VsB3QZp6oItEqtNEOcMempCxVZMKsg4IWGTq6gLdkkfEIQgc_FuwrcoJDG76u6k2ObAeZw0vpEix69-oNHKKu4zzPPQ4Fn0G7jgeuPVp_O4A4LYXTneA6gnSJqmnIvllKGmeN1uvdDePn_A9VybsmG3oaJRAPo=",
+              "title": "quadminds.com"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwDb8-0kcue9z2J-R2vFoGKdWGsLsqMgPW_V1KR_7fh5-epJDgVgkaSIf_OBxuCNRRLRyU8xaoyC-EG6qeAEbidsOAFR76KuNfsUEQwoRvOkwVHFMc71tNStpWYYQVaJftWEI=",
+              "title": "bcnsoft.com.ar"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtDGELQ0LrPGNK7R6BbzFTvqeRebuUe-1bHI23uPnJVQU08ATDhw_juHc1c-RG522mmcyZJrKePhDmBFVn-8U8RdS4GnY-13Q=",
+              "title": "pleko.app"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGXe5tPtGlf3FT-LdCjiiiKFeJ8zj06deIA6PEnpkqYfJdiv98s_F8Lo3V_SOxt2DsuTeEPqmAihMBHTdPY5U5ssUbsq-lClnSMloZsiyrBoqNzdKQ875-6",
+              "title": "gastrologic.io"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5G-8574LST422PKMVziDeuTX57cMvCDFmFvy3CFg4TiS9ywZhaC6pn6SoV2Jta3Im76P_7ReD7HQ30DLextfCUauXSpJcsO2Ai1Y=",
+              "title": "routal.com"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH016t8yAZYIFLBvnQTVpcdvFHktLViH2dqLCfvxSY3uOonGK4m9KyY1LP_u-Ue2TzyiS9CT1AlQPE2m7uHi3KOMgDK4Xs5gjZ3PuS7k_ilMAHmlwxN4pnT0AASYDXEhOyozjJ1OrRegmbQ_mSL4QFSK4jzSSDEu898tj5uW0DqqHk43MQtFQNcwkaS4UWGTVwG-eRrf24waYBx_CbI1c9iFatPCgDTvyszQ3057-WDYMGZCqmwtyMvdlx4YpUOFKrhfpy3GeE89Chmp_0DkM4HNDXwRpPZkvgB",
+              "title": "wynges.com"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhYzNTByvj8fJKCmrW-gtbEBuXS7f6nXQeN1UkgmPS2aVq4PTqLTlpI2Fi64fHm2obcnph6k3VAOreTYUOPXDdpPtYuZ6jDtd6YbiK4UYbGuFezJWTxq5y8HZNKjD_m1CfrfJ3gSHL13Oq7LPQleRzYjWeo50=",
+              "title": "naturalsoftware.com.ar"
+            }
+          }
+        ],
+        "groundingSupports": [
+          {
+            "segment": {
+              "startIndex": 475,
+              "endIndex": 539,
+              "text": "`Search - Pymes Argentina`) con los 4 grupos de anuncios adentro"
+            },
+            "groundingChunkIndices": [
+              0
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 1939,
+              "endIndex": 2140,
+              "text": "Esto te garantiza recibir volumen constante de tráfico, verificar qué términos de búsqueda entran, ir limpiando negativos y conseguir las primeras 10-15 conversiones reales sin sobrepagar los clics"
+            },
+            "groundingChunkIndices": [
+              0
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 2343,
+              "endIndex": 2489,
+              "text": "Volumen real de las keywords en Argentina y reemplazos\n**Diagnóstico: Hay un error recurrente: pegar la palabra \"argentina\" adentro de la keyword"
+            },
+            "groundingChunkIndices": [
+              1,
+              2
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 2675,
+              "endIndex": 2806,
+              "text": "Nadie escribe `software calcular food cost argentina` en Google; buscan `software calcular food cost` estando ubicados en Argentina"
+            },
+            "groundingChunkIndices": [
+              3,
+              1
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 2932,
+              "endIndex": 3035,
+              "text": "* ❌ `planilla de escandallo gastronomia` → \"Escandallo\" es un término técnico/español peninsular"
+            },
+            "groundingChunkIndices": [
+              4
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 3037,
+              "endIndex": 3111,
+              "text": "En Argentina los dueños de locales buscan \"costo de platos\" o \"recetario\""
+            },
+            "groundingChunkIndices": [
+              3,
+              5
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 3679,
+              "endIndex": 3846,
+              "text": "* ✅ **Reemplazos reales:** `\"optimizador de rutas de reparto\"`, `\"software de ruteo logistico\"`, `\"app para planificar rutas\"`, `\"planificador de rutas de entregas\"`"
+            },
+            "groundingChunkIndices": [
+              2,
+              6
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 3997,
+              "endIndex": 4146,
+              "text": "* ✅ **Reemplazos reales:** `\"software de stock para distribuidoras\"`, `\"sistema de gestion para distribuidoras\"`, `\"software inventario mayorista\"`"
+            },
+            "groundingChunkIndices": [
+              7,
+              8
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 5860,
+              "endIndex": 6063,
+              "text": "**La fuga de negativos de competidores de \"ingreso/soporte/software tradicional\":**\n   Los usuarios en Argentina buscan marcas competidoras no para comprar, sino para entrar a sus paneles o pedir soporte"
+            },
+            "groundingChunkIndices": [
+              2,
+              7
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 6168,
+              "endIndex": 6402,
+              "text": "* **Negativos indispensables a sumar urgente:** `login`, `ingresar`, `soporte`, `telefono`, `atencion al cliente`, `facturacion afip`, `maxirest`, `bistrosoft`, `toteat`, `quadminds login`, `simpliroute login`, `tokko broker ingresar`"
+            },
+            "groundingChunkIndices": [
+              2
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 7283,
+              "endIndex": 7363,
+              "text": "Usá **Maximizar clics** con tope de CPC max (USD 0.80) las primeras 2-3 semanas"
+            },
+            "groundingChunkIndices": [
+              0
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 7368,
+              "endIndex": 7540,
+              "text": "**Limpiá las keywords:** sacá la palabra \"argentina\" del texto de la keyword y reemplazá términos rígidos/técnicos (como \"escandallo\") por cómo busca el cliente real"
+            },
+            "groundingChunkIndices": [
+              4
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 7545,
+              "endIndex": 7626,
+              "text": "Cargá los **negativos de competidores/login/soporte** antes de apretar \"Activar\""
+            },
+            "groundingChunkIndices": [
+              2
+            ]
+          }
+        ],
+        "webSearchQueries": [
+          "software calcular food cost argentina busquedas",
+          "optimizador de rutas de reparto argentina software",
+          "control de stock distribuidoras argentina software"
+        ]
+      }
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 6363,
+    "candidatesTokenCount": 2150,
+    "totalTokenCount": 11067,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 6363
+      }
+    ],
+    "thoughtsTokenCount": 2554,
+    "serviceTier": "standard"
+  },
+  "modelVersion": "gemini-3.6-flash",
+  "responseId": "T-d3atzPBZS8nsEPuq_z0Q8"
+}
