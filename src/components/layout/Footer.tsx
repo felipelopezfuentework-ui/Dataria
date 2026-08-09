@@ -80,6 +80,11 @@ export default function Footer() {
                   Política de Privacidad
                 </Link>
               </li>
+              <li>
+                <Link href="/terminos" className="text-sm text-white/70 hover:text-white transition-colors duration-160">
+                  Condiciones del Servicio
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -118,6 +123,10 @@ export default function Footer() {
           <span className="flex items-center gap-3">
             <Link href="/privacidad" className="hover:text-white/70 transition-colors duration-160">
               Privacidad
+            </Link>
+            <span aria-hidden="true">·</span>
+            <Link href="/terminos" className="hover:text-white/70 transition-colors duration-160">
+              Condiciones
             </Link>
             <span aria-hidden="true">·</span>
             <span>Buenos Aires, Argentina</span>
