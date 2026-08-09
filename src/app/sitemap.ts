@@ -46,6 +46,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.3,
     },
+    {
+      url: 'https://www.dataria.work/terminos',
+      lastModified,
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
     ...posts.map((post) => ({
       url: `https://www.dataria.work/blog/${post.slug}`,
       lastModified: new Date(post.date),
