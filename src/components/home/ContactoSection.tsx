@@ -104,8 +104,8 @@ export default function ContactoSection({
                 <Input label="Nombre" required value={form.nombre} onChange={set('nombre')} placeholder="Tu nombre" />
                 <Input label="Email" type="email" required value={form.email} onChange={set('email')} placeholder="tucorreo@ejemplo.com" />
               </div>
-              <Input label="Teléfono" type="tel" value={form.telefono} onChange={set('telefono')} placeholder="Tu teléfono (opcional)" />
-              <Input label="Empresa / Proyecto" value={form.proyecto} onChange={set('proyecto')} placeholder="Nombre de tu proyecto o negocio (opcional)" />
+              <Input label="Teléfono" type="tel" required value={form.telefono} onChange={set('telefono')} placeholder="Tu teléfono o WhatsApp" />
+              <Input label="Empresa / Proyecto" value={form.proyecto} onChange={set('proyecto')} placeholder="Nombre de tu proyecto o negocio" />
               <Select label="Industria" value={form.industria} onChange={set('industria')}>
                 <option value="">Seleccionar</option>
                 {industries.map((i) => <option key={i} value={i}>{i}</option>)}
