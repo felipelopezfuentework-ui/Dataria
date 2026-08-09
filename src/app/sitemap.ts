@@ -40,6 +40,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.8,
     },
+    {
+      url: 'https://www.dataria.work/privacidad',
+      lastModified,
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
     ...posts.map((post) => ({
       url: `https://www.dataria.work/blog/${post.slug}`,
       lastModified: new Date(post.date),

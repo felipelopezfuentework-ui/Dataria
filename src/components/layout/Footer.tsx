@@ -75,6 +75,11 @@ export default function Footer() {
                   Contacto
                 </Link>
               </li>
+              <li>
+                <Link href="/privacidad" className="text-sm text-white/70 hover:text-white transition-colors duration-160">
+                  Política de Privacidad
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -110,7 +115,13 @@ export default function Footer() {
 
         <div className="mt-14 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/40">
           <span>© {new Date().getFullYear()} Dataria. Todos los derechos reservados.</span>
-          <span>Buenos Aires, Argentina</span>
+          <span className="flex items-center gap-3">
+            <Link href="/privacidad" className="hover:text-white/70 transition-colors duration-160">
+              Privacidad
+            </Link>
+            <span aria-hidden="true">·</span>
+            <span>Buenos Aires, Argentina</span>
+          </span>
         </div>
       </div>
     </footer>
