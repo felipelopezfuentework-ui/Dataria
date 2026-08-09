@@ -101,7 +101,7 @@ export default function PrivacidadPage() {
           <UL>
             <li><strong>Nombre</strong> (obligatorio)</li>
             <li><strong>Correo electrónico</strong> (obligatorio)</li>
-            <li><strong>Teléfono</strong> (opcional)</li>
+            <li><strong>Teléfono o WhatsApp</strong> (obligatorio)</li>
             <li><strong>Empresa o proyecto</strong> (opcional)</li>
             <li><strong>Industria</strong> (opcional)</li>
             <li><strong>Descripción del proceso que querés resolver</strong> (texto libre)</li>
