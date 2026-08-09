@@ -1,0 +1,44 @@
+Tercera vuelta. Acepté casi todo, pero hay una contradicción en tu propia lista de keywords y dos temas que no aparecieron en ninguna de las dos respuestas anteriores. Necesito cerrarlos para cargar hoy.
+
+## 1. Contradicción en las keywords en concordancia exacta
+
+En la primera auditoría me dijiste, con razón, que meter "argentina" dentro de una keyword en frase o exacta mata el volumen porque nadie escribe eso literalmente. El principio que aplicaste fue: la concordancia exacta tiene que ser el término que la gente REALMENTE tipea.
+
+Pero después me propusiste estas cuatro en exacta:
+
+- `[food cost pyme]`
+- `[control de insumos gastronomia]`
+- `[sistema de rutas de reparto]`
+- `[control de stock e inventario distribuidoras]`
+
+Ninguna me suena a algo que una persona escriba textualmente en Google. "Control de stock e inventario distribuidoras" son cinco palabras encadenadas que parecen sacadas de un folleto, no de una búsqueda real. Me parece el mismo error que me señalaste, solo que sin la palabra "argentina".
+
+Mi hipótesis: la concordancia exacta debería reservarse para el término núcleo, corto y de alto volumen, del tipo `[food cost]`, `[control de stock]`, `[optimizador de rutas]`. Y las variantes largas y descriptivas deberían ir todas en frase, que es la que tolera palabras alrededor.
+
+¿Tengo razón o me estoy perdiendo algo? Si tengo razón, dame la lista corregida de las exactas para los 4 grupos. Si el término núcleo corto es demasiado ambiguo de intención (por ejemplo `[control de stock]` sirve para cualquier rubro y me traería tráfico de indumentaria), decímelo y proponé el punto medio concreto.
+
+## 2. Impuestos sobre la inversión publicitaria en Argentina
+
+Ninguna de las dos respuestas anteriores mencionó esto y es plata real.
+
+En Argentina, la facturación de Google Ads tiene cargas impositivas por encima del monto invertido (IVA, percepciones de Ganancias/IIBB, y lo que corresponda según cómo se pague y quién sea el contribuyente).
+
+- ¿Cuánto representan hoy, en porcentaje sobre el gasto publicitario neto, para un monotributista argentino que paga con tarjeta?
+- El presupuesto diario que cargo en la plataforma, ¿es el monto neto de publicidad y los impuestos se suman aparte en la factura, o el presupuesto ya los incluye?
+- Si USD 15/día es el máximo que este anunciante puede gastar TODO INCLUIDO, ¿qué presupuesto diario debería cargar realmente en la plataforma para no pasarse?
+
+Necesito el número concreto, porque cambia cuánto configuro.
+
+## 3. Moneda de la cuenta
+
+La cuenta de Google Ads es nueva y argentina. ¿Está en pesos o en dólares? ¿Cómo lo verifico, y afecta en algo cómo cargo el presupuesto diario y el límite de CPC máximo que me recomendaste ($900 ARS)?
+
+## 4. Choque de títulos en un mismo anuncio
+
+Me diste "Calculá tu Food Cost Ya" para reemplazar a "Escandallo Automático Ya". El problema es que ese anuncio YA tiene el título "Calculá tu Food Cost Real". Quedarían dos títulos casi idénticos en el mismo anuncio adaptable, y entiendo que Google penaliza o directamente no rota títulos redundantes.
+
+Dame un reemplazo distinto para "Escandallo Automático Ya", de 30 caracteres o menos, en español rioplatense, que NO se parezca a "Calculá tu Food Cost Real" y que aporte un ángulo diferente.
+
+## 5. Lo que quede
+
+Si con todo esto ves algo más que esté flojo y que un anunciante con USD 15/día no pueda darse el lujo de equivocar, decilo ahora. Es la última consulta antes de prender el gasto.

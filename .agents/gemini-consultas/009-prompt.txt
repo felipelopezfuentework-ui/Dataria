@@ -1,0 +1,50 @@
+Necesito una revisión crítica y concreta del plan de Google Ads de Dataria, ANTES de prender el gasto. No busco confirmación: si algo está mal planteado, decímelo con claridad y con la alternativa concreta.
+
+## Situación real, hoy (9 de agosto de 2026)
+
+- Anunciante: Dataria (dataria.work), pyme argentina de 2 personas. Vende módulos de IA a medida para pymes: gastronomía, distribuidoras, inmobiliarias, e-commerce. Ticket no publicado; venta consultiva con reunión previa de 15 minutos.
+- Cuenta de Google Ads nueva, casi sin historial (21 impresiones y 1 clic en total). Campaña vieja pausada, se va a rehacer de cero.
+- Conversión: `generate_lead` (envío del formulario de contacto), medida en GA4, importada a Google Ads y dejada como ÚNICA conversión principal. Los clics a WhatsApp y a "Agendar reunión" quedan como secundarios/observación (esto se decidió en la consulta 008).
+- Presupuesto total disponible: USD 15/día.
+- Mercado: solo Argentina, en español.
+- No hay búsquedas de marca: nadie conoce Dataria todavía.
+
+## El plan que armamos y quiero que audites
+
+**Tipo de campaña:** solo Búsqueda (Search). Descartamos Máximo rendimiento (Performance Max), Display, Video/Demand Gen y Shopping.
+
+**Estructura:** DOS campañas separadas.
+1. `Search - Gastronomía - Alta Intención` — USD 8/día → landing `dataria.work/gastronomia`
+   - Grupo 1 "Food cost": `software calcular food cost argentina`, `planilla de escandallo gastronomia`, `sistema para calcular costo de platos`
+   - Grupo 2 "Control de stock": `control de stock gastronomico software`, `control de stock insumos restaurante`, `gestión de inventario de ingredientes software`, `software inventario cocina restaurante`
+2. `Search - Distribuidoras - Alta Intención` — USD 7/día → landing `dataria.work/distribuidoras`
+   - Grupo 1 "Rutas": `optimizador de rutas de reparto`, `software planificacion de rutas logistica`, `organizar entregas distribuidora argentina`, `ruteador de entregas pyme`
+   - Grupo 2 "Stock y demanda": `control de stock distribuidoras argentina`, `gestion de inventario distribuidora`, `evitar quiebre de stock distribuidora`
+
+**Concordancias:** solo frase y exacta. Nada de amplia hasta tener 30+ conversiones/mes, puja automática andando y negativos maduros.
+
+**Puja:** Maximizar conversiones, SIN CPA objetivo.
+
+**Ubicación:** Argentina, con la opción "Presencia" (no "Presencia o interés"). Redes de Display y Socios de búsqueda desactivadas. Aplicación automática de recomendaciones desactivada.
+
+**Anuncios:** 2 anuncios adaptables por grupo, 15 títulos y 4 descripciones cada uno.
+
+**Negativos de campaña:** gratis, free, barato, open source, github, descargar plantilla, excel gratis, curso, tutorial, como hacer, empleo, trabajo, curriculum, cv, pdf, sap, oracle, salesforce, microsoft dynamics, reddit, wiki.
+
+## Lo que quiero que respondas, en este orden
+
+1. **La duda que más me preocupa: ¿dos campañas o una sola?** Con USD 8/día y USD 7/día por separado, ¿cada campaña va a juntar suficientes conversiones para que Maximizar conversiones aprenda algo, o estoy fragmentando el presupuesto por debajo del umbral que necesita el algoritmo? ¿Convendría UNA sola campaña de USD 15/día con los 4 grupos adentro? Dame una recomendación clara, no las dos opciones.
+
+2. **Estrategia de puja para arrancar de cero.** Con literalmente 0 conversiones de historial, ¿Maximizar conversiones es correcto, o conviene arrancar con CPC manual o Maximizar clics durante las primeras semanas para juntar datos y recién después pasar a conversiones? ¿Qué hacen realmente las cuentas nuevas chicas?
+
+3. **Volumen real de esas keywords en Argentina.** Buscá y decime si esos términos tienen volumen de búsqueda suficiente en Argentina o si son demasiado nicho y la campaña no va a gastar ni el presupuesto. Si alguno es casi cero, decime cuál y proponé el reemplazo concreto que usaría un argentino buscando esa solución (ojo con la diferencia entre cómo lo dice el proveedor y cómo lo busca el dueño de un restaurante o de una distribuidora).
+
+4. **¿Descartar Performance Max fue correcto?** Google la empuja fuerte en el alta guiada. Con USD 15/día, tracking recién configurado y cero historial de conversiones, ¿es realmente una mala idea o me estoy perdiendo algo?
+
+5. **Concordancia frase + exacta.** En un mercado chico como Argentina y en español, ¿esto restringe demasiado el alcance? ¿Cuál es el criterio real para habilitar amplia?
+
+6. **Presupuesto.** ¿USD 15/día es suficiente para conseguir señal útil en Argentina en este vertical, o es tan bajo que no voy a poder decidir nada en 30 días? Si es insuficiente, decime cuál sería el mínimo realista.
+
+7. **Qué me estoy perdiendo.** El error más caro que suele cometer un anunciante nuevo en esta situación exacta y que no aparece en mi plan.
+
+Sé concreto y aplicable. Prefiero que me corrijas ahora a descubrirlo gastando.
