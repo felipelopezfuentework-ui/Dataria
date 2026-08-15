@@ -21,6 +21,8 @@ Especificación completa y actualizada en `.agents/google-ads-campanas.md` (rees
 
 La medición ya está cerrada (GA4 vinculado, `generate_lead` como única conversión principal, tráfico interno filtrado). **No queda ningún bloqueante técnico: falta cargarla a mano en la plataforma.**
 
+**⏳ Anotado el 15/ago, arreglar ANTES de cambiar la estrategia de puja:** la acción de conversión `Dataria (web) generate_lead` tiene **valor "Dinámico" con 1,00 ARS de media**. Es un default que arrastra de GA4, no un dato real. Hoy es inerte porque *Maximizar clics* ignora el valor de conversión. **Pero si alguna vez se pasa a *Maximizar valor de conversión* o a *ROAS objetivo*, le estaríamos diciendo al algoritmo que un lead vale un peso** y optimizaría cualquier cosa. Con la economía real (setup USD 200-500 + USD 50-150/mes indefinido), un lead vale órdenes de magnitud más. Se corrige en Herramientas → Conversiones → editar la acción → poner un valor fijo que refleje el valor real de un lead, o directamente "no usar valor".
+
 Dos cosas a resolver en paralelo, que NO bloquean el lanzamiento:
 - **Mail de admin:** el conector de Gmail de Claude apunta a `imanollopezgonzalez@gmail.com`, no a `datariaai@gmail.com`. Por eso Claude no ve las notificaciones de la cuenta de Ads de Dataria, ni la respuesta de la API, ni los leads del formulario. Decidir si se cambia el conector o se arma un MCP aparte con OAuth propio (permitiría las dos cuentas en paralelo).
 - **API de Google Ads:** el developer token sigue en nivel Test, que no lee la cuenta real. Solicitud de Basic Access enviada el 09/08, sin novedades. El MCP de Google Ads no está configurado en la máquina de Imanol. Solo hace falta para automatizar, no para lanzar.
