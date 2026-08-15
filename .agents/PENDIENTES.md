@@ -1,5 +1,5 @@
 # Pendientes Web Dataria (dataria.work)
-*Actualizado 2026-07-23 — simplificado, se eliminó todo lo ya completado (el historial real queda en `git log`)*
+*Actualizado 2026-08-15 — se eliminó todo lo ya completado (el historial real queda en `git log`)*
 
 ## Contexto rápido
 - Sitio: Dataria — herramientas de IA a medida para pymes/autónomos, 4 rubros (gastronomía, distribuidoras, inmobiliarias, e-commerce) + formulario "Otros". NO es un restaurante (no confundir con Ragu Bodegón).
@@ -7,15 +7,24 @@
 - Deploy: Vercel, proyecto **"dataria-nrr8"** (⚠️ NO "dataria" a secas — hay dos proyectos parecidos en la cuenta, el que sirve dataria.work es el nrr8). Dominio comprado en Squarespace.
 - Contexto de marca/producto completo: `.agents/product-marketing.md` en el repo (v5). Historial de consultas a Gemini: `.agents/gemini-consultas/` en el repo.
 - GA4 Measurement ID: `G-J2675ZE6DY`. Search Console verificado por TXT en DNS (cubre www y no-www a la vez).
-- Objetivo actual: full foco en SEO/SEM/GEO. Google Ads queda para el final.
+- Objetivo actual: **lanzar Google Ads.** Es el único pendiente que mueve la aguja; el resto es mantenimiento.
 - **Regla de trabajo de Imanol: ir en orden, confirmar antes de avanzar al siguiente paso. Los PRs se mergean directo a main sin preguntar cada vez (pedido explícito).**
 
 ---
 
 ## 🔴 Pendientes activos
 
-### 1. AlternativeTo — bloqueado hasta el 26/jul
-La cuenta de Imanol necesita 7 días de antigüedad para poder sugerir un producto nuevo (creada 19/jul). El copy ya está listo para pegar apenas se pueda:
+### 1. Google Ads — LO ÚNICO PRIORITARIO. Spec lista, falta cargarla.
+Especificación completa y actualizada en `.agents/google-ads-campanas.md` (reescrita el 15/ago: 1 campaña, 6 grupos, distribuidoras como rubro principal, $7.000 ARS/día, Maximizar clics con tope de CPC $1.800). Datos de mercado en `.agents/keywords-investigacion.md`.
+
+La medición ya está cerrada (GA4 vinculado, `generate_lead` como única conversión principal, tráfico interno filtrado). **No queda ningún bloqueante técnico: falta cargarla a mano en la plataforma.**
+
+Dos cosas a resolver en paralelo, que NO bloquean el lanzamiento:
+- **Mail de admin:** el conector de Gmail de Claude apunta a `imanollopezgonzalez@gmail.com`, no a `datariaai@gmail.com`. Por eso Claude no ve las notificaciones de la cuenta de Ads de Dataria, ni la respuesta de la API, ni los leads del formulario. Decidir si se cambia el conector o se arma un MCP aparte con OAuth propio (permitiría las dos cuentas en paralelo).
+- **API de Google Ads:** el developer token sigue en nivel Test, que no lee la cuenta real. Solicitud de Basic Access enviada el 09/08, sin novedades. El MCP de Google Ads no está configurado en la máquina de Imanol. Solo hace falta para automatizar, no para lanzar.
+
+### 2. AlternativeTo — desbloqueado, falta hacerlo
+El bloqueo de antigüedad de cuenta (7 días desde el 19/jul) venció el 26/jul. El copy ya está listo para pegar:
 - **Name:** Dataria — **Website:** https://dataria.work
 - **Tagline:** "IA a medida para pymes argentinas, sin equipo técnico"
 - **Description:** ver versión sin nombres de clientes en "Copy de referencia" más abajo.
@@ -25,19 +34,16 @@ La cuenta de Imanol necesita 7 días de antigüedad para poder sugerir un produc
 - **Alternativas a marcar:** Tokko Broker (CRM inmobiliario), SimpliRoute (rutas de reparto), Choco.com (pedidos/gestión gastronómica).
 - Proceso: cuenta propia → ícono de usuario → "Suggest new application" → 3 pasos. Aprobación manual 1-2 días.
 
-### 2. Google Business Profile — solo falta sumar reseñas
+### 3. Google Business Profile — solo falta sumar reseñas
 Perfil completo (verificación, fotos, horario, servicios, URL de reserva). Tarea continua: pedir reseñas reales a clientes (Mariana, Luciano, Gabriel y los que se sumen).
 
-### 3. Google Ads — activo, Imanol le dedica el fin de semana del 25-26/jul
-Campañas de Gastronomía y Distribuidoras completamente especificadas (keywords, RSAs, negativos, sitelinks) en `.agents/google-ads-campanas.md` — listas para cargar. Antes de prender el gasto falta terminar el checklist de GA4 (ver ese mismo archivo, sección final):
-- `generate_lead` ya es Key Event. Falta que `click_agendar_reunion` y `click_whatsapp` aparezcan en Administrar → Eventos de GA4 para poder marcarlos también (evento secundario, nunca principal).
-- Tráfico interno: regla creada en GA4 con la IP de Imanol. **Falta sumar la IP de Felipe desde su ubicación habitual** (se cargó primero desde la casa de su padre, de paso, pero falta la de su casa/oficina de siempre).
-- Falta vincular GA4 con Google Ads e importar `generate_lead` como conversión.
+### 4. Investigación de keywords — lo que falta medir
+Detalle en `.agents/keywords-investigacion.md`, sección "Qué falta explorar". Lo principal: **inmobiliarias y e-commerce nunca se midieron** (puede haber más volumen que en gastronomía), y no se usó el método de correr el Planificador con "Empezar con un sitio web" apuntando a competidores (toteat, bistrosoft, simpliroute, quadminds) para ver el vocabulario real del mercado. Hacerlo después de lanzar, no antes.
 
-### 4. Idea sin desarrollar — agente que optimice la campaña de Ads de forma continua
-Conectar un agente que tenga el contexto y el análisis de la campaña de Google Ads de Dataria, vinculado a Google Trends (o algo similar) para ir detectando cambios/oportunidades y sugiriendo mejoras a la campaña con el tiempo. Idea todavía sin definir del todo (ni Imanol la tiene clara) — no se investigó qué herramienta puntual usar ni cómo conectarla. Retomar una vez que la campaña de Ads esté andando (no tiene sentido optimizar algo que todavía no existe).
+### 5. Idea sin desarrollar — agente que optimice la campaña de Ads de forma continua
+Conectar un agente con el contexto y el análisis de la campaña real, vinculado a Google Trends o similar, para ir sugiriendo mejoras con el tiempo. Idea sin definir del todo. Retomar una vez que la campaña esté andando y con la API aprobada.
 
-### 5. Blog — mantenimiento a demanda
+### 6. Blog — mantenimiento a demanda
 Imanol va a ir pasando modificaciones puntuales a los posts ya publicados a medida que las necesite.
 
 ---
