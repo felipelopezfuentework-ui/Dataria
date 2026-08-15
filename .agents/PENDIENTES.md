@@ -15,7 +15,9 @@
 ## 🔴 Pendientes activos
 
 ### 1. Google Ads — LO ÚNICO PRIORITARIO. Spec lista, falta cargarla.
-Especificación completa y actualizada en `.agents/google-ads-campanas.md` (reescrita el 15/ago: 1 campaña, 6 grupos, distribuidoras como rubro principal, $7.000 ARS/día, Maximizar clics con tope de CPC $1.800). Datos de mercado en `.agents/keywords-investigacion.md`.
+Especificación completa y actualizada en `.agents/google-ads-campanas.md` (reescrita el 15/ago: 1 campaña, 6 grupos, distribuidoras como rubro principal, $7.000 ARS/día, Maximizar clics con tope de CPC $1.800).
+
+**📄 Documento base del proyecto: `.agents/keywords-definidas.md`** — qué se midió, qué salió, con qué keywords arrancamos y qué se descartó. Es el que hay que leer primero y el que se actualiza con los datos de la campaña real. Detalle de las mediciones en `keywords-investigacion.md` (ronda 1) y `keywords-plan-barrido.md` (método de la ronda 2).
 
 La medición ya está cerrada (GA4 vinculado, `generate_lead` como única conversión principal, tráfico interno filtrado). **No queda ningún bloqueante técnico: falta cargarla a mano en la plataforma.**
 
@@ -42,10 +44,25 @@ Plan completo en `.agents/keywords-plan-barrido.md`, con las semillas ya escrita
 
 **Los cuatro bloques se pueden correr a mano en el Planificador hoy, sin esperar la API.** Cuando llegue Basic Access, el mismo trabajo lo hace `.agents/scripts/keyword_ideas.py` sin trabajo manual.
 
-### 5. Idea sin desarrollar — agente que optimice la campaña de Ads de forma continua
-Conectar un agente con el contexto y el análisis de la campaña real, vinculado a Google Trends o similar, para ir sugiriendo mejoras con el tiempo. Idea sin definir del todo. Retomar una vez que la campaña esté andando y con la API aprobada.
+### 5. Automatizar la investigación de keywords — evaluar qué se puede conectar
+El barrido del 15/ago se hizo a mano: 6 corridas en el Planificador, descargar CSV, procesar con script. Funcionó, pero no escala a Pariggi y Pollo Cocido. Hay que evaluar qué parte se puede automatizar y con qué.
 
-### 6. Blog — mantenimiento a demanda
+**Lo que ya está resuelto y solo espera la aprobación:**
+- `scripts/keyword_ideas.py` corre `GenerateKeywordIdeas` contra la API y hace lo mismo que el Planificador con cientos de semillas. Probado de punta a punta; frena en `DEVELOPER_TOKEN_NOT_APPROVED`. **Necesita Basic Access CON el uso permitido "Researching keywords and recommendations"** — con "Reporting" solo, no sirve. Límite: 1 QPS, 15.000 operaciones/día.
+
+**Lo que hay que investigar (nadie lo miró todavía):**
+- **¿El barrido de competidores se puede hacer por API?** El script hoy soporta `siteSeed` y `urlSeed`, pero no se pudo probar sin aprobación. Si funciona, las 6 corridas manuales pasan a ser un comando.
+- **¿Se puede automatizar el ciclo completo?** Semillas → API → clasificación → propuesta de keywords y negativos. La clasificación hoy es un script de reglas hecho a mano; evaluar si conviene que la haga un modelo.
+- **Google Trends:** no tiene API oficial. Ver si alguna alternativa da datos usables para Argentina.
+- **MCP de Google Ads:** verificado el 15/ago que **NO sirve para keywords** — expone solo 3 herramientas de lectura (`search`, `get_resource_metadata`, `list_accessible_customers`). Sirve para leer métricas de campañas corriendo, no para investigar. No volver a evaluarlo para esto.
+- **Meta:** el conector de Meta Ads ya está activo en Claude. Para Pariggi hay que definir cuál es el equivalente del barrido de competidores — probablemente la **biblioteca de anuncios** (qué creativos corren, hace cuánto, con qué ángulo). Sin explorar.
+
+**Método documentado mientras tanto:** el razonamiento completo quedó en el skill `investigar-keywords-y-armar-campanas`, aplicable a Pariggi y Pollo Cocido aunque siga siendo manual.
+
+### 6. Idea sin desarrollar — agente que optimice la campaña de forma continua
+Conectar un agente con el contexto y el análisis de la campaña real para ir sugiriendo mejoras con el tiempo. Retomar una vez que la campaña esté andando y con la API aprobada — antes no hay datos que analizar.
+
+### 7. Blog — mantenimiento a demanda
 Imanol va a ir pasando modificaciones puntuales a los posts ya publicados a medida que las necesite.
 
 ---
