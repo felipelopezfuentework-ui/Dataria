@@ -1,0 +1,78 @@
+Cuarta vuelta sobre Google Ads de Dataria. La campaña sigue SIN cargar y sin gastar un peso. Antes de prenderla necesito resolver cuatro cosas. Necesito que uses búsqueda web real para las que dependen de documentación de Google o de herramientas actuales (2026), y que si no encontrás una fuente lo digas explícitamente en vez de completar con lo que suene razonable.
+
+IMPORTANTE SOBRE TU PROPIO HISTORIAL: en la consulta anterior (011) reintrodujiste `[escandallo]`, un término peninsular que vos misma habías mandado a sacar en la 010, y agregaste grupos de Inmobiliarias y E-commerce que yo no había pedido. Además tu estimación de impuestos (24-30%) resultó incompleta. No repitas ese patrón: si algo quedó descartado, quedó descartado, y si un número no lo podés respaldar, decilo.
+
+=== CONTEXTO MEDIDO (esto no es opinión, salió del Planificador de palabras clave) ===
+
+Corrí el Planificador sobre ~1.400 keywords en 8 ángulos, Argentina, español, período jul/2025-jun/2026. Resultados reales:
+
+GASTRONOMÍA — 1.098 keywords analizadas, solo 2 superan las 50 búsquedas/mes:
+- `software gastronómico`: 500/mes, competencia Alta, puja $1.111-$9.014
+- `sistema de comandas para restaurantes`: 500/mes — DESCARTADA, no es lo que vendo
+- Todo el resto (food cost, inventario de cocina, control de mermas, erp gastronomico, software para panaderia, etc): 50/mes cada una, que es el cajón de Google para el rango 10-100.
+
+DISTRIBUIDORAS — 331 keywords, 8 superan las 50/mes. Clusters:
+- Última milla: 7.250/mes — pero 1.250 son informativas ("qué es", "pdf") y `proveedor de ultima milla` (500/mes) busca CONTRATAR una empresa que reparta, no software.
+- Flotas/GPS: 5.700/mes — `monitoreo de flotas` 500/mes, pero la intención es telemetría GPS con hardware. No lo vendo.
+- Software logística/TMS: 4.350/mes, 69 keywords — encaje directo.
+- Rutas/ruteo/reparto: 800/mes, 16 keywords — encaje directo.
+- Distribuidora/mayorista: 600/mes, 12 keywords — encaje directo.
+
+Pujas de parte superior de página, rango bajo: `software para distribuidoras` $2.776 · `software logistica` $2.124 · `optimizar rutas de reparto` $1.594 · `optimizador de rutas` $1.376 · `software gastronómico` $1.111 · `food cost` $459.
+
+Qué es Dataria: módulos de IA a medida para pymes argentinas. Gastronomía = food cost + control de stock de insumos. Distribuidoras = optimización de rutas + control de stock y proyección de demanda. NO vende punto de venta, NO vende comandas, NO vende GPS/telemetría, NO hace las entregas. Se integra con Fudo y Maxirest, no los reemplaza.
+
+Economía real: setup USD 200-500 una vez + USD 50-150/mes de mantenimiento indefinido. Presupuesto de pauta decidido: $7.000 ARS/día neto (~USD 190/mes con impuestos). Cuenta en pesos con facturación local, monotributo.
+
+=== PREGUNTA 1: ¿Es Búsqueda el tipo de campaña correcto? ===
+
+Esta es la pregunta más importante y quiero que la respondas sin complacencia.
+
+Los datos de arriba me dicen que casi nadie busca lo que Dataria hace. El volumen grande del mercado está en categorías vecinas que no vendo (punto de venta, comandas, GPS, contratar un tercero que reparta). Mi lectura es que Búsqueda tiene un techo bajísimo: no es que compito mal, es que la demanda no existe todavía porque nadie sabe que esto se puede resolver así.
+
+Si eso es cierto, capturar demanda con Search es la estrategia equivocada y debería estar CREANDO demanda (Demand Gen, YouTube, contenido, LinkedIn, outbound directo).
+
+Necesito que evalúes las tres opciones y elijas UNA, con el criterio explícito:
+(a) Search igual, aceptando poco volumen pero alta intención — es el plan actual.
+(b) Search chico + una segunda vía de generación de demanda en paralelo, partiendo el presupuesto.
+(c) Nada de Search todavía; todo el presupuesto a generar demanda hasta que haya búsquedas que capturar.
+
+Considerá que con $7.000/día y CPC real de ~$1.500 esperaría ~140 clics/mes y 3-7 formularios/mes. Y que 1 o 2 clientes al año pagan toda la pauta anual, o sea que el listón de éxito es bajo. ¿Eso cambia tu respuesta? Decime también qué señal concreta, medida a los 30 días, me tendría que hacer cambiar de opción.
+
+=== PREGUNTA 2: ¿Dónde más busco keywords, además del Planificador de Google? ===
+
+Mi lista actual tiene ~30 keywords y me parece flaca y obvia. Siento que estoy adivinando el vocabulario del mercado en vez de medirlo.
+
+Quiero fuentes y métodos concretos, no categorías genéricas. Para cada uno decime: cómo se accede, si es gratis o cuánto sale, y qué tipo de término devuelve que el Planificador NO devuelve. Me interesan especialmente:
+- Métodos dentro del propio Google que no estoy usando (el Planificador con "Empezar con un sitio web" apuntando a competidores, Search Console, Google Trends, sugerencias de autocompletado, "búsquedas relacionadas", People Also Ask).
+- Herramientas de terceros que sirvan de verdad para ARGENTINA y español rioplatense, con volúmenes reales. Ojo: muchas herramientas tienen datos pobres para Argentina. Si sabés que una es mala para el mercado argentino, decilo.
+- Fuentes de lenguaje natural donde las pymes argentinas describen ESTE dolor con sus propias palabras (foros, grupos, comunidades, reseñas de competidores). El vocabulario real, no el del folleto.
+- El informe de términos de búsqueda de la propia campaña una vez que corra: qué tan rápido empieza a ser la mejor fuente y a partir de cuántos clics es estadísticamente útil.
+
+Y una pregunta de fondo: si en el rubro casi todo da 50/mes (el cajón 10-100), ¿tiene sentido seguir buscando más keywords de 50, o el problema es que estoy buscando en la capa equivocada del embudo?
+
+=== PREGUNTA 3: Automatizar la investigación por API ===
+
+Ya verifiqué contra la API real (no lo estoy suponiendo): mi developer token está en nivel Test y devuelve DEVELOPER_TOKEN_NOT_APPROVED contra la cuenta de producción. Estoy tramitando Basic Access. También verifiqué que el MCP oficial de Google Ads (github.com/googleads/google-ads-mcp) expone solo 3 herramientas (search, get_resource_metadata, list_accessible_customers), o sea reporting de solo lectura: NO hace investigación de keywords.
+
+Confirmame o corregime esto:
+- Para generar ideas de keywords con volumen por API hace falta `KeywordPlanIdeaService.GenerateKeywordIdeas`, y eso requiere declarar el uso permitido "Researching keywords and recommendations" (no alcanza con "Reporting"). ¿Es así?
+- Si declaro uso permitido "Reporting" solamente, ¿me quedo sin KeywordPlanIdeaService?
+- ¿Hay algún límite de cuota relevante en Basic Access para este servicio?
+- ¿`GenerateKeywordIdeas` devuelve exactamente los mismos volúmenes que la interfaz del Planificador, o hay diferencias de agregación/redondeo que me puedan confundir al comparar?
+
+=== PREGUNTA 4: Responder el mail de compliance ===
+
+Google me respondió la solicitud de Basic Access con esto:
+
+"Would you mind briefly clarifying your business model and how you use Google Ads? I just want to make sure your company type is accurate. To understand the differences among the different company types, please see this page. Your current classification is Advertiser."
+Y agrega: "a role based or distribution list email address (e.g. info@company.com or google-ads-api@company.com) should be used as your developer contact email."
+
+Mi situación: Dataria es una empresa argentina que vende software propio a pymes. Va a usar la API ÚNICAMENTE para su propia cuenta de Google Ads (534-804-3664, bajo su propia MCC 714-580-8015). No administra cuentas de terceros, no le vende ni le da acceso a la API a sus clientes, no construye una herramienta que otros usen para manejar sus campañas. Mi contacto de API hoy es datariaai@gmail.com, que no es el mail de una persona sino la casilla de la empresa, pero es un Gmail y no un mail del dominio dataria.work.
+
+- ¿"Advertiser" es la clasificación correcta para este caso? Si no, ¿cuál sería y por qué?
+- Redactame la respuesta al mail, en inglés, breve y concreta, que describa el modelo de negocio y el uso de la API de forma que un revisor de compliance pueda aprobarla sin volver a preguntar. Que mencione explícitamente el uso permitido que necesito, incluyendo investigación de keywords para mis propias campañas.
+- ¿Conviene que cambie el contacto a un mail del dominio propio en medio de la revisión, o eso reinicia el trámite? Dame la respuesta práctica.
+
+=== FORMATO ===
+Respondé las 4 preguntas en orden, sin agregar temas que no pedí. Donde des un número o cites una política de Google, decime de dónde sale. Si algo no lo pudiste verificar con búsqueda, marcálo como "no verificado".

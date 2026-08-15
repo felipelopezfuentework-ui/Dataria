@@ -1,0 +1,267 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": " Respuestas a las 4 preguntas planteadas, fundamentadas en la documentación oficial de Google Ads API (agosto 2026) e investigación del mercado local B2B.\n\n---\n\n### PREGUNTA 1: ¿Es Búsqueda el tipo de campaña correcto?\n\n**Opción elegida: (a) Búsqueda igual, aceptando poco volumen pero alta intención.**\n\n#### Justificación y análisis de opciones:\n1. **Economía de la unidad y listón de éxito:** Con un presupuesto de $7.000 ARS/día (~$210.000 ARS/mes netos) y CPC de ~$1.500 ARS, el volumen estimado es de ~140 clics/mes. En B2B de ticket medio/alto con modelo recurrente (setup USD 200–500 + abono mensual USD 50–150), cerrar **1 o 2 clientes al año** paga el 100% de la inversión publicitaria anual. El listón de conversión requerido para lograr ROI positivo es sumamente bajo (~0,5% a 1% de conversión de clic a cliente cerrado).\n2. **Por qué dividir el presupuesto (Opción b) es un error:** Partir $7.000 ARS/día deja $3.500/día en Búsqueda (~2 clics al día) y $3.500/día en generación de demanda (Demand Gen / Meta / LinkedIn). En pauta B2B, $3.500 ARS/día en campañas de interrupción (Social/Demand Gen) no alcanzan la frecuencia mínima de impresión ni generan suficiente volumen de eventos para que el algoritmo de aprendizaje automático optimice pujas. Terminarías con dos campañas infrapautadas.\n3. **Captura vs. Creación de demanda:** Aunque el volumen absoluto en el Planificador es bajo (\"50 búsquedas/mes\" por término), quien escribe `software para distribuidoras` u `optimizar rutas de reparto` está en **fase activa de compra/solución**. Esa intención transaccional no se logra con Demand Gen o publicidad fría.\n\n#### Señal concreta a los 30 días para cambiar de estrategia:\n* **Métrica evaluada:** Correr la campaña durante 30 días acumulando entre **120 y 150 clics válidos**.\n* **Criterio de cambio (Pivote):** Si al llegar a ~150 clics el Informe de términos de búsqueda muestra que **>80% de los clics fueron búsquedas relevantes** (no basurero) y se obtienen **0 formularios/reuniones calificados**, significa que la intención de búsqueda en Search para estos términos no convierte comercialmente al sitio actual.\n* **Acción si ocurre:** Pausar Búsqueda y migrar el 100% del presupuesto a **Demand Gen / Meta Ads** orientado a dueños/gerentes pyme, o a **Outbound directo por LinkedIn/WhatsApp**.\n\n---\n\n### PREGUNTA 2: ¿Dónde más busco keywords, además del Planificador de Google?\n\n#### 1. Métodos dentro de Google\n* **Planificador con \"Empezar con un sitio web\":** \n  * *Cómo acceder:* Gratis dentro de Google Ads UI > Planificador de palabras clave > \"Empezar con un sitio web\".\n  * *Uso:* En lugar de keywords, ingresá la URL directa de competidores de la región (ej. `fudo.com.ar`, `maxirest.com`, `quadminds.com`, `simpliroute.com`).\n  * *Lo que devuelve:* Extrae los términos exactos por los que Google clasifica esos sitios. Descubre palabras transaccionales que los competidores posicionan y que no surgen al adivinar semillas.\n* **Google Search Console (GSC):**\n  * *Acceso:* Gratis (requiere propiedad verificada).\n  * *Uso:* Filtrar la pestaña \"Resultados de búsqueda\" por impresiones y posición media.\n  * *Limitación:* Para un dominio nuevo sin tráfico orgánico masivo, no aportará keywords externas aún.\n* **Google Trends:**\n  * *Acceso:* Gratis (`trends.google.com`).\n  * *Uso:* Filtrar por Argentina. Permite comparar términos (ej. `software logistica` vs `rutas de reparto`) para ver tendencia temporal y regiones con más demanda (ej. CABA vs. Santa Fe/Córdoba). En la sección \"Consultas relacionadas\" muestra búsquedas \"En aumento\" (breakout).\n* **Autocompletado, \"Búsquedas relacionadas\" y \"People Also Ask\" (PAA):**\n  * *Acceso:* Gratis (navegación de incógnito en `google.com.ar`).\n  * *Uso:* Tipear la semilla y revisar qué modificadores sugiere Google. Devuelve frases de intención real en lenguaje local (ej. `programa para calcular costos de platos excel`, `como organizar repartos de mercaderia`).\n\n#### 2. Herramientas de terceros para Argentina / Rioplatense\n* **Semrush:**\n  * *Acceso/Costo:* De pago (desde ~$130 USD/mes; hay prueba gratuita o licencias compartidas).\n  * *Rendimiento en Argentina:* **Bueno/Aceptable.** Tiene base de datos específica para Argentina (`Google.com.ar`). Permite hacer \"Domain Overview\" de competidores locales y ver por qué palabras clave pagan Ads o posicionan en orgánico.\n* **Ahrefs:**\n  * *Acceso/Costo:* De pago (desde ~$99 USD/mes).\n  * *Rendimiento en Argentina:* La base de datos de palabras clave locales en español rioplatense es ligeramente inferior a la de Semrush en volumen de cola larga, aunque muy precisa para análisis de backlinks y sitios de competidores.\n* **Ubersuggest / AnswerThePublic:**\n  * *Acceso/Costo:* Freemium / ~$29 USD/mes.\n  * *Rendimiento en Argentina:* **Pobre.** Sus datos de volumen para Argentina en nichos B2B están altamente interpolados y suelen replicar los rangos genéricos del Planificador de Google. No justifica la inversión para este caso de uso.\n\n#### 3. Fuentes de lenguaje natural de pymes argentinas\n* **Reseñas en Google Play Store / Capterra / Trustpilot de competidores:**\n  * *Método:* Buscar las fichas de apps de competidores (Fudo, Maxirest, QuadMinds, SimpliRoute, Tokko).\n  * *Utilidad:* Leer las reseñas de 1, 2 y 3 estrellas. Los dueños y encargados expresan sus dolores en lenguaje crudo: *\"el software se cuelga al armar la hoja de ruta\"*, *\"no puedo cruzar el stock de la cocina con el costo\"*, *\"las planillas de excel no me cierran con los repartidores\"*. Esos pain points se convierten en keywords de coincidencia de frase o copy de anuncios.\n* **Comunidades y Foros (Reddit / Grupos de Facebook):**\n  * *Fuentes:* `r/Argentina`, `r/MercadoLider`, o grupos de Facebook como *\"Gastronómicos Argentina\"*, *\"Distribuidoras y Mayoristas Argentina\"*.\n  * *Utilidad:* Buscar publicaciones donde pregunten *\"¿Qué sistema usan para...?\"*. Devuelve la terminología no técnica con la que el cliente busca resolver el problema antes de conocer la categoría del software.\n\n#### 4. Informe de términos de búsqueda de la campaña en vivo\n* **Puesta en marcha:** Debe revisarse **desde el día 1** diariamente para negativizar búsquedas basura (`gratis`, `pdf`, `curriculum`, `empleo`, etc.).\n* **Utilidad estadística:** Comienza a ser representativo a partir de **100 a 150 clics acumulados** (aproximadamente 3 a 4 semanas de campaña con el presupuesto actual).\n\n#### ¿Tiene sentido seguir buscando más keywords de \"50/mes\"?\n**Sí, pero diferenciando la capa del embudo:**\n1. En nichos B2B en Argentina, \"50/mes\" es el umbral base que muestra la interfaz de Google Ads para cualquier volumen entre 10 y 100 búsquedas mensuales. Acumular 15 o 20 palabras clave de \"50/mes\" con intención comercial directa (`software para distribuidoras`, `hoja de ruta de reparto`, `control de food cost`) suma un volumen real de demanda capturable de alta calidad.\n2. Sin embargo, no hay que quedarse solo en palabras \"orientadas a la solución\" (`software XYZ`). Hay que atacar la **capa media del embudo (Problem-Aware)**: usuarios que buscan resolver el problema operativo manualmente (ej. `planilla excel control de stock insumos`, `como armar rutas de reparto en excel`). Estas búsquedas tienen volumen, y se pueden capturar con anuncios de Búsqueda que ofrezcan la automatización como paso superador a la planilla.\n\n---\n\n### PREGUNTA 3: Automatizar la investigación por API\n\nVerificado contra la documentación oficial de Google Ads API:\n\n1. **Permissible Use y `KeywordPlanIdeaService`:**\n   * **Confirmado:** Para generar ideas de keywords por API utilizando `KeywordPlanIdeaService.GenerateKeywordIdeas`, la documentación oficial establece que el developer token **DEBE tener asignado el Permissible Use *\"Researching keywords and recommendations\"***.\n   * Si la cuenta se declara únicamente para *\"Reporting\"*, las llamadas a los servicios de planificación (`KeywordPlanIdeaService`, `KeywordPlanService`, `KeywordPlanCampaignService`) quedan **bloqueadas en producción y devuelven error de permiso**.\n\n2. **Límites de cuota en Basic Access:**\n   * **Límite general:** Un token con nivel *Basic Access* dispone de **15.000 operaciones por día** tanto en cuentas de prueba como de producción.\n   * **Límite específico para servicios de planificación (Planning Services):** Google impone una restricción adicional de tasa para `KeywordPlanIdeaService`: **1 QPS (1 solicitud por segundo / máximo 60 solicitudes por minuto)**. Si se realizan peticiones concurrentes o más rápidas que 1 QPS, la API devuelve el error `RESOURCE_EXHAUSTED`.\n\n3. **Diferencia de datos entre API y la interfaz web del Planificador:**\n   * **Precisión de volumen histórico:** En cuentas sin gasto elevado activo, la interfaz web del Planificador agrupa y redondea los volúmenes en rangos amplios (ej. `10 - 100`, `100 - 1K`). La API, a través de `GenerateKeywordIdeas` y `GenerateKeywordHistoricalMetrics`, suele devolver la métrica exacta o menos agregada (ej. `40`, `210` búsquedas mensuales promedio).\n   * **Sugerencias:** La interfaz web aplica algoritmos visuales de expansión (\"Amplíe su búsqueda\"). La API devuelve estrictamente los resultados asociados a las semillas (`keywordSeed`, `urlSeed`, `siteSeed`) y parámetros de localización/idioma enviados en la estructura de la solicitud.\n\n---\n\n### PREGUNTA 4: Responder el mail de compliance\n\n#### 1. Clasificación correcta: \"Advertiser\"\n**Sí, \"Advertiser\" (o Direct Advertiser) es la clasificación 100% correcta.** \nGoogle define \"Agency\" como una entidad que administra campañas e inversión publicitaria para clientes terceros. Como Dataria va a utilizar la API exclusivamente para gestionar y analizar sus propias campañas dentro de su propia estructura MCC / CID, no califica como Agencia ni como desarrollador de software para terceros.\n\n#### 2. Correo de contacto del desarrollador (Dominio vs Gmail)\n**Respuesta práctica:** Se debe **cambiar el contacto a un correo del dominio propio (`dataria.work`) ANTES de responder el mail**.\nGoogle Ads API Compliance exige explícitamente el uso de una dirección de correo basada en roles dentro del dominio de la empresa (ej. `info@dataria.work` o `google-ads-api@dataria.work`). \n* *Efecto en el trámite:* Cambiar el email en la sección *Centro de API* del MCC no reinicia la revisión desde cero; simplemente actualiza el registro de contacto. Si respondés con un correo `@gmail.com`, el equipo de compliance pausará la solicitud y volverá a pedirte un email corporativo.\n\n#### 3. Redacción de la respuesta para Compliance (en inglés)\n\n**Subject:** Re: Basic Access Application - Developer Token [MCC: 714-580-8015]\n\n> Dear Google Ads API Compliance Team,\n>\n> Thank you for reaching out.\n>\n> **1. Business Model & Account Classification**\n> Dataria is a B2B software company based in Argentina that develops custom AI operational modules for small and medium-sized businesses. Our classification as **Advertiser** is correct. We use the Google Ads API strictly for internal management of our own advertising campaigns. We do not manage third-party accounts, nor do we provide API access or tools to external clients.\n>\n> **2. API Scope & Use Cases**\n> We are requesting Basic Access to support the following internal use cases for our own Manager Account (MCC: 714-580-8015) and child account (CID: 534-804-3664):\n> - **Permissible Use: Reporting** — Automated internal performance reporting and campaign tracking.\n> - **Permissible Use: Researching keywords and recommendations** — Automated keyword research using `KeywordPlanIdeaService.GenerateKeywordIdeas` to identify high-intent search terms for our own campaign planning.\n>\n> **3. Developer Contact Update**\n> As requested, we have updated our developer contact email in the API Center to a role-based company domain address: `google-ads-api@dataria.work` *(o la casilla de dominio propia que configures)*.\n>\n> Please let us know if any further information is needed to complete the review.\n>\n> Best regards,  \n> **Imanol / Dataria Team**  \n> Dataria (MCC: 714-580-8015)",
+            "thoughtSignature": "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"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "index": 0,
+      "groundingMetadata": {
+        "searchEntryPoint": {
+          "renderedContent": "<style>\n.container {\n  align-items: center;\n  border-radius: 8px;\n  display: flex;\n  font-family: Google Sans, Roboto, sans-serif;\n  font-size: 14px;\n  line-height: 20px;\n  padding: 8px 12px;\n}\n.chip {\n  display: inline-block;\n  border: solid 1px;\n  border-radius: 16px;\n  min-width: 14px;\n  padding: 5px 16px;\n  text-align: center;\n  user-select: none;\n  margin: 0 8px;\n  -webkit-tap-highlight-color: transparent;\n}\n.carousel {\n  overflow: auto;\n  scrollbar-width: none;\n  white-space: nowrap;\n  margin-right: -12px;\n}\n.headline {\n  display: flex;\n  margin-right: 4px;\n}\n.gradient-container {\n  position: relative;\n}\n.gradient {\n  position: absolute;\n  transform: translate(3px, -9px);\n  height: 36px;\n  width: 9px;\n}\n@media (prefers-color-scheme: light) {\n  .container {\n    background-color: #fafafa;\n    box-shadow: 0 0 0 1px #0000000f;\n  }\n  .headline-label {\n    color: #1f1f1f;\n  }\n  .chip {\n    background-color: #ffffff;\n    border-color: #d2d2d2;\n    color: #5e5e5e;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #f2f2f2;\n  }\n  .chip:focus {\n    background-color: #f2f2f2;\n  }\n  .chip:active {\n    background-color: #d8d8d8;\n    border-color: #b6b6b6;\n  }\n  .logo-dark {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #fafafa 15%, #fafafa00 100%);\n  }\n}\n@media (prefers-color-scheme: dark) {\n  .container {\n    background-color: #1f1f1f;\n    box-shadow: 0 0 0 1px #ffffff26;\n  }\n  .headline-label {\n    color: #fff;\n  }\n  .chip {\n    background-color: #2c2c2c;\n    border-color: #3c4043;\n    color: #fff;\n    text-decoration: none;\n  }\n  .chip:hover {\n    background-color: #353536;\n  }\n  .chip:focus {\n    background-color: #353536;\n  }\n  .chip:active {\n    background-color: #464849;\n    border-color: #53575b;\n  }\n  .logo-light {\n    display: none;\n  }\n  .gradient {\n    background: linear-gradient(90deg, #1f1f1f 15%, #1f1f1f00 100%);\n  }\n}\n</style>\n<div class=\"container\">\n  <div class=\"headline\">\n    <svg class=\"logo-light\" width=\"18\" height=\"18\" viewBox=\"9 9 35 35\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M42.8622 27.0064C42.8622 25.7839 42.7525 24.6084 42.5487 23.4799H26.3109V30.1568H35.5897C35.1821 32.3041 33.9596 34.1222 32.1258 35.3448V39.6864H37.7213C40.9814 36.677 42.8622 32.2571 42.8622 27.0064V27.0064Z\" fill=\"#4285F4\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 43.8555C30.9659 43.8555 34.8687 42.3195 37.7213 39.6863L32.1258 35.3447C30.5898 36.3792 28.6306 37.0061 26.3109 37.0061C21.8282 37.0061 18.0195 33.9811 16.6559 29.906H10.9194V34.3573C13.7563 39.9841 19.5712 43.8555 26.3109 43.8555V43.8555Z\" fill=\"#34A853\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M16.6559 29.8904C16.3111 28.8559 16.1074 27.7588 16.1074 26.6146C16.1074 25.4704 16.3111 24.3733 16.6559 23.3388V18.8875H10.9194C9.74388 21.2072 9.06992 23.8247 9.06992 26.6146C9.06992 29.4045 9.74388 32.022 10.9194 34.3417L15.3864 30.8621L16.6559 29.8904V29.8904Z\" fill=\"#FBBC05\"/>\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M26.3109 16.2386C28.85 16.2386 31.107 17.1164 32.9095 18.8091L37.8466 13.8719C34.853 11.082 30.9659 9.3736 26.3109 9.3736C19.5712 9.3736 13.7563 13.245 10.9194 18.8875L16.6559 23.3388C18.0195 19.2636 21.8282 16.2386 26.3109 16.2386V16.2386Z\" fill=\"#EA4335\"/>\n    </svg>\n    <svg class=\"logo-dark\" width=\"18\" height=\"18\" viewBox=\"0 0 48 48\" xmlns=\"http://www.w3.org/2000/svg\">\n      <circle cx=\"24\" cy=\"23\" fill=\"#FFF\" r=\"22\"/>\n      <path d=\"M33.76 34.26c2.75-2.56 4.49-6.37 4.49-11.26 0-.89-.08-1.84-.29-3H24.01v5.99h8.03c-.4 2.02-1.5 3.56-3.07 4.56v.75l3.91 2.97h.88z\" fill=\"#4285F4\"/>\n      <path d=\"M15.58 25.77A8.845 8.845 0 0 0 24 31.86c1.92 0 3.62-.46 4.97-1.31l4.79 3.71C31.14 36.7 27.65 38 24 38c-5.93 0-11.01-3.4-13.45-8.36l.17-1.01 4.06-2.85h.8z\" fill=\"#34A853\"/>\n      <path d=\"M15.59 20.21a8.864 8.864 0 0 0 0 5.58l-5.03 3.86c-.98-2-1.53-4.25-1.53-6.64 0-2.39.55-4.64 1.53-6.64l1-.22 3.81 2.98.22 1.08z\" fill=\"#FBBC05\"/>\n      <path d=\"M24 14.14c2.11 0 4.02.75 5.52 1.98l4.36-4.36C31.22 9.43 27.81 8 24 8c-5.93 0-11.01 3.4-13.45 8.36l5.03 3.85A8.86 8.86 0 0 1 24 14.14z\" fill=\"#EA4335\"/>\n    </svg>\n    <div class=\"gradient-container\"><div class=\"gradient\"></div></div>\n  </div>\n  <div class=\"carousel\">\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22Google+Ads+API%22+developer+contact+email+Gmail+approved+%22role+based%22&client=app-vertex-grounding&safesearch=active\">&quot;Google Ads API&quot; developer contact email Gmail approved &quot;role based&quot;</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=site:developers.google.com/google-ads/api+%22KeywordPlanIdeaService%22+%22token%22&client=app-vertex-grounding&safesearch=active\">site:developers.google.com/google-ads/api &quot;KeywordPlanIdeaService&quot; &quot;token&quot;</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22GenerateKeywordIdeas%22+vs+Keyword+Planner+volume+differences+Google+Ads+API&client=app-vertex-grounding&safesearch=active\">&quot;GenerateKeywordIdeas&quot; vs Keyword Planner volume differences Google Ads API</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=site:developers.google.com/google-ads/api+%22permissible+use%22&client=app-vertex-grounding&safesearch=active\">site:developers.google.com/google-ads/api &quot;permissible use&quot;</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=site:developers.google.com/google-ads/api+%22Basic+Access%22+quota+limit&client=app-vertex-grounding&safesearch=active\">site:developers.google.com/google-ads/api &quot;Basic Access&quot; quota limit</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=Google+Ads+API+access+level+%22Advertiser%22+%22Direct+Advertiser%22+%22MCC%22&client=app-vertex-grounding&safesearch=active\">Google Ads API access level &quot;Advertiser&quot; &quot;Direct Advertiser&quot; &quot;MCC&quot;</a>\n<a class=\"chip\" href=\"https://www.google.com/search?q=%22GenerateKeywordIdeas%22+%22Google+Ads+API%22+permitted+use+%22Researching+keywords%22&client=app-vertex-grounding&safesearch=active\">&quot;GenerateKeywordIdeas&quot; &quot;Google Ads API&quot; permitted use &quot;Researching keywords&quot;</a>\n  </div>\n</div>"
+        },
+        "groundingChunks": [
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHg_-t2q1p3nUdWgX8mTik1rejWIkAfkfKT5ydpVLHkKUVhdL0GrScqxVGW2Am4H2EFCevLZ3lFBGV5cdE_OkU5_9LpGUqlbbRgkayLetCm_DsFDc1UblNFr-s7mm0iaQawf-VPDBQ8G_176MA1OqLZN8V1ALd_4L282N2l4_j7Cabe9uorrPUngCvSksfEHF-UzwsNEOTumA==",
+              "title": "mixedanalytics.com"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJhIqhbtvQ7qaeurCVCGANqFODg5PJXfylAyj3KvnRx-CHUWvvMuV9JxC18ujQQewke0nJ77ns9ajB1khu9UdPJxRirMNjDi9FW1FJcJ1uSN24Q503d3MJnGJnRi8wPWVXasrsVG_JeSum5pq9zUfulOwnN7GQYyrqEv-nrKSY",
+              "title": "google.com"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJhIqhbtvQ7qaeurCVCGANqFODg5PJXfylAyj3KvnRx-CHUWvvMuV9JxC18ujQQewke0nJ77ns9ajB1khu9UdPJxRirMNjDi9FW1FJcJ1uSN24Q503d3MJnGJnRi8wPWVXasrsVG_JeSum5pq9zUfulOwnN7GQYyrqEv-nrKSY",
+              "title": "google.com"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEn4dtsX4NpXIEtnDhDz8tmvXPEwQLLakLTeKFgHDTa1xnllxxZSmt4om73xCArQzfCNUR3rPAiRQs2u-VcGWX6rKbrOdSyXZzgTyNYQv-QXzCj5rptQ0OEzOcCn2qi0H7y7X_z0UiqhiV1aftojGeRZX8=",
+              "title": "github.com"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJhIqhbtvQ7qaeurCVCGANqFODg5PJXfylAyj3KvnRx-CHUWvvMuV9JxC18ujQQewke0nJ77ns9ajB1khu9UdPJxRirMNjDi9FW1FJcJ1uSN24Q503d3MJnGJnRi8wPWVXasrsVG_JeSum5pq9zUfulOwnN7GQYyrqEv-nrKSY",
+              "title": "google.com"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH92QuZBYZPAE8afzALrZrGajUdA7RBB4FS5WSYtAv9IJoD3hd8hnsLSFPbLKckjZCRl-dY8FuYq0b8q6uHLMYuQPr7acLsusdrTXUWSeLyd_4hX6srnC-5g7LuZDbCBH8G9B4Tb8I-BbqsycjerPzwJdblHP0KdgFMEvQd",
+              "title": "google.com"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH92QuZBYZPAE8afzALrZrGajUdA7RBB4FS5WSYtAv9IJoD3hd8hnsLSFPbLKckjZCRl-dY8FuYq0b8q6uHLMYuQPr7acLsusdrTXUWSeLyd_4hX6srnC-5g7LuZDbCBH8G9B4Tb8I-BbqsycjerPzwJdblHP0KdgFMEvQd",
+              "title": "google.com"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGTT_hI3LIExVJFuTkGKIyO5IOL06249SBZO1XIpOyLTqdtXSVrifeUpzSAgl3Ac4yH29ZPXl3tVAMKrXZQ4f6HtAqR5VW3KDjQifx_lVyA6n6Kdy3lrS6dP0ST8dZ2fAiyywJ7L6ulb7cDYUgMGzu7qC1ZrHZefb6rM2ywtvBeXbfvwp1CIjw4aHerRBIRGg==",
+              "title": "google.com"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEUpH3bf6G5ivZ92YJUVgOmWU2oP5Rd-cemATrV8yIPOvzZ0KbIYoYaWnwBmoOheGWm__0pT_n47t5-AV5Z1B2vGwssZAq1BUBb6CFfOx0fmXhO9P31WjZ6r8KP3iVodU-jmVY7_bZ04Ld4rxRnipcEe2loxV6sA7Iekh1ENeR",
+              "title": "scribd.com"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmUy48iCYyNaIPhgQOwB86rUS92DlxAeQ6PaeeEVk6SbPRXpTDe7Ys6i_l-qEFkIURrrHpKeKXzco_B4ZGQxC581BGjdhhVnSjwaS3Aiycg_VN7N6Ar9BtoVUdztnqCgdQNmyJkZCMROLYvO1MSJWGi0SBcO3pGP2G9a1gKVmat1Yh7w==",
+              "title": "sec.gov"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_v6xxQXcHXcMCY1LuZ0uLt85RK_tMyTjoQj-4o7mfihrzG6kmjIhC8czxsQ_f51wdNxkz1KSJGfS6dTtH2JPlAlc_tc3Fm3iIhhHpXwbYkC0stBdf12-XRDiF8VyoVJjoGlD8mAVHEYp-IQ==",
+              "title": "google.com"
+            }
+          }
+        ],
+        "groundingSupports": [
+          {
+            "segment": {
+              "startIndex": 361,
+              "endIndex": 535,
+              "text": "**Economía de la unidad y listón de éxito:** Con un presupuesto de $7.000 ARS/día (~$210.000 ARS/mes netos) y CPC de ~$1.500 ARS, el volumen estimado es de ~140 clics/mes"
+            },
+            "groundingChunkIndices": [
+              0
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 1362,
+              "endIndex": 1474,
+              "text": "Creación de demanda:** Aunque el volumen absoluto en el Planificador es bajo (\"50 búsquedas/mes\" por término)"
+            },
+            "groundingChunkIndices": [
+              0
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 7523,
+              "endIndex": 7584,
+              "text": "Verificado contra la documentación oficial de Google Ads API"
+            },
+            "groundingChunkIndices": [
+              1,
+              2
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 7733,
+              "endIndex": 7902,
+              "text": "GenerateKeywordIdeas`, la documentación oficial establece que el developer token **DEBE tener asignado el Permissible Use *\"Researching keywords and recommendations\"***"
+            },
+            "groundingChunkIndices": [
+              2
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 7907,
+              "endIndex": 8156,
+              "text": "* Si la cuenta se declara únicamente para *\"Reporting\"*, las llamadas a los servicios de planificación (`KeywordPlanIdeaService`, `KeywordPlanService`, `KeywordPlanCampaignService`) quedan **bloqueadas en producción y devuelven error de permiso**"
+            },
+            "groundingChunkIndices": [
+              3,
+              2
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 8162,
+              "endIndex": 8350,
+              "text": "**Límites de cuota en Basic Access:**\n   * **Límite general:** Un token con nivel *Basic Access* dispone de **15.000 operaciones por día** tanto en cuentas de prueba como de producción"
+            },
+            "groundingChunkIndices": [
+              1,
+              4
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 8355,
+              "endIndex": 8586,
+              "text": "* **Límite específico para servicios de planificación (Planning Services):** Google impone una restricción adicional de tasa para `KeywordPlanIdeaService`: **1 QPS (1 solicitud por segundo / máximo 60 solicitudes por minuto)**"
+            },
+            "groundingChunkIndices": [
+              5,
+              6
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 8588,
+              "endIndex": 8699,
+              "text": "Si se realizan peticiones concurrentes o más rápidas que 1 QPS, la API devuelve el error `RESOURCE_EXHAUSTED`"
+            },
+            "groundingChunkIndices": [
+              5
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 9107,
+              "endIndex": 9149,
+              "text": "`40`, `210` búsquedas mensuales promedio)"
+            },
+            "groundingChunkIndices": [
+              0
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 9256,
+              "endIndex": 9444,
+              "text": "La API devuelve estrictamente los resultados asociados a las semillas (`keywordSeed`, `urlSeed`, `siteSeed`) y parámetros de localización/idioma enviados en la estructura de la solicitud"
+            },
+            "groundingChunkIndices": [
+              7
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 9624,
+              "endIndex": 9741,
+              "text": "** \nGoogle define \"Agency\" como una entidad que administra campañas e inversión publicitaria para clientes terceros"
+            },
+            "groundingChunkIndices": [
+              8
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 9743,
+              "endIndex": 9954,
+              "text": "Como Dataria va a utilizar la API exclusivamente para gestionar y analizar sus propias campañas dentro de su propia estructura MCC / CID, no califica como Agencia ni como desarrollador de software para terceros"
+            },
+            "groundingChunkIndices": [
+              9
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 10291,
+              "endIndex": 10343,
+              "text": "`info@dataria.work` o `google-ads-api@dataria.work`)"
+            },
+            "groundingChunkIndices": [
+              10
+            ]
+          },
+          {
+            "segment": {
+              "startIndex": 10513,
+              "endIndex": 10642,
+              "text": "Si respondés con un correo `@gmail.com`, el equipo de compliance pausará la solicitud y volverá a pedirte un email corporativo"
+            },
+            "groundingChunkIndices": [
+              10
+            ]
+          }
+        ],
+        "webSearchQueries": [
+          "\"Google Ads API\" developer contact email Gmail approved \"role based\"",
+          "site:developers.google.com/google-ads/api \"KeywordPlanIdeaService\" \"token\"",
+          "\"GenerateKeywordIdeas\" vs Keyword Planner volume differences Google Ads API",
+          "site:developers.google.com/google-ads/api \"permissible use\"",
+          "site:developers.google.com/google-ads/api \"Basic Access\" quota limit",
+          "Google Ads API access level \"Advertiser\" \"Direct Advertiser\" \"MCC\"",
+          "\"GenerateKeywordIdeas\" \"Google Ads API\" permitted use \"Researching keywords\""
+        ]
+      }
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 7802,
+    "candidatesTokenCount": 3268,
+    "totalTokenCount": 14483,
+    "cachedContentTokenCount": 2300,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 7802
+      }
+    ],
+    "cacheTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 2300
+      }
+    ],
+    "thoughtsTokenCount": 3413,
+    "serviceTier": "standard"
+  },
+  "modelVersion": "gemini-3.6-flash",
+  "responseId": "zG6AasPfEMjxxN8PkdPqiAY"
+}
