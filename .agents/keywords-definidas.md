@@ -186,6 +186,21 @@ Una semana. No son errores de medición, la subasta cambia. **Los números de es
 
 ---
 
+## Keywords en observación
+
+Están **cargadas y activas** en la campaña. Se listan acá porque hay que mirarlas de cerca en las primeras revisiones, no porque estén en duda.
+
+| Keyword | Grupo | Qué mirar |
+|---|---|---|
+| `software de gestion gastronomica` | G4 | Su puja **triplicó en 6 días** ($853 → $2.600). Con tope $1.800 aparece abajo del pliegue. Si su cuota de impresiones perdida por ranking es alta y trae términos relevantes, es la primera candidata a justificar subir el tope. |
+| `software para distribuidoras` | G3 | La más cara de la cuenta ($2.776 en ago-9, $1.952 en ago-15). Muy volátil. |
+| `software logistica` | G1 | Piso $2.124. Abajo del pliegue con el tope actual. |
+| `sistema de gestion para distribuidoras` | G3 | Piso $2.651. Abajo del pliegue. |
+
+**Cómo se decide si subir el tope por alguna de estas:** no alcanza con que tenga cuota de impresiones perdida — eso lo va a tener siempre una keyword cara. Tiene que cumplir **las dos** condiciones: cuota perdida por ranking alta **y** que los términos de búsqueda que trae sean relevantes. Si trae términos malos, subir el tope solo hace que pagues más caro por tráfico que igual no sirve.
+
+---
+
 ## Qué falta medir
 
 - **Inmobiliarias y e-commerce:** 2 de nuestras 4 verticales y **no se midió una sola keyword de ninguna**. Puede haber más volumen que en gastronomía, que resultó ser el rubro chico. Semillas listas en [`scripts/semillas/`](scripts/semillas/).
