@@ -47,6 +47,8 @@ Pujas de "parte superior de la página" según el Planificador, rango bajo:
 
 Con $1.800 se compite arriba en rutas, food cost y software gastronómico, y abajo de la página en los términos de logística/distribuidoras. **Es a propósito: se arranca conservador y se sube según la cuota de impresiones real a los 14 días.**
 
+> **Ojo con estas pujas: se mueven.** El barrido del 15-ago volvió a medir keywords que ya teníamos y dieron distinto. `software de ruteo logístico` pasó de **$2.303 a $521**; `optimizador de rutas` de **$1.376 a $1.964**. En una semana. No son errores: la subasta cambia. **Conclusión práctica: el tope de CPC se calibra con los datos reales de la campaña corriendo, no con el Planificador.** Los números de acá sirven para arrancar, no para decidir de una vez.
+
 ### Números esperados
 - $7.000 ARS/día neto = **$210.000 ARS/mes**.
 - Con impuestos (~24%: IVA 21% + IIBB, cuenta en pesos con facturación local) ≈ **$260.400 ARS/mes ≈ USD 190/mes**.
@@ -103,7 +105,9 @@ Software de Logística Pyme · Gestión Logística con IA · Ordená tu Operaci�
 *800 búsquedas/mes, 16 keywords. Es el módulo con testimonio real.*
 
 **Exacta:** `[optimizador de rutas]` · `[optimizar rutas de reparto]` · `[rutas de reparto]`
-**Frase:** `"planificacion de rutas de reparto"` · `"planificador de rutas logistica"` · `"software de reparto"`
+**Frase:** `"planificacion de rutas de reparto"` · `"planificador de rutas logistica"` · `"software de reparto"` · `"organizacion de rutas"` · `"app para organizar repartos"`
+
+*(Las dos últimas salieron del barrido de SimpliRoute el 15-ago: vocabulario real del mercado, y baratas — puja baja $529 y $568 contra $1.964 de `optimizador de rutas`.)*
 
 Paths: `distribuidoras` / `rutas`
 Negativos de grupo: `chofer`, `empleo`, `curso`, `moto`, `gps`, `waze`, `google maps`, `turistica`
@@ -142,8 +146,10 @@ Software para Distribuidoras · Gestión Integral con IA · Sin Equipo Técnico 
 ### G4 — Software gastronómico  → `https://www.dataria.work/gastronomia`
 *500 búsquedas/mes en una sola keyword: el 25% del volumen del rubro.*
 
-**Exacta:** `[software gastronomico]`
+**Exacta:** `[software gastronomico]` · `[sistema gastronomico]`
 **Frase:** `"software de gestion gastronomica"` · `"software para gastronomia"` · `"erp gastronomico"` · `"sistema de gestion para restaurantes"`
+
+> **`[sistema gastronomico]` es el hallazgo del barrido de competidores (15-ago): otras 500 búsquedas/mes** que no estaban en ninguna lista previa. Apareció en Maxirest **y** en Bistrosoft por separado — dos fuentes independientes. Con esto el ancla de gastronomía pasa de 500 a **1.000 búsquedas/mes**, y el rubro deja de depender de una sola keyword. Puja $1.642–$9.406.
 
 Paths: `gastronomia` / `gestion`
 
@@ -185,7 +191,9 @@ Calculá tu Food Cost Real · Márgenes Reales de Tu Menú · Software Food Cost
 ### G6 — Control de stock gastronómico  → `https://www.dataria.work/gastronomia`
 
 **Exacta:** `[inventario de cocina]` · `[control de mermas]`
-**Frase:** `"control de stock restaurante"` · `"software inventario restaurante"` · `"sistema de inventario para restaurante"` · `"control de stock insumos"`
+**Frase:** `"control de stock restaurante"` · `"software inventario restaurante"` · `"sistema de inventario para restaurante"` · `"control de stock insumos"` · `"software gestion de inventarios"`
+
+*(La última salió del barrido: puja baja $450, la más barata de todo el grupo.)*
 
 Paths: `gastronomia` / `stock`
 Negativos de grupo: `ropa`, `indumentaria`, `calzado`, `farmacia`, `ferreteria`, `kiosco`, `curso`, `excel`
@@ -218,7 +226,17 @@ Cargar **antes** de habilitar la campaña, no después.
 `toteat` · `bistrosoft` · `maxirest` · `fudo` · `simpliroute` · `quadminds` · `beetrack` · `tokko` · `tokko broker` · `marketman` · `choco` · `clientify`
 
 **Producto que Dataria no vende**
-`punto de venta` · `pos` · `tpv` · `comandas` · `caja registradora` · `gps` · `rastreo satelital` · `localizacion vehicular` · `proveedor de ultima milla` · `chazki`
+`punto de venta` · `pos` · `tpv` · `comandas` · `caja registradora` · `menu qr` · `carta qr` · `codigo qr` · `gps` · `rastreo satelital` · `localizacion vehicular` · `proveedor de ultima milla` · `chazki`
+
+**🔴 Cluster Google Maps — el más importante de todos**
+`google` · `maps` · `mapa` · `mapas` · `itinerario` · `trayecto` · `recorrido` · `waze` · `google earth` · `viaje` · `turismo`
+
+> **Por qué esto es lo que más plata salva.** El barrido de SimpliRoute (15-ago) devolvió **371 keywords y 30.650 búsquedas/mes** de gente buscando armar rutas en Google Maps: `crear ruta en google maps`, `mis rutas google`, `maps cómo llegar` (5.000/mes). Es el cluster de ruido más grande que encontramos, **10 veces más grande que todo el mercado real de Dataria**, y pega justo al lado de las keywords de rutas.
+>
+> Que no es tráfico comercial lo confirma la puja: **$17 a $79**. Nadie puja por esa gente porque no compra nada. Si entra a la campaña, son clics baratos que el algoritmo va a perseguir con gusto y que no convierten nunca.
+
+**Marcas nuevas detectadas en el barrido** (sumar a la lista de competidores de arriba)
+`el chef` · `insoft` · `managementpro` · `management pro` · `articotrans` · `quonext` · `cloudfleet` · `mediagenia` · `unigis` · `highway` · `routal` · `fieldpro` · `drivin` · `gour-net` · `pedisy` · `presik` · `bcnsoft`
 
 ---
 
