@@ -37,8 +37,10 @@ El bloqueo de antigüedad de cuenta (7 días desde el 19/jul) venció el 26/jul.
 ### 3. Google Business Profile — solo falta sumar reseñas
 Perfil completo (verificación, fotos, horario, servicios, URL de reserva). Tarea continua: pedir reseñas reales a clientes (Mariana, Luciano, Gabriel y los que se sumen).
 
-### 4. Investigación de keywords — lo que falta medir
-Detalle en `.agents/keywords-investigacion.md`, sección "Qué falta explorar". Lo principal: **inmobiliarias y e-commerce nunca se midieron** (puede haber más volumen que en gastronomía), y no se usó el método de correr el Planificador con "Empezar con un sitio web" apuntando a competidores (toteat, bistrosoft, simpliroute, quadminds) para ver el vocabulario real del mercado. Hacerlo después de lanzar, no antes.
+### 4. Investigación de keywords — segunda vuelta, plan listo para correr
+Plan completo en `.agents/keywords-plan-barrido.md`, con las semillas ya escritas en `.agents/scripts/semillas/`. Cuatro bloques: método de competidores, capa "problema" del embudo, ángulos no cubiertos, y las dos verticales nunca medidas (inmobiliarias y e-commerce).
+
+**Los cuatro bloques se pueden correr a mano en el Planificador hoy, sin esperar la API.** Cuando llegue Basic Access, el mismo trabajo lo hace `.agents/scripts/keyword_ideas.py` sin trabajo manual.
 
 ### 5. Idea sin desarrollar — agente que optimice la campaña de Ads de forma continua
 Conectar un agente con el contexto y el análisis de la campaña real, vinculado a Google Trends o similar, para ir sugiriendo mejoras con el tiempo. Idea sin definir del todo. Retomar una vez que la campaña esté andando y con la API aprobada.
