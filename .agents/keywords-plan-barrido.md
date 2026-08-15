@@ -21,7 +21,16 @@ No fue por falta de búsqueda: se midieron 1.400 términos. Quedó flaca por tre
 
 En vez de escribir semillas, se le da al Planificador la URL de un competidor y devuelve **los términos por los que Google lo clasifica**. Es vocabulario real del mercado, no el nuestro.
 
-**Cómo:** Google Ads → Herramientas → Planificación → Planificador de palabras clave → Descubrir nuevas palabras clave → pestaña **"Empezar con un sitio web"** → pegar la URL → elegir **"Usar todo el sitio"**.
+**Cómo:** Google Ads → Herramientas → Planificación → Planificador de palabras clave → Descubrir nuevas palabras clave → pestaña **"Empezar con un sitio web"** → pegar la URL → **elegir bien entre las dos opciones (ver abajo)**.
+
+### ⚠️ "Usar todo el sitio" vs "Usar solo esta página" — no da igual
+
+| Tipo de URL | Opción correcta | Por qué |
+|---|---|---|
+| Sitio de una marca (`maxirest.com`, `quadminds.com`) | **Usar todo el sitio** | Toda la empresa vende un solo producto: el sitio entero ya es la categoría. |
+| Página de categoría de un directorio (`comparasoftware.com.ar/planificacion-de-rutas`) | **Usar solo esta página** | Con "todo el sitio", Google **ignora la ruta** y toma el dominio entero. |
+
+**Esto ya falló una vez (15-ago).** Se corrieron las dos URLs de comparasoftware con "Usar todo el sitio": Google descartó `/planificacion-de-rutas` y `/software-para-restaurantes`, midió el dominio completo, y devolvió **el mismo archivo idéntico las dos veces** — 154 keywords de las que 37% eran de organigramas y 10% de farmacias. Cero utilidad. Un directorio comparador cubre todos los rubros; sin la ruta, devuelve su catálogo entero.
 
 Verificar arriba que diga **Argentina** y **Español**. Una URL por corrida. Descargar el CSV de cada una.
 
