@@ -13,7 +13,7 @@ Este es el documento de referencia del proyecto de Ads: qué se midió, qué sal
 - **Distribuidoras es 5 a 10 veces más grande que gastronomía.** El plan original tenía la prioridad al revés.
 - El mercado total alcanzable es chico: **~6.000 a 8.000 búsquedas/mes** entre los dos rubros.
 - Alrededor hay clusters enormes de tráfico que **no es nuestro cliente** — el más grande, 30.650 búsquedas/mes.
-- Arrancamos con **1 campaña, 6 grupos, 38 keywords**, $7.000 ARS/día y tope de CPC de $1.800.
+- Arrancamos con **1 campaña, 6 grupos, 39 keywords**, $7.000 ARS/día y tope de CPC de $1.800.
 - Con nuestra economía (setup USD 200-500 + USD 50-150/mes indefinido), **1 o 2 clientes al año pagan toda la pauta anual**.
 
 ---
@@ -68,7 +68,7 @@ Juntas son **1.000 búsquedas/mes**: la mitad del rubro. Ninguna de las dos se n
 
 ## Con qué arrancamos
 
-**1 campaña · 6 grupos · 38 keywords · $7.000 ARS/día · tope CPC $1.800.**
+**1 campaña · 6 grupos · 39 keywords · $7.000 ARS/día · tope CPC $1.800.**
 
 Una sola campaña porque fragmentar el presupuesto deja cada mitad por debajo del umbral de aprendizaje del algoritmo.
 
@@ -135,6 +135,7 @@ Una sola campaña porque fragmentar el presupuesto deja cada mitad por debajo de
 | `calcular food cost` | Frase | 50 | — | ✅ |
 | `software food cost` | Frase | 50 | — | ✅ |
 | `ficha tecnica de platos` | Frase | 50 | — | ✅ |
+| `costo de platos restaurante` | Frase | sin medir | — | ✅ decisión de Imanol 17-ago |
 | `control de mermas` | Frase | 50 | — | ✅ |
 
 **G6 · Control de stock gastronómico** → `/gastronomia`
@@ -156,9 +157,13 @@ Una sola campaña porque fragmentar el presupuesto deja cada mitad por debajo de
 >   Baja) y pertenece a food cost, no a stock: `merma` es un campo de la demo de Food Cost
 >   (`src/components/demos/gastronomia/FoodCostDemo.tsx`), porque es lo que distorsiona el costo
 >   del plato.
-> - **`costo de platos restaurante` queda descartada.** No la midió nadie: no aparece en la ronda
->   1, ni en el barrido, ni en este documento. Existía solo en la spec vieja.
-> - **Son 38 keywords**, no 34. El resumen decía mal: 6+8+6+6+6+6.
+> - **`costo de platos restaurante` entra a G5 en frase — decisión de Imanol (17-ago).** Se había
+>   propuesto descartarla por no tener volumen medido: no aparece tabulada en la ronda 1 ni en el
+>   barrido. Imanol la sostuvo, y tiene con qué: la ronda 1 **sí corrió ese ángulo** como semilla
+>   ("cuánto cuesta un plato", "rentabilidad"). En concordancia de frase el riesgo es casi nulo —
+>   si nadie la busca no junta impresiones, no gasta por existir. **Mirarla a los 14 días:** si no
+>   tuvo ni una impresión, se saca.
+> - **Son 39 keywords**, no 34: 6+8+6+6+7+6. G5 queda con 7.
 
 ---
 
