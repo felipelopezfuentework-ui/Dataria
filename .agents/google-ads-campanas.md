@@ -2,7 +2,58 @@
 
 **Estado (2026-08-15):** especificación lista para cargar. Reemplaza por completo la versión del 25-jul, que quedó obsoleta tras la investigación de keywords con datos reales del Planificador (ver `.agents/keywords-investigacion.md`) y las consultas 009-011 a Gemini.
 
-**Nada de esto se cargó todavía en la plataforma. Cero pesos gastados.**
+**🟡 La campaña YA EXISTE: publicada y EN PAUSA desde el 15/ago, con $0,00 gastados.** Solo está creado G1. Estado completo y pantalla por pantalla en [`CONTEXTO-PARA-NUEVO-CHAT.md`](CONTEXTO-PARA-NUEVO-CHAT.md).
+
+---
+
+## ⚠️ Correcciones aplicadas durante la carga real (15/ago) — MANDAN sobre lo que dice más abajo
+
+Este documento se escribió antes de cargar. Durante la carga se cambiaron cosas. **Donde haya conflicto, gana esta sección.**
+
+### 1. 🔴 Fuera todas las menciones de clientes
+Imanol pidió sacarlas ("no me gusta"). Afecta **títulos y descripciones de G1, G2, G3** (`Usado por Pollo Cocido`, "Ya lo usa Pollo Cocido…") y **G4, G5** (`Usado por Pastas Pariggi`, "Ya lo usan Pastas Pariggi y MP Catering"). **Ignorar esos títulos y descripciones al cargar G3, G4 y G5** — hay que reemplazarlos por diferenciales.
+
+> Pendiente sin definir: la landing `/distribuidoras` **sí publica** el testimonio "Gabriel Morales — Pollo Cocido", y la "descripción larga con nombres" de `PENDIENTES.md` también.
+
+### 2. G1 — títulos finales cargados
+`Software de Logística Pyme` · `Gestión Logística con IA` · **`Software de Transporte Pyme`** · **`Sistema ERP para Logística`** · `Ordená tu Operación Diaria` · `Probá la Demo Gratis` · `Sin Equipo Técnico` · `IA a Medida para tu Pyme` · `Setup en 2-4 Semanas` · `Nosotros Integramos Todo` · `Empezá con Un Módulo` · `Sin Instalar Nada Técnico` · `Rutas, Stock y Demanda` · `Agendá tu Consulta Gratis` · `Menos Excel, Más Control`
+
+Salió `Software Hecho a tu Medida` (redundante con `IA a Medida para tu Pyme`) y `Usado por Pollo Cocido`.
+Descripción 4 pasó a: *"Empezá con un módulo y sumá otros sin rehacer nada. Agendá tu consulta gratis."*
+
+**Por qué los dos títulos nuevos:** solo 2 de los 15 originales decían "logística", y **ninguno** decía "transporte" ni "ERP", teniendo keywords de ambos (`software para transporte y logistica`, `sistema erp logistica`). Menos relevancia = peor nivel de calidad = CPC más caro.
+
+> **Regla para G3-G6: antes de cargar, contar cuántos títulos contienen el término núcleo de las keywords del grupo.** Balance sano ~4 de relevancia y ~11 de diferencial.
+
+### 3. G2 — títulos y descripciones finales
+Entra **`Planificá tus Repartos`** en lugar de `Usado por Pollo Cocido` (cubre `planificacion de rutas de reparto` y `planificador de rutas logistica`, que ningún título tocaba). Descripción 1 pierde el "sin registrarte"; descripción 4 pasa a *"Menos horas armando rutas a mano cada mañana. Agendá tu consulta gratis."* Lista completa en el CONTEXTO.
+
+### 4. Sitelinks — los 4 de abajo NO se usaron
+Se descartó `Casos reales → /blog` (el blog tiene **notas, no casos** — verificado) y se rearmaron neutros, porque los sitelinks de campaña aparecen bajo los 6 grupos y Google exige destinos distintos:
+
+| Título | Desc. 1 | Desc. 2 | URL |
+|---|---|---|---|
+| Agendá tu consulta | 15 minutos, sin costo | Contanos tu caso | `/#contacto` |
+| Cómo funciona Dataria | Setup, seguimiento, expansión | Sin equipo técnico propio | `/#como-trabajamos` |
+| Guías para pymes | Food cost, rutas y stock | Para gastronomía y logística | `/blog` |
+| Soluciones por rubro | Gastronomía y distribución | IA adaptada a tu operación | `/#industrias` |
+
+> **Anclas reales verificadas:** `#industrias`, `#como-trabajamos`, `#contacto` en la home. **`#demos` existe en `/gastronomia`, NO en `/distribuidoras`.** No hay página de precios.
+
+### 5. Textos destacados
+`Datos 100% seguros` → **`Datos alojados en la nube`**. El claim absoluto no se puede sustanciar.
+
+### 6. Extractos del sitio (no estaban en esta spec)
+Encabezado **"Servicios"**: Optimización de rutas · Control de stock · Proyección de demanda · Cálculo de food cost
+
+### 7. ⚠️ Claims cargados que nadie verificó
+- **"Probá la Demo Gratis" / "sin registrarte"** — dos lecturas del sitio sugieren que **no hay demo autoservicio**. No concluyente (el fetch no ejecuta JS). Si pide datos, hay que reescribir texto en los 6 grupos: es desaprobación por destino engañoso.
+- **"Setup en 2-4 Semanas"** — en textos destacados y en 4 grupos, sin confirmar.
+
+### 8. IA Max: apagado, entero
+Incluidas personalización de texto, expansión de URL final y búsquedas de marca. También se descartaron el **Formulario para clientes potenciales** (captura el lead dentro de Google, no dispara `generate_lead`) y las **extensiones de llamada** (una llamada no es conversión medible acá).
+
+---
 
 ---
 

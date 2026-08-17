@@ -14,8 +14,33 @@
 
 ## 🔴 Pendientes activos
 
-### 1. Google Ads — LO ÚNICO PRIORITARIO. Spec lista, falta cargarla.
-Especificación completa y actualizada en `.agents/google-ads-campanas.md` (reescrita el 15/ago: 1 campaña, 6 grupos, distribuidoras como rubro principal, $7.000 ARS/día, Maximizar clics con tope de CPC $1.800).
+### 1. Google Ads — 🟡 EN CARGA. Campaña publicada EN PAUSA el 15/ago.
+
+> **📄 Antes de tocar nada, leer `.agents/CONTEXTO-PARA-NUEVO-CHAT.md` completo.** Ahí está el estado pantalla por pantalla, cada decisión con su motivo y lo que falta verificar.
+
+**Estado real (15/ago, fin de jornada):** la campaña `Search - Dataria - Alta Intención` **existe, está publicada y en pausa**. Presupuesto 7.000 ARS/día, tipo Búsqueda, **0 clics · 0 impresiones · $0,00 gastado**. Se dejó en pausa a propósito: **los negativos todavía no están cargados** y la fecha de inicio es hoy.
+
+**Solo está creado G1** (6 keywords + 1 anuncio). El asistente crea la campaña con un grupo; G2 a G6 se agregan desde la interfaz normal.
+
+**Para retomar, en orden:**
+1. **Verificar 3 cosas que el resumen de creación no mostró:** tope de CPC en **$1.800**, Ubicaciones en **"Presencia"** (no "Presencia o interés"), **IA Max desactivado**.
+2. **Cargar negativos de campaña** — la lista grande, incluido el cluster Google Maps. **Antes de habilitar.**
+3. Crear **G2 a G6** (G2 ya está redactado y corregido en el CONTEXTO).
+4. Negativos por grupo, seis listas.
+5. **Verificar moneda ARS** en Facturación → Configuración.
+6. Renombrar la PMax vieja a `ZZ - VIEJA - PMax - NO USAR`.
+7. **Quitar la extensión de ubicación** (Vicente López · Julio Argentino Roca 2253) — decidido por Imanol, se saca a nivel **cuenta**.
+8. Habilitar.
+
+**⚠️ Dos claims cargados que nadie verificó:**
+- **"Probá la Demo Gratis" / "sin registrarte"** — dos lecturas del sitio sugieren que **no hay demo autoservicio** (todo pasa por "Agendar reunión" / "Solicitar demo"). No es concluyente (la herramienta no ejecuta JS). Si pide datos, hay que reescribir texto en los 6 grupos: prometer prueba sin registro y entregar formulario es desaprobación por destino engañoso.
+- **"Setup en 2-4 Semanas"** — en textos destacados y en 4 grupos. Nadie confirmó el plazo real.
+
+**🔴 Decisión del 15/ago: sin menciones de clientes en los anuncios.** Fuera `Usado por Pollo Cocido` y `Usado por Pastas Pariggi` / `MP Catering`. **La spec `google-ads-campanas.md` todavía los tiene — ignorarlos al cargar.** Pendiente: la landing `/distribuidoras` **sí publica** el testimonio "Gabriel Morales — Pollo Cocido", y la "descripción larga CON nombres de clientes" de este mismo documento también. Imanol no definió si eso también sale.
+
+**⚠️ Los documentos no están sincronizados:** `keywords-definidas.md` lista 38 keywords pero su resumen dice 34, y `google-ads-campanas.md` da otro número. `control de mermas` figura en G5 en un doc y en G6 en el otro. Reconciliar al terminar la carga.
+
+Especificación completa en `.agents/google-ads-campanas.md` (reescrita el 15/ago: 1 campaña, 6 grupos, distribuidoras como rubro principal, $7.000 ARS/día, Maximizar clics con tope de CPC $1.800). **Desactualizada respecto de lo que se cargó de verdad** — el CONTEXTO manda.
 
 **📄 Documento base del proyecto: `.agents/keywords-definidas.md`** — qué se midió, qué salió, con qué keywords arrancamos y qué se descartó. Es el que hay que leer primero y el que se actualiza con los datos de la campaña real. Detalle de las mediciones en `keywords-investigacion.md` (ronda 1) y `keywords-plan-barrido.md` (método de la ronda 2).
 

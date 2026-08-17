@@ -49,19 +49,108 @@
 | Borrador | "Creación de una campaña nueva". Nombre: `Search - Dataria - Alta Intención` |
 | Objetivo de conversión | `Envío de formularios para clientes potenciales` = `generate_lead`. **1 sola acción** ✅ |
 | Resultados | ☑️ Visitas al sitio web (`https://www.dataria.work`) · ☐ Llamadas telefónicas **sin marcar** |
-| Estrategia de puja | **Clics** (bajo "Otras opciones de optimización") + tope de CPC **$1.800** |
+| Estrategia de puja | **Clics** + tope de CPC **$1.800 ARS**. "Pujar solo por clientes nuevos" **sin marcar**. ✅ Confirmado por captura 15-ago |
 
-### La pantalla donde quedó
+### Configuración de la campaña ✅ (confirmada por captura 15-ago)
 
-Estaba por seleccionar **Clics** en el desplegable de estrategia de puja y marcar el límite de CPC en 1800.
+| Ajuste | Cómo quedó |
+|---|---|
+| Redes | Partners de búsqueda **☐** · Display **☐** — las dos desmarcadas |
+| Ubicaciones | **Argentina**, y en *Opciones de ubicación* → **"Presencia"** (no "Presencia o interés") |
+| Idiomas | **Español** solo. Google sugiere agregar Inglés — ignorado |
+| Anuncios políticos UE | "No incluye", + casilla de aplicar a toda la cuenta |
+| Segmentos de audiencia | **Ninguno**, y en modo **Observación**. A 4 clics/día ningún segmento junta volumen; "Segmentación" habría recortado el alcance. Contra: los datos de segmento no se juntan retroactivamente — si más adelante se quieren, se agregan y listo |
+| Más ajustes | Todo por defecto: rotación "Optimizar", todo el día, sin opciones de URL, sin feeds de páginas |
+| **IA Max** | **APAGADO**, con sus tres sub-opciones (personalización de texto, expansión de URL final, búsquedas de marca) |
 
-### Lo que falta
+> **Por qué IA Max apagado.** Es el mismo mecanismo de PMax con otro nombre: amplía keywords por IA, reescribe textos y cambia la URL de destino. Con el cluster de **30.650 búsq./mes de "armar rutas en Google Maps"** pegado al lado de las keywords de rutas —y con CPC de $17-79, o sea clics baratos que el algoritmo persigue con gusto— la expansión automática es la vía más rápida a quemar el presupuesto. El "+14% de conversiones" que promete Google describe cuentas **con** historial de conversiones; ésta tiene cero. Se puede re-testear en 2-3 meses, con negativos maduros y conversiones reales, en campaña aparte.
+>
+> ⚠️ **Expansión de URL final** en particular pisaría las URL finales propias por grupo, que están elegidas a propósito.
 
-1. Terminar puja: **Clics + tope $1.800**. "Adquisición de clientes" → **apagada**.
-2. **Presupuesto: $7.000 ARS/día**
-3. **Segmentación:** Argentina, y en *Opciones de ubicación* elegir **"Presencia"** (viene "Presencia o interés"). Idioma: español.
-4. **Redes: DESMARCAR** "Socios de búsqueda" y "Red de Display".
-5. **Negativos de campaña ANTES de habilitar** (están en `google-ads-campanas.md`).
+⚠️ Google ofrece botones **"Aplicar"** para volver a prender partners de búsqueda y expansión a Display. **Ignorarlos siempre**, acá y en la pestaña de Recomendaciones.
+
+### Extensiones de campaña ✅ (cargadas 15-ago)
+
+**4 sitelinks**, todos neutros (sirven a los 6 grupos por igual) y con destinos distintos, como exige Google:
+`Agendá tu consulta` → `/#contacto` · `Cómo funciona Dataria` → `/#como-trabajamos` · `Guías para pymes` → `/blog` · `Soluciones por rubro` → `/#industrias`
+
+**5 textos destacados:** Sin equipo técnico · Probalo antes de pagar · Setup en 2-4 semanas · **Datos alojados en la nube** · Empezá con 1 módulo
+> "Datos 100% seguros" de la spec se cambió por "Datos alojados en la nube": el claim absoluto no se puede sustanciar.
+
+**Extractos del sitio**, encabezado "Servicios": Optimización de rutas · Control de stock · Proyección de demanda · Cálculo de food cost
+
+**De los otros 7 tipos de recurso, ninguno.** En particular **Formulario para clientes potenciales → NO**: captura el lead dentro de Google, la persona no llega al sitio, no dispara `generate_lead` y saltea las demos. **Llamadas → NO**, por coherencia con haber dejado "Llamadas telefónicas" sin marcar. **Precios** es el único que vale repensar más adelante (filtra a quien no puede pagar), pero hoy la web no publica precios y la extensión tiene que ser consistente.
+
+### 🔴 Decisión nueva del 15-ago: sin menciones de clientes
+
+**Imanol pidió sacar `Usado por Pollo Cocido` y `Usado por Pastas Pariggi` / `MP Catering` de todos los anuncios.** Aplica a G1, G2, G3 (Pollo Cocido) y G4, G5 (Pariggi/MP Catering) — la spec de `google-ads-campanas.md` todavía los tiene, hay que ignorarlos al cargar.
+
+⚠️ **Inconsistencia sin resolver:** la landing `/distribuidoras` **sí publica** un testimonio con nombre — "Gabriel Morales — Pollo Cocido". Se sacó de los anuncios pero sigue en la web. Decisión pendiente de Imanol.
+
+### ⚠️ Claims sin verificar que siguen cargados
+
+- ~~**"Probá la Demo Gratis" / "sin registrarte"**~~ → **RESUELTO el 16-ago, leyendo el código fuente** (commit `5ad83e4`). La demo **sí es autoservicio y no pide un solo dato**:
+  - `/gastronomia` monta `<GastronomiaDemos />` (`src/app/gastronomia/page.tsx:81`), que renderiza `IndustryDemoPanel` con las 3 demos: Food cost, Control de stock, Planificador de turnos.
+  - El botón **"Ver demo"** (`src/components/industry/IndustryDemoPanel.tsx:81-85`) solo hace `setActiveDemoId(id)`: cambia estado en el cliente y monta el componente. **No hay formulario, ni mail, ni modal previo, ni redirección.**
+  - Los demos traen datos de ejemplo cargados (`FoodCostDemo.tsx:35-41`: aceite de oliva, harina 000, mozzarella…). Los `<Input>` que aparecen adentro son para agregar insumos **dentro** de la demo, no datos personales.
+  - **No hay `middleware.ts`**, ni auth, ni gate: la ruta es pública y las demos cargan con `dynamic(..., { ssr: false })`.
+  - **Conclusión:** el claim "Probá la demo gratis" es sustentable, y **"sin registrarte" también** — se sacó por precaución y se puede volver a poner. Verificado contra el código, no contra la página renderizada; un clic en producción lo cierra del todo.
+- **"Setup en 2-4 Semanas"** — aparece en textos destacados y como título en 4 grupos. Nadie confirmó que los setups reales entren en ese plazo.
+
+### Verificado del sitio (15-ago, por fetch)
+
+- `/blog` **existe**, 5 artículos publicados (food cost, ventana horaria, inmobiliarias, predicción de stock, Excel vs ERP vs IA). Son **notas, no casos de clientes** — por eso se descartó el sitelink "Casos reales".
+- Anclas reales de la home: `#industrias`, `#como-trabajamos`, `#contacto`. **`#demos` existe en `/gastronomia`, NO en `/distribuidoras`.**
+- Páginas: `/`, `/gastronomia`, `/distribuidoras`, `/inmobiliarias`, `/ecommerce`, `/blog`, `/privacidad`, `/terminos`. **No hay página de precios.**
+
+### 🟢 ESTADO AL 15-AGO, FIN DE JORNADA
+
+**La campaña `Search - Dataria - Alta Intención` está PUBLICADA y EN PAUSA.** Confirmado por captura: presupuesto 7.000,00 ARS/día, tipo Búsqueda, fecha de inicio 15 ago 2026, **0 clics · 0 impresiones · $0,00 gastado**.
+
+Se publicó en pausa a propósito, porque **los negativos todavía no están cargados** y la fecha de inicio es hoy.
+
+**Solo existe G1** (6 keywords + 1 anuncio). El asistente de creación crea la campaña con un grupo; G2 a G6 se agregan desde la interfaz normal, que es más rápida.
+
+### ⚠️ Tres cosas a verificar apenas se retome
+
+No se pudieron confirmar en la pantalla de revisión:
+
+1. **Tope de CPC en $1.800.** El resumen decía solo "Maximiza los clics", sin mostrar el límite. Es el número que define la campaña — verificarlo en Configuración → Puja.
+2. **Ubicaciones en "Presencia"**, no "Presencia o interés". El resumen decía solo "Argentina".
+3. **IA Max desactivado.** Dos capturas del mismo resumen mostraron textos contradictorios ("activadas" y "desactivadas"). Tiene que decir **desactivadas**.
+
+### Lo que falta, en orden
+
+1. **Verificar los 3 puntos de arriba.**
+2. **Negativos de campaña** — la lista grande de `google-ads-campanas.md`, incluido el cluster Google Maps. **Antes de habilitar.**
+3. **Crear G2 a G6** con keywords y anuncio. *(G2 ya está redactado y corregido — ver abajo.)*
+4. **Negativos por grupo**, seis listas.
+5. **Verificar moneda ARS** en Facturación → Configuración. Si estuviera en USD, el `1800` cargado significaría USD 1.800 por clic.
+6. Renombrar la PMax vieja a `ZZ - VIEJA - PMax - NO USAR`.
+7. **Quitar la extensión de ubicación** (Vicente López · Julio Argentino Roca 2253) — **decidido por Imanol el 15-ago**. Se saca desde recursos a nivel **cuenta**, no desde la campaña.
+8. **Habilitar**, recién después de 2 y 4.
+
+### G2 — Rutas de reparto, listo para cargar
+
+Nombre `G2 - Rutas de Reparto` · URL `https://www.dataria.work/distribuidoras` · Rutas `distribuidoras` / `rutas`
+
+**Keywords (8):** `[optimizador de rutas]` · `[optimizar rutas de reparto]` · `[rutas de reparto]` · `"planificacion de rutas de reparto"` · `"planificador de rutas logistica"` · `"software de reparto"` · `"organizacion de rutas"` · `"app para organizar repartos"`
+
+**Títulos (15):** Optimizá tus Rutas de Reparto · Software de Ruteo Argentina · Rutas para Pyme de Reparto · **Planificá tus Repartos** · IA que Arma tus Rutas · Menos Horas Armando Rutas · Menos Km, Más Entregas · Organizá Entregas sin Excel · Reducí Costos de Nafta · Ventana Horaria sin Drama · Probá la Demo Gratis · Sin Equipo Técnico · Nosotros Integramos Todo · Sin Instalar Nada Técnico · Agendá tu Consulta Gratis
+
+**Descripciones (4):**
+- Optimizá rutas y reducí kilómetros con IA. Probá la demo gratis.
+- Sabé cuándo llega cada pedido, sin llamados ni WhatsApp perdidos.
+- Nosotros integramos todo: no necesitás saber de tecnología para empezar hoy.
+- Menos horas armando rutas a mano cada mañana. Agendá tu consulta gratis.
+
+> Cambios contra la spec: salió `Usado por Pollo Cocido`, entró `Planificá tus Repartos` (cubre las keywords de "planificación/planificador", que ningún título tocaba). Se sacó "sin registrarte" de la descripción 1 y la mención de cliente de la descripción 4.
+
+### Método de chequeo por grupo (aplicarlo a G3-G6)
+
+En **G1 solo 2 de 15 títulos** decían "logística", y ninguno "transporte" ni "ERP", teniendo keywords de las dos. Se agregaron `Software de Transporte Pyme` y `Sistema ERP para Logística`, y salieron `Menos Excel, Más Control` (volvió después) y `Software Hecho a tu Medida`.
+
+**Antes de cargar cada grupo: contar cuántos títulos contienen el término núcleo de sus keywords.** Un balance sano es ~4 de relevancia y ~11 de diferencial. G2 ya venía bien (6 de 15 con "rutas"/"ruteo").
 6. **Los 6 grupos** con sus keywords, negativos de grupo y URL final propia.
 7. **1 anuncio adaptable por grupo** — ya escritos y verificados, ninguno pasa los límites de caracteres.
 8. Sitelinks y textos destacados.
@@ -160,6 +249,43 @@ Es una hipótesis mejor informada, **nunca una validación**. Tres modos de fall
 3. **Deriva entre consultas** — reintrodujo `[escandallo]` que ella misma había descartado, y agregó rubros que nadie pidió.
 
 Contrastar contra fuente primaria **todo** número, todo "requiere/exige", y toda contradicción con una decisión previa. Documentar el veredicto junto a la respuesta.
+
+---
+
+## 6bis. ¿Conviene gastar más de $7.000/día? (analizado el 15-ago)
+
+Imanol preguntó, y se calculó contra los datos reales en vez de estimar.
+
+**De las 38 keywords, 36 están en el cajón "50" de Google (rango 10-100).** Solo `software gastronomico` y `sistema gastronomico` tienen volumen diferenciado (500 c/u). Volumen capturable estimado: **~2.800 búsq./mes**.
+
+```
+~2.800 búsquedas/mes  ×  ~60% cuota de impresiones  =  ~1.680 impresiones
+~1.680  ×  5% CTR  =  ~84 clics/mes  ×  $1.500 CPC  =  ~$126.000/mes  =  $4.200/día
+```
+
+**Contra un presupuesto de $7.000/día.** Con CTR optimista (8%) da ~$6.000/día; con pesimista (3%), ~$2.500. **En los tres escenarios el techo del mercado queda por debajo del presupuesto** → subirlo no compraría un solo clic más. Es el mismo error de la PMax vieja: $20.159/día de presupuesto, $14,22 gastados.
+
+> ⚠️ El **CTR del 5% es un supuesto**, no un dato de Dataria. Nadie midió el CTR de estos anuncios porque nunca corrieron.
+
+**Las palancas de crecimiento, en orden de impacto:**
+1. **Más keywords** de los clusters ya medidos (G1 tiene 69 keywords en su cluster, se cargaron 6).
+2. **Subir el tope de CPC** a $2.500-2.800 por las keywords caras bajo el pliegue.
+3. **Medir inmobiliarias y e-commerce**, dos verticales sin una sola keyword medida.
+4. **El presupuesto entra recién cuarto.**
+
+**Cómo se confirma:** a los 14 días, *cuota de impresiones perdida por presupuesto* debería estar cerca de **0%**. Si está alta, este análisis estaba mal y subir el presupuesto pasa a ser lo primero.
+
+### Cuándo y cómo se amplían las keywords
+
+**A los 14 días, con el informe de términos de búsqueda — NO volviendo al Planificador.** El Planificador dice qué *podría* buscar la gente; el informe dice qué buscó **realmente alguien que vio el anuncio**. Los términos relevantes con clics se agregan como exactas propias; el ruido va a negativos.
+
+**No ampliar antes:** con 60 keywords más, el mismo presupuesto se reparte, cada una junta 2-3 clics al mes y a los 14 días no se puede decidir nada sobre ninguna.
+
+> **Ojo con "quedaron muchas afuera":** la concordancia de **frase ya captura variantes** (`"software de gestion logistica"` se activa con "mejor software de gestión logística para pymes"). El volumen real capturado está entre 300 y 4.350 en G1, no en el piso. Decir "queda el 93% sin tocar" exagera.
+
+### ⚠️ Los documentos no están sincronizados
+
+Conteo de keywords: **`keywords-definidas.md` lista 38 pero su propio resumen dice 34**, y `google-ads-campanas.md` da otro número. Además `control de mermas` está en G5 en un documento y en G6 en el otro, y `costo de platos restaurante` aparece solo en uno. **Reconciliar después de terminar la carga.**
 
 ---
 
