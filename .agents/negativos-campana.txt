@@ -1,0 +1,113 @@
+# NEGATIVOS A NIVEL CAMPAÑA — Search - Dataria - Alta Intención
+# Revisado el 2026-08-17. Cargar TODOS en concordancia AMPLIA (sin comillas ni corchetes),
+# salvo la única línea marcada como FRASE al final.
+# Pegar de una sola vez en: Herramientas → Administrador de exclusiones →
+# Listas de palabras clave negativas → nueva lista "Ruido - Dataria" → aplicar a la campaña.
+# NO copiar las líneas que empiezan con #.
+
+# ── Intención de no pagar / investigar ──
+gratis
+free
+open source
+github
+descargar
+plantilla
+plantillas
+pdf
+ejemplo
+ejemplos
+curso
+cursos
+capacitacion
+tutorial
+tutoriales
+como hacer
+que es
+definicion
+tesis
+monografia
+reddit
+wiki
+
+# ── Empleo ──
+empleo
+empleos
+trabajo
+curriculum
+cv
+sueldo
+busco trabajo
+
+# ── Software enterprise, fuera de alcance ──
+sap
+oracle
+salesforce
+microsoft dynamics
+odoo
+tango
+
+# ── Marcas de competidores ──
+toteat
+bistrosoft
+maxirest
+fudo
+simpliroute
+quadminds
+beetrack
+tokko
+marketman
+choco
+clientify
+insoft
+managementpro
+management pro
+articotrans
+quonext
+cloudfleet
+mediagenia
+unigis
+highway
+routal
+fieldpro
+drivin
+gour-net
+gour net
+pedisy
+presik
+bcnsoft
+
+# ── Producto que Dataria NO vende ──
+punto de venta
+puntos de venta
+pos
+tpv
+comanda
+comandas
+comandera
+caja registradora
+menu qr
+menus qr
+carta qr
+codigo qr
+gps
+rastreo satelital
+satelital
+localizacion vehicular
+ultima milla
+chazki
+
+# ── Cluster Google Maps (30.650 búsq./mes de ruido, el más importante) ──
+google
+maps
+mapa
+mapas
+itinerario
+trayecto
+waze
+viaje
+viajes
+turismo
+turistica
+
+# ── ÚNICA en concordancia de FRASE (cargar aparte, con comillas) ──
+# "el chef"
