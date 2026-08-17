@@ -1,5 +1,5 @@
 # NEGATIVOS A NIVEL CAMPAÑA — Search - Dataria - Alta Intención
-# Revisado el 2026-08-17. Cargar TODOS en concordancia AMPLIA (sin comillas ni corchetes),
+# Revisado el 2026-08-17 contra los 2.172 keywords del barrido (.agents/datos-crudos/). Cargar TODOS en concordancia AMPLIA (sin comillas ni corchetes),
 # salvo la única línea marcada como FRASE al final.
 # Pegar de una sola vez en: Herramientas → Administrador de exclusiones →
 # Listas de palabras clave negativas → nueva lista "Ruido - Dataria" → aplicar a la campaña.
@@ -103,6 +103,8 @@ mapa
 mapas
 itinerario
 trayecto
+recorrido
+recorridos
 waze
 viaje
 viajes
