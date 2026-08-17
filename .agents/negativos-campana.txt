@@ -111,5 +111,11 @@ viajes
 turismo
 turistica
 
-# ── ÚNICA en concordancia de FRASE (cargar aparte, con comillas) ──
-# "el chef"
+# ── DESCARTADO ──
+# "el chef" (competidor, marca de Insoft) se iba a cargar en frase. Se midió el 17-ago
+# contra los 2.172 keywords del barrido: la palabra "chef" aparece CERO veces, ni siquiera
+# en la página de categoría de restaurantes de Comparasoftware. No protege de nada medible
+# y en amplia bloquearía "software para el chef". La marca ya queda cubierta por `insoft`.
+# Si aparece en el informe de términos de búsqueda, se agrega ahí.
+#
+# TOTAL A CARGAR: 94 líneas, todas en concordancia amplia.
