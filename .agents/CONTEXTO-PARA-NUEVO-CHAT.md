@@ -1,6 +1,6 @@
 # Contexto para chat nuevo — Google Ads de Dataria
 
-**Escrito:** 2026-08-15
+**Escrito:** 2026-08-15 · **Actualizado:** 2026-08-17
 **Para qué sirve:** arrancar una conversación nueva sin perder nada. Leer esto primero, completo, antes de tocar nada.
 
 ---
@@ -100,7 +100,7 @@
 ### Verificado del sitio (15-ago, por fetch)
 
 - `/blog` **existe**, 5 artículos publicados (food cost, ventana horaria, inmobiliarias, predicción de stock, Excel vs ERP vs IA). Son **notas, no casos de clientes** — por eso se descartó el sitelink "Casos reales".
-- Anclas reales de la home: `#industrias`, `#como-trabajamos`, `#contacto`. **`#demos` existe en `/gastronomia`, NO en `/distribuidoras`.**
+- Anclas reales de la home: `#industrias`, `#como-trabajamos`, `#contacto`. ~~`#demos` no existe en `/distribuidoras`~~ → **FALSO, corregido el 17-ago leyendo el código.** `/distribuidoras` monta el panel con tres demos (Rutas, Stock y demanda, Agente de pedidos), y la sección lleva `id="demos"`. El error salió de un fetch que no ejecuta JavaScript. **Las cuatro landings de rubro tienen demos.**
 - Páginas: `/`, `/gastronomia`, `/distribuidoras`, `/inmobiliarias`, `/ecommerce`, `/blog`, `/privacidad`, `/terminos`. **No hay página de precios.**
 
 ### 🟢 ESTADO AL 15-AGO, FIN DE JORNADA
@@ -111,24 +111,59 @@ Se publicó en pausa a propósito, porque **los negativos todavía no están car
 
 **Solo existe G1** (6 keywords + 1 anuncio). El asistente de creación crea la campaña con un grupo; G2 a G6 se agregan desde la interfaz normal, que es más rápida.
 
-### ⚠️ Tres cosas a verificar apenas se retome
+### ✅ Verificado el 17-ago por captura (ya no hace falta volver a mirarlo)
 
-No se pudieron confirmar en la pantalla de revisión:
+| Qué | Cómo quedó |
+|---|---|
+| Tope de CPC | "Definir un límite de puja de CPC máximo" tildado · **1.800,00 ARS** |
+| Ubicaciones | Argentina · **Presencia** |
+| IA Max | Toggle apagado · "Personalización de texto y Expansión de URL final **desactivadas**" |
+| Adquisición de clientes | "Pujar lo mismo por clientes nuevos y por los actuales" |
+| **Moneda** | **ARS confirmado** — la propia pantalla de puja rotula "1.800,00 ARS" y "7.000,00 ARS al día". No hizo falta ir a Facturación |
 
-1. **Tope de CPC en $1.800.** El resumen decía solo "Maximiza los clics", sin mostrar el límite. Es el número que define la campaña — verificarlo en Configuración → Puja.
-2. **Ubicaciones en "Presencia"**, no "Presencia o interés". El resumen decía solo "Argentina".
-3. **IA Max desactivado.** Dos capturas del mismo resumen mostraron textos contradictorios ("activadas" y "desactivadas"). Tiene que decir **desactivadas**.
+⚠️ En la pantalla de puja Google muestra una advertencia amarilla empujando a Maximizar conversiones. **Ignorarla:** la cuenta tiene cero historial de conversiones, que es justo por lo que se eligió Maximizar clics.
+
+### ✅ Negativos de campaña — CARGADOS el 17-ago
+
+Lista compartida **`Ruido - Dataria`** (Herramientas → Biblioteca compartida → Listas de exclusión), **94 negativos en concordancia amplia**, aplicada a la campaña. Archivo fuente: **`.agents/negativos-campana.txt`**.
+
+Se eligió lista compartida en vez de cargarlos sueltos en la campaña: se edita en un solo lugar y se aplica a campañas futuras con un clic.
+
+**Auditada contra los 2.172 keywords del barrido**, no solo contra las nuestras: bloquea 60.350 de 331.550 búsq./mes medidas (18%) y tiene **cero falsos positivos** — lo único "comercial" que bloquea es `comandas`, `gratis` y `mapas`, que es exactamente lo buscado.
+
+Cambios contra la lista de `google-ads-campanas.md`, todos medidos:
+- **`recorrido` + `recorridos` SÍ van.** Primero se sacaron con el argumento de que un comprador tipea "optimizar recorridos"; el dato lo desmintió: de 62 keywords con "recorrido", 56 ya caían por otros negativos y las 6 restantes son de consumidor. **Cero consultas comerciales con "recorrido" en toda la medición.**
+- **`barato` fuera.** Dataria *es* la opción barata (USD 50-150/mes): quien busca "software barato" es el cliente, no el que no paga. `gratis` y `free` sí quedan.
+- **`modelo` fuera.** Bloqueaba "modelo predictivo de demanda". `plantilla` y `ejemplo` ya cubren esa intención.
+- **`proveedor de ultima milla` → `ultima milla`.** En amplia, un negativo de 4 palabras exige las 4 en la búsqueda: no bloqueaba casi nada. Mismo motivo para agregar `satelital` suelto.
+- **Plurales agregados** (`cursos`, `plantillas`, `ejemplos`, `tutoriales`, `empleos`, `viajes`, `puntos de venta`, `menus qr`, `comanda`): [los negativos no matchean plurales ni singulares](https://support.google.com/google-ads/answer/2453972) — sí corrigen mayúsculas y errores de tipeo.
+- **Redundantes eliminados:** `tokko broker` (cae por `tokko`), `google earth` (por `google`), `excel gratis` (por `gratis` — y así se evita meter `excel` suelto, que mataría "reemplazar Excel", que es buena búsqueda).
+- **`"el chef"` descartado.** Se iba a cargar en frase; la palabra "chef" aparece **cero veces** en los 2.172 keywords. La marca ya queda cubierta por `insoft`.
 
 ### Lo que falta, en orden
 
-1. **Verificar los 3 puntos de arriba.**
-2. **Negativos de campaña** — la lista grande de `google-ads-campanas.md`, incluido el cluster Google Maps. **Antes de habilitar.**
-3. **Crear G2 a G6** con keywords y anuncio. *(G2 ya está redactado y corregido — ver abajo.)*
-4. **Negativos por grupo**, seis listas.
-5. **Verificar moneda ARS** en Facturación → Configuración. Si estuviera en USD, el `1800` cargado significaría USD 1.800 por clic.
+1. ~~Verificar los 3 puntos~~ ✅ · ~~Negativos de campaña~~ ✅ · ~~Verificar moneda~~ ✅
+2. **Renombrar `Grupo de anuncios 1` → `G1 - Software Logística`.** Nunca se renombró. Con 6 grupos, los informes de términos de búsqueda son ilegibles si uno se llama así.
+3. **Averiguar qué dice "Entidad no apta"** en G1 (grupo y anuncio). Pasar el mouse por el texto punteado. Si es "campaña en pausa", es esperable; si el anuncio está **desaprobado**, hay que saberlo antes de escribir los 5 grupos que faltan.
+4. **Crear G2 a G6** — tipo **Estándar**, nunca Dinámico (ver procedimiento abajo).
+5. **Negativos por grupo: probablemente ninguno.** Ver procedimiento.
 6. Renombrar la PMax vieja a `ZZ - VIEJA - PMax - NO USAR`.
-7. **Quitar la extensión de ubicación** (Vicente López · Julio Argentino Roca 2253) — **decidido por Imanol el 15-ago**. Se saca desde recursos a nivel **cuenta**, no desde la campaña.
-8. **Habilitar**, recién después de 2 y 4.
+7. **Quitar la extensión de ubicación** (Vicente López · Julio Argentino Roca 2253) — decidido el 15-ago. Se saca desde recursos a nivel **cuenta**, no desde la campaña.
+8. **Habilitar.**
+
+### 📋 Procedimiento para cargar un grupo (aplicar a G3-G6)
+
+Los pasos, en orden, tal como se hicieron con G2:
+
+1. **Campañas → Grupos de anuncios → + → Estándar.** Nunca **Dinámico**: el dinámico deja que Google elija la página de destino y escriba los títulos leyendo el sitio. Es el mismo mecanismo de IA Max y PMax, ya descartados, y además no usa keywords.
+2. **Nombre `G# - Tema`** y **URL final propia del grupo** (`/distribuidoras` o `/gastronomia`).
+3. **Rutas de acceso** (los dos campos de 15 caracteres que se ven en verde bajo el dominio).
+4. **Keywords pegadas con sus símbolos:** `[corchetes]` = exacta, `"comillas"` = frase. Sin símbolos queda en amplia, que no se usa hasta tener 30+ conversiones/mes.
+5. **Antes de cargar los títulos, contar cuántos contienen el término núcleo de las keywords del grupo.** Balance sano: ~4 de relevancia y ~11 de diferencial. G1 tenía solo 2 de 15 con "logística" y hubo que corregirlo; G2 vino con 6 de 15.
+6. **Verificar caracteres:** títulos ≤30, descripciones ≤90, rutas ≤15. Se cuentan, no se estiman.
+7. **Negativos de grupo: revisar si no son redundantes.** Los de la spec vieja quedaron casi todos cubiertos por los 94 de campaña. En G2 sobrevivían `chofer` y `moto`, y **ninguno aparece una sola vez en los 2.172 keywords medidos** — encima `chofer` sería contraproducente, porque "control de choferes" es un ángulo propio de distribuidoras. **G2 quedó sin negativos de grupo.**
+
+> **Cómo funciona el anuncio, para explicarlo cuando haga falta:** no se carga un anuncio, se cargan piezas. 15 títulos y 4 descripciones, y Google arma combinaciones mostrando **3 títulos y 2 descripciones** por vez. Por eso cada título tiene que funcionar solo y en cualquier orden — nada de oraciones partidas en dos títulos.
 
 ### G2 — Rutas de reparto, listo para cargar
 
@@ -139,7 +174,7 @@ Nombre `G2 - Rutas de Reparto` · URL `https://www.dataria.work/distribuidoras` 
 **Títulos (15):** Optimizá tus Rutas de Reparto · Software de Ruteo Argentina · Rutas para Pyme de Reparto · **Planificá tus Repartos** · IA que Arma tus Rutas · Menos Horas Armando Rutas · Menos Km, Más Entregas · Organizá Entregas sin Excel · Reducí Costos de Nafta · Ventana Horaria sin Drama · Probá la Demo Gratis · Sin Equipo Técnico · Nosotros Integramos Todo · Sin Instalar Nada Técnico · Agendá tu Consulta Gratis
 
 **Descripciones (4):**
-- Optimizá rutas y reducí kilómetros con IA. Probá la demo gratis.
+- Optimizá rutas y reducí kilómetros con IA. **Probá la demo sin registrarte.** *(17-ago: se devolvió el "sin registrarte" que se había sacado por las dudas — la demo está verificada como autoservicio. Es el diferencial más fuerte contra SimpliRoute y QuadMinds, que piden demo por formulario.)*
 - Sabé cuándo llega cada pedido, sin llamados ni WhatsApp perdidos.
 - Nosotros integramos todo: no necesitás saber de tecnología para empezar hoy.
 - Menos horas armando rutas a mano cada mañana. Agendá tu consulta gratis.
