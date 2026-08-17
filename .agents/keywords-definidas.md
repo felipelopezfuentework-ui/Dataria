@@ -13,7 +13,7 @@ Este es el documento de referencia del proyecto de Ads: qué se midió, qué sal
 - **Distribuidoras es 5 a 10 veces más grande que gastronomía.** El plan original tenía la prioridad al revés.
 - El mercado total alcanzable es chico: **~6.000 a 8.000 búsquedas/mes** entre los dos rubros.
 - Alrededor hay clusters enormes de tráfico que **no es nuestro cliente** — el más grande, 30.650 búsquedas/mes.
-- Arrancamos con **1 campaña, 6 grupos, 34 keywords**, $7.000 ARS/día y tope de CPC de $1.800.
+- Arrancamos con **1 campaña, 6 grupos, 38 keywords**, $7.000 ARS/día y tope de CPC de $1.800.
 - Con nuestra economía (setup USD 200-500 + USD 50-150/mes indefinido), **1 o 2 clientes al año pagan toda la pauta anual**.
 
 ---
@@ -68,7 +68,7 @@ Juntas son **1.000 búsquedas/mes**: la mitad del rubro. Ninguna de las dos se n
 
 ## Con qué arrancamos
 
-**1 campaña · 6 grupos · 34 keywords · $7.000 ARS/día · tope CPC $1.800.**
+**1 campaña · 6 grupos · 38 keywords · $7.000 ARS/día · tope CPC $1.800.**
 
 Una sola campaña porque fragmentar el presupuesto deja cada mitad por debajo del umbral de aprendizaje del algoritmo.
 
@@ -149,6 +149,16 @@ Una sola campaña porque fragmentar el presupuesto deja cada mitad por debajo de
 | `software gestion de inventarios` 🆕 | Frase | 50 | **$450** | ✅ |
 
 🆕 = salió del barrido de competidores del 15/ago.
+
+> **Reconciliación con `google-ads-campanas.md` (17-ago).** Los dos documentos se contradecían
+> y este es el que manda. Resuelto:
+> - **`control de mermas` va en G5, no en G6.** Está medido (ronda 1: 50 búsq./mes, competencia
+>   Baja) y pertenece a food cost, no a stock: `merma` es un campo de la demo de Food Cost
+>   (`src/components/demos/gastronomia/FoodCostDemo.tsx`), porque es lo que distorsiona el costo
+>   del plato.
+> - **`costo de platos restaurante` queda descartada.** No la midió nadie: no aparece en la ronda
+>   1, ni en el barrido, ni en este documento. Existía solo en la spec vieja.
+> - **Son 38 keywords**, no 34. El resumen decía mal: 6+8+6+6+6+6.
 
 ---
 
