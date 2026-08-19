@@ -5,6 +5,7 @@ import Input from '@/components/ui/Input'
 import Button from '@/components/ui/Button'
 import Select from '@/components/ui/Select'
 import { trackEvent } from '@/lib/analytics'
+import AvisoDatosPersonales from '@/components/legal/AvisoDatosPersonales'
 
 const industries = ['Gastronomía', 'Distribuidoras de Alimentos', 'Inmobiliarias', 'E-commerce', 'Otro']
 const ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY
@@ -136,6 +137,7 @@ export default function ContactoSection({
               <Button type="submit" size="lg" loading={loading} className="w-full !bg-[#306ECF] !bg-none !normal-case !text-[15px]">
                 Enviar consulta
               </Button>
+              <AvisoDatosPersonales className="pt-1" />
             </form>
           ) : (
             <div className="bg-white rounded-xl border border-borde shadow-soft p-10 text-center animate-fade-in">

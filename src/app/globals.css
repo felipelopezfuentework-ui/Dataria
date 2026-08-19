@@ -2,11 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Fuentes cargadas vía <link> en src/app/layout.tsx (head) */
+/* Fuentes autohospedadas con next/font en src/app/layout.tsx.
+   --font-jakarta y --font-inter las define next/font sobre <html>: no se pide
+   nada a fonts.googleapis.com ni a fonts.gstatic.com en ninguna visita. */
 
 :root {
-  --font-display: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Arial, sans-serif;
-  --font-text: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --font-display: var(--font-jakarta), var(--font-inter), 'Helvetica Neue', Arial, sans-serif;
+  --font-text: var(--font-inter), 'Helvetica Neue', Arial, sans-serif;
 }
 
 @layer base {

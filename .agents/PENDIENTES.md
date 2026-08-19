@@ -1,5 +1,6 @@
 # Pendientes Web Dataria (dataria.work)
-*Actualizado 2026-08-15 — se eliminó todo lo ya completado (el historial real queda en `git log`)*
+*Actualizado 2026-08-19 — se eliminó todo lo ya completado (el historial real queda en `git log`).*
+*Cada entrada dice su fecha y su estado: ✅ hecho y verificado · 🟡 en curso · 🔴 bloqueado o pendiente de un dato.*
 
 ## Contexto rápido
 - Sitio: Dataria — herramientas de IA a medida para pymes/autónomos, 4 rubros (gastronomía, distribuidoras, inmobiliarias, e-commerce) + formulario "Otros". NO es un restaurante (no confundir con Ragu Bodegón).
@@ -91,6 +92,50 @@ Conectar un agente con el contexto y el análisis de la campaña real para ir su
 
 ### 7. Blog — mantenimiento a demanda
 Imanol va a ir pasando modificaciones puntuales a los posts ya publicados a medida que las necesite.
+
+---
+
+### 8. Consentimiento de cookies — ✅ código terminado 19/ago · 🔴 faltan 3 datos de Imanol
+
+**Estado al 19-ago-2026.** Todo lo que se resuelve por código está hecho, buildeado y verificado con
+Playwright contra el build de producción: **53/53 comprobaciones OK, cero errores de consola.**
+
+**Hecho:**
+- Banner de consentimiento (`src/components/consent/CookieConsent.tsx`) montado en `layout.tsx`.
+- Google Consent Mode v2: el default `denied` de los cuatro señalizadores va como **primer elemento del
+  `<head>`**, antes de cualquier gtag. Al aceptar se manda el `consent update`.
+- `GoogleAnalytics.tsx` ya no se auto-ejecuta: expone `loadGoogleAnalytics()`, que solo corre tras el «Aceptar».
+- «Aceptar» y «Rechazar»: mismo tamaño y peso medidos (150x44 px, 15px/600), un clic cada uno.
+- Al rechazar se borran las cookies `_ga*`, `_gid*`, `_gat*` y `_gcl*`.
+- Enlace «Cookies» en el pie, en la misma línea que Privacidad y Condiciones, que reabre el banner.
+- `/privacidad`: sección 7 reescrita con ancla `#cookies` y tabla cookie por cookie. Las dos cláusulas que
+  exige la AAIP (art. 14 inc. 3 y Órgano de Control) ya estaban y se verificaron.
+- Aviso del art. 6 de la Ley 25.326 al pie de los **dos** formularios (contacto principal e inline de «Otros»).
+- No hay ningún `<noscript>` ni píxel de imagen en las 20 páginas generadas.
+- **Tipografías autohospedadas con `next/font`** (19-ago): Plus Jakarta Sans e Inter se sirven desde el propio
+  dominio. Cero peticiones a `fonts.googleapis.com` y `fonts.gstatic.com` — medido, era una petición a un
+  tercero en cada visita y antes del consentimiento. Ambas son SIL OFL, sin problema de licencia.
+
+**Medido el 19-ago, no supuesto:** aceptando, el sitio contacta `googletagmanager.com`,
+`region1.analytics.google.com` y **`stats.g.doubleclick.net`** (atribución de conversiones por la vinculación
+GA4 ↔ Google Ads) y deja tres cookies: `_ga` y `_ga_J2675ZE6DY` (**400 días** — el navegador recorta los 2 años
+que declara Google) y `_gcl_au` (90 días). Sin decidir o rechazando: **cero peticiones y cero cookies**.
+
+**🔴 Lo que falta, y depende de datos que solo tiene Imanol (los debe, 19-ago):**
+
+| Falta | Para qué | Estado |
+|---|---|---|
+| **CUIT y razón social** del responsable | El art. 6 inc. b pide identidad del responsable. Por Crunchbase el nombre legal es **Felipe López Fuente** (monotributo), pero no hay CUIT confirmado | 🔴 Imanol lo debe |
+| **Domicilio legal** (calle y número) | Hoy la política solo dice «Provincia de Buenos Aires». El art. 6 inc. b pide domicilio | 🔴 Imanol lo debe |
+| **Inscripción de la base ante la AAIP** (art. 21) | Trámite gratuito por TAD, requiere los dos datos de arriba | 🔴 Imanol lo debe |
+
+⚠️ **No inventar ninguno de los tres, ni deducirlos de otros proyectos.** Las constancias de ARCA que hay en
+la PC de Imanol son de otras empresas en las que trabaja, no de Dataria: usar cualquiera de esas sería poner
+un CUIT ajeno en la política de privacidad. Solo sirve el dato que confirme Imanol para Dataria.
+
+**Para probar en local:** hace falta un `.env.local` con `NEXT_PUBLIC_GA_MEASUREMENT_ID=G-J2675ZE6DY`. Sin esa
+variable el cargador de GA4 no hace nada por diseño, y el banner parece "roto" cuando en realidad está bien.
+El script de verificación con Playwright no está en el repo: vive en el scratchpad de la sesión.
 
 ---
 

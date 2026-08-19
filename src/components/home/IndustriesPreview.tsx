@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { useReveal } from '@/hooks/useReveal'
 import { trackEvent } from '@/lib/analytics'
+import AvisoDatosPersonales from '@/components/legal/AvisoDatosPersonales'
 
 // Cada industria vive ahora en su propia página (SEO/GEO: ver .agents/gemini-consultas/001-*).
 // Las demos interactivas se mudaron ahí — acá solo queda la vidriera que linkea a cada una.
@@ -300,6 +301,7 @@ function OtrosForm() {
               style={{ backgroundColor: '#306ECF' }}>
               {loading ? 'Enviando…' : 'Enviar consulta'}
             </button>
+            <AvisoDatosPersonales camposObligatorios="Nombre y email" className="pt-1" />
           </form>
         ) : (
           <div className="bg-white rounded-xl border border-[#DCE5E9] shadow-sm p-10 text-center">

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Breadcrumb } from '@/components/industry/Breadcrumb'
+import BotonPreferenciasCookies from '@/components/consent/BotonPreferenciasCookies'
 
 export const metadata: Metadata = {
   title: 'Política de Privacidad | Dataria',
@@ -9,11 +10,14 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.dataria.work/privacidad' },
 }
 
-const ULTIMA_ACTUALIZACION = '9 de agosto de 2026'
+const ULTIMA_ACTUALIZACION = '19 de agosto de 2026'
 
-function H2({ children }: { children: React.ReactNode }) {
+function H2({ children, id }: { children: React.ReactNode; id?: string }) {
   return (
-    <h2 className="font-display text-2xl md:text-3xl font-bold text-carbon mt-14 mb-4 tracking-[-0.02em] scroll-mt-24">
+    <h2
+      id={id}
+      className="font-display text-2xl md:text-3xl font-bold text-carbon mt-14 mb-4 tracking-[-0.02em] scroll-mt-24"
+    >
       {children}
     </h2>
   )
@@ -69,7 +73,7 @@ export default function PrivacidadPage() {
             <UL>
               <li>Solo recolectamos los datos que nos dejás en el formulario de contacto y datos de navegación anónimos o seudonimizados.</li>
               <li>No vendemos ni alquilamos datos personales a nadie, bajo ninguna circunstancia.</li>
-              <li>Usamos Google Analytics y Google Ads para entender qué contenido sirve y medir nuestras campañas.</li>
+              <li>Usamos Google Analytics 4 para entender qué contenido sirve y medir nuestras campañas, pero <strong>no cargamos ninguna etiqueta hasta que lo aceptes</strong> en el banner de cookies. Si rechazás, el sitio funciona igual.</li>
               <li>Las demos de la web funcionan con datos ficticios: no te pedimos información real para probarlas.</li>
               <li>Podés pedirnos acceso, corrección o eliminación de tus datos escribiendo a <A href="mailto:datariaai@gmail.com">datariaai@gmail.com</A>.</li>
             </UL>
@@ -119,7 +123,8 @@ export default function PrivacidadPage() {
 
           <H3>2.2. Datos de navegación</H3>
           <P>
-            Cuando visitás el sitio recolectamos automáticamente, mediante Google Analytics 4 y las etiquetas de Google:
+            <strong>Solo si aceptaste las cookies</strong> en el banner, recolectamos mediante Google Analytics 4 los
+            siguientes datos de navegación. Si todavía no decidiste, o si rechazaste, nada de esto se registra:
           </P>
           <UL>
             <li>Páginas visitadas, tiempo de permanencia y recorrido dentro del sitio</li>
@@ -163,13 +168,25 @@ export default function PrivacidadPage() {
 
           <H2>4. Base del tratamiento</H2>
           <P>
-            El tratamiento se basa en tu <strong>consentimiento libre, expreso e informado</strong>, prestado al
-            completar y enviar el formulario de contacto o al continuar navegando el sitio con las cookies habilitadas,
-            conforme a los artículos 5 y 6 de la Ley N° 25.326 de Protección de los Datos Personales de la República
-            Argentina.
+            El tratamiento se basa en tu <strong>consentimiento libre, expreso e informado</strong>, conforme a los
+            artículos 5 y 6 de la Ley N° 25.326 de Protección de los Datos Personales de la República Argentina. Ese
+            consentimiento se presta de dos formas distintas e independientes:
           </P>
+          <UL>
+            <li>
+              <strong>Para tus datos de contacto:</strong> al completar y enviar voluntariamente el formulario, después
+              de leer el aviso que figura al pie del mismo.
+            </li>
+            <li>
+              <strong>Para las cookies de análisis y publicidad:</strong> al pulsar «Aceptar» en el banner de cookies.
+              Hasta ese momento no se carga ninguna etiqueta de terceros. <strong>Seguir navegando no equivale a
+              aceptar</strong>, y rechazar no limita el acceso a ninguna parte del sitio.
+            </li>
+          </UL>
           <P>
-            Podés retirar tu consentimiento en cualquier momento, sin que ello afecte la licitud del tratamiento previo.
+            Podés retirar tu consentimiento en cualquier momento, sin que ello afecte la licitud del tratamiento previo:
+            para las cookies, desde el enlace «Cookies» del pie de página; para tus datos de contacto, escribiéndonos a{' '}
+            <A href="mailto:datariaai@gmail.com">datariaai@gmail.com</A>.
           </P>
 
           <H2>5. Con quién compartimos los datos</H2>
@@ -218,49 +235,154 @@ export default function PrivacidadPage() {
           <H2>6. Transferencia internacional de datos</H2>
           <P>
             Los proveedores mencionados almacenan y procesan información en servidores ubicados fuera de la República
-            Argentina, principalmente en los Estados Unidos y en la Unión Europea. Al utilizar el sitio y enviar el
+            Argentina, principalmente en los Estados Unidos y en la Unión Europea. En el caso de las etiquetas de
+            Google, y solo si aceptaste las cookies, los datos de navegación se envían a los dominios{' '}
+            <code className="text-xs bg-fondo-suave px-1.5 py-0.5 rounded">analytics.google.com</code> y{' '}
+            <code className="text-xs bg-fondo-suave px-1.5 py-0.5 rounded">stats.g.doubleclick.net</code>, operados por
+            Google. Al utilizar el sitio y enviar el
             formulario, prestás tu consentimiento para esa transferencia internacional, conforme al artículo 12 de la
             Ley N° 25.326. Estos proveedores aplican cláusulas contractuales y estándares de seguridad reconocidos
             internacionalmente.
           </P>
 
-          <H2>7. Cookies y tecnologías similares</H2>
-          <P>Utilizamos las siguientes categorías de cookies:</P>
-          <UL>
-            <li>
-              <strong>Necesarias:</strong> permiten el funcionamiento básico del sitio y la seguridad. No se pueden
-              desactivar sin afectar la navegación.
-            </li>
-            <li>
-              <strong>Analíticas:</strong> Google Analytics 4 (identificador <code className="text-xs bg-fondo-suave px-1.5 py-0.5 rounded">G-J2675ZE6DY</code>). Nos
-              dicen cuántas personas visitan cada página y cómo la recorren, de forma agregada.
-            </li>
-            <li>
-              <strong>Publicitarias:</strong> Google Ads. Nos permiten saber si una visita provino de un anuncio y si
-              terminó en una consulta, y eventualmente mostrar anuncios a quienes ya visitaron el sitio.
-            </li>
-          </UL>
+          <H2 id="cookies">7. Cookies y tecnologías similares</H2>
 
-          <H3>Cómo controlarlas</H3>
+          <H3>7.1. Nada se carga hasta que aceptás</H3>
+          <P>
+            Al entrar por primera vez al sitio verás un banner con dos opciones equivalentes: <strong>Aceptar</strong> y{' '}
+            <strong>Rechazar</strong>. Hasta que pulses una de las dos, el sitio{' '}
+            <strong>no carga ninguna etiqueta de terceros</strong>: no se pide nada a los servidores de Google y no se
+            escribe ninguna cookie de análisis ni de publicidad en tu navegador.
+          </P>
+          <P>
+            Técnicamente lo implementamos con el <strong>Modo de consentimiento v2 de Google</strong>: apenas se abre la
+            página declaramos como <em>denegados</em> los cuatro estados de consentimiento{' '}
+            (<code className="text-xs bg-fondo-suave px-1.5 py-0.5 rounded">analytics_storage</code>,{' '}
+            <code className="text-xs bg-fondo-suave px-1.5 py-0.5 rounded">ad_storage</code>,{' '}
+            <code className="text-xs bg-fondo-suave px-1.5 py-0.5 rounded">ad_user_data</code> y{' '}
+            <code className="text-xs bg-fondo-suave px-1.5 py-0.5 rounded">ad_personalization</code>), y recién si
+            aceptás enviamos la actualización que los habilita y se descarga el script de medición.
+          </P>
+          <P>
+            Tu decisión se guarda en el <strong>almacenamiento local de tu navegador</strong>, en la clave{' '}
+            <code className="text-xs bg-fondo-suave px-1.5 py-0.5 rounded">dataria-consent-v1</code>. Es un dato técnico
+            que queda en tu dispositivo, no se envía a ningún servidor y solo sirve para no volver a preguntarte en cada
+            página.
+          </P>
+
+          <H3>7.2. Qué cookies se usan, una por una</H3>
+          <P>
+            Si aceptás, se cargan las siguientes. Ninguna de ellas es necesaria para que el sitio funcione, y podés
+            revocarlas cuando quieras:
+          </P>
+          <div className="overflow-x-auto rounded-xl border border-borde mb-6">
+            <table className="w-full text-sm min-w-[42rem]">
+              <thead>
+                <tr className="bg-fondo-suave">
+                  <th className="text-left font-bold text-carbon px-4 py-3">Cookie</th>
+                  <th className="text-left font-bold text-carbon px-4 py-3">Servicio y finalidad</th>
+                  <th className="text-left font-bold text-carbon px-4 py-3">Duración</th>
+                  <th className="text-left font-bold text-carbon px-4 py-3">Quién la trata y dónde</th>
+                </tr>
+              </thead>
+              <tbody className="text-texto-sec align-top">
+                <tr className="border-t border-borde">
+                  <td className="px-4 py-3"><code className="text-xs">_ga</code></td>
+                  <td className="px-4 py-3">
+                    <strong>Google Analytics 4</strong> — genera un identificador seudónimo para distinguir visitantes y
+                    contar visitas únicas.
+                  </td>
+                  <td className="px-4 py-3">400 días</td>
+                  <td className="px-4 py-3">
+                    Google LLC / Google Ireland Ltd. Servidores en Estados Unidos y otros países donde Google opera.
+                  </td>
+                </tr>
+                <tr className="border-t border-borde">
+                  <td className="px-4 py-3"><code className="text-xs">_ga_J2675ZE6DY</code></td>
+                  <td className="px-4 py-3">
+                    <strong>Google Analytics 4</strong> — mantiene el estado de la sesión para la propiedad{' '}
+                    <code className="text-xs">G-J2675ZE6DY</code>, la única propiedad de analítica del sitio.
+                  </td>
+                  <td className="px-4 py-3">400 días</td>
+                  <td className="px-4 py-3">
+                    Google LLC / Google Ireland Ltd. Servidores en Estados Unidos y otros países donde Google opera.
+                  </td>
+                </tr>
+                <tr className="border-t border-borde">
+                  <td className="px-4 py-3"><code className="text-xs">_gcl_au</code></td>
+                  <td className="px-4 py-3">
+                    <strong>Google Ads</strong> — vinculador de conversiones: permite atribuir una consulta al anuncio
+                    que la originó. La deja el mismo script de Google cuando la cuenta de Analytics está vinculada a la
+                    de Ads.
+                  </td>
+                  <td className="px-4 py-3">90 días</td>
+                  <td className="px-4 py-3">
+                    Google LLC / Google Ireland Ltd. Servidores en Estados Unidos y otros países donde Google opera.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <P>
+            Google declara para las dos primeras cookies una duración de 2 años, pero los navegadores actuales la
+            recortan: medido sobre este sitio, se guardan por <strong>400 días</strong>.
+          </P>
+          <P>
+            <strong>Sobre Google Ads:</strong> el sitio <strong>no</strong> tiene instalada una etiqueta propia de
+            remarketing ni de conversión de Google Ads. La medición de campañas se hace a partir de los eventos de
+            Google Analytics 4 descriptos más arriba, con la propiedad vinculada a nuestra cuenta de Google Ads. Por esa
+            vinculación, y siempre <strong>después</strong> de que aceptes, el script de Google contacta —además de{' '}
+            <code className="text-xs bg-fondo-suave px-1.5 py-0.5 rounded">googletagmanager.com</code>— los dominios{' '}
+            <code className="text-xs bg-fondo-suave px-1.5 py-0.5 rounded">analytics.google.com</code> y{' '}
+            <code className="text-xs bg-fondo-suave px-1.5 py-0.5 rounded">stats.g.doubleclick.net</code>, este último
+            para atribuir conversiones a los anuncios. Si rechazás, ninguno de esos dominios recibe una sola petición.
+            Si en el futuro incorporáramos una etiqueta publicitaria adicional, quedaría sujeta exactamente al mismo
+            consentimiento previo —no se cargaría sin tu aceptación— y actualizaríamos esta tabla.
+          </P>
+          <P>
+            <strong>Cookies necesarias:</strong> el sitio no usa cookies propias de sesión, de inicio de sesión ni de
+            carrito. La única información técnica que guardamos en tu dispositivo es la decisión sobre cookies descripta
+            en el punto 7.1, que vive en el almacenamiento local y no viaja en las peticiones al servidor.
+          </P>
+          <P>
+            Podés leer cómo utiliza Google la información de los sitios que usan sus servicios en{' '}
+            <A href="https://policies.google.com/technologies/partner-sites">
+              Cómo usa Google la información de sitios y apps que usan sus servicios
+            </A>{' '}
+            y en la <A href="https://policies.google.com/privacy">Política de Privacidad de Google</A>.
+          </P>
+
+          <H3>7.3. Cómo revocar o cambiar tu decisión</H3>
           <UL>
+            <li>
+              <strong>Desde el sitio, en cualquier momento:</strong> pulsá «Cookies» en el pie de página —o{' '}
+              <BotonPreferenciasCookies>abrí el banner desde acá</BotonPreferenciasCookies>— y elegí la otra opción. El
+              cambio tiene efecto inmediato.
+            </li>
+            <li>
+              <strong>Si rechazás después de haber aceptado</strong>, dejamos de enviar datos y borramos del navegador
+              las cookies <code className="text-xs">_ga</code>, <code className="text-xs">_ga_J2675ZE6DY</code>,{' '}
+              <code className="text-xs">_gcl_au</code> y cualquier otra que empiece con esos prefijos. Los datos ya
+              registrados en Google Analytics permanecen en esa plataforma hasta cumplirse el plazo de retención del
+              punto 8; podés pedirnos su eliminación escribiéndonos.
+            </li>
             <li>Desde la configuración de tu navegador podés bloquear o eliminar cookies en cualquier momento.</li>
             <li>
               Podés instalar el{' '}
               <A href="https://tools.google.com/dlpage/gaoptout">complemento de inhabilitación de Google Analytics</A>{' '}
-              para impedir que tu navegación se registre.
+              para impedir que tu navegación se registre en cualquier sitio.
             </li>
             <li>
               Podés desactivar la personalización de anuncios de Google desde{' '}
-              <A href="https://adssettings.google.com/">Configuración de anuncios de Google</A>.
-            </li>
-            <li>
-              Podés gestionar la publicidad basada en intereses de múltiples proveedores en{' '}
+              <A href="https://adssettings.google.com/">Configuración de anuncios de Google</A>, y gestionar la
+              publicidad basada en intereses de múltiples proveedores en{' '}
               <A href="https://optout.aboutads.info/">YourAdChoices</A> y{' '}
               <A href="https://www.youronlinechoices.com/">Your Online Choices</A>.
             </li>
           </UL>
           <P>
-            Bloquear cookies analíticas o publicitarias no impide que uses el sitio ni que nos envíes una consulta.
+            Rechazar las cookies <strong>no</strong> limita ninguna función del sitio: podés navegar todas las páginas,
+            usar todas las demos y enviarnos una consulta exactamente igual.
           </P>
 
           <H2>8. Cuánto tiempo conservamos los datos</H2>

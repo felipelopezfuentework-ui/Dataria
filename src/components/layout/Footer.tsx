@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { trackEvent } from '@/lib/analytics'
+import { openCookiePreferences } from '@/lib/consent'
 
 export default function Footer() {
   return (
@@ -128,6 +129,14 @@ export default function Footer() {
             <Link href="/terminos" className="hover:text-white/70 transition-colors duration-160">
               Condiciones
             </Link>
+            <span aria-hidden="true">·</span>
+            <button
+              type="button"
+              onClick={openCookiePreferences}
+              className="text-xs text-white/40 hover:text-white/70 transition-colors duration-160"
+            >
+              Cookies
+            </button>
             <span aria-hidden="true">·</span>
             <span>Buenos Aires, Argentina</span>
           </span>
