@@ -104,7 +104,7 @@ export default function Hero() {
 
         {/* Sub */}
         <p className={`font-display font-semibold text-lg md:text-xl mb-10 tracking-[-0.01em] reveal ${v}`} style={{ color: '#5A6871', lineHeight: '1.6', maxWidth: '520px', margin: '0 auto 40px', transitionDelay: '300ms' }}>
-          Dataria crea herramientas de IA para que pymes y autónomos optimicen sus operaciones — desde el primer día.
+          Dataria crea herramientas con IA para que pymes y autónomos optimicen sus operaciones — desde el primer día.
         </p>
 
         {/* CTAs */}
