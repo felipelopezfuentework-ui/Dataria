@@ -75,7 +75,7 @@ export default function EcommercePage() {
       <IndustryFAQ faqs={faqs} />
       <IndustrySchema
         path="/ecommerce"
-        serviceName="Herramientas de IA para e-commerce"
+        serviceName="Herramientas con IA para e-commerce"
         serviceDescription="Módulos de inteligencia artificial a medida para tiendas online en Argentina: panel de clientes, stock e inventario y proyecciones de ventas."
         breadcrumbCurrent="E-commerce"
         faqs={faqs}

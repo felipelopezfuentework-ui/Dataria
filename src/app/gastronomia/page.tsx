@@ -92,7 +92,7 @@ export default function GastronomiaPage() {
       <IndustryFAQ faqs={faqs} />
       <IndustrySchema
         path="/gastronomia"
-        serviceName="Herramientas de IA para gastronomía"
+        serviceName="Herramientas con IA para gastronomía"
         serviceDescription="Módulos de inteligencia artificial a medida para restaurantes y locales gastronómicos en Argentina: cálculo de food cost, control de stock de insumos e inventario de cocina, y planificador de turnos."
         breadcrumbCurrent="Gastronomía"
         faqs={faqs}

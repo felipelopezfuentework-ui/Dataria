@@ -7,7 +7,7 @@ const steps = [
     num: '01',
     name: 'Setup',
     tag: 'Desarrollo inicial',
-    desc: 'Configuramos las herramientas de IA desde cero, integradas con tus datos y adaptadas a tu operación específica. Entregamos en semanas, no en meses.',
+    desc: 'Configuramos las herramientas con IA desde cero, integradas con tus datos y adaptadas a tu operación específica. Entregamos en semanas, no en meses.',
     items: ['Diagnóstico de puntos críticos', 'Capacitación de equipos', 'Desarrollo interactivo'],
   },
   {

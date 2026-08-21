@@ -75,7 +75,7 @@ export default function InmobiliariasPage() {
       <IndustryFAQ faqs={faqs} />
       <IndustrySchema
         path="/inmobiliarias"
-        serviceName="Herramientas de IA para inmobiliarias"
+        serviceName="Herramientas con IA para inmobiliarias"
         serviceDescription="Módulos de inteligencia artificial a medida para inmobiliarias en Argentina: CRM, agente de consultas por WhatsApp y agenda de visitas."
         breadcrumbCurrent="Inmobiliarias"
         faqs={faqs}

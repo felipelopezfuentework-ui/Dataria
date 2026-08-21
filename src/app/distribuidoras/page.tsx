@@ -85,7 +85,7 @@ export default function DistribuidorasPage() {
       <IndustryFAQ faqs={faqs} />
       <IndustrySchema
         path="/distribuidoras"
-        serviceName="Herramientas de IA para distribuidoras"
+        serviceName="Herramientas con IA para distribuidoras"
         serviceDescription="Módulos de inteligencia artificial a medida para distribuidoras mayoristas en Argentina: optimización de rutas, control de stock y proyección de demanda, y agente de pedidos por WhatsApp."
         breadcrumbCurrent="Distribuidoras"
         faqs={faqs}

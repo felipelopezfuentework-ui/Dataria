@@ -22,11 +22,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'Dataria — Menos datos sueltos. Mejores decisiones.',
   description:
-    'Dataria crea herramientas de inteligencia artificial para pymes y autónomos — gastronomía, distribución, inmobiliarias y e-commerce.',
+    'Dataria crea herramientas con inteligencia artificial para pymes y autónomos — gastronomía, distribución, inmobiliarias y e-commerce.',
   keywords: ['inteligencia artificial', 'pymes', 'automatización', 'gastronomía', 'distribuidoras'],
   openGraph: {
     title: 'Dataria',
-    description: 'Herramientas de IA para negocios reales.',
+    description: 'Herramientas con IA para negocios reales.',
     type: 'website',
   },
 }
@@ -37,7 +37,7 @@ const organizationSchema = {
   name: 'Dataria',
   url: 'https://www.dataria.work',
   description:
-    'Dataria crea herramientas de inteligencia artificial a medida para pymes y autónomos en gastronomía, distribución, inmobiliarias y e-commerce.',
+    'Dataria crea herramientas con inteligencia artificial a medida para pymes y autónomos en gastronomía, distribución, inmobiliarias y e-commerce.',
   email: 'datariaai@gmail.com',
   areaServed: 'AR',
 }
